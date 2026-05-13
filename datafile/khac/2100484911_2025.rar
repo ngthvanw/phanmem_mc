@@ -1,0 +1,1018 @@
+SET FOREIGN_KEY_CHECKS=0;
+SET SQL_MODE=NO_AUTO_VALUE_ON_ZERO;
+SET AUTOCOMMIT=0;
+START TRANSACTION;
+ALTER TABLE bangcdkt AUTO_INCREMENT=294;
+DROP TABLE IF EXISTS bangcdtk;
+
+CREATE TABLE `bangcdtk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `tentk` varchar(200) NOT NULL,
+  `matk` varchar(14) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `cap` int(10) NOT NULL,
+  `_nock` bigint(20) NOT NULL,
+  `_cock` bigint(20) NOT NULL,
+  `matkcha` varchar(6) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+TRUNCATE bangcdtk;DROP TABLE IF EXISTS sdtkdk;
+
+CREATE TABLE `sdtkdk` (
+  `sott` int(10) NOT NULL AUTO_INCREMENT,
+  `matk` varchar(14) NOT NULL,
+  `tentk` varchar(200) NOT NULL,
+  `soduno` bigint(20) NOT NULL,
+  `soduco` bigint(20) NOT NULL,
+  `cttheobophan` int(1) NOT NULL,
+  `chitiettheond` char(1) NOT NULL,
+  `matkcha` int(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `sodupsno` bigint(20) NOT NULL,
+  `sodupsco` bigint(20) NOT NULL,
+  `tygia` bigint(20) NOT NULL,
+  `sotiennt` double(15,3) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_matkcha` (`matkcha`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
+
+TRUNCATE sdtkdk;INSERT INTO sdtkdk (sott,matk,tentk,soduno,soduco,sodupsno,sodupsco,matkcha,cttheobophan,tygia,sotiennt) VALUES ('1','111','Tiền mặt','0','0','191553710','362773510','0','0','',''),('2','1111','&nbsp#*#&nbsp#*#&nbsp#*#Tiền Việt Nam','9877000','0','191553710','362773510','111','0','',''),('3','112','Tiền gửi ngân hàng','0','0','5499982','5682000','0','0','',''),('4','1121','&nbsp#*#&nbsp#*#&nbsp#*#Tiền việt nam','0','0','5499982','5682000','112','0','',''),('5','112102','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Tiền gửi ngân hàng Sacombank 61299','35682','0','5499982','5682000','1121','0','',''),('6','131','Phải thu của khách hàng','0','0','3499200','3499200','0','0','',''),('7','133','Thuế GTGT được khấu trừ','0','0','11248648','14226120','0','0','',''),('8','1331','&nbsp#*#&nbsp#*#&nbsp#*#Thuế GTGT được khấu trừ của hàng hóa, dịch vụ','1632541','0','11248648','14226120','133','0','',''),('9','156','Hàng hóa','0','0','127088000','157128290','0','0','',''),('10','1561','&nbsp#*#&nbsp#*#&nbsp#*#Giá trị hàng mua','2514647978','0','127088000','157128290','156','1','',''),('11','331','Phải trả cho người bán','0','0','40040000','0','0','0','',''),('12','333','Thuế và các khoản phải nộp Nhà nước','0','0','16226120','16226120','0','0','',''),('13','3331','&nbsp#*#&nbsp#*#&nbsp#*#Thuế giá trị gia tăng phải nộp','0','0','14226120','14226120','333','0','',''),('14','33311','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Thuế GTGT đầu ra','0','0','14226120','14226120','3331','0','',''),('15','3339','&nbsp#*#&nbsp#*#&nbsp#*#Phí, lệ phí và các khoản phải nộp khác','0','0','2000000','2000000','333','0','',''),('16','33391','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Lệ phí môn bài','0','0','2000000','2000000','3339','0','',''),('17','334','Phải trả người lao động','0','0','54000000','54000000','0','0','',''),('18','411','Vốn đầu tư của chủ sở hữu','0','0','150000000','0','0','0','',''),('19','4111','&nbsp#*#&nbsp#*#&nbsp#*#Vốn góp của chủ sở hữu','0','0','150000000','0','411','0','',''),('20','41111','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Vốn góp chủ sở hữu','0','2500000000','0','0','4111','1','',''),('21','41112','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Góp vốn bổ sung','0','150000000','150000000','0','4111','0','',''),('22','421','Lợi nhuận sau thuế chưa phân phối','0','0','68546922','54167342','0','0','',''),('23','4211','&nbsp#*#&nbsp#*#&nbsp#*#Lợi nhuận sau thuế chưa phân phối năm trước','109427219','0','54167342','0','421','0','',''),('24','4212','&nbsp#*#&nbsp#*#&nbsp#*#Lợi nhuận sau thuế chưa phân phối năm nay','14379580','0','14379580','54167342','421','0','',''),('25','511','Doanh thu bán hàng và cung cấp dịch vụ','0','0','177826500','177826500','0','0','',''),('26','5111','&nbsp#*#&nbsp#*#&nbsp#*#Doanh thu bán hàng hóa','0','0','177826500','177826500','511','0','',''),('27','515','Doanh thu hoạt động tài chính','0','0','290','290','0','0','',''),('28','5151','&nbsp#*#&nbsp#*#&nbsp#*#Lãi tiền gửi','0','0','290','290','515','0','',''),('29','632','Giá vốn bán hàng','0','0','157128290','157128290','0','0','',''),('30','642','Chi phí quản lý kinh doanh','0','0','75118080','75118080','0','0','',''),('31','6421','&nbsp#*#&nbsp#*#&nbsp#*#Chi phí bán hàng','0','0','75118080','75118080','642','0','',''),('32','711','Thu nhập khác','0','0','40040000','40040000','0','0','',''),('33','911','Xác định kết quả kinh doanh','0','0','232246370','232246370','0','0','','');
+DROP TABLE IF EXISTS banggiathanhtieuchuan;
+
+CREATE TABLE `banggiathanhtieuchuan` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` char(14) NOT NULL,
+  `mavt` char(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `dinhmuc` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `loaivl` char(3) NOT NULL,
+  `thang` int(2) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS chitiet_dinhmuc_ct_vl;
+
+CREATE TABLE `chitiet_dinhmuc_ct_vl` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` varchar(14) NOT NULL,
+  `mahm` char(14) NOT NULL,
+  `tenhm` varchar(300) NOT NULL,
+  `mavt` char(14) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `thue` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_chitiet_dinhmuc_ct_vl_masp_masp` (`masp`),
+  CONSTRAINT `fk_chitiet_dinhmuc_ct_vl_masp_masp` FOREIGN KEY (`masp`) REFERENCES `masp` (`masp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS chitiet_dinhmuc_sp;
+
+CREATE TABLE `chitiet_dinhmuc_sp` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mapsdm` int(11) NOT NULL,
+  `masp` varchar(14) NOT NULL,
+  `mavt` varchar(14) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dinhmuc` double NOT NULL,
+  `tylehaohoc` double NOT NULL,
+  `dinhmuckecakhauhao` double NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE chitiet_pskt AUTO_INCREMENT=124177313493828;
+ALTER TABLE chitiet_psvt AUTO_INCREMENT=638;
+DROP TABLE IF EXISTS cnkh;
+
+CREATE TABLE `cnkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makh` varchar(14) NOT NULL,
+  `tenkh` varchar(700) NOT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `matk` varchar(6) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `nock_` bigint(20) NOT NULL,
+  `cock_` bigint(20) NOT NULL,
+  `nontdk` double NOT NULL,
+  `contdk` double NOT NULL,
+  `nontps` double NOT NULL,
+  `contps` double NOT NULL,
+  `nontck` double NOT NULL,
+  `contck` double NOT NULL,
+  `nontck_` double NOT NULL,
+  `contck_` double NOT NULL,
+  `loaitien` char(3) NOT NULL,
+  `manhom` int(4) NOT NULL,
+  `makh_matk` char(21) NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+TRUNCATE cnkh;DROP TABLE IF EXISTS sdcn;
+
+CREATE TABLE `sdcn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(3) NOT NULL,
+  `maso_` char(3) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `tenkh` varchar(60) DEFAULT NULL,
+  `matk` char(5) NOT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `kho` varchar(5) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `province` varchar(15) DEFAULT NULL,
+  `country` varchar(15) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `fax` varchar(15) DEFAULT NULL,
+  `comment` text,
+  `sdkno` bigint(13) NOT NULL,
+  `sdkco` bigint(13) NOT NULL,
+  `psno` bigint(14) NOT NULL,
+  `psco` bigint(14) NOT NULL,
+  `sckno` bigint(13) NOT NULL,
+  `sckco` bigint(13) NOT NULL,
+  `date` date DEFAULT NULL,
+  `noqh` char(1) DEFAULT NULL,
+  `tygiapt` bigint(20) NOT NULL,
+  `tygiaptr` bigint(20) NOT NULL,
+  `thanhtienntpt` double NOT NULL,
+  `thanhtienntptr` double NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_makh` (`makh`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+TRUNCATE cnkh;INSERT INTO sdcn (makh,makhcha,matk,sdkno,sdkco,thanhtienntpt,thanhtienntptr,tygiapt,tygiaptr) VALUES ('2500551','0','131','0','0','0','0','0','0'),('TPHCM','0','331','0','0','0','0','0','0'),('0312294919','TPHCM','331','0','0','0','0','0','0');
+DROP TABLE IF EXISTS cpdodangdk;
+
+CREATE TABLE `cpdodangdk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` varchar(14) NOT NULL,
+  `soduco` bigint(20) NOT NULL,
+  `soduno` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='cpdodangdk';
+
+TRUNCATE cpdodangdk;DROP TABLE IF EXISTS cptratruoc;
+
+CREATE TABLE `cptratruoc` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` char(14) NOT NULL,
+  `matscha` char(14) NOT NULL,
+  `tents` varchar(300) DEFAULT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysd` date DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `ngaysx` date NOT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tylekh` bigint(6) DEFAULT NULL,
+  `thoigiansd` double DEFAULT NULL,
+  `soluong` double DEFAULT NULL,
+  `dongia` double DEFAULT NULL,
+  `nguyengia` double DEFAULT NULL,
+  `giatriconlai` double DEFAULT NULL,
+  `muckhthang` double NOT NULL,
+  `muckhquy` double DEFAULT NULL,
+  `muckhnam` double NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `chuthich` text,
+  `mabp` char(6) NOT NULL,
+  `bophan` varchar(200) NOT NULL,
+  `manhomts` char(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `khauhao` int(1) NOT NULL DEFAULT '1',
+  `niendo` char(4) NOT NULL,
+  `cpkhongduoctru` int(1) NOT NULL,
+  `theodoi` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mats` (`mats`),
+  UNIQUE KEY `mats_30` (`mats`),
+  UNIQUE KEY `mats_31` (`mats`),
+  UNIQUE KEY `mats_32` (`mats`),
+  UNIQUE KEY `mats_33` (`mats`),
+  UNIQUE KEY `mats_34` (`mats`),
+  UNIQUE KEY `mats_35` (`mats`),
+  UNIQUE KEY `mats_36` (`mats`),
+  UNIQUE KEY `mats_37` (`mats`),
+  UNIQUE KEY `mats_38` (`mats`),
+  UNIQUE KEY `mats_39` (`mats`),
+  UNIQUE KEY `mats_40` (`mats`),
+  UNIQUE KEY `mats_41` (`mats`),
+  UNIQUE KEY `mats_42` (`mats`),
+  UNIQUE KEY `mats_43` (`mats`),
+  UNIQUE KEY `mats_44` (`mats`),
+  UNIQUE KEY `mats_45` (`mats`),
+  UNIQUE KEY `mats_46` (`mats`),
+  UNIQUE KEY `mats_47` (`mats`),
+  UNIQUE KEY `mats_48` (`mats`),
+  UNIQUE KEY `mats_49` (`mats`),
+  UNIQUE KEY `mats_50` (`mats`),
+  UNIQUE KEY `mats_51` (`mats`),
+  UNIQUE KEY `mats_52` (`mats`),
+  UNIQUE KEY `mats_53` (`mats`),
+  UNIQUE KEY `mats_54` (`mats`),
+  UNIQUE KEY `mats_55` (`mats`),
+  UNIQUE KEY `mats_56` (`mats`),
+  UNIQUE KEY `mats_57` (`mats`),
+  UNIQUE KEY `mats_58` (`mats`),
+  UNIQUE KEY `mats_59` (`mats`),
+  UNIQUE KEY `mats_60` (`mats`),
+  UNIQUE KEY `mats_61` (`mats`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO cptratruoc VALUES('1','CUOC CNTT','0','Cước DV viễn thông','Tháng','6421','0000-00-00','','2021-01-28','','0','0','0','0','0','0','0','0','0','','','','','','1535','Cuoc DV vien thong','1','2024','0','1'),('2','CUOC CNTT-01','CUOC CNTT','Cước Viễn Thông 7 tháng','Tháng','6421','2020-10-23','','0000-00-00','','0','0','0','0','0','0','0','0','0','','','','','','1535','Cuoc Vien Thong 7 thang','1','2024','0','1');
+DROP TABLE IF EXISTS danhsach_hopdong_daily;
+
+CREATE TABLE `danhsach_hopdong_daily` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `namhd` int(4) NOT NULL,
+  `ngaybd` date NOT NULL,
+  `ngaykt` date NOT NULL,
+  `giadichvu` double NOT NULL,
+  `teptin` text NOT NULL,
+  `nguoinhap` char(1) NOT NULL,
+  `ngaynhap` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ngaythaydoi` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE dinhkhoan_psvt AUTO_INCREMENT=2006;
+DROP TABLE IF EXISTS dinhmucxemay;
+
+CREATE TABLE `dinhmucxemay` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `mats` char(14) NOT NULL,
+  `maloaiduong` int(4) NOT NULL,
+  `tenloaiduong` varchar(400) NOT NULL,
+  `sokm` double(10,2) NOT NULL,
+  `litkmdau` double(10,2) NOT NULL,
+  `tongdau` double(15,4) NOT NULL,
+  `pptinh` int(1) NOT NULL,
+  `ghichu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS mact;
+
+CREATE TABLE `mact` (
+  `sott` int(10) unsigned NOT NULL,
+  `mact` char(14) NOT NULL,
+  `tenct` varchar(200) NOT NULL,
+  `mactcha` char(14) NOT NULL,
+  `diachi` varchar(100) NOT NULL,
+  `makh` char(10) NOT NULL,
+  `so_hd` char(20) NOT NULL,
+  `ngayhd` date NOT NULL,
+  `ngay_kc` date NOT NULL,
+  `ngay_ht` date NOT NULL,
+  `giatri_hd` bigint(12) NOT NULL,
+  `vatlieu` bigint(12) NOT NULL,
+  `nhancong` bigint(12) NOT NULL,
+  `may` bigint(12) NOT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  PRIMARY KEY (`mact`),
+  KEY `sott` (`sott`),
+  KEY `tenct` (`tenct`(191)),
+  KEY `mact` (`mact`),
+  KEY `mactcha` (`mactcha`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO mact VALUES('1','0001','Toàn bộ','0','','TPTV','','0000-00-00','0000-00-00','0000-00-00','0','0','0','0','Toan bo');
+DROP TABLE IF EXISTS makh;
+
+CREATE TABLE `makh` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `makh` char(14) NOT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `tenkh` varchar(1000) DEFAULT NULL,
+  `matk` char(6) DEFAULT NULL,
+  `makhcha` char(14) NOT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `diachi` varchar(1000) DEFAULT NULL,
+  `dienthoai` char(20) DEFAULT NULL,
+  `hanmucno` bigint(12) DEFAULT NULL,
+  `noth` bigint(12) DEFAULT NULL,
+  `noqh` bigint(12) DEFAULT NULL,
+  `nonh` bigint(12) DEFAULT NULL,
+  `nodh` bigint(12) DEFAULT NULL,
+  `noxau` bigint(12) DEFAULT NULL,
+  `ngaytra` date DEFAULT NULL,
+  `ghichu` text,
+  `tenkd` varchar(1000) DEFAULT NULL,
+  `rank` bigint(20) NOT NULL DEFAULT '1',
+  `loaitien` char(3) NOT NULL DEFAULT 'VND',
+  `manhom` int(11) NOT NULL DEFAULT '1001',
+  `niendo` char(4) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `makh` (`makh`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `tenkd` (`tenkd`(255)),
+  KEY `fk_makh_manhom_manhom` (`manhom`),
+  KEY `index_makhcha` (`makhcha`),
+  CONSTRAINT `fk_makh_manhom_manhom` FOREIGN KEY (`manhom`) REFERENCES `manhomkh` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=691 DEFAULT CHARSET=utf8;
+
+INSERT INTO makh VALUES('557','0309268901','0309268901','Cty TNHH TM Hồng Linh','','TPHCM','','520B Trần Hưng Đạo, Phường 14, Quận 5, Tp HCM','(08)38550101','','','','','','','','','Cty TNHH TM Hong Linh','1','VND','1001','2024','','557'),('558','0303046010','0303046010','DNTN Cúc Thu','','TPHCM','','497 Trần Hưng Đạo B, P.14, Q.5, Tp HCM','','','','','','','','','','DNTN Cuc Thu','1','VND','1001','2024','','558'),('559','0313382572','0313382572','Cty TNHH TM Tường Nga','','TPHCM','','429 Hưng Phú, P.9, Q.8, Tp. HCM','','','','','','','','','','Cty TNHH TM Tuong Nga','1','VND','1001','2024','','559'),('560','0302944364','0302944364','DN TN Lưu Thị Thu Vân','','TPHCM','','15 Đỗ Ngọc Thạnh, P.14, Q.5, Tp. HCM','','','','','','','','','','DN TN Luu Thi Thu Van','1','VND','1001','2024','','560'),('561','0309279685','0309279685','Cty TNHH TMDV Sông Cửu Long','','0','','526 Trần Hưng Đạo, P.14, Q.5, Tp.HCM','','','','','','','','','','Cty TNHH TMDV Song Cuu Long','1','VND','1001','2024','','561'),('562','0302966336','0302966336','Doanh Nghiệp Tư Nhân Mỹ Oanh','','0','','481 Trần Hưng Đạo B, P.14, Q5, Tp.HCM','','','','','','','','','','Doanh Nghiep Tu Nhan My Oanh','1','VND','1001','2024','','562'),('563','0312294919','0312294919','Cty TNHH TMDV Vải Sợi Phượng','','TPHCM','','8 Đỗ Ngọc Thạnh, P.14, Q.5, Tp.HCM','','','','','','','','','','Cty TNHH TMDV Vai Soi Phuong','1','VND','1001','2024','','563'),('564','0311600835','0311600835','Cty TNHH SXTM Huệ Phương Thảo','','TPHCM','','79-81 Đỗ Công Tường, P. Tân Qý, Tân Phú, Tp.HCM','','','','','','','','','','Cty TNHH SXTM Hue Phuong Thao','1','VND','1001','2024','','564'),('565','0311458032','0311458032','Cty TNHH TMDV XNK Hòa Long','','TPHCM','','42 Dương Tử Giang, P.14, Q.5, Tp. HCM','','','','','','','','','','Cty TNHH TMDV XNK Hoa Long','1','VND','1001','2024','','565'),('566','2100462770','2100462770','CTy TNHH Kế toán và tư vấn thuế Chiến Thuật','','0','','57 A Đường Bạch Đằng, P.4, Tp.Trà Vinh','','','','','','','','','','CTy TNHH Ke toan va tu van thue Chien Thuat','1','VND','1001','2024','','566'),('567','TPTV-01-002','2100114477','Cty TNHH Xổ Số Kiến Thiết Trà Vinh','','TRVI-01','','54A, Phạm Ngũ Lão, P.1, Tp. Trà Vinh','','','','','','','','','','Cty TNHH Xo So Kien Thiet Tra Vinh','1','VND','1001','2024','','567'),('568','TRVI-04-004','2100224180','UBND Xã Hoà Lợi','','TRVI-04','','Hoà Lợi, Châu Thành, Trà Vinh','','','','','','','','','','UBND Xa Hoa Loi','1','VND','1001','2024','','568'),('569','TPTV-01-001','','Người mua không lấy hoá đơn','','TRVI-01','','Trà Vinh','','','','','','','','','','Nguoi mua khong lay hoa don','1','VND','1001','2024','','569'),('570','TRVI-03-003','2100117012','Lưu Thị Thu Trang','','TRVI-03','','Kim Hoà, Cầu Ngang, Trà Vinh','','','','','','','','','','Luu Thi Thu Trang','1','VND','1001','2024','','570'),('571','TRVI-06-006','2100388164','Trường TH Phước Hưng A','','TRVI-06','','Phước Hưng, Trà Cú, Trà Vinh','','','','','','','','','','Truong TH Phuoc Hung A','1','VND','1001','2024','','571'),('572','TRVI-03-001','2100108561','Trần Thị Vân','','TRVI-03','','Mỹ Long, Cầu Ngang, Trà Vinh','','','','','','','','','','Tran Thi Van','1','VND','1001','2024','','572'),('573','TRVI-03-002','2100108628','Nguyễn Thị Kim Khoa','','TRVI-03','','Mỹ Long, Cầu Ngang, Trà Vinh','','','','','','','','','','Nguyen Thi Kim Khoa','1','VND','1001','2024','','573'),('574','TRVI-06-003','2100161364','Ông Thị Ánh Nga','','TRVI-06','','Đôm Xuân, Trà Cú, Trà Vinh','','','','','','','','','','Ong Thi Anh Nga','1','VND','1001','2024','','574'),('575','TRVI-05-004','2100365414','Lâm Ngọc Lợi','','TRVI-05','','Duyên Hải, Trà Vinh','','','','','','','','','','Lam Ngoc Loi','1','VND','1001','2024','','575'),('576','TRVI-03-007','2100163444','Lê Thị Khá','','TRVI-03','','Minh Thuận A, Cầu Ngang, Trà Vinh','','','','','','','','','','Le Thi Kha','1','VND','1001','2024','','576'),('577','TRVI-06-005','2100183801','Huỳnh Thị Soa','','TRVI-06','','Đại Án, Trà Cú, Trà Vinh','','','','','','','','','','Huynh Thi Soa','1','VND','1001','2024','','577'),('578','TRVI-06-007','2100776056','Nguyễn Thị Thơm','','TRVI-06','','Đôn Châu, Trà Cú, Trà Vinh','','','','','','','','','','Nguyen Thi Thom','1','VND','1001','2024','','578'),('579','TRVI-03-004','2100126828','Lê Văn Út','','TRVI-03','','Hiệp Mỹ, Cầu Ngang, Trà Vinh','','','','','','','','','','Le Van Et','1','VND','1001','2024','','579'),('580','100025','','Chi Cục Thuế TP Trà Vinh','','0','','Trà Vinh','','','','','','','','','','Chi Cuc Thue TP Tra Vinh','1','VND','1001','2024','','580'),('581','100026','','Lưu Tấn Phát','','0','','Giám Đốc','','','','','','','','','','Luu Tan Phat','1','VND','1001','2024','','581'),('582','TRVI-01','','TP. TRÀ VINH','','TRVI','','Tỉnh Trà Vinh','','','','','','','','','','TP. TRA VINH','1','VND','1001','2024','','582'),('583','TRVI-04','','Huyện Châu Thành - Trà Vinh','','TRVI','','Châu Thành - Trà Vinh','','','','','','','','','','Huyen Chau Thanh - Tra Vinh','1','VND','1001','2024','','583'),('584','TRVI-06','','Huyện Trà Cú - Trà Vinh','','TRVI','','HUYỆN TRÀ CÚ, TRÀ VINH','','','','','','','','','','Huyen Tra Cu - Tra Vinh','1','VND','1001','2024','','584'),('585','TRVI-03','','Huyện Cầu Ngang - Trà Vinh','','TRVI','','Cầu Ngang - Trà Vinh','','','','','','','','','','Huyen Cau Ngang - Tra Vinh','1','VND','1001','2024','','585'),('586','TRVI-05','','Huyện Duyên Hải - Trà Vinh','','TRVI','','Duyên Hải - Trà Vinh','','','','','','','','','','Huyen Duyen Hai - Tra Vinh','1','VND','1001','2024','','586'),('587','TPHCM','','TP. HỒ CHÍ MINH','','0','','TP. Hồ Chí Minh','','','','','','','','','','TP. HO CHI MINH','1','VND','1001','2024','','587'),('588','0302665385','0302665385','DNTN Vải Sợi Ngọc Mai','','0','','Số 15 Thương xá Đồng Khánh, Phường 14, Quận 5, TP. HCM','','','','','','','','','','DNTN Vai Soi Ngoc Mai','1','VND','1001','2024','','588'),('589','0312580821','0312580821','Cty TNHH MTV Vải Sợi Thuận Phát','','0','','Số 10 Nguyễn Tư Giản, phường 12, Q. Gò Vấp, TP. HCM','','','','','','','','','','Cty TNHH MTV Vai Soi Thuan Phat','1','VND','1001','2024','','589'),('590','0304844534','0304844534','DNTN Ánh Loan','','0','','Thương Xá Đồng Khánh, số 465-473 Trần Hưng Đạo B, P14, Q.5, Tp. HCM','','','','','','','','','','DNTN Anh Loan','1','VND','1001','2024','','590'),('591','0313897934','0313897934','Cty TNHH TMDV XNK Thu Trang','','0','','709 Hồng Bàng, P.6, Q.6, TP. HCM','','','','','','','','','','Cty TNHH TMDV XNK Thu Trang','1','VND','1001','2024','','591'),('592','0301759721','0301759721','CTy TNHH SX-TM Vinh Phát Đạt','','0','','78 Dương Tử Giang, P.14, Q.5, TP. HCM','','','','','','','','','','CTy TNHH SX-TM Vinh Phat Dat','1','VND','1001','2024','','592'),('593','0311461719','0311461719','DNTN Nhu Hường','','0','','549 Trần Hưng Đạo B, P.14, Q.5, TP. HCM','','','','','','','','','','DNTN Nhu Huong','1','VND','1001','2024','','593'),('594','0313137443','0313137443','DNTN Vải Sợi Hân Chúc','','0','','499 Trần Hưng Đạo B, P.14, Q.5, TP. HCM','','','','','','','','','','DNTN Vai Soi Han Chuc','1','VND','1001','2024','','594'),('595','0301455459','0301455459','Cty CP Tập Đoàn Thái Tuấn','','0','','P. Đông Hưng Thuận, Q.12, TP. HCM','','','','','','','','','','Cty CP Tap Doan Thai Tuan','1','VND','1001','2024','','595'),('596','0313878748','0313878748','Cty TNHH TMDV XNK Hoàng Uyên','','0','','8/2 Lầu 1, Lưu Xuân Tín, P.10, Q.5, TP. HCM','','','','','','','','','','Cty TNHH TMDV XNK Hoang Uyen','1','VND','1001','2024','','596'),('597','TRVI-03-005','2100152444','Lê Thị Khói','','TRVI-03','','Ấp Minh Thuận A-Cầu Ngang-Trà Vinh','','','','','','','','','','Le Thi Khoi','1','VND','1001','2024','','597'),('598','TRVI-06-002','2100160124','Trần Thị Diệp','','TRVI-06','','Cây Da-Đôn Xuân-Trà Cú-Trà Vinh','','','','','','','','','','Tran Thi Diep','1','VND','1001','2024','','598'),('599','TRVI-03-009','','BÁN LẺ CẦU NGANG','','TRVI-03','','Cầu Ngang-Trà Vinh','','','','','','','','','','BAN LE CAU NGANG','1','VND','1001','2024','','599'),('600','TRVI-02','','Huyện Cầu Kè- Trà Vinh','','TRVI','','HUYỆN CẦU KÈ, TRÀ VINH','','','','','','','','','','Huyen Cau Ke- Tra Vinh','1','VND','1001','2024','','600'),('601','TRVI-02-001','','BÁN LẺ CẦU KÈ','','TRVI-02','','Cầu kè, Trà Vinh','','','','','','','','','','BAN LE CAU KE','1','VND','1001','2024','','601'),('602','TRVI-05-001','','BÁN LẺ DUYÊN HẢI','','TRVI-05','','Duyên Hải, Trà Vinh','','','','','','','','','','BAN LE DUYEN HAI','1','VND','1001','2024','','602'),('603','TRVI-04-001','','BÁN LẺ CHÂU THÀNH','','TRVI-04','','Châu Thành, Trà Vinh','','','','','','','','','','BAN LE CHAU THANH','1','VND','1001','2024','','603'),('604','TRVI-03-006','2100152539','Nguyễn Thị Hoa Lan','','TRVI-03','','K1, TT. Cầu Ngang, Huyện Cầu Ngang, Trà Vinh','','','','','','','','','','Nguyen Thi Hoa Lan','1','VND','1001','2024','','604'),('605','TRVI-05-003','2100198300','Huỳnh Thị Tuyết','','TRVI-05','','Cây Da, Ngũ Lạc, Duyên Hải, Trà Vinh','','','','','','','','','','Huynh Thi Tuyet','1','VND','1001','2024','','605'),('606','TRVI-06-004','2100172856','Trần Thị Bửu Huệ','','TRVI-06','','Đồng Sơn-Tập Sơn-Trà Cú','','','','','','','','','','Tran Thi Buu Hue','1','VND','1001','2024','','606'),('607','TRVI-02-002','2100164704','Đỗ Thị Năm','','TRVI-02','','Ninh Thới- Cầu Kè- Trà Vinh','','','','','','','','','','Do Thi Nam','1','VND','1001','2024','','607'),('608','TRVI-03-008','2100220909','Nguyễn Thị Kim Anh','','TRVI-03','','Khóm Minh Thuận A, Cầu Ngang, Trà Vinh','','','','','','','','','','Nguyen Thi Kim Anh','1','VND','1001','2024','','608'),('609','100056','','Ngâng hàng Sacombank','','0','','Chi nhánh Trà Vinh','','','','','','','','','','Ngang hang Sacombank','1','VND','1001','2024','','609'),('610','NHSC','','Ngân hàng Sacombank','','0','','Chi nhánh Trà Vinh','','','','','','','','','','Ngan hang Sacombank','1','VND','1001','2024','','610'),('611','0310440716','0310440716','Cty TNHH MTV Chuối','','0','','58/7 Cao Văn Lầu, P.1, Q.6, TP. HCM','','','','','','','','','','Cty TNHH MTV Chuoi','1','VND','1001','2024','','611'),('612','0307578263','0307578263','Cty TNHH MTV Sản Xuất Sơn Huệ','','0','','72 Ba Vân, P.14, Q. Tân Bình, TP. HCM','','','','','','','','','','Cty TNHH MTV San Xuat Son Hue','1','VND','1001','2024','','612'),('613','0309347494','0309347494','Cty TNHH MTV DV TM Nga Vui','','0','','56 Đỗ Ngọc Thạnh, P.14, Q.5, TP. HCM','','','','','','','','','','Cty TNHH MTV DV TM Nga Vui','1','VND','1001','2024','','613'),('614','TPTV-01-003','2100610919','Trường mầm non Ischool Trà Vinh','','TRVI-01','','36 Quang Trung, K.3, P.1, TP. Trà Vinh','','','','','','','','','','Truong mam non Ischool Tra Vinh','1','VND','1001','2024','','614'),('615','TRVI-04-002','2100388118','Võ Thị Trúc Bình','','TRVI-04','','Thanh Trì, Đa Lộc, Châu Thành, Trà Vinh','','','','','','','','','','Vo Thi Truc Binh','1','VND','1001','2024','','615'),('616','TRVI','','TỈNH TRÀ VINH','','0','','TRÀ VINH','','','','','','','','','','TINH TRA VINH','1','VND','1001','2024','','616'),('617','TRVI-06-001','','BÁN LẺ TRÀ CÚ','','TRVI-06','','Huyện Trà Cú, Trà Vinh','','','','','','','','','','BAN LE TRA CE','1','VND','1001','2024','','617'),('618','100068','','Hồ Thị Thu Hồng','','0','','số 85/2, Quang Trung, P.1, TP. Trà Vinh','','','','','','','','','','Ho Thi Thu Hong','1','VND','1001','2024','','618'),('619','2200218800','2200218800-003','Chi nhánh Cty CP TM Du lịch Sóc Trăng','','0','','683/14/15 Hồng Bàng-P.6-Q.6-TP. Trà Vinh','','','','','','','','','','Chi nhanh Cty CP TM Du lich Soc Trang','1','VND','1001','2024','','619'),('620','0304028769','0304028769','Từ Bửu Liên','','0','','547 Trần Hưng Đạo, P.14, Q.5','','','','','','','','','','Tu Buu Lien','1','VND','1001','2024','','620'),('621','1101812962','1101812962','Cty TNHH SX TM DV Tú Khang','','0','','Ấp 4-Xã Thạnh lợi-huyện Bến Lức-tỉnh Long An','','','','','','','','','','Cty TNHH SX TM DV Tu Khang','1','VND','1001','2024','','621'),('622','TRVI-07','2100390004','Trường TH Lê Văn Tám TP Trà Vinh','','TRVI','','Số 12-đường 19/5, khóm 2, P.1, TP. Trà Vinh','','','','','','','','','','Truong TH Le Van Tam TP Tra Vinh','1','VND','1001','2024','','622'),('623','TRVI-01-004','2100425352','Cty CP Minh Minh Tâm','','TRVI-01','','36- Nguyễn Đáng-P.9, TP. Trà Vinh','','','','','','','','','','Cty CP Minh Minh Tam','1','VND','1001','2024','','623'),('624','TRVI-02-003','2100360521','Khưu Tuyết Nga','','TRVI-02','','Khóm 2, TT. Cầu Kè, H. Cầu Kè, Trà Vinh','','','','','','','','','','Khuu Tuyet Nga','1','VND','1001','2024','','624'),('625','0302746926','0302746926','Cty TNHH Thương Mại Anh Tài Cúc','','0','','65 Đỗ Ngọc Thạnh, P. 14, Q.5, TP. HCM','','','','','','','','','','Cty TNHH Thuong Mai Anh Tai Cuc','1','VND','1001','2024','','625'),('626','2100113258','2100113258','Cty CP Văn Hoá Tổng hợp Trà Vinh','','0','','72A trần phú, khóm 4, phường 3, TP. Trà Vinh','','','','','','','','','','Cty CP Van Hoa Tong hop Tra Vinh','1','VND','1001','2024','','626'),('627','TRVI-01-005','2100274872','Cty CP Dược Phẩm TV. pharm','','TRVI-01','','27 Nguyễn Chí Thanh, k.2, F.9, TP. Trà Vinh','','','','','','','','','','Cty CP Duoc Pham TV. pharm','1','VND','1001','2024','','627'),('628','TRVI-01-006','2100389866','Trường tiểu học Kim Đồng','','TRVI-01','','ấp Phú Hoà, Long Đức, TP. Trà Vinh','','','','','','','','','','Truong tieu hoc Kim Dong','1','VND','1001','2024','','628'),('629','TRVI-01-007','','Bảo tàng tổng hợp Trà Vinh','','TRVI-01','','ấp Vĩnh Lợi, Long Đức, TP. Trà Vinh','','','','','','','','','','Bao tang tong hop Tra Vinh','1','VND','1001','2024','','629'),('630','TRVI-02-004','2100387756','Phòng Lao Động-Thương binh và Xã Hội Huyện Cầu Ngang','','TRVI-02','','Khóm thống nhất, TT. Cầu Ngang, Trà Vinh','','','','','','','','','','Phong Lao Dong-Thuong binh va Xa Hoi Huyen Cau Ngang','1','VND','1001','2024','','630'),('631','TRVI-01-008','','BÁN LẺ TP. TRÀ VINH','','TRVI-01','','','','','','','','','','','','BAN LE TP. TRA VINH','1','VND','1001','2024','','631'),('632','2100484911','2100484911','Cty TNHH Vải Sợi Hai Dung','','0','','số 104, Đường Độc Lập, Khóm 1-Phường 3, TP. Trà Vinh','','','','','','','','','','Cty TNHH Vai Soi Hai Dung','1','VND','1001','2024','','632'),('633','100083','','Tống Thị Trúc Lan','','0','','272_ Bạch Đằng_p.4-TPTV-Trà Vinh','','','','','','','','','','Tong Thi Truc Lan','1','VND','1001','2024','','633'),('634','2100356677','2100356677','Công ty TNHH TMDV Sài Gòn Trà Vinh','','0','','Nguyễn Đáng- K3-P.6-TPTV-Trà Vinh','','','','','','','','','','Cong ty TNHH TMDV Sai Gon Tra Vinh','1','VND','1001','2024','','634'),('635','100085','','Tập đoàn viễn thông quân đội Cty Viettel Telecom- CN Trà Vinh','','0','','156 Nguyễn Đáng- K6- P7, TP. Trà Vinh','','','','','','','','','','Tap doan vien thong quan doi Cty Viettel Telecom- CN Tra Vinh','1','VND','1001','2024','','635'),('636','TRVI-04-005','','Trường Quân Sự Tỉnh Trà Vinh','','TRVI-04','','Xã Song Lộc, huyện Châu Thành, Tỉnh trà Vinh','','','','','','','','','','Truong Quan Su Tinh Tra Vinh','1','VND','1001','2024','','636'),('637','TRVI-08','','Huyện Càng Long','','TRVI','','Càng Long, Trà Vinh','','','','','','','','','','Huyen Cang Long','1','VND','1001','2024','','637'),('638','TRVI-08-001','2100387403067','Trường Mẫu Giáo Ban Mai','','TRVI-08','','Rạch Dửa, Đại Phước, càng Long, Trà Vinh','','','','','','','','','','Truong Mau Giao Ban Mai','1','VND','1001','2024','','638'),('639','100089','','Đinh Thị Quyên','','0','','Giồng Giá, Hoà Minh, Châu Thành, Trà Vinh','','','','','','','','','','Dinh Thi Quyen','1','VND','1001','2024','','639'),('640','100090','','Huỳnh Thị Bích Phượng','','0','','Trà Cuôn, Kim Hoà, Cầu Nganh, Trà Vinh','','','','','','','','','','Huynh Thi Bich Phuong','1','VND','1001','2024','','640'),('641','100091','','Nguyễn Thị Cẩm','','0','','Bến Kinh, Mỹ Long, Cầu Ngang, Trà Vinh','','','','','','','','','','Nguyen Thi Cam','1','VND','1001','2024','','641'),('642','100092','2100183801','Huỳnh Thị Son','','0','','Ấp Chợ, Đại An, Trà Cú, Trà Vinh','','','','','','','','','','Huynh Thi Son','1','VND','1001','2024','','642'),('643','100093','2100628296','Công Ty TNHH Phần Mềm T&T CM 4.0','','0','','số A3/29 Phạm Ngũ lão, khóm 3, phường 1, TP. Trà Vinh','','','','','','','','','','Cong Ty TNHH Phan Mem T&T CM 4.0','1','VND','1001','2024','','643'),('644','100094','','Lai Cẩm Tiên','','0','','Khóm 3, TT. Trà Cú, h. Trà Cú, Trà Vinh','','','','','','','','','','Lai Cam Tien','1','VND','1001','2024','','644'),('645','100095','','Lê Thị Hạp','','0','','Ấp 10, Long Hữu, Duyên Hải, Trà Vinh','','','','','','','','','','Le Thi Hap','1','VND','1001','2024','','645'),('646','100097','','Trương Thị Thuý Liên','','0','','Ấp Ro Say, Ngủ Lạc, Duyên Hải, Trà Vinh','','','','','','','','','','Truong Thi Thuy Lien','1','VND','1001','2024','','646'),('647','100098','','Nguyễn Thị Trang','','0','','Giồng Chôm, Mỹ Chánh, Châu Thành, Trà Vinh','','','','','','','','','','Nguyen Thi Trang','1','VND','1001','2024','','647'),('648','100099','','Nguyễn Thị Nguyệt','','0','','Long Hưng, Long Hoà, Châu Thành, Trà Vinh','','','','','','','','','','Nguyen Thi Nguyet','1','VND','1001','2024','','648'),('649','0304258480-002','0304258480-002','CTY TNHH SX-TM-DV Hoàn Việt - Cửa Hàng Hoàn Việt 1','','0','','888 Nguyễn Trãi, P.14, Q.5, TP.HCM','','','','','','','','','','CTY TNHH SX-TM-DV Hoan Viet - Cua Hang Hoan Viet 1','1','VND','1001','2024','','649'),('650','0302240093','0302240093','DNTN Hồng Yến','','0','','66 Đỗ Ngọc Thạch, P.14, Q.5, TP.HCM','','','','','','','','','','DNTN Hong Yen','1','VND','1001','2024','','650'),('651','TRVI-02-005','','Huỳnh Thị Liễu','','TRVI-02','','Mỹ Văn, Ninh Thới, Cầu Kè, Trà Vinh','','','','','','','','','','Huynh Thi Lieu','1','VND','1001','2024','','651'),('652','100103','1500531346','CTY TNHH Thiên Hồng Ân','','0','','33/5F Phạm Ngũ Lão, P.4, TP.Vĩnh Long','','','','','','','','','','CTY TNHH Thien Hong An','1','VND','1001','2024','','652'),('653','TRVI-02-006','','Huỳnh Văn Cón','','TRVI-02','','Trà Ốp, Thông Hòa, Cầu Kè, Trà Vinh','','','','','','','','','','Huynh Van Con','1','VND','1001','2024','','653'),('654','0309279621','0309279621','CTY TNHH TM Vàm Cỏ Đông','','0','','524 Trần Hưng Đạo, Phường 14, Quận 5, TP HCM','','','','','','','','','','CTY TNHH TM Vam Co Dong','1','VND','1001','2024','','654'),('655','0312082713','0312082713','CTY TNHH Phát Triển Minh An','','0','','104 Độc Lập, Khóm 1, Phường 3, TP Trà Vinh','','','','','','','','','','CTY TNHH Phat Trien Minh An','1','VND','1001','2024','','655'),('656','0106869738-043','0106869738-043','Trung Tâm Kinh Doanh VNPT - Trà Vinh - Chi Nhánh Tổng CTY DV Viễn Thông','','0','','Số 83 Lê Lợi, Phường 4, TP Trà Vinh, VN','','','','','','','','','','Trung Tam Kinh Doanh VNPT - Tra Vinh - Chi Nhanh Tong CTY DV Vien Thong','1','VND','1001','2024','','656'),('657','TRVI-03-010','','Trường THCS TT Mỹ Long','','TRVI-03','','TT Mỹ Long, H Cầu Ngang, Trà Vinh','','','','','','','','','','Truong THCS TT My Long','1','VND','1001','2024','','657'),('658','0313392108','0313392108','CTY TNHH MTV TM Trần Lâm Bảo','','0','','','','','','','','','','','','CTY TNHH MTV TM Tran Lam Bao','1','VND','1001','2024','','658'),('659','0315453275','0315453275','CTY TNHH MTV Vải Sợi An Phát','','0','','Số 10 Nguyễn Tư Giản, P.12, Q.Gò Vấp, TP HCM','','','','','','','','','','CTY TNHH MTV Vai Soi An Phat','1','VND','1001','2024','','659'),('660','TRVI-02-007','','Trường Tiểu Học Phú Cần A','','TRVI-02','','Đại Mong, Phú Cần, Tiểu Cần, Trà Vinh','','','','','','','','','','Truong Tieu Hoc Phu Can A','1','VND','1001','2024','','660'),('661','0306549245','0306549245','TRẦN NGỌC BẢO TRÚC','','0','','Quầy 7, Trung Tâm 1, TX Đồng Khánh','','','','','','','','','','TRAN NGOC BAO TRUC','1','VND','1001','2024','','661'),('662','2100191263','2100191263','UBND Xã Long Hiệp','','0','','Long Hiệp, Trà Cú, Trà Vinh','','','','','','','','','','UBND Xa Long Hiep','1','VND','1001','2024','','662'),('663','KH200107','0301175691-045','CN Liên Hiệp HTXTM-HCM. CoopMart Duyên Hải','','0','','Đường Lý Thường Kiệt, Phường 1, Thị xã Duyên Hải, Trà Vinh, Việt Nam','','','','','','','','','','CN Lien Hiep HTXTM-HCM. CoopMart Duyen Hai','1','VND','1001','2024','','663'),('664','200108','0100109106-072','Viettel Trà Vinh- CN Tập Đoàn Công Nghiệp - Viễn Thông Quân Đội','','0','','Số 156, Nguyễn Đáng, Khóm 6, Phường 7, Thành phố Trà Vinh, Tỉnh Trà Vinh','','','','','','','','','','Viettel Tra Vinh- CN Tap Doan Cong Nghiep - Vien Thong Quan Doi','1','VND','1001','2024','','664'),('665','200109','','Ông Trường Trình','','0','','TP HCM','','','','','','','','','','Ong Truong Trinh','1','VND','1001','2024','','665'),('666','2100308539','2100308539','Công Ty TNHH Giày Da Mỹ Phong','','0','','Ấp Tân Đại, Xã Hiếu Tử, Huyện Tiểu Cần, Tỉnh Trà Vinh','','','','','','','','','','Cong Ty TNHH Giay Da My Phong','1','VND','1001','2024','','666'),('667','0306288138','0306288138','Công Ty TNHH MTV Sản Xuất Thương Mại Chiêu Bảo','','0','','237/49 Trịnh Đình Trọng','','','','','','','','','','Cong Ty TNHH MTV San Xuat Thuong Mai Chieu Bao','1','VND','1001','2024','','667'),('668','2100389873','2100389873','Trường Tiểu Học Đại An B','','0','','ấp Trà kha - xã Đại an, Huyện Trà Cú, Tỉnh Trà Vinh','','','','','','','','','','Truong Tieu Hoc Dai An B','1','VND','1001','2024','','668'),('669','220113','','Công Đoàn Cơ Sở Trường Mẫu Giáo Đại An','','0','','Me Rạch E, Đại An, Trà Cú, Trà Vinh','','','','','','','','','','Cong Doan Co So Truong Mau Giao Dai An','1','VND','1001','2024','','669'),('670','220114','','Thư Viện Tỉnh Trà Vinh','','0','','Số 1, Trưng Vương, F1, Trà Vinh','','','','','','','','','','Thu Vien Tinh Tra Vinh','1','VND','1001','2024','','670'),('671','2100388686','2100388686','Trường Mẫu Giáo Tuổi Hồng','','0','','ấp Đầu Bờ, xã Hoà Thuận, Xã Hòa Thuận, Huyện Châu Thành, Tỉnh Trà Vinh','','','','','','','','','','Truong Mau Giao Tuoi Hong','1','VND','1001','2024','','671'),('672','TRVI-06-008','','Trường Mẫu Giáo An Quãng Hữu','','TRVI-06','','An Quãng Hữu, Trà Cú, Trà Vinh','','','','','','','','','','Truong Mau Giao An Quang Huu','1','VND','1001','2024','','672'),('673','TRVI-05-005','2100223606-050','Trường Trung Học Cơ Sở Đôn Xuân','','TRVI-05','','ấp Chợ, Xã Đôn Xuân, Huyện Duyên Hải, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','Truong Trung Hoc Co So Don Xuan','1','VND','1001','2024','','673'),('674','0300264518-001','0300264518-001','Hộ Kinh Doanh Lương Thị Mỹ Thanh','','0','','Quầy số 1, Của hàng BVS Đồng Khánh, số 497 Trần Hưng Đạo, Phường 14, Quận 5, HCM','','','','','','','','','','Ho Kinh Doanh Luong Thi My Thanh','1','VND','1001','2024','','674'),('675','0317240138','0317240138','Công Ty TNHH FATRACO','','0','','17 Lê Duẩn, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh','','','','','','','','','','Cong Ty TNHH FATRACO','1','VND','1001','2024','','675'),('676','0304185352','0304185352','Doanh Nghiệp Tư Nhân Tân Mỹ','','0','','236/47 Thái Phiên, Phường 8, Quận 11, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','Doanh Nghiep Tu Nhan Tan My','1','VND','1001','2024','','676'),('677','TRVI-05-006','2100223606-053','Trường Trung Học Cơ Sở Đôn Xuân A','','TRVI-05','','ấp Chợ, Xã Đôn Xuân, Huyện Duyên Hải, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','Truong Trung Hoc Co So Don Xuan A','1','VND','1001','2024','','677'),('678','0302229572','0302229572','Doanh Nghiệp Tư Nhân Thu Hiền','','0','','550 Trần Hưng Đạo B, Phường 14, Quận 5, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','Doanh Nghiep Tu Nhan Thu Hien','1','VND','1001','2024','','678'),('679','2100191305','2100191305','Trường THCS Phước Hưng','','0','','ấp Chợ, Xã Phước Hưng, Huyện Trà Cú, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','Truong THCS Phuoc Hung','1','VND','1001','2024','','679'),('680','0304738053','0304738053','Công Ty TNHH MTV Tinh Quang','','0','','14 Đường 17 KDC Bình Hưng ấp 2 Xã Bình Hưng, Xã Bình Hưng, Huyện Bình Chánh, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','Cong Ty TNHH MTV Tinh Quang','1','VND','1001','2024','','680'),('681','230125','0309279685','CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ SÔNG CỬU LONG','','0','','526 Trần Hưng Đạo, Phường 14, Quận 5, TP HCM, Việt Nam','','','','','','','','','','CONG TY TNHH THUONG MAI DICH VU SONG CUU LONG','1','VND','1001','2024','','681'),('682','230126','0309347494','CÔNG TY TNHH MỘT THÀNH VIÊN DỊCH VỤ THƯƠNG MẠI NGA VUI','','0','','56 Đỗ Ngọc Thạnh, Phường 14, Quận 5, Tp.HCM','','','','','','','','','','CONG TY TNHH MOT THANH VIEN DICH VU THUONG MAI NGA VUI','1','VND','1001','2024','','682'),('683','2100386777-003','2100386777-003','CHI CỤC KIỂM LÂM TRÀ VINH','','0','','Hẻm 68, Nguyễn Chí Thanh, Khóm 3, Phường 6, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','CHI CUC KIEM LAM TRA VINH','1','VND','1001','2024','','683'),('684','2400414','','LƯU TẤN PHÁT','','0','','Trà Vinh','','','','','','','','','','LUU TAN PHAT','1','VND','1001','2024','','684'),('685','0301103908-062','0301103908-062','NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN SÀI GÒN THƯƠNG TÍN- CHI NHÁNH TRÀ VINH','','0','','Số 555, Nguyễn Đáng, Khóm 3, Phường 6 (hết hiệu lực), Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','NGAN HANG THUONG MAI CO PHAN SAI GON THUONG TIN- CHI NHANH TRA VINH','1','VND','1001','2024','','685'),('686','2100216239-001','2100216239-001','CHI CỤC THUẾ THÀNH PHỐ TRÀ VINH','','0','','67 Lý Thường Kiệt, Phường 4, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','CHI CUC THUE THANH PHO TRA VINH','1','VND','1001','2024','','686'),('687','240127','0311500358','BÀNH QUẾ MAI','','0','','quầy 39+40, cửa hàng bông vải sợi đồng khánh, 497 trần hưng đạo, phường 14, quận 5, TP. HCM','','','','','','','','','','BANH QUE MAI','1','VND','1001','2024','','687'),('688','0314733368','0314733368','CÔNG TY TNHH TRUNG PHÁT ÍCH THUẬN','','0','','154A Trần Đại Nghĩa - Phường Tân Tạo A - Quận Bình Tân - TP Hồ Chí Minh','','','','','','','','','','CONG TY TNHH TRUNG PHAT ICH THUAN','1','VND','1001','2024','','688'),('689','0317163010','0317163010','CÔNG TY TNHH PHÂN PHỐI VÀ THƯƠNG MẠI BẢO ANH','','0','','545 Trần Hưng Đạo B, Phường 14, Quận 5, Thành phố Hồ Chí Minh','','','','','','','','','','CONG TY TNHH PHAN PHOI VA THUONG MAI BAO ANH','1','VND','1001','2024','','689'),('690','8050283598','8050283598','Cửa hàng trang phục đạo cụ Hương','','0','','116A-VÕ VĂN KIỆT-K7-PHƯỜNG 7-TPTV-TỈNH TRÀ VINH','','','','','','','','','','Cua hang trang phuc dao cu Huong','1','VND','1001','2024','','690'),('124174407325795','2500551','2100388132','TRƯỜNG MẪU GIÁO NGÃI XUYÊN','','0','','ấp Xoài Thum, Xã Ngãi Xuyên, Huyện Trà Cú, Tỉnh Trà Vinh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','TRUONG MAU GIAO NGAI XUYEN','1','VND','1001','','','551'),('124174409417847','2500552','2100681395','CÔNG TY TNHH MTV XÂY DỰNG ĐĂNG PHÁT TV','','0','','Ấp Trì Phong, Xã Hòa Lợi, Huyện Châu Thành, Tỉnh Trà Vinh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH MTV XAY DUNG DANG PHAT TV','1','VND','1001','','','552'),('124174960875665','2500553','2100696112','CÔNG TY TNHH XK MK FASHION STYLE','','0','','Số 8/11, Ấp Đầu Bờ, Xã Hòa Thuận, Huyện Châu Thành, Tỉnh Trà Vinh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH XK MK FASHION STYLE','1','VND','1001','','','553'),('124174961025383','2500554','0304258480','CÔNG TY TNHH SẢN XUẤT - THƯƠNG MẠI - DỊCH VỤ HOÀN VIỆT','','0','','768G Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH SAN XUAT - THUONG MAI - DICH VU HOAN VIET','1','VND','1001','','','554'),('124175263346737','2500555','8717886731-001','HỘ KINH DOANH ĐẶNG HUỲNH HOA','','0','','37 Đỗ Ngọc Thạnh, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','HO KINH DOANH DANG HUYNH HOA','1','VND','1001','','','555'),('124176680347863','095188000105','095188000105','HỘ KINH DOANH ĐẶNG HUỲNH HOA','','0','','37 Đỗ Ngọc Thạnh, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','HO KINH DOANH DANG HUYNH HOA','1','VND','1001','','','556');
+ALTER TABLE makh AUTO_INCREMENT=721;
+DROP TABLE IF EXISTS makho;
+
+CREATE TABLE `makho` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makho` char(4) NOT NULL,
+  `tenkho` varchar(100) DEFAULT NULL,
+  `diachi` varchar(40) DEFAULT NULL,
+  `ghichu` text,
+  `tenkhokd` varchar(100) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `makho` (`makho`),
+  KEY `tenkhokd` (`tenkhokd`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO makho VALUES('1','0010','Kho chung','','','kho');
+DROP TABLE IF EXISTS maloaiduong;
+
+CREATE TABLE `maloaiduong` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maduong` int(4) NOT NULL,
+  `tenduong` varchar(400) NOT NULL,
+  `ghichu` text NOT NULL,
+  `pptinh` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `maduong` (`maduong`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+INSERT INTO maloaiduong VALUES('1','1001','Quốc lộ','','1'),('2','1002','Tỉnh lộ','','1'),('3','1003','Hương lộ','','1'),('4','1004','Đường Đal','','1'),('9','1005','Định mức theo kilomet đường','','2');
+DROP TABLE IF EXISTS mand;
+
+CREATE TABLE `mand` (
+  `sott` int(6) NOT NULL AUTO_INCREMENT,
+  `mand` char(6) NOT NULL,
+  `tennoidung` varchar(250) DEFAULT NULL,
+  `rate_tax` char(2) DEFAULT NULL,
+  `tkno` varchar(6) DEFAULT NULL,
+  `tkco` varchar(6) DEFAULT NULL,
+  `ghichu` text,
+  `mapl` varchar(4) DEFAULT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  `rank` int(10) DEFAULT NULL,
+  `tennoidung_en` varchar(250) NOT NULL,
+  `tennoidung_cn` varchar(250) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `mand` (`mand`),
+  KEY `tennoidung` (`tennoidung`),
+  KEY `tenkd` (`tenkd`)
+) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8;
+
+INSERT INTO mand VALUES('6','121121','Thí nghiệm mẫu bê tông','10','1541','121','Ghi chú','THU','Thi nghiem mau be tong','19','',''),('7','121212','Máy vi tính','10','6422','121','Ghi chú','THU','May vi tinh','6','',''),('8','100000','Thuế GTGT đầu vào','10','1331','1331','','CHI','','26','',''),('9','100001','Thuế GTGT đầu ra','10','33311','33311','','CHI','','21','',''),('10','100002','Thu tiền khách hàng','10','1111','131','','THU','Thu tien khach hang','5','',''),('11','100003','Trả nợ khách hàng','10','331','','','CHI','Tra no khach hang','3','',''),('12','100004','Chi phí tiền điện','10','6422','1111','','CHI','','16','',''),('13','100005','Chi phí tiền nước','5','6422','1111','','CHI','Chi phi tien nuoc','5','',''),('14','100006','Khấu hao TSCĐ','0','6422','','','CHI','','5','',''),('15','100007','Chi phí trả lãi vai','0','635','1111','','CHI','','8','',''),('16','100008','Chi phí văn phòng phẩm','10','6421','1111','','CHI','Chi phi van phong pham','3','',''),('17','100009','Chi phí cơm tiếp khách','10','6421','1111','','CHI','Chi phi com tiep khach','1','',''),('18','100010','Mua hàng trả tiền mặt','0','','1111','','NHAP','Mua hang tra tien mat','31','',''),('19','100011','Mua hàng chậm trả','0','','331','','NHAP','Mua hang cham tra','18','',''),('20','100012','Nhập kho từ sản xuất','0','','154','','CHI','','7','',''),('21','100013','Nhập khuyến mãi','0','','711','','CHI','','2','',''),('22','100014','Xuất bán hàng thu tiền mặt','10','1111','5111','','XUAT','Xuat ban hang thu tien mat','21','',''),('23','100015','Nhập kho từ sản xuất','0','','154','','NHAP','','1','',''),('24','100016','Nhập Khuyến mãi','0','','711','','NHAP','','1','',''),('25','100020','Xuất bán hàng ghi nợ','10','131','5111','','XUAT','','5','',''),('26','100021','Xuất bán hàng do hao hụt','10','6422','','','XUAT','','1','',''),('27','100029','Vai ngân hàng','10','1111','1111','','THU','','2','',''),('28','100030','Phí bảo vệ môi trường','0','6422','1111','','CHI','','6','',''),('29','100031','Chi phí điện thoại','10','6421','1111','','CHI','Chi phi dien thoai','3','',''),('30','100017','Chi mua xăng, dầu DO','10','6422','1111','','CHI','Chi mua xang, dau DO','7','',''),('31','100032','Chi phi khac','10','6422','1111','','CHI','','4','',''),('33','100035','Tiền Điện','','','','','','','1','',''),('34','012121','tien dien','10','6422','1111','','THU','tien dien','1','',''),('35','574106','Chi mua bảo hiểm','10','6422','1111','','CHI','Chi mua bao hiem','2','',''),('36','100036','Khai thuế Quí 4/2016','10','6421','1111','','CHI','Khai thue Qui 4/2016','4','',''),('37','100037','Nộp Thuế TNDN','0','3334','1111','','CHI','Nop Thue TNDN','2','',''),('38','100038','Lệ phí Môn bài','0','33391','1111','','CHI','Le phi Mon bai','1','',''),('39','100039','Chi lương nhân viên','0','334','1111','','CHI','Chi luong nhan vien','5','',''),('40','100040','Phí dịch vụ Ngân hàng','10','6421','1111','','CHI','Phi dich vu Ngan hang','1','',''),('41','100041','Rút tiền gửi','0','1111','1121','','CHI','Rut tien gui','1','',''),('42','100042','Thu lãi vay, lãi tiền gửi','0','1121','5151','','THU','Thu lai vay, lai tien gui','6','',''),('89','_XKHSX','Xuất kho sản xuất','0','621','','','XUAT','Xuat kho san xuat','0','',''),('90','100090','Khấu hao tài sản cố định','0','6421','','','KHAC','Khau hao tai san co dinh','0','',''),('91','100091','Phân bổ chi phí trả trước','0','6421','','','KHAC','Phan bo chi phi tra truoc','0','',''),('92','100092','Khấu trừ thuế GTGT','0','3331','1331','','KHAC','Khấu trừ thuế GTGT','0','',''),('93','100093','Bút toán chi phí sãn xuất,kinh doanh dỡ dang','0','154','632','','KHAC','But toan chi phi san xuat,kinh doanh do dang','0','',''),('94','100094','Phân bổ chi phí sản xuất chung','0','154','627','','KHAC','Phan bo chi phi san xuat chung','0','',''),('95','100095','KC tăng giảm thuế TNDN','0','154','627','','KHAC','KC tang giam thue TNDN','0','',''),('96','100096','KC tăng giảm lợi nhuận phân phối năm nay','0','911','821','','KHAC','KC tang giam loi nhuan nam nay','0','',''),('99','100099','Kết chuyển giá vốn bán hàng','0','632','','','KHAC','Ket chuyen gia von ban hang','0','',''),('100','_ATS01','Tăng do mua mới hoặc bổ sung','0','6422','','','TATS','Tang do mua moi hoac bo sung','0','',''),('101','_ATS02','Tăng do trang bị thêm TSCĐ','0','6422','','','TATS','Tang do trang bi them TSCD','0','',''),('102','_ATS03','Tăng do đánh giá lại','0','6422','','','TATS','Tang do danh gia lai','0','',''),('103','_ATS04','Giảm do thanh lý nhượng giá','0','','','','GITS','Giam do thanh ly nhuong gia','0','',''),('104','_ATS05','Giảm do giảm vốn','0','','','','GITS','Giam do giam von','0','',''),('105','_ATS06','Giảm do đánh giá lại, tháo gỡ','0','','','','GITS','Giam do danh gia lai, thao go','0','',''),('106','100106','Phí dịch vụ kế toán','8','6421','1111','','CHI','Phi dich vu ke toan','1','',''),('107','100107','Nộp tiền vào TK','0','1121','1111','','THU','Nop tien vao TK','4','',''),('108','100108','kết chuyển lương tháng','0','6421','','','CHI','ket chuyen luong thang','2','',''),('109','KCCPBH','Kết chuyễn chi phí bán hàng','0','911','6421','','KHAC','Kết chuyễn chi phí bán hàng','0','',''),('110','KCCPHD','Kết chuyễn chi phí HĐ khác','0','911','811','','KHAC','Kết chuyễn chi phí HĐ khác','0','',''),('111','KCCPKD','Kết chuyễn chi phí QLDN','0','911','6422','','KHAC','Kết chuyễn chi phí QLDN','0','',''),('112','KCCPTC','Kết chuyễn chi phí tài chính','0','911','635','','KHAC','Kết chuyễn chi phí tài chính','0','',''),('113','KCDOTT','Kết chuyễn doanh thu bán hàng hóa','0','5111','911','','KHAC','Kết chuyễn doanh thu bán hàng hóa','0','',''),('114','KCDTDV','Kết chuyễn doanh thu dịch vụ','0','5113','911','','KHAC','Kết chuyễn doanh thu dịch vụ','0','',''),('115','KCDTTC','Kết chuyễn doanh thu tài chính','0','5151','911','','KHAC','Kết chuyễn doanh thu tài chính','0','',''),('116','KCDTTP','Kết chuyễn doanh thu bán thành phẩm','0','5112','911','','KHAC','Kết chuyễn doanh thu bán thành phẩm','0','',''),('117','KCGVHB','Kết chuyễn giá vốn bán hàng','0','911','632','','KHAC','Kết chuyễn giá vốn bán hàng','0','',''),('118','KCKPNK','Kết chuyển khoản phải nộp khác','0','811','33393','','KHAC','Kết chuyển khoản phải nộp khác','0','',''),('119','KCLAKD','Kết chuyễn lãi kinh doanh','0','911','4212','','KHAC','Kết chuyễn lãi kinh doanh','0','',''),('120','KCLNNT','Kết chuyển lợi nhuận năm trước','0','4212','4211','','KHAC','Kết chuyển lợi nhuận năm trước','0','',''),('121','KCLOKD','Kết chuyễn lỗ kinh doanh','0','4212','911','','KHAC','Kết chuyễn lỗ kinh doanh','0','',''),('122','KCLONT','kết chuyễn lỗ năm trước','0','4211','4212','','KHAC','kết chuyễn lỗ năm trước','0','',''),('123','KCTHDN','Kết chuyễn chi phí thuế thu nhập doanh nghiệp','0','821','3334','','KHAC','Kết chuyễn chi phí thuế thu nhập doanh nghiệp','0','',''),('124','KCTNDN','Kết chuyễn chi phí thuế thu nhập doanh nghiệp','0','911','821','','KHAC','Kết chuyễn chi phí thuế thu nhập doanh nghiệp','0','',''),('125','KCTNKC','Kết chuyễn thu nhập HĐ khác','0','911','711','','KHAC','Kết chuyễn thu nhập HĐ khác','0','',''),('126','TLPTTK','Tiền lương phải trả','0','6422','334','','KHAC','Tiền lương phải trả','0','',''),('127','TMBPN','Thuế môn bài phải nộp','0','6421','33391','','KHAC','Thue mon bai phai nop','1','',''),('140','100128','Phí, lệ phí và các khoản nộp khác','0','','','','CHI','','2','',''),('141','100141','Phải trả khác','0','1111','3388','','CHI','Phai tra khac','1','',''),('172','100142','Cươc viễn thông, CNTT','10','6421','1111','','CHI','Cuoc vien thong, CNTT','3','',''),('203','KC5118','Kết chuyển doanh thu khác','0','5118','911','','KHAC','Kết chuyển doanh thu khác','0','',''),('204','KC5151','Kết chuyển doanh thu tài chính','0','5151','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('205','KC5152','Kết chuyển doanh thu tài chính','0','5152','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('206','KC5153','Kết chuyển doanh thu tài chính','0','5153','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('207','KC5158','Kết chuyển doanh thu tài chính','0','5158','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('210','100208','Phí dịch vụ lưu dữ liệu điện toán đám mây','10','6421','1111','','CHI','Phi dich vu luu du lieu dien toan dam may','2','',''),('211','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('212','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('213','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('214','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('215','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('216','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('217','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('218','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('219','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('220','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('221','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('222','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('223','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('224','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('225','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('226','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('228','100228','Chi phí trả trước','10','242','1111','','CHI','Chi phi tra truoc','2','',''),('229','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('230','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('231','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('232','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('233','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('234','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('235','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('236','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('238','100238','Phải thu khác','0','1388','1111','','THU','Phai thu khac','2','',''),('239','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('241','100241','Thuế TNDN','0','1111','3334','','CHI','Thue TNDN','2','',''),('242','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('243','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('244','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('245','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('246','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('247','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('248','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('249','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('250','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('251','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('252','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('253','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('254','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('255','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('256','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('257','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('288','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('289','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('290','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('291','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('292','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('293','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('294','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('295','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('296','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('297','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('298','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('299','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('300','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('301','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('302','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('303','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('304','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('305','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('306','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('307','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('308','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('309','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('310','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('311','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('312','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('313','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('314','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('315','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('316','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('318','100318','Góp vốn bổ sung','0','','41112','','THU','Gop von bo sung','2','',''),('319','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('320','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('321','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('323','100323','Vốn góp bổ sung','10','1111','41112','','THU','Von gop bo sung','1','','');
+ALTER TABLE mand AUTO_INCREMENT=354;
+DROP TABLE IF EXISTS manhanvien;
+
+CREATE TABLE `manhanvien` (
+  `sott` int(10) unsigned NOT NULL,
+  `manhanvien` int(6) NOT NULL DEFAULT '0',
+  `tennv` varchar(100) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `diachi` varchar(500) NOT NULL,
+  `dienthoai` varchar(15) NOT NULL,
+  `luongcb` double NOT NULL,
+  `namsinh` date NOT NULL,
+  `mabp` char(4) NOT NULL,
+  `mabpgoc` varchar(6) NOT NULL,
+  `gioitinh` int(1) NOT NULL,
+  `crdate` date NOT NULL,
+  `tenkd` char(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `chucdanh` varchar(200) NOT NULL,
+  `trinhdo` varchar(200) NOT NULL,
+  `masothue` char(10) NOT NULL,
+  `ngaybdhopdong` date NOT NULL,
+  `ngaykthopdong` date NOT NULL,
+  `phantramthang` float NOT NULL,
+  `phantramquy` float NOT NULL,
+  `phantramnam` float NOT NULL,
+  `tinhluong` char(2) NOT NULL,
+  `phucapchucvu` bigint(20) NOT NULL,
+  `phicongdoan` bigint(20) NOT NULL,
+  `baohiem` bigint(20) NOT NULL,
+  `baohiemyt` bigint(20) NOT NULL,
+  `baohiemtn` bigint(20) NOT NULL,
+  `kinhphicongdoan` bigint(20) NOT NULL,
+  `dn_baohiem` bigint(20) NOT NULL,
+  `dn_baohiemyt` bigint(20) NOT NULL,
+  `dn_baohiemtn` bigint(20) NOT NULL,
+  `giamtrugiacanh` bigint(20) NOT NULL,
+  `tienangiuaca` bigint(20) NOT NULL,
+  `phucapkhongdungbhxh` bigint(20) NOT NULL,
+  `thuethunhap` bigint(20) NOT NULL,
+  `matk1` char(6) NOT NULL,
+  `phantramtk` int(2) NOT NULL,
+  `matk2` char(6) NOT NULL,
+  `loaibp` char(2) NOT NULL,
+  `sapxep` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO manhanvien VALUES('1','1','Lưu Tấn Phát','084073000235','','','0','0000-00-00','1214','','1','0000-00-00','Luu Tan Phat','','Giám đốc','5','2100257468','0000-00-00','0000-00-00','0','0','0','CB','0','0','0','0','0','0','0','0','0','0','0','0','0','6421','100','','','0'),('2','2','Hồ Thị Thu Hồng','084175009954','','','4500000','0000-00-00','1214','','0','0000-00-00','Ho Thi Thu Hong','','Thủ quỹ','5','2100452532','0000-00-00','0000-00-00','0','0','0','CB','0','0','0','0','0','0','0','0','0','99000000','0','0','0','6421','100','','','0');
+DROP TABLE IF EXISTS manhom;
+
+CREATE TABLE `manhom` (
+  `sott` int(11) NOT NULL,
+  `manhom` int(4) NOT NULL AUTO_INCREMENT,
+  `tennhom` varchar(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `rank` int(11) NOT NULL,
+  PRIMARY KEY (`manhom`),
+  KEY `manhom` (`manhom`),
+  FULLTEXT KEY `tennhom` (`tennhom`),
+  FULLTEXT KEY `tennhom_2` (`tennhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=1231 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO manhom VALUES('100','1100','Thành Phẩm','','0'),('99','1200','Nhóm dịch vụ','','0'),('5','1230','Vải','','53');
+ALTER TABLE manhom AUTO_INCREMENT=1261;
+DROP TABLE IF EXISTS manhomkh;
+
+CREATE TABLE `manhomkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `manhom` int(11) NOT NULL,
+  `tennhom` varchar(500) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `u_manhom` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO manhomkh VALUES('1','1001','Khác',''),('3','1010','Nhân viên','');
+DROP TABLE IF EXISTS masp;
+
+CREATE TABLE `masp` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` varchar(14) NOT NULL,
+  `tensp` varchar(1000) NOT NULL,
+  `maspcha` varchar(14) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `tenkd` varchar(255) NOT NULL,
+  `makh` varchar(14) NOT NULL,
+  `diachi` varchar(300) NOT NULL,
+  `namsx` date NOT NULL,
+  `gthopdong` bigint(20) NOT NULL,
+  `ngaykhoicong` date NOT NULL,
+  `ngayhoanthanh` date NOT NULL,
+  `vatlieu` bigint(20) NOT NULL,
+  `nhancong` bigint(20) NOT NULL,
+  `may` bigint(20) NOT NULL,
+  `quyettoan` int(11) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `chonchuyen` char(1) NOT NULL,
+  `niendo` char(4) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `masp` (`masp`),
+  UNIQUE KEY `mats` (`masp`),
+  KEY `index_maspcha` (`maspcha`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO masp VALUES('1','0001','Toàn Bộ','0','Cái','','HANG SAN XUAT','','','0000-00-00','0','0000-00-00','0000-00-00','0','0','0','0','','','2024');
+DROP TABLE IF EXISTS matk;
+
+CREATE TABLE `matk` (
+  `sott` int(10) unsigned NOT NULL,
+  `matk` char(6) NOT NULL,
+  `tentk` varchar(255) DEFAULT NULL,
+  `matkcha` char(4) NOT NULL,
+  `loaitk` varchar(60) DEFAULT NULL,
+  `mats` char(3) DEFAULT NULL,
+  `mangv` char(3) DEFAULT NULL,
+  `nhomtk` char(10) DEFAULT NULL,
+  `shtk` int(6) NOT NULL,
+  `ghichu` text,
+  `ngaytao` date DEFAULT NULL,
+  `rank` bigint(20) NOT NULL DEFAULT '0',
+  `tentk_en` varchar(250) NOT NULL,
+  `tentk_cn` varchar(250) NOT NULL,
+  PRIMARY KEY (`matk`),
+  KEY `rank` (`rank`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO matk VALUES('1','111','Tiền mặt','0','1','110','','TT','111','','2016-11-29','15','',''),('2','1111','Tiền Việt Nam','111','1','110','','TT','111','','2016-11-09','53','',''),('3','1112','Ngoại tệ','111','1','110','','TT','111','','2016-11-09','11','',''),('4','112','Tiền gửi ngân hàng','0','1','110','','TT','112','','2016-11-09','17','',''),('5','1121','Tiền việt nam','112','1','110','','TT','112','','2016-11-26','9','',''),('7','112101','Tiền gửi ngân hàng BIDV','1121','1','110','','TT','112','','2017-03-10','26','',''),('6','112102','Tiền gửi ngân hàng Sacombank 61299','1121','1','110','','TT','112','','2020-01-30','31','',''),('8','1122','Ngoại tệ','112','1','110','','TT','112','','2016-11-08','10','',''),('138','112201','Tiền gửi ngân hàng BIDV','1122','1','110','','TT','112','','2017-04-21','1','',''),('9','121','Chứng khoán kinh doanh','0','1','121','','TT','121','','2016-11-08','9','',''),('10','128','Đầu tư nắm giữ đến ngày đáo hạn','0','1','122','','TT','128','','2016-11-08','3','',''),('11','1281','Tiền gửi có kỳ hạn','128','1','122','','TT','128','','2016-11-08','5','',''),('12','1288','Các khoản đầu tư khác nắm giữ đến ngày đáo','128','1','122','','TT','128','','2016-11-09','0','',''),('13','131','Phải thu của khách hàng','0','1','130','','TT','131','','2016-11-08','5','',''),('14','133','Thuế GTGT được khấu trừ','0','1','110','','TT','133','','2017-03-16','1','',''),('15','1331','Thuế GTGT được khấu trừ của hàng hóa, dịch vụ','133','1','110','','TT','133','','2017-01-25','0','',''),('16','1332','Thuế GTGT được khấu trừ của TSCĐ','133','1','110','','TT','0','','2016-11-07','0','',''),('133','136','Phải thu nội bộ','0','1','130','','TT','136','','2016-11-08','1','',''),('134','1361','Vốn kinh doanh ở đơn vị trực thuộc','136','1','133','','TT','136','','2016-11-08','0','',''),('135','1368','Phải thu nội bộ khác','136','1','134','','TT','136','','2016-11-08','1','',''),('17','138','Phải thu khác','0','1','130','','TT','138','','2016-11-08','0','',''),('18','1381','Tài sản thiếu chờ xử lý','138','1','135','','TT','138','','2016-11-08','0','',''),('19','1386','Cầm cố, thế chấp, ký quỹ, ký cược','138','1','110','','TT','0','','2016-11-07','0','',''),('20','1388','Phải thu khác','138','1','110','','TT','0','','2016-11-07','1','',''),('21','141','Tạm ứng','0','1','110','','TT','0','','2016-11-07','0','',''),('22','151','Hàng mua đang đi đường','0','1','110','','TT','0','','2016-11-07','17','',''),('23','152','nguyên vật liệu','0','1','110','','TT','0','','2016-11-07','6','',''),('24','153','Công cụ, dụng cụ','0','1','110','','TT','0','','2016-11-07','5','',''),('25','154','Chi phí sản xuất, kinh doanh dở dang','0','1','110','','TT','0','','2016-11-07','8','',''),('26','155','Thành phẩm','0','1','110','','TT','0','','2016-11-07','8','',''),('27','156','Hàng hóa','0','1','110','','TT','0','','2016-11-07','3','',''),('0','1561','Giá trị hàng mua','156','1','110','','TT','156','','2017-02-10','4','',''),('0','1562','Chi phí mua hàng','156','1','110','','TT','156','','2017-02-10','1','',''),('28','157','hàng gửi đi bán','0','1','110','','TT','0','','2016-11-07','2','',''),('29','211','Tài sản cố định','0','1','150','','TT','211','','2016-11-08','0','',''),('30','2111','TSCĐ hữu hình','211','1','110','','TT','0','','2016-11-07','0','',''),('31','2112','TSCĐ thuê tài chính','211','1','110','','TT','0','','2016-11-07','0','',''),('32','2113','TSCĐ vô hình','211','1','110','','TT','0','','2016-11-07','0','',''),('33','214','Hao mòn tài sản cố định','0','1','110','','TT','0','','2016-11-07','0','',''),('34','2141','Hao mòn TSCĐ hữu hình','214','1','110','','TT','0','','2016-11-07','0','',''),('35','2142','Hao mòn TSCĐ thuê tài chính','214','1','110','','TT','0','','2016-11-07','0','',''),('36','2143','Hao mòn TSCĐ vô hình','214','1','110','','TT','0','','2016-11-07','0','',''),('37','2147','Hao mòn bất động sản đâu tư','214','1','110','','TT','0','','2016-11-07','0','',''),('38','217','Bất động sản đầu tư','0','1','160','','TT','217','','2016-11-08','0','',''),('39','228','Đầu tư góp vốn vào đơn vị khác','0','1','110','','TT','0','','2016-11-07','0','',''),('40','2281','Đầu tư góp vốn vào liên doanh liên kết','228','1','110','','TT','0','','2016-11-07','0','',''),('41','2288','Đầu tư khác','228','1','110','','TT','0','','2016-11-07','0','',''),('42','229','Dự phòng tổn thất tài sản','0','1','110','','TT','0','','2016-11-07','0','',''),('43','2291','Dự phòng giảm giá chứng khoán kinh doanh','229','1','110','','TT','0','','2016-11-07','0','',''),('44','2292','Dự phòng tổn thất đầu tư vào đơn vị khác','229','1','110','','TT','0','','2016-11-07','0','',''),('45','2293','Dự phòng phải thu khó đòi','229','1','110','','TT','0','','2016-11-07','0','',''),('46','2294','Dự phòng giảm giá hàng tồn kho','229','1','110','','TT','0','','2016-11-07','0','',''),('47','241','Xây dựng cơ bản dở dang','0','1','170','','TT','241','','2016-11-08','0','',''),('48','2411','Mua sắm TSCĐ','241','1','110','','TT','0','','2016-11-07','0','',''),('49','2412','Xây dựng cơ bản','241','1','110','','TT','0','','2016-11-07','0','',''),('50','2413','Sửa chữa lớn TSCĐ','241','1','110','','TT','0','','2016-11-07','0','',''),('51','242','Chi phí trả trước','0','1','110','','TT','0','','2016-11-07','0','',''),('53','331','Phải trả cho người bán','0','2','311','','TT','331','','2016-11-08','2','',''),('54','333','Thuế và các khoản phải nộp Nhà nước','0','2','413','','TT','333','','2016-11-08','0','',''),('55','3331','Thuế giá trị gia tăng phải nộp','333','2','413','','TT','333','','2016-11-08','1','',''),('56','33311','Thuế GTGT đầu ra','3331','2','413','','TT','333','','2017-03-10','0','',''),('57','33312','Thuế GTGT hàng nhập khẩu','3331','2','413','','TT','333','','2017-03-10','0','',''),('58','3332','Thuế tiêu thụ đặc biệt','333','2','413','','NO','333','','2016-11-08','0','',''),('59','3333','Thuế xuất, nhập khẩu','333','2','413','','NO','333','','2016-11-08','0','',''),('60','3334','Thuế thu nhập doanh nghiệp','333','2','413','','NO','333','','2016-11-08','0','',''),('61','3335','Thuế thu nhập cá nhân','333','2','413','','NO','333','','2016-11-08','0','',''),('62','3336','Thuế tài nguyên','333','2','413','','NO','333','','2016-11-08','0','',''),('63','3337','Thuế nhà đất tiền thuê đất','333','2','413','','NO','333','','2016-11-08','0','',''),('64','3338','Thuế bảo vệ môi trường và các khoản thu khác','333','2','413','','NO','333','','2016-11-08','0','',''),('65','33381','Thuế bảo vệ môi trường','3338','2','413','','NO','333','','2017-03-10','0','',''),('66','33382','Các loại thuế khác','3338','2','413','','TT','333','','2017-03-10','0','',''),('67','3339','Phí, lệ phí và các khoản phải nộp khác','333','2','413','','NO','333','','2016-11-08','0','',''),('142','33391','Lệ phí môn bài','3339','2','413','','NO','333','','2023-02-24','1','',''),('68','334','Phải trả người lao động','0','2','414','','NO','334','','2016-11-08','0','',''),('69','335','Chi phí phải trả','0','2','350','','NO','0','','2016-11-07','0','',''),('70','336','Phải trả nội bộ','0','2','360','','NO','0','','2016-11-07','0','',''),('71','3361','Phải trả nội bộ về vốn kinh doanh','336','2','360','','NO','0','','2016-11-07','0','',''),('72','3368','Phải trả nội bộ khác','336','2','360','','NO','0','','2016-11-07','0','',''),('73','338','Phải trả phải nộp khác','0','2','360','','NO','0','','2016-11-07','0','',''),('74','3381','Tài sản thừa chờ giải quyết','338','2','360','','NO','0','','2016-11-07','0','',''),('75','3382','Kinh phí công đoàn','338','2','360','','NO','0','','2016-11-07','0','',''),('76','3383','Bảo hiểm xã hội','338','2','360','','NO','0','','2016-11-07','0','',''),('77','3384','Bảo hiểm y tế','338','2','360','','NO','0','','2016-11-07','0','',''),('78','3385','Bảo hiểm thất nghiệp','338','2','360','','NO','0','','2016-11-07','0','',''),('79','3386','Nhận ký quỹ , ký cược','338','2','360','','NO','0','','2016-11-07','0','',''),('80','3387','Doanh thu chưa thực hiện','338','2','360','','NO','0','','2016-11-07','0','',''),('81','3388','Phải trả phải nộp','338','2','360','','NO','0','','2016-11-07','1','',''),('82','341','Vay và nợ thuê tài chính','0','2','360','','NO','0','','2016-11-07','0','',''),('83','3411','Các khoản đi vay','341','2','360','','NO','0','','2016-11-07','0','',''),('84','3412','Nợ thuê tài chính','341','2','360','','NO','0','','2016-11-07','0','',''),('85','352','Dự phòng phải trả','0','2','360','','NO','352','','2016-11-08','0','',''),('86','3521','Dự phòng bảo hành sản phẩm hàng hóa','352','2','360','','NO','0','','2016-11-07','0','',''),('87','3522','Dự phòng bảo hành công trình xây dựng','352','2','360','','NO','0','','2016-11-07','0','',''),('88','3524','Dự phòng phải trả khác','352','2','360','','NO','0','','2016-11-07','0','',''),('89','353','Quỹ khen thưởng phúc lợi','0','2','418','','NO','353','','2016-11-08','0','',''),('136','3531','Quỹ khen thưởng','353','2','418','','NO','353','','2016-12-16','1','',''),('90','3532','Quỹ phúc lợi','353','2','418','','NO','353','','2016-11-08','0','',''),('91','3533','Quỹ phúc lợi đã hình thành TSCĐ','353','2','418','','NO','353','','2016-11-08','0','',''),('92','3534','Quỹ thưởng ban quản lý điều hành công ty','353','2','418','','NO','353','','2016-11-08','0','',''),('93','356','Quỹ phát triển khoa học và công nghệ','0','2','360','','NO','0','','2016-11-07','0','',''),('94','3561','Quỹ phát triển khoa học và công nghệ','356','2','360','','NO','0','','2016-11-07','0','',''),('95','3562','Quỹ phát triển khoa học và công nghệ đã hình t','356','2','360','','NO','0','','2016-11-07','0','',''),('105','411','Vốn đầu tư của chủ sở hữu','0','3','400','','KHAC','0','','2016-11-07','0','',''),('106','4111','Vốn góp của chủ sở hữu','411','3','410','','KHAC','411','','2016-12-26','0','',''),('107','4112','Thặng dư vốn cổ phần','411','3','410','','KHAC','0','','2016-11-07','1','',''),('108','4118','Vốn khác','411','3','410','','NO','0','','2016-11-07','0','',''),('109','413','Chênh lệch tỷ giá hối đoái','0','3','410','','KHAC','0','','2016-11-07','0','',''),('110','418','Các quỹ thuộc vốn chủ sở hữu','0','3','410','','KHAC','0','','2016-11-07','0','',''),('111','419','Cổ phiếu quỹ','0','3','410','','KHAC','0','','2016-11-07','0','',''),('112','421','Lợi nhuận sau thuế chưa phân phối','0','3','420','','KHAC','0','','2016-11-07','0','',''),('139','4211','Lợi nhuận sau thuế chưa phân phối năm trước','421','3','420','','KHAC','421','','2017-06-28','0','',''),('113','4212','Lợi nhuận sau thuế chưa phân phối năm nay','421','3','420','','KHAC','421','','2016-11-08','0','',''),('114','511','Doanh thu bán hàng và cung cấp dịch vụ','0','4','510','','KHAC','511','','2016-11-08','0','',''),('115','5111','Doanh thu bán hàng hóa','511','4','510','','KHAC','511','','2016-11-08','0','',''),('116','5112','Doanh thu bán thành phẩm','511','4','510','','KHAC','511','','2016-11-25','0','',''),('117','5113','Doanh thu cung cấp dịch vụ','511','4','510','','KHAC','511','','2016-11-08','0','',''),('118','5118','Doanh thu khác','511','4','510','','KHAC','511','','2016-11-08','0','',''),('119','515','Doanh thu hoạt động tài chính','0','4','510','','KHAC','515','','2016-11-08','0','',''),('140','5151','Lãi tiền gửi','515','4','510','','KHAC','515','','2018-02-05','0','',''),('141','5152','Lãi chênh lẹch tỷ giá','515','4','510','','KHAC','515','','2018-02-05','0','',''),('120','611','Mua hàng','0','5','610','','KHAC','611','','2016-11-08','0','',''),('137','621','Chi phí nguyên vật liệu','0','1','110','','TT','621','','2017-04-17','0','',''),('121','631','Giá thành sản xuất','0','5','630','','KHAC','631','','2016-11-08','0','',''),('122','632','Giá vốn bán hàng','0','5','630','','KHAC','632','','2016-11-08','0','',''),('123','635','Chi phí tài chính','0','5','640','','KHAC','635','','2016-11-08','0','',''),('124','642','Chi phí quản lý kinh doanh','0','5','640','','KHAC','642','','2016-11-08','0','',''),('125','6421','Chi phí bán hàng','642','5','642','','KHAC','642','','2016-11-08','3','',''),('126','6422','Chi phí quản lý doanh nghiệp','642','5','640','','KHAC','642','','2016-11-08','8','',''),('127','711','Thu nhập khác','0','6','710','','KHAC','711','','2016-11-08','0','',''),('128','811','Chi phí khác','0','7','810','','KHAC','811','','2016-11-08','0','',''),('129','821','Chi phí thuế thu nhập doanh nghiệp','0','7','820','','KHAC','821','','2016-11-08','0','',''),('130','911','Xác định kết quả kinh doanh','0','8','910','','KHAC','911','','2016-11-08','0','',''),('143','41112','Góp vốn bổ sung','4111','3','410','','KHAC','411','','2022-03-07','1','',''),('144','41111','Vốn góp chủ sở hữu','4111','3','410','','KHAC','411','','2022-03-07','0','','');
+DROP TABLE IF EXISTS mats;
+
+CREATE TABLE `mats` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` char(14) NOT NULL,
+  `tents` varchar(300) DEFAULT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysd` date DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `ngaysx` date NOT NULL,
+  `congsuat` varchar(200) DEFAULT NULL,
+  `tylekh` bigint(6) DEFAULT NULL,
+  `thoigiansd` double DEFAULT NULL,
+  `soluong` double DEFAULT NULL,
+  `dongia` double DEFAULT NULL,
+  `nguyengia` double DEFAULT NULL,
+  `giatriconlai` double DEFAULT NULL,
+  `muckhthang` double NOT NULL,
+  `muckhquy` double DEFAULT NULL,
+  `muckhnam` double NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `chuthich` text,
+  `mabp` char(6) NOT NULL,
+  `bophan` varchar(200) NOT NULL,
+  `manhomts` char(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `matscha` varchar(14) NOT NULL,
+  `khauhao` int(1) NOT NULL DEFAULT '1',
+  `ngaygiam` date NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `sohuu` varchar(200) NOT NULL,
+  `matkgiam` char(6) NOT NULL,
+  `cpkhongduoctru` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mats` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS mavt;
+
+CREATE TABLE `mavt` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) DEFAULT NULL,
+  `quycach` varchar(35) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dvtp` varchar(100) NOT NULL,
+  `kl` double NOT NULL,
+  `kt` double NOT NULL,
+  `mavtcha` char(6) NOT NULL COMMENT 'kh�ng s? d?ng',
+  `manhom` int(4) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `matk` char(5) NOT NULL,
+  `ghichu` text NOT NULL,
+  `giaban` double NOT NULL,
+  `giabansi` double NOT NULL,
+  `giamua` double NOT NULL,
+  `rate` char(2) NOT NULL,
+  `mark` char(1) NOT NULL,
+  `congvao` bigint(10) NOT NULL,
+  `trura` bigint(10) NOT NULL,
+  `dp` int(2) NOT NULL COMMENT 'chi?t kh?u t�nh %',
+  `max` double NOT NULL,
+  `min` double NOT NULL,
+  `muc` double NOT NULL,
+  `tenkd` varchar(1000) NOT NULL,
+  `sl` int(1) DEFAULT '0',
+  `loaivl` char(3) NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `pbchiphi` int(1) NOT NULL,
+  `tkdoanhthu` char(6) NOT NULL,
+  `mavttt` char(20) NOT NULL,
+  `sapxep` char(1) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  `heso` double NOT NULL DEFAULT '1',
+  PRIMARY KEY (`mavt`),
+  UNIQUE KEY `umavt` (`mavt`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `sott` (`sott`),
+  KEY `mavt` (`mavt`),
+  KEY `fk_mavt_manhom_manhom` (`manhom`),
+  KEY `index_tenvt` (`tenvt`(255)),
+  KEY `sapxep` (`sapxep`),
+  KEY `id_mavttt` (`mavttt`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  FULLTEXT KEY `FullTenKD` (`tenkd`),
+  CONSTRAINT `fk_mavt_manhom_manhom` FOREIGN KEY (`manhom`) REFERENCES `manhom` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=887 DEFAULT CHARSET=utf8;
+
+TRUNCATE mavt;INSERT INTO mavt VALUES ('734','100001','Phi Thatexco -Khổ lớn','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Phi Thatexco -Kho lon','0','','2024','0','5111','','','734','1'),('735','100002','Vải','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai','0','','2024','0','5111','','','735','1'),('736','100004','Vải A065 PTH','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai A065 PTH','0','','2024','0','5111','','','736','1'),('737','100006','Vải KS 28-30-34 loại 1','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai KS 28-30-34 loai 1','0','','2024','0','5111','','','737','1'),('738','100007','Vải KS 2834 K1m5-11in','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai KS 2834 K1m5-11in','0','','2024','0','5111','','','738','1'),('739','100008','Vải Kate K44/45','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Kate K44/45','0','','2024','0','5111','','','739','1'),('740','100010','Vải PinTron 110-76/PE (40x40 K120)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai PinTron 110-76/PE (40x40 K120)','0','','2024','0','5111','','','740','1'),('741','100013','Vải Poly 100% K44 (Thailand)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Poly 100% K44 (Thailand)','0','','2024','0','5111','','','741','1'),('742','100014','Vải Polyester 100% 1m6 VCG','','m','','0','0','','1230','','1561','','26000','0','0','10','','0','0','0','0','0','0','Vai Polyester 100% 1m6 VCG','0','','2024','0','5111','','','742','1'),('743','100016','Vải Polyester 135D/108F','','kg','','0','0','','1230','','1561','','68000','0','0','10','','0','0','0','0','0','0','Vai Polyester 135D/108F','0','','2024','0','5111','','','743','1'),('744','100017','Vải Polyester Spun Fabric','','m','','0','0','','1230','','1561','','20000','0','0','10','','0','0','0','0','0','0','Vai Polyester Spun Fabric','0','','2024','0','5111','','','744','1'),('745','100018','Vải Polyester pha K44','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Polyester pha K44','0','','2024','0','5111','','','745','1'),('746','100019','Vải Polyester pha K44/60','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Polyester pha K44/60','0','','2024','0','5111','','','746','1'),('747','100022','Vải Solton','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Solton','0','','2024','0','5111','','','747','1'),('748','100023','Vải Solton','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Solton','0','','2024','0','5111','','','748','1'),('749','100024','Vải TF 02800802A','','m','','0','0','','1230','','1561','','55000','0','0','10','','0','0','0','0','0','0','Vai TF 02800802A','0','','2024','0','5111','','','749','1'),('750','100025','Vải TF 11180208A','','m','','0','0','','1230','','1561','','52000','0','0','10','','0','0','0','0','0','0','Vai TF 11180208A','0','','2024','0','5111','','','750','1'),('751','100028','Vải TP059','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP059','0','','2024','0','5111','','','751','1'),('752','100029','Vải TP060','','m','','0','0','','1230','','1561','','55555.55','0','0','10','','0','0','0','0','0','0','Vai TP060','0','','2024','0','5111','','','752','1'),('753','100030','Vải TP065','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP065','0','','2024','0','5111','','','753','1'),('754','100032','Vải TP073','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP073','0','','2024','0','5111','','','754','1'),('755','100034','Vải công sở khổ lớn','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai cong so kho lon','0','','2024','0','5111','','','755','1'),('756','100036','Vải dệt kim đã nhuộm VS 2040','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai det kim da nhuom VS 2040','0','','2024','0','5111','','','756','1'),('757','100037','Vải dệt kim đã nhuộm VS 2542','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai det kim da nhuom VS 2542','0','','2024','0','5111','','','757','1'),('758','100038','Vải gấm Thượng Hải','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai gam Thuong Hai','0','','2024','0','5111','','','758','1'),('759','100040','Vải sản phẩm mới -Khổ lớn','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai san pham moi -Kho lon','0','','2024','0','5111','','','759','1'),('760','100041','Vải sản phẩm mới -Khổ nhỏ','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai san pham moi -Kho nho','0','','2024','0','5111','','','760','1'),('761','100043','Vải sợi L.A','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai soi L.A','0','','2024','0','5111','','','761','1'),('762','100044','Vải taclon','','Mét','','0','0','','1230','','1561','','30000','0','0','10','','0','0','0','0','0','0','Vai taclon','0','','2024','0','5111','','','762','1'),('763','100045','Vải thành phẩm','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thanh pham','0','','2024','0','5111','','','763','1'),('764','100046','Vải thành phẩm 1m2','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thanh pham 1m2','0','','2024','0','5111','','','764','1'),('765','100047','Vải thành phẩm 1m6','','m','','0','0','','1230','','1561','','25000','0','0','10','','0','0','0','0','0','0','Vai thanh pham 1m6','0','','2024','0','5111','','','765','1'),('766','100049','Vải thun','','Kg','','0','0','','1230','','1561','','70000','0','0','10','','0','0','0','0','0','0','Vai thun','0','','2024','0','5111','','','766','1'),('767','100050','Vải thun (Stock) K54/55','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun (Stock) K54/55','0','','2024','0','5111','','','767','1'),('768','100051','Vải thun (Stock) K58/60','','m','','0','0','','1230','','1561','','25000','0','0','10','','0','0','0','0','0','0','Vai thun (Stock) K58/60','0','','2024','0','5111','','','768','1'),('769','100052','Vải thun 320T K16','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun 320T K16','0','','2024','0','5111','','','769','1'),('770','100054','Vải thun K58/60','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun K58/60','0','','2024','0','5111','','','770','1'),('771','100055','Vải thun K58/60 (TQ)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun K58/60 (TQ)','0','','2024','0','5111','','','771','1'),('772','100056','Vải thun Span khổ 1m6 (V-TS)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun Span kho 1m6 (V-TS)','0','','2024','0','5111','','','772','1'),('773','100057','Vải thun Stock K16','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun Stock K16','0','','2024','0','5111','','','773','1'),('774','100059','Vải thun VN','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun VN','0','','2024','0','5111','','','774','1'),('775','100060','Vải thun VN','','Kg','','0','0','','1230','','1561','','54000','0','0','10','','0','0','0','0','0','0','Vai thun VN','0','','2024','0','5111','','','775','1'),('776','100061','Vải thun XH','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun XH','0','','2024','0','5111','','','776','1'),('777','100062','Vải thun bông K16','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun bong K16','0','','2024','0','5111','','','777','1'),('778','100063','Vải thun các loại K16','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun cac loai K16','0','','2024','0','5111','','','778','1'),('779','100066','Vải thun thành phẩm K16','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun thanh pham K16','0','','2024','0','5111','','','779','1'),('780','100067','áo dài AD 106','','cái','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','ao dai AD 106','0','','2024','0','5111','','','780','1'),('781','100068','áo dài AD80','','cái','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','ao dai AD80','0','','2024','0','5111','','','781','1'),('782','100070','Vải visco hoa K145','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai visco hoa K145','0','','2024','0','5111','','','782','1'),('783','100071','Vải Pintron 110: 76','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Pintron 110: 76','0','','2024','0','5111','','','783','1'),('784','100073','Vải thun','','kg','','0','0','','1230','','1561','','77000','0','0','10','','0','0','0','0','0','0','Vai thun','0','','2024','0','5111','','','784','1'),('785','100074','vải polyestespun pabric','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','vai polyestespun pabric','0','','2024','0','5111','','','785','1'),('786','100075','Vải thành phẩm','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thanh pham','0','','2024','0','5111','','','786','1'),('787','100077','Vải thun vol','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun vol','0','','2024','0','5111','','','787','1'),('788','100078','Vải A091','','m','','0','0','','1230','','1561','','55000','0','0','10','','0','0','0','0','0','0','Vai A091','0','','2024','0','5111','','','788','1'),('789','100079','vải thun VN','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','vai thun VN','0','','2024','0','5111','','','789','1'),('790','100080','vải polyeste spun pabrie','','m','','0','0','','1230','','1561','','22000','0','0','10','','0','0','0','0','0','0','vai polyeste spun pabrie','0','','2024','0','5111','','','790','1'),('791','100082','Vải Thành phẩm','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Thanh pham','0','','2024','0','5111','','','791','1'),('792','100083','Vải màu','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai mau','0','','2024','0','5111','','','792','1'),('793','100084','Vải thành phẩm Nhật Nam','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thanh pham Nhat Nam','0','','2024','0','5111','','','793','1'),('794','100086','Vải Soltor','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Soltor','0','','2024','0','5111','','','794','1'),('795','100087','Vải TP078','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP078','0','','2024','0','5111','','','795','1'),('796','100089','Vải thun 1m5','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun 1m5','0','','2024','0','5111','','','796','1'),('797','100090','Vải polyphalen K58/60','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai polyphalen K58/60','0','','2024','0','5111','','','797','1'),('798','100091','Vải Cottonphalen 108-148cm','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Cottonphalen 108-148cm','0','','2024','0','5111','','','798','1'),('799','100092','Vải Rayon màu K120','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Rayon mau K120','0','','2024','0','5111','','','799','1'),('800','100093','Vải thun Sotton','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun Sotton','0','','2024','0','5111','','','800','1'),('801','100095','Vải KT 102x70','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai KT 102x70','0','','2024','0','5111','','','801','1'),('802','100098','Vải thun','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun','0','','2024','0','5111','','','802','1'),('803','100099','Phi Ánh Lụa- Khổ lớn','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Phi Anh Lua- Kho lon','0','','2024','0','5111','','','803','1'),('804','100100','Vải Pintron V1040 ( Xám- Cl092)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Pintron V1040 ( Xam- Cl092)','0','','2024','0','5111','','','804','1'),('805','100101','Vải polyester pha visco 44/45','','m','','0','0','','1230','','1561','','20000','0','0','10','','0','0','0','0','0','0','Vai polyester pha visco 44/45','0','','2024','0','5111','','','805','1'),('806','100102','Vải PT 110x76 160 (Xám-Clo92)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai PT 110x76 160 (Xam-Clo92)','0','','2024','0','5111','','','806','1'),('807','100103','Vải polyester 1m5','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai polyester 1m5','0','','2024','0','5111','','','807','1'),('808','100106','Vải Sản Phẩm Mới- Khổ lớn','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai San Pham Moi- Kho lon','0','','2024','0','5111','','','808','1'),('809','100107','Vải ITY','','Kg','','0','0','','1230','','1561','','55000','0','0','10','','0','0','0','0','0','0','Vai ITY','0','','2024','0','5111','','','809','1'),('810','100108','Vải TL 18780014A','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TL 18780014A','0','','2024','0','5111','','','810','1'),('811','100109','Vải DT 110&76 K16','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai DT 110&76 K16','0','','2024','0','5111','','','811','1'),('812','100117','Vải thun TM','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun TM','0','','2024','0','5111','','','812','1'),('813','100118','Vải thun sotton màu','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun sotton mau','0','','2024','0','5111','','','813','1'),('814','100119','Hoa xuân- khổ lớn','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Hoa xuan- kho lon','0','','2024','0','5111','','','814','1'),('815','100123','Vải mọc thun NH2','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai moc thun NH2','0','','2024','0','5111','','','815','1'),('816','100124','Vải Rayon màu K160','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Rayon mau K160','0','','2024','0','5111','','','816','1'),('817','100125','Vải Puntron','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Puntron','0','','2024','0','5111','','','817','1'),('818','100126','Vải Rayon Hoa','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Rayon Hoa','0','','2024','0','5111','','','818','1'),('819','100127','Vải thun','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun','0','','2024','0','5111','','','819','1'),('820','100128','Vải thun dệt kim (VN)','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun det kim (VN)','0','','2024','0','5111','','','820','1'),('821','100129','Vải dệt kim sợi ngang','','M','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai det kim soi ngang','0','','2024','0','5111','','','821','1'),('822','100130','Vải KT V3010','','M','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai KT V3010','0','','2024','0','5111','','','822','1'),('823','100131','Vải thun sotton màu (B)','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun sotton mau (B)','0','','2024','0','5111','','','823','1'),('824','100132','Vải Thun In Hoa','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Thun In Hoa','0','','2024','0','5111','','','824','1'),('825','100133','Vải Taclon K125','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Taclon K125','0','','2024','0','5111','','','825','1'),('826','100134','Vải Dệt Thoi Từ Sơ Sợi Fija','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Det Thoi Tu So Soi Fija','0','','2024','0','5111','','','826','1'),('827','100135','Vải TP140','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP140','0','','2024','0','5111','','','827','1'),('828','100136','Vải Thun Khổ 1.6m (UT1D)','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Thun Kho 1.6m (UT1D)','0','','2024','0','5111','','','828','1'),('829','100137','Vải TP094','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP094','0','','2024','0','5111','','','829','1'),('830','100138','Vải Thun K44/63','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Thun K44/63','0','','2024','0','5111','','','830','1'),('831','100139','Vải Kate K44/45 (xx India) (Stock)','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Kate K44/45 (xx India) (Stock)','0','','2024','0','5111','','','831','1'),('832','100140','Vải Kate','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Kate','0','','2024','0','5111','','','832','1'),('833','100141','Vải TP071','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP071','0','','2024','0','5111','','','833','1'),('834','100142','Vải TP084','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP084','0','','2024','0','5111','','','834','1'),('835','100143','Vải TP072','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP072','0','','2024','0','5111','','','835','1'),('836','100144','Vải Polyester K58/60','','m','','0','0','','1230','','1561','','24000','0','0','10','','0','0','0','0','0','0','Vai Polyester K58/60','0','','2024','0','5111','','','836','1'),('837','100145','Vải Mộc Solton','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Moc Solton','0','','2024','0','5111','','','837','1'),('838','100146','Vải Pintron K120 (Xám - C1092)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Pintron K120 (Xam - C1092)','0','','2024','0','5111','','','838','1'),('839','100147','Vải Kate 110:76 K1.6','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Kate 110:76 K1.6','0','','2024','0','5111','','','839','1'),('840','100148','Vải TP080','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP080','0','','2024','0','5111','','','840','1'),('841','100149','Vải PT 110x76','','m','','0','0','','1230','','1561','','16000','0','0','10','','0','0','0','0','0','0','Vai PT 110x76','0','','2024','0','5111','','','841','1'),('842','100150','Vải Thun Sotton TK','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Thun Sotton TK','0','','2024','0','5111','','','842','1'),('843','100151','Vải TL 18520014A','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TL 18520014A','0','','2024','0','5111','','','843','1'),('844','100152','Vải TP040','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP040','0','','2024','0','5111','','','844','1'),('845','200117','Vải Mellange Solton TK','','kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Mellange Solton TK','0','','2024','0','5111','','','845','1'),('846','200124','Vải Ity Span TK','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Ity Span TK','0','','2024','0','5111','','','846','1'),('847','200125','Vải PT 110x86 160 (Trắng-C1894)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai PT 110x86 160 (Trang-C1894)','0','','2024','0','5111','','','847','1'),('848','200126','Vải Thun dệt kim K58/60\\\\\\\\\\\\\\\"','','Mét','','0','0','','1230','','1561','','28000','0','0','10','','0','0','0','0','0','0','Vai Thun det kim K58/60\\\\\\\\\\\\\\\"','0','','2024','0','5111','','','848','1'),('849','200133','Vải thun K61/62','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun K61/62','0','','2024','0','5111','','','849','1'),('850','200137','Vải','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai','0','','2024','0','5111','','','850','1'),('851','200138','Vải PT 110x88 160','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai PT 110x88 160','0','','2024','0','5111','','','851','1'),('852','210142','Vải thun Cotonpha (Stock)','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai thun Cotonpha (Stock)','0','','2024','0','5111','','','852','1'),('853','210149','Vải Rayon màu K145','','m','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Rayon mau K145','0','','2024','0','5111','','','853','1'),('854','210150','Vải TP047','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP047','0','','2024','0','5111','','','854','1'),('855','220154','Vải TP117','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP117','0','','2024','0','5111','','','855','1'),('856','220155','Vải TP050','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP050','0','','2024','0','5111','','','856','1'),('857','220156','Vải TP069','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP069','0','','2024','0','5111','','','857','1'),('858','220157','Vải TP087','','Mét','','0','0','','1230','','1561','','88000','0','0','10','','0','0','0','0','0','0','Vai TP087','0','','2024','0','5111','','','858','1'),('859','220158','Vải TP152','','Mét','','0','0','','1230','','1561','','155000','0','0','10','','0','0','0','0','0','0','Vai TP152','0','','2024','0','5111','','','859','1'),('860','220159','Vải TP131','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP131','0','','2024','0','5111','','','860','1'),('861','220160','Vải TP121','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP121','0','','2024','0','5111','','','861','1'),('862','220161','Vải TP085','','Mét','','0','0','','1230','','1561','','87000','0','0','10','','0','0','0','0','0','0','Vai TP085','0','','2024','0','5111','','','862','1'),('863','220162','Vải TP063','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP063','0','','2024','0','5111','','','863','1'),('864','220163','Vải TP079','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP079','0','','2024','0','5111','','','864','1'),('865','220164','Vải Cúc cổ','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Cuc co','0','','2024','0','5111','','','865','1'),('866','220165','Vải Lạc Việt','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Lac Viet','0','','2024','0','5111','','','866','1'),('867','220166','Vải Mosscrepe màu BW','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Mosscrepe mau BW','0','','2024','0','5111','','','867','1'),('868','220167','Vải Sóng lụa','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Song lua','0','','2024','0','5111','','','868','1'),('869','220168','Vải Ngọc Vân','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Ngoc Van','0','','2024','0','5111','','','869','1'),('870','220169','Vải Ngọc Lan','','Mét','','0','0','','1230','','1561','','420000','0','0','10','','0','0','0','0','0','0','Vai Ngoc Lan','0','','2024','0','5111','','','870','1'),('871','220170','Vải Nguyệt Cát','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Nguyet Cat','0','','2024','0','5111','','','871','1'),('872','220171','Vải Cát Tường','','Mét','','0','0','','1230','','1561','','345000','0','0','10','','0','0','0','0','0','0','Vai Cat Tuong','0','','2024','0','5111','','','872','1'),('873','220172','Vải Trống Đồng','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Trong Dong','0','','2024','0','5111','','','873','1'),('874','220173','Vải Mộc Thủy','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai Moc Thuy','0','','2024','0','5111','','','874','1'),('875','220174','Vải Tứ Quý','','Mét','','0','0','','1230','','1561','','350000','0','0','10','','0','0','0','0','0','0','Vai Tu Quy','0','','2024','0','5111','','','875','1'),('876','220175','Vải Mai Lan','','Mét','','0','0','','1230','','1561','','420000','0','0','10','','0','0','0','0','0','0','Vai Mai Lan','0','','2024','0','5111','','','876','1'),('877','HH200115','Vải TP082','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP082','0','','2024','0','5111','','','877','1'),('878','HH200116','Vải TP045','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai TP045','0','','2024','0','5111','','','878','1'),('879','HH240176','Vải TP053','','Mét','','0','0','','1230','','1561','','45000','0','0','10','','0','0','0','0','0','0','Vai TP053','0','','2024','0','5111','','','879','0'),('880','HH240207','Vải ITY','','Mét','','0','0','','1230','','1561','','52000','0','0','10','','0','0','0','0','0','0','Vai ITY','0','','2024','0','5111','','','880','0'),('881','HH240208','Vải polyester pha viscorayon khổ 44/45 (kate) XX: India','','m','','0','0','','1230','','1561','','21000','0','0','10','','0','0','0','0','0','0','Vai polyester pha viscorayon kho 44/45 (kate) XX: India','0','','2024','0','5111','','','881','0'),('882','HH240209','Vải TP088','','Mét','','0','0','','1230','','1561','','80000','0','0','10','','0','0','0','0','0','0','Vai TP088','0','','2024','0','5111','','','882','0'),('883','HH240570','Vải dệt thoi 100% polyester','','Kg','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai det thoi 100% polyester','0','','2024','0','5111','','','883','0'),('124174961043618','HH2500724','Vải thun dệt kim Việt Nam POLY1','','Kg','','0','0','','1230','','1561','','0','0','44000','8','','0','0','0','0','0','0','Vai thun det kim Viet Nam POLY1','0','','','0','5111','','','724','0'),('124174961050965','HH2500725','Vải thun dệt kim Việt Nam Viscose 9','','Kg','','0','0','','1230','','1561','','0','0','46500','8','','0','0','0','0','0','0','Vai thun det kim Viet Nam Viscose 9','0','','','0','5111','','','725','0'),('124175263352828','HH2500726','Vải Lê nin in cao cấp','','M','','0','0','','1230','','1561','','0','0','40000','10','','0','0','0','0','0','0','Vai Le nin in cao cap','0','','','0','5111','','','726','0'),('124175263355623','HH2500727','Vải boly','','Mét','','0','0','','1230','','1561','','45000','0','17000','10','','0','0','0','0','0','0','Vai boly','0','','','0','5111','','','727','0'),('124175263357817','HH2500728','Vải ngoc bích','','Mét','','0','0','','1230','','1561','','20000','0','25000','10','','0','0','0','0','0','0','Vai ngoc bich','0','','','0','5111','','','728','0'),('124175557193315','HH2500729','Vải polyester K44/64\\\"','','Kg','','0','0','','1230','','1561','','0','0','20000','8','','0','0','0','0','0','0','Vai polyester K44/64\\\"','0','','','0','5111','','','729','0'),('124175991096544','HH2500730','Vải TP076','','Mét','','0','0','','1230','','1561','','80000','0','73000','8','','0','0','0','0','0','0','Vai TP076','0','','','0','5111','','','730','0'),('124175991108253','HH2500731','Vải thun in bông','','Kg','','0','0','','1230','','1561','','0','0','82000','8','','0','0','0','0','0','0','Vai thun in bong','0','','','0','5111','','','731','0'),('124176680351436','HH2500732','Vải lụa mịn','','Mét','','0','0','','1230','','1561','','0','0','0','10','','0','0','0','0','0','0','Vai lua min','0','','','0','5111','','','732','0'),('124176680367483','HH2500733','Vải TP089','','Mét','','0','0','','1230','','1561','','87000','0','82000','10','','0','0','0','0','0','0','Vai TP089','0','','','0','5111','','','733','0'),('884','NC-001','Nhân công','','Công','','0','0','','1200','','622','','0','0','0','10','','0','0','0','0','0','0','Nhan cong','0','NC','2024','0','5113','','','884','1'),('885','SXC-01','Chi phí chung cố định','','','','0','0','','1200','','627','','0','0','0','10','','0','0','0','0','0','0','Chi phí chung co dinh','0','SXC','2024','0','5113','','','885','1'),('886','SXC-02','Chi phí chung biến đổi','','','','0','0','','1200','','627','','0','0','0','10','','0','0','0','0','0','0','Chi phí chung bien doi','0','SXC','2024','0','5113','','','886','1');
+ALTER TABLE mavt AUTO_INCREMENT=917;
+DROP TABLE IF EXISTS nhatkykiemphieu;
+
+CREATE TABLE `nhatkykiemphieu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `lanthu` int(11) NOT NULL,
+  `tuso` varchar(11) NOT NULL,
+  `denso` int(11) NOT NULL,
+  `ngaynhap` date NOT NULL,
+  `gionhap` time NOT NULL,
+  `loaiphieu` int(11) NOT NULL,
+  `nguoinhap` varchar(20) NOT NULL,
+  `gt1` bigint(20) NOT NULL,
+  `gt2` bigint(20) NOT NULL,
+  `ngaycuoi` date NOT NULL,
+  `matk` char(6) NOT NULL,
+  `niendo` int(4) NOT NULL,
+  `truongnhomduyet` tinyint(4) NOT NULL,
+  `giamdocduyet1` tinyint(4) NOT NULL,
+  `nguoiduyet1` varchar(20) NOT NULL,
+  `ngayduyet1` datetime NOT NULL,
+  `giamdocduyet` tinyint(4) NOT NULL,
+  `nguoiduyet` varchar(50) NOT NULL,
+  `ngayduyet` datetime NOT NULL,
+  `ghichu` text NOT NULL,
+  `machinhanh` char(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8;
+
+TRUNCATE nhatkykiemphieu;INSERT INTO nhatkykiemphieu VALUES ('138','1','IV','0','2026-02-11','09:22:08','10','Dung','283','0','0000-00-00','','0','1','0','','0000-00-00 00:00:00','0','','0000-00-00 00:00:00','','2100484911'),('137','1','IV-2025','0','2026-02-11','09:21:32','9','Dung','0','-1632541','0000-00-00','','0','1','1','Thanh','2026-02-11 07:15:36','0','','0000-00-00 00:00:00','','2100484911');
+ALTER TABLE nhatkykiemphieu AUTO_INCREMENT=169;
+ALTER TABLE nhatkylamviec AUTO_INCREMENT=724;
+DROP TABLE IF EXISTS plchuyenlo;
+
+CREATE TABLE `plchuyenlo` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(10) NOT NULL,
+  `nampslo` int(5) NOT NULL,
+  `solophatsinh` bigint(20) NOT NULL,
+  `sochuyenkytruoc` bigint(20) NOT NULL,
+  `sochuyentrongky` bigint(20) NOT NULL,
+  `sochuyenkysau` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umaso` (`maso`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS plgdlk;
+
+CREATE TABLE `plgdlk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(10) NOT NULL,
+  `namps` int(5) NOT NULL,
+  `chiphilaivay` bigint(20) NOT NULL,
+  `laitiengui` bigint(20) NOT NULL,
+  `laivaytrutiengui` bigint(20) NOT NULL,
+  `chiphikhauhao` bigint(20) NOT NULL,
+  `loinhuanthuan` bigint(20) NOT NULL,
+  `ebitda` bigint(20) NOT NULL,
+  `laivayduoctru` bigint(20) NOT NULL,
+  `chiphilaivaykhongduoctru` bigint(20) NOT NULL,
+  `chiphilaivaykhongduoctruchuyentiep` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umaso` (`maso`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+INSERT INTO plgdlk VALUES('1','2021_2020','2020','0','0','0','0','0','0','0','0','0',''),('2','2021_2019','2019','0','0','0','0','0','0','0','0','0',''),('3','2021_2018','2018','0','0','0','0','0','0','0','0','0',''),('4','2021_2017','2017','0','0','0','0','0','0','0','0','0',''),('5','2021_2016','2016','0','0','0','0','0','0','0','0','0',''),('6','2021_2021','2021','396453236','4235674','392217562','198564237','112346789','703128588','210938576','181278986','181278986','');
+DROP TABLE IF EXISTS plthuetndnuudai;
+
+CREATE TABLE `plthuetndnuudai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `machitieu` char(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieucha` char(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `phantram` int(11) NOT NULL,
+  `nam` varchar(10) NOT NULL,
+  `ketunam` varchar(10) NOT NULL,
+  `chonuudai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umachitieu` (`machitieu`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+INSERT INTO plthuetndnuudai VALUES('1','1.1','Doanh nghiệp sản xuất mới thành lập từ dự án đầu tư.','1','0','0','','','0'),('2','1.2','Doanh nghiệp di chuyển địa điểm ra khỏi đô thị theo quy hoạch đã được cơ quan có thẩm quyền phê duyệt.','1','0','0','','','0'),('3','1.3','Doanh nghiệp mới thành lập từ dự án đầu tư vào ngành nghề, lĩnh vực ưu đãi đầu tư.','1','0','0','','','0'),('4','1.4','Doanh nghiệp mới thành lập từ dự án đầu tư vào ngành nghề, lĩnh vực đặc biệt ưu đãi đầu tư.','1','0','0','','','0'),('5','1.5','Doanh nghiệp mới thành lập từ dự án đầu tư vào nghành nghề, lĩnh vực ưu đãi đầu tư theo quy định tại Nghị định số 124/2008/NĐ-CP.','1','0','0','','','0'),('6','1.6','Doanh nghiệp mới thành lập từ dự án đầu tư vào địa bàn thuộc Danh mục địa bàn có điều kiện kinh tế - xã hội khó khăn.','1','0','0','','','1'),('7','1.7','Doanh nghiệp mới thành lập từ dự án đầu tư vào địa bàn thuộc Danh mục địa bàn có điều kiện kinh tế - xã hội đặc biệt khó khăn, khu kinh tế, khu công nghệ cao.','1','0','0','','','0'),('8','1.8','Doanh nghiệp thành lập mới trong lĩnh vực xã hội hoá hoặc có thu nhập từ hoạt động xã hội hoá.','1','0','0','','','0'),('9','1.9','Hợp tác xã dịch vụ nông nghiệp, Quỹ tín dụng nhân dân.','1','0','0','','','0'),('10','1.10','Ưu đãi theo Giấy phép đầu tư, Giấy chứng nhận ưu đãi đầu tư.','1','0','0','','','0'),('11','2.1','- Thuế suất thuế thu nhập doanh nghiệp ưu đãi: [PhanTram]%','2','0','17','','','0'),('12','2.2','- Thời hạn áp dụng thuế suất ưu đãi [SoNam] năm, kể từ năm [Nam]','2','0','0','10','2012','0'),('13','2.3','- Thời gian miễn thuế [SoNam] năm, kể từ năm [Nam]','2','0','0','2','2012','0'),('14','2.4','- Thời gian giảm 50% số thuế phải nộp: [SoNam] năm, kể từ năm [Nam]','2','0','0','4','2014','0'),('15','3','Xác định số thuế TNDN chênh lệch do doanh nghiệp hưởng thuế suất ưu đãi','3','0','0','','','0'),('16','3.1','Tổng thu nhập tính thuế được hưởng thuế suất ưu đãi','3','0','0','','','0'),('17','3.2','Thuế TNDN tính theo thuế suất ưu đãi','3','0','0','','','0'),('18','3.3','Thuế TNDN tính theo thuế suất phổ thông (20%)','3','0','0','','','0'),('19','3.4','Thuế TNDN chênh lệch ([4]=[3]-[2])','3','0','0','','','0'),('20','4','Xác định số thuế được miễn, giảm trong kỳ tính thuế','3','0','0','','','0'),('21','4.1','Tổng thu nhập tính thuế được miễn thuế hoặc giảm thuế','3','0','0','','','0'),('22','4.2','Thuế suất thuế TNDN ưu đãi áp dụng (%)','3','0','0','','','0'),('23','4.3','Thuế thu nhập doanh nghiệp phải nộp','3','0','0','','','0'),('24','4.4','Tỷ lệ thuế TNDN được miễn hoặc giảm (%)','3','0','0','','','0'),('25','4.5','Thuế TNDN được miễn, giảm','3','0','0','','','0');
+DROP TABLE IF EXISTS pscptt;
+
+CREATE TABLE `pscptt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) DEFAULT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngaysx` date NOT NULL,
+  `thoigiansd` double NOT NULL,
+  `thoigiansdconlai` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `mats` char(14) DEFAULT NULL,
+  `tents` varchar(500) DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `soluong` double NOT NULL,
+  `dongia` bigint(10) NOT NULL,
+  `gtvnd` bigint(14) DEFAULT NULL,
+  `nguyengia` bigint(14) NOT NULL,
+  `giatriconlai` bigint(14) NOT NULL,
+  `tylekh` double NOT NULL,
+  `tgsd` double(7,3) DEFAULT NULL,
+  `muckhthang` bigint(13) NOT NULL,
+  `muckhquy` bigint(13) NOT NULL,
+  `muckhnam` bigint(13) NOT NULL,
+  `matk` char(7) DEFAULT NULL,
+  `tkno` char(7) DEFAULT NULL,
+  `tkco` char(7) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(500) DEFAULT NULL,
+  `comment` text,
+  `tanggiam` int(1) NOT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `ngayhoadon` date NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `manhomts` varchar(6) NOT NULL,
+  `tennhomts` varchar(255) NOT NULL,
+  `mapsts` int(11) NOT NULL,
+  `thamchieu` bigint(14) NOT NULL,
+  `loaisp` varchar(2) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_pscptt_mats_mats` (`mats`),
+  CONSTRAINT `fk_pscptt_mats_mats` FOREIGN KEY (`mats`) REFERENCES `cptratruoc` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+TRUNCATE pscptt;ALTER TABLE pskt AUTO_INCREMENT=1895;
+DROP TABLE IF EXISTS psts;
+
+CREATE TABLE `psts` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) DEFAULT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngaysx` date NOT NULL,
+  `thoigiansd` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `mats` char(14) DEFAULT NULL,
+  `tents` varchar(500) DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `soluong` double NOT NULL,
+  `dongia` bigint(10) NOT NULL,
+  `gtvnd` bigint(14) DEFAULT NULL,
+  `nguyengia` bigint(14) NOT NULL,
+  `giatriconlai` bigint(14) NOT NULL,
+  `tylekh` double NOT NULL,
+  `tgsd` double(7,3) DEFAULT NULL,
+  `muckhthang` bigint(13) NOT NULL,
+  `muckhquy` bigint(13) NOT NULL,
+  `muckhnam` bigint(13) NOT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tkno` char(5) DEFAULT NULL,
+  `tkco` char(5) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(500) DEFAULT NULL,
+  `comment` text,
+  `tanggiam` int(1) NOT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `ngayhoadon` date NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `manhomts` varchar(6) NOT NULL,
+  `tennhomts` varchar(255) NOT NULL,
+  `mapsts` int(11) NOT NULL,
+  `thamchieu` bigint(14) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_psts_mats_mats` (`mats`),
+  CONSTRAINT `fk_psts_mats_mats` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_100` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_101` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_102` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_103` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_104` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_105` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_106` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_107` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_108` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_109` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_110` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_111` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_112` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_113` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_114` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_70` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_71` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_72` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_73` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_74` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_75` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_76` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_77` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_78` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_79` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_80` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_81` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_82` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_83` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_84` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_85` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_86` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_87` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_88` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_89` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_90` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_91` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_92` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_93` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_94` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_95` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_96` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_97` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_98` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`),
+  CONSTRAINT `psts_ibfk_99` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+TRUNCATE psts;DROP TABLE IF EXISTS psvoncsh;
+
+CREATE TABLE `psvoncsh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mapsvoncsh` int(11) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngayhoadon` date NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `makh` char(14) NOT NULL,
+  `mabp` char(14) NOT NULL,
+  `bophan` varchar(300) NOT NULL,
+  `mand` char(14) NOT NULL,
+  `noidung` varchar(300) NOT NULL,
+  `vondieule` bigint(20) NOT NULL,
+  `vongop` bigint(20) NOT NULL,
+  `tanggiam` int(1) NOT NULL,
+  `ghichu` text NOT NULL,
+  `tenkd` varchar(300) NOT NULL,
+  `vondieuletrongky` bigint(20) NOT NULL,
+  `vongoptrongky` bigint(20) NOT NULL,
+  `tyle` double NOT NULL,
+  `vonchuagop` bigint(20) NOT NULL,
+  `vondieuleusd` double NOT NULL,
+  `vongopusd` double NOT NULL,
+  `vondieuletrongkyusd` double NOT NULL,
+  `vongoptrongkyusd` double NOT NULL,
+  `vonchuagopusd` double NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO psvoncsh VALUES('1','1','','0000-00-00','0000-00-00','','100026','','','','','1600000000','1600000000','0','','Luu Tan Phat','0','0','0','0','0','0','0','0','0'),('2','2','','0000-00-00','0000-00-00','','100068','','','','','900000000','900000000','0','','','0','0','0','0','0','0','0','0','0');
+ALTER TABLE psvt AUTO_INCREMENT=511;
+CREATE TABLE IF NOT EXISTS `sanluong_khauhao_taisan` ( `sott` BIGINT NOT NULL AUTO_INCREMENT , `mats` VARCHAR(20) NOT NULL,`matscha` VARCHAR(20) NOT NULL , `tents` VARCHAR(1000) NOT NULL , `thang1` BIGINT NOT NULL DEFAULT '0' , `thang2` BIGINT NOT NULL DEFAULT '0' , `thang3` BIGINT NOT NULL DEFAULT '0' , `thang4` BIGINT NOT NULL DEFAULT '0' , `thang5` BIGINT NOT NULL DEFAULT '0' , `thang6` BIGINT NOT NULL DEFAULT '0' , `thang7` BIGINT NOT NULL DEFAULT '0' , `thang8` BIGINT NOT NULL DEFAULT '0' , `thang9` BIGINT NOT NULL DEFAULT '0' , `thang10` BIGINT NOT NULL DEFAULT '0' , `thang11` BIGINT NOT NULL DEFAULT '0' , `thang12` BIGINT NOT NULL DEFAULT '0' , `tongcong` BIGINT NOT NULL,`tenkd` VARCHAR(1000) NOT NULL , PRIMARY KEY (`sott`)) ENGINE = InnoDB;ALTER TABLE sdtkdk AUTO_INCREMENT=165;
+DROP TABLE IF EXISTS sodu_hoadon_dauky_nhap;
+
+CREATE TABLE `sodu_hoadon_dauky_nhap` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `kyhieu` varchar(20) NOT NULL,
+  `tuso` varchar(300) NOT NULL,
+  `denso` varchar(300) NOT NULL,
+  `loaphieu` int(11) NOT NULL DEFAULT '1',
+  `quy` varchar(10) NOT NULL,
+  `soquyen` varchar(10) NOT NULL,
+  `mauso` varchar(20) NOT NULL,
+  `loaiphieu` char(3) NOT NULL DEFAULT 'DK',
+  `huy` varchar(300) NOT NULL,
+  `sudung` varchar(300) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+TRUNCATE sodu_hoadon_dauky_nhap;INSERT INTO sodu_hoadon_dauky_nhap (kyhieu,tuso,denso,loaphieu,quy,soquyen,mauso,loaiphieu) VALUES ('C25MHD','0','0','1','0','40','1','DK'),('C25MHD','58','340','1','0','300','1','DK');
+DROP TABLE IF EXISTS thongtinchung;
+
+CREATE TABLE `thongtinchung` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `noidung` text NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO thongtinchung VALUES('1','0:::0:0:0:nho:tt133:0:::::::::::::0:::::VN:::0:0:1:0:::0:1:0:0:0:0:0',''),('2','2#*#1#*#1','');
+DROP TABLE IF EXISTS tk;
+
+CREATE TABLE `tk` (
+  `sott` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `quycach` varchar(35) DEFAULT NULL,
+  `manhom` char(6) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sldk` double(12,3) DEFAULT NULL,
+  `gtvndk` bigint(13) DEFAULT NULL,
+  `slntk` double(13,3) DEFAULT NULL,
+  `gtnvnd` bigint(14) DEFAULT NULL,
+  `slxtk` double(13,3) DEFAULT NULL,
+  `gtxvnd` bigint(14) DEFAULT NULL,
+  `slck` double DEFAULT NULL,
+  `gtvnck` double DEFAULT NULL,
+  `dgxvnd` double DEFAULT NULL,
+  `giaban` bigint(13) DEFAULT NULL,
+  `ttgiaban` bigint(15) DEFAULT NULL,
+  `rate` char(2) DEFAULT NULL,
+  `chietkhau` int(2) NOT NULL,
+  `sl` int(1) NOT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(60) DEFAULT NULL,
+  `tenkd` char(200) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_tk_mavt_mavt` (`mavt`),
+  KEY `fk_tk_makho_makho` (`makho`),
+  FULLTEXT KEY `tenvt` (`tenvt`),
+  FULLTEXT KEY `tenvt_2` (`tenvt`),
+  CONSTRAINT `fk_tk_makho_makho` FOREIGN KEY (`makho`) REFERENCES `makho` (`makho`),
+  CONSTRAINT `fk_tk_mavt_mavt` FOREIGN KEY (`mavt`) REFERENCES `mavt` (`mavt`)
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+
+TRUNCATE tk;INSERT INTO tk(sott,mavt,tenvt,matk,dvt,gtvnck,dgxvnd,slck,rate,makho,kho,quycach,manhom,tennhom) VALUES ('65519','100001','Phi Thatexco -Khổ lớn','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65520','100002','Vải','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65521','100004','Vải A065 PTH','1561','m','44156.926','40756843','923.000','10','0010','','','1230','Vải'),('65522','100006','Vải KS 28-30-34 loại 1','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65523','100007','Vải KS 2834 K1m5-11in','1561','Kg','145412.870','25738078','177.000','10','0010','','','1230','Vải'),('65524','100008','Vải Kate K44/45','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65525','100010','Vải PinTron 110-76/PE (40x40 K120)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65526','100013','Vải Poly 100% K44 (Thailand)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65527','100014','Vải Polyester 100% 1m6 VCG','1561','m','25029.630','10011852','400.000','10','0010','','','1230','Vải'),('65528','100016','Vải Polyester 135D/108F','1561','kg','64497.060','80718070','1251.500','10','0010','','','1230','Vải'),('65529','100017','Vải Polyester Spun Fabric','1561','m','20564.426','101318868','4926.900','10','0010','','','1230','Vải'),('65530','100018','Vải Polyester pha K44','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65531','100019','Vải Polyester pha K44/60','1561','m','18000.000','9306000','517.000','10','0010','','','1230','Vải'),('65532','100022','Vải Solton','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65533','100023','Vải Solton','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65534','100024','Vải TF 02800802A','1561','m','49083.575','64839402','1321.000','10','0010','','','1230','Vải'),('65535','100025','Vải TF 11180208A','1561','m','49504.754','97816444','1975.900','10','0010','','','1230','Vải'),('65536','100028','Vải TP059','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65537','100029','Vải TP060','1561','m','52445.783','50253549','958.200','10','0010','','','1230','Vải'),('65538','100030','Vải TP065','1561','m','55114.757','14715640','267.000','10','0010','','','1230','Vải'),('65539','100032','Vải TP073','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65540','100034','Vải c&ocirc#*#ng sở khổ lớn','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65541','100036','Vải dệt kim đ&atilde#*# nhuộm VS 2040','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65542','100037','Vải dệt kim đ&atilde#*# nhuộm VS 2542','1561','Kg','96000.000','38400000','400.000','10','0010','','','1230','Vải'),('65543','100038','Vải gấm Thượng Hải','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65544','100040','Vải sản phẩm mới -Khổ lớn','1561','m','68932.937','61267594','888.800','10','0010','','','1230','Vải'),('65545','100041','Vải sản phẩm mới -Khổ nhỏ','1561','m','50732.675','45710140','901.000','10','0010','','','1230','Vải'),('65546','100043','Vải sợi L.A','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65547','100044','Vải taclon','1561','Mét','26000.000','22360000','860.000','10','0010','','','1230','Vải'),('65548','100045','Vải th&agrave#*#nh phẩm','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65549','100046','Vải th&agrave#*#nh phẩm 1m2','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65550','100047','Vải th&agrave#*#nh phẩm 1m6','1561','m','19072.569','66898942','3507.600','10','0010','','','1230','Vải'),('65551','100049','Vải thun','1561','Kg','60027.217','160392723','2672.000','10','0010','','','1230','Vải'),('65552','100050','Vải thun (Stock) K54/55','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65553','100051','Vải thun (Stock) K58/60','1561','m','23400.185','0','0.000','10','0010','','','1230','Vải'),('65554','100052','Vải thun 320T K16','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65555','100054','Vải thun K58/60','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65556','100055','Vải thun K58/60 (TQ)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65557','100056','Vải thun Span khổ 1m6 (V-TS)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65558','100057','Vải thun Stock K16','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65559','100059','Vải thun VN','1561','Kg','45932.046','33847325','736.900','10','0010','','','1230','Vải'),('65560','100060','Vải thun VN','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65561','100061','Vải thun XH','1561','Kg','64801.667','28642337','442.000','10','0010','','','1230','Vải'),('65562','100062','Vải thun b&ocirc#*#ng K16','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65563','100063','Vải thun c&aacute#*#c loại K16','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65564','100066','Vải thun th&agrave#*#nh phẩm K16','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65565','100067','&aacute#*#o d&agrave#*#i AD 106','1561','cái','0.000','0','0.000','10','0010','','','1230','Vải'),('65566','100068','&aacute#*#o d&agrave#*#i AD80','1561','cái','0.000','0','0.000','10','0010','','','1230','Vải'),('65567','100070','Vải visco hoa K145','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65568','100071','Vải Pintron 110: 76','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65569','100073','Vải thun','1561','kg','64525.455','265025402','4107.300','10','0010','','','1230','Vải'),('65570','100074','vải polyestespun pabric','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65571','100075','Vải th&agrave#*#nh phẩm','1561','kg','64405.234','30012839','466.000','10','0010','','','1230','Vải'),('65572','100077','Vải thun vol','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65573','100078','Vải A091','1561','m','52797.895','149713711','2835.600','10','0010','','','1230','Vải'),('65574','100079','vải thun VN','1561','kg','37787.063','20469252','541.700','10','0010','','','1230','Vải'),('65575','100080','vải polyeste spun pabrie','1561','m','20837.220','47863094','2297.000','10','0010','','','1230','Vải'),('65576','100082','Vải Th&agrave#*#nh phẩm','1561','kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65577','100083','Vải m&agrave#*#u','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65578','100084','Vải th&agrave#*#nh phẩm Nhật Nam','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65579','100086','Vải Soltor','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65580','100087','Vải TP078','1561','m','65945.456','16558904','251.100','10','0010','','','1230','Vải'),('65581','100089','Vải thun 1m5','1561','kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65582','100090','Vải polyphalen K58/60','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65583','100091','Vải Cottonphalen 108-148cm','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65584','100092','Vải Rayon m&agrave#*#u K120','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65585','100093','Vải thun Sotton','1561','kg','78711.340','75562886','960.000','10','0010','','','1230','Vải'),('65586','100095','Vải KT 102x70','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65587','100098','Vải thun','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65588','100099','Phi &Aacute#*#nh Lụa- Khổ lớn','1561','m','47073.644','11768411','250.000','10','0010','','','1230','Vải'),('65589','100100','Vải Pintron V1040 ( X&aacute#*#m- Cl092)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65590','100101','Vải polyester pha visco 44/45','1561','m','19637.536','36741829','1871.000','10','0010','','','1230','Vải'),('65591','100102','Vải PT 110x76 160 (X&aacute#*#m-Clo92)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65592','100103','Vải polyester 1m5','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65593','100106','Vải Sản Phẩm Mới- Khổ lớn','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65594','100107','Vải ITY','1561','Kg','50030.576','116020906','2319.000','10','0010','','','1230','Vải'),('65595','100108','Vải TL 18780014A','1561','m','45805.054','18505242','404.000','10','0010','','','1230','Vải'),('65596','100109','Vải DT 110&amp#*#76 K16','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65597','100117','Vải thun TM','1561','Kg','40000.000','26432000','660.800','10','0010','','','1230','Vải'),('65598','100118','Vải thun sotton m&agrave#*#u','1561','kg','95949.949','41258478','430.000','10','0010','','','1230','Vải'),('65599','100119','Hoa xu&acirc#*#n- khổ lớn','1561','m','58148.880','27039229','465.000','10','0010','','','1230','Vải'),('65600','100123','Vải mọc thun NH2','1561','kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65601','100124','Vải Rayon m&agrave#*#u K160','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65602','100125','Vải Puntron','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65603','100126','Vải Rayon Hoa','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65604','100127','Vải thun','1561','Kg','70000.000','210070000','3001.000','10','0010','','','1230','Vải'),('65605','100128','Vải thun dệt kim (VN)','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65606','100129','Vải dệt kim sợi ngang','1561','M','0.000','0','0.000','10','0010','','','1230','Vải'),('65607','100130','Vải KT V3010','1561','M','0.000','0','0.000','10','0010','','','1230','Vải'),('65608','100131','Vải thun sotton m&agrave#*#u (B)','1561','kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65609','100132','Vải Thun In Hoa','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65610','100133','Vải Taclon K125','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65611','100134','Vải Dệt Thoi Từ Sơ Sợi Fija','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65612','100135','Vải TP140','1561','Mét','118363.638','15387273','130.000','10','0010','','','1230','Vải'),('65613','100136','Vải Thun Khổ 1.6m (UT1D)','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65614','100137','Vải TP094','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65615','100138','Vải Thun K44/63','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65616','100139','Vải Kate K44/45 (xx India) (Stock)','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65617','100140','Vải Kate','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65618','100141','Vải TP071','1561','Mét','60027.270','10444745','174.000','10','0010','','','1230','Vải'),('65619','100142','Vải TP084','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65620','100143','Vải TP072','1561','Mét','60872.727','31166836','512.000','10','0010','','','1230','Vải'),('65621','100144','Vải Polyester K58/60','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65622','100145','Vải Mộc Solton','1561','kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65623','100146','Vải Pintron K120 (X&aacute#*#m - C1092)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65624','100147','Vải Kate 110:76 K1.6','1561','m','19000.000','9500000','500.000','10','0010','','','1230','Vải'),('65625','100148','Vải TP080','1561','m','67636.365','30605455','452.500','10','0010','','','1230','Vải'),('65626','100149','Vải PT 110x76','1561','m','15515.612','38618359','2489.000','10','0010','','','1230','Vải'),('65627','100150','Vải Thun Sotton TK','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65628','100151','Vải TL 18520014A','1561','Mét','64935.064','9090909','140.000','10','0010','','','1230','Vải'),('65629','100152','Vải TP040','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65630','200117','Vải Mellange Solton TK','1561','kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65631','200124','Vải Ity Span TK','1561','Kg','0.000','0','0.000','10','0010','','','1230','Vải'),('65632','200125','Vải PT 110x86 160 (Trắng-C1894)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65633','200126','Vải Thun dệt kim K58/60\\\\&quot#*#','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65634','200133','Vải thun K61/62','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65635','200137','Vải','1561','m','15500.000','11067000','714.000','10','0010','','','1230','Vải'),('65636','200138','Vải PT 110x88 160','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65637','210142','Vải thun Cotonpha (Stock)','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65638','210149','Vải Rayon m&agrave#*#u K145','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65639','210150','Vải TP047','1561','Mét','38454.545','16735418','435.200','10','0010','','','1230','Vải'),('65640','220154','Vải TP117','1561','Mét','97500.000','10627500','109.000','10','0010','','','1230','Vải'),('65641','220155','Vải TP050','1561','Mét','43944.161','28976780','659.400','10','0010','','','1230','Vải'),('65642','220156','Vải TP069','1561','Mét','57500.000','17825000','310.000','10','0010','','','1230','Vải'),('65643','220157','Vải TP087','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65644','220158','Vải TP152','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65645','220159','Vải TP131','1561','Mét','125000.000','0','0.000','10','0010','','','1230','Vải'),('65646','220160','Vải TP121','1561','Mét','115000.000','5750000','50.000','10','0010','','','1230','Vải'),('65647','220161','Vải TP085','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65648','220162','Vải TP063','1561','Mét','52500.000','17797500','339.000','10','0010','','','1230','Vải'),('65649','220163','Vải TP079','1561','Mét','65833.333','17775000','270.000','10','0010','','','1230','Vải'),('65650','220164','Vải C&uacute#*#c cổ','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65651','220165','Vải Lạc Việt','1561','Mét','388889.044','5288891','13.600','10','0010','','','1230','Vải'),('65652','220166','Vải Mosscrepe m&agrave#*#u BW','1561','Kg','73000.000','32850000','450.000','10','0010','','','1230','Vải'),('65653','220167','Vải S&oacute#*#ng lụa','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65654','220168','Vải Ngọc V&acirc#*#n','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65655','220169','Vải Ngọc Lan','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65656','220170','Vải Nguyệt C&aacute#*#t','1561','Mét','590909.070','5081818','8.600','10','0010','','','1230','Vải'),('65657','220171','Vải C&aacute#*#t Tường','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65658','220172','Vải Trống Đồng','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65659','220173','Vải Mộc Thủy','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65660','220174','Vải Tứ Qu&yacute#*#','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65661','220175','Vải Mai Lan','1561','Mét','0.000','0','0.000','10','0010','','','1230','Vải'),('65662','HH200115','Vải TP082','1561','Mét','69327.274','15335193','221.200','10','0010','','','1230','Vải'),('65663','HH200116','Vải TP045','1561','Mét','38045.455','14647500','385.000','10','0010','','','1230','Vải'),('65664','HH240176','Vải TP053','1561','Mét','45148.147','17937359','397.300','10','0010','','','1230','Vải'),('65665','HH240207','Vải ITY','1561','Mét','44000.000','11176000','254.000','10','0010','','','1230','Vải'),('65666','HH240208','Vải polyester pha viscorayon khổ 44/45 (kate) XX: India','1561','m','0.000','0','0.000','10','0010','','','1230','Vải'),('65667','HH240209','Vải TP088','1561','Mét','74962.964','16289452','217.300','10','0010','','','1230','Vải'),('65668','HH240570','Vải dệt thoi 100% polyester','1561','Kg','24000.000','40152000','1673.000','10','0010','','','1230','Vải'),('65669','HH2500724','Vải thun dệt kim Việt Nam POLY1','1561','Kg','44000.000','6160000','140.000','8','0010','','','1230','Vải'),('65670','HH2500725','Vải thun dệt kim Việt Nam Viscose 9','1561','Kg','46500.000','9300000','200.000','8','0010','','','1230','Vải'),('65671','HH2500726','Vải L&ecirc#*# nin in cao cấp','1561','M','40000.000','3080000','77.000','10','0010','','','1230','Vải'),('65672','HH2500727','Vải boly','1561','Mét','17000.000','0','0.000','10','0010','','','1230','Vải'),('65673','HH2500728','Vải ngoc b&iacute#*#ch','1561','Mét','25000.000','25000','1.000','10','0010','','','1230','Vải'),('65674','HH2500729','Vải polyester K44/64&quot#*#','1561','Kg','20000.000','9240000','462.000','8','0010','','','1230','Vải'),('65675','HH2500730','Vải TP076','1561','Mét','73000.000','1825000','25.000','8','0010','','','1230','Vải'),('65676','HH2500731','Vải thun in b&ocirc#*#ng','1561','Kg','82000.000','4346000','53.000','8','0010','','','1230','Vải'),('65677','HH2500732','Vải lụa mịn','1561','Mét','0.000','0','300.000','10','0010','','','1230','Vải'),('65678','HH2500733','Vải TP089','1561','Mét','82000.000','4510000','55.000','10','0010','','','1230','Vải');
+ALTER TABLE tkthang AUTO_INCREMENT=66189;
+ALTER TABLE tmp_dskhcn AUTO_INCREMENT=681;
+ALTER TABLE tmp_hachtoanluongthang AUTO_INCREMENT=571;
+ALTER TABLE tmp_tkhientai AUTO_INCREMENT=194;
+DROP TABLE IF EXISTS tmp_tknvlhienthai_xuat;
+
+CREATE TABLE `tmp_tknvlhienthai_xuat` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `soluong` double NOT NULL,
+  `ghichu` text NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE tmp_tksphienthai AUTO_INCREMENT=194;
+ALTER TABLE tokhaithue AUTO_INCREMENT=1054;
+DROP TABLE IF EXISTS tokhaithue_dautu;
+
+CREATE TABLE `tokhaithue_dautu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `matkhai` char(5) NOT NULL,
+  `gthh` double NOT NULL,
+  `thue` double NOT NULL,
+  `thang` varchar(8) NOT NULL,
+  `loaitokhai` int(11) NOT NULL DEFAULT '1',
+  `chitietdsbr` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS tokhaitndn;
+
+CREATE TABLE `tokhaitndn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` varchar(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieu` varchar(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `machitieucha` varchar(5) NOT NULL,
+  `loaitokhai` varchar(10) NOT NULL,
+  `matk` varchar(100) NOT NULL,
+  `tkno` varchar(100) NOT NULL,
+  `sotiendk` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=373 DEFAULT CHARSET=utf8;
+
+TRUNCATE tokhaitndn;INSERT INTO tokhaitndn VALUES ('72','','1. Doanh thu bán hàng và cung cấp dịch vụ','01','0','0','XDKQKD','511','','177826500',''),('73','','2. Các khoản giảm trừ doanh thu','02','0','0','XDKQKD','','','0',''),('74','','3. Doanh thu thuần về bán hàng và cung cấp dịch vụ (10=01-02)','10','0','0','XDKQKD','','','177826500',''),('75','','4. Giá vốn bán hàng','11','0','0','XDKQKD','','632','157128290',''),('76','','5. Lợi nhuận gộp về bán hàng và  cung cấp dịch vụ (20=10-11)','20','0','0','XDKQKD','','','20698210',''),('77','','6. Doanh thu hoạt động tài chính','21','0','0','XDKQKD','515','','290',''),('78','','7. Chi phí tài chính','22','0','0','XDKQKD','','635','0',''),('79','','- Trong đó: Chi phí lãi vay','23','0','1','XDKQKD','','','0',''),('80','','8. Chi phí quản lý kinh doanh','24','0','0','XDKQKD','','642','75118080',''),('81','','9. Lợi nhuận thuần từ hoạt động kinh doanh (30=20+21-22-24)','30','0','0','XDKQKD','','','-54419580',''),('82','','10. Thu nhập khác','31','0','0','XDKQKD','711','','40040000',''),('83','','11. Chi phí khác','32','0','0','XDKQKD','','811','0',''),('84','','12. Lợi nhuận khác (40= 31-32)','40','0','0','XDKQKD','','','40040000',''),('85','','13. Tổng lợi nhuận kế toán trước thuế (50=30+40)','50','0','0','XDKQKD','','','-14379580',''),('86','','14. Chi phí thuế TNDN','51','0','0','XDKQKD','','','0',''),('87','','15. Lợi nhuận sau thuế thu nhập doanh nghiệp (60 = 50-51)','60','0','0','XDKQKD','','','-14379580',''),('100','','- Trong đó: Tiền lương','25','0','0','XDKQKD','334','','54000000',''),('200','','Kết quả kinh doanh ghi nhận theo báo cáo tài chính','','0','0','PLKQKD','','','',''),('201','1','Doanh thu bán hàng và cung cấp dịch vụ','4','0','0','PLKQKD','511','','',''),('202','','Trong đó: - Doanh thu bán hàng hoá, dịch vụ xuất khẩu','5','0','1','PLKQKD','','','',''),('203','2','Các khoản giảm trừ doanh thu ([06]=[07]+[08]+[09])','6','0','0','PLKQKD','','','',''),('204','a','Chiết khấu thương mại','7','0','1','PLKQKD','','','',''),('205','b','Giảm giá hàng bán','8','0','1','PLKQKD','','','',''),('206','c','Giá trị hàng bán bị trả lại','9','0','1','PLKQKD','','','',''),('207','3','Doanh thu hoạt động tài chính','10','0','0','PLKQKD','515','','177826500',''),('208','','Trong đó: Doanh thu từ lãi tiền gửi','11','0','3','PLKQKD','515','','157128290',''),('209','4','Chi phí sản xuất, kinh doanh hàng hoá, dịch vụ ([12]=[13]+[14]+[15])','12','0','0','PLKQKD','','','',''),('210','a','Giá vốn hàng bán','13','0','1','PLKQKD','','632','',''),('211','b','Chi phí bán hàng','14','0','1','PLKQKD','','6421','',''),('212','c','Chi phí quản lý doanh nghiệp','15','0','1','PLKQKD','','6422','',''),('213','5','Chi phí tài chính','16','0','0','PLKQKD','','635','',''),('214','','Trong đó: Chi phí lãi tiền vay','17','0','1','PLKQKD','','','',''),('215','6','Lợi nhuận thuần từ hoạt động kinh doanh ([18]=[04]-[06]+[10]-[12]-[16])','18','0','0','PLKQKD','','','',''),('216','7','Thu nhập khác','19','0','0','PLKQKD','711','','',''),('217','8','Chi phí khác','20','0','0','PLKQKD','','811','20698210',''),('218','9','Lợi nhuận khác ([21]=[19]-[20])','21','0','0','PLKQKD','','','290',''),('219','10','Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp ([22]=[18]+[21])','22','0','0','PLKQKD','','','0',''),('301','A','Kết quả kinh doanh ghi nhận theo báo cáo tài chính','A','0','0','TNDN','','','',''),('302','1','Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp','A1','0','A','TNDN','','','',''),('303','B','Xác định thu nhập chịu thuế theo Luật thuế thu nhập doanh nghiệp','B','0','0','TNDN','','','',''),('304','1','Điều chỉnh tăng tổng lợi nhuận trước thuế thu nhập doanh nghiệp  (B1= B2+B3+B4+B5+B6 +B7)','B1','0','B','TNDN','','','',''),('305','1.1','Các khoản điều chỉnh tăng doanh thu','B2','0','B','TNDN','','','',''),('306','1.2','Chi phí của phần doanh thu điều chỉnh giảm','B3','0','B','TNDN','','','',''),('307','1.3','Các khoản chi không được trừ khi xác định thu nhập chịu thuế','B4','0','B','TNDN','','','',''),('308','1.4','Thuế thu nhập đã nộp cho phần thu nhập nhận được ở nước ngoài','B5','0','B','TNDN','','','',''),('309','1.5','Điều chỉnh tăng lợi nhuận do xác định giá thị trường đối với  giao dịch liên kết','B6','0','B','TNDN','','','',''),('310','1.6','Các khoản điều chỉnh làm tăng lợi nhuận trước thuế khác','B7','0','B','TNDN','','','',''),('311','2','Điều chỉnh giảm tổng lợi nhuận trước thuế thu nhập doanh nghiệp (B8=B9+B10+B11+B12)','B8','0','B','TNDN','','','',''),('312','2.1','Giảm trừ các khoản doanh thu đã tính thuế năm trước','B9','0','B','TNDN','','','',''),('313','2.2','Chi phí của phần doanh thu điều chỉnh tăng','B10','0','B','TNDN','','','',''),('314','2.3','Chi phí lãi vay không được trừ kỳ trước được chuyển sang kỳ này của doanh  nghiệp có giao dịch liên kết','B11','0','B','TNDN','','','',''),('315','2.4','Các khoản điều chỉnh làm giảm lợi nhuận trước thuế khác','B12','0','B','TNDN','','','',''),('316','3','Tổng thu nhập chịu thuế (B13=A1+B1-B8)','B13','0','B','TNDN','','','',''),('317','3.1','Thu nhập chịu thuế từ hoạt động sản xuất kinh doanh','B14','0','B','TNDN','','','',''),('318','3.2','Thu nhập chịu thuế từ hoạt động chuyển nhượng bất động sản','B15','0','B','TNDN','','','',''),('319','C','Xác định thuế thu nhập doanh nghiệp ( TNDN) phải nộp từ hoạt động sản xuất kinh doanh','C','0','0','TNDN','','','',''),('320','1','Thu nhập chịu thuế (C1 = B14)','C1','0','C','TNDN','','','',''),('321','2','Thu nhập miễn thuế','C2','0','C','TNDN','','','',''),('322','3','Chuyển lỗ và bù trừ lãi, lỗ (C3=C3a+C3b)','C3','0','C','TNDN','','','',''),('323','3.1','Lỗ từ hoạt động SXKD được chuyển trong kỳ','C3a','0','C','TNDN','','','',''),('324','3.2','Lỗ từ chuyển nhượng BĐS được bù trừ với lãi của hoạt động SXKD','C3b','0','C','TNDN','','','',''),('325','4','Thu nhập tính thuế (TNTT) (C4=C1-C2-C3)','C4','0','C','TNDN','','','',''),('326','5','Trích lập quỹ khoa học công nghệ (nếu có)','C5','0','C','TNDN','','','',''),('327','6','TNTT sau khi đã trích lập quỹ khoa học công nghệ (C6=C4-C5=C7+C8)','C6','0','C','TNDN','','','',''),('329','6.1','+ Thu nhập tính thuế áp dụng thuế suất 20%','C7','0','C','TNDN','','','',''),('330','6.2','+ Thu nhập tính thuế tính theo thuế suất không ưu đãi khác','C8','0','C','TNDN','','','',''),('331','6.3','+ Thuế suất không ưu đãi khác (%)','C8a','0','C','TNDN','','','',''),('332','7','Thuế TNDN từ hoạt ðộng SXKD tính theo thuế suất không ưu đãi(C9 =(C7 x 20%) + (C8 x C8a))','C9','0','C','TNDN','','','',''),('333','8','Thuế TNDN được ưu đãi theo Luật thuế TNDN (C10 = C11 + C12 + C13)','C10','0','C','TNDN','','','',''),('334','8.1','Trong đó: +Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi','C11','0','C','TNDN','','','',''),('335','8.2','+ Thuế TNDN được miễn trong kỳ','C12','0','C','TNDN','','','',''),('336','8.3','+ Thuế TNDN được giảm trong kỳ','C13','0','C','TNDN','','','',''),('337','9','Thuế TNDN được miễn, giảm theo Hiệp định thuế','C14','0','C','TNDN','','','',''),('338','10','Thuế TNDN được miễn, giảm theo từng thời kỳ','C15','0','C','TNDN','','','',''),('340','11','Thuế thu nhập đã nộp ở nước ngoài được trừ trong kỳ tính thuế','C16','0','C','TNDN','','','',''),('341','12','Thuế TNDN phải nộp của hoạt động sản xuất kinh doanh(C17=C9-C10-C14-C15-C16)','C17','0','C','TNDN','','','',''),('342','D','Thuế TNDN phải nộp từ hoạt động chuyển nhượng BĐS','D','0','0','TNDN','','','',''),('343','1','Thu nhập chịu thuế (D1 = B15)','D1','0','D','TNDN','','','',''),('344','2','Lỗ từ hoạt động chuyển nhượng BĐS được chuyển trong kỳ','D2','0','D','TNDN','','','',''),('345','3','Thu nhập tính thuế (D3=D1-D2)','D3','0','D','TNDN','','','',''),('346','4','Trích lập quỹ khoa học công nghệ (nếu có)','D4','0','D','TNDN','','','',''),('347','5','TNTT sau khi đã trích lập quỹ khoa học công nghệ (D5=D3-D4)','D5','0','D','TNDN','','','',''),('348','6','Thuế TNDN phải nộp của hoạt động chuyển nhượng BĐS trong kỳ','D6','0','D','TNDN','','','',''),('349','7','Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư - kinh doanh nhà ở xã hội để bán, cho thuê, cho thuê mua','D7','0','D','TNDN','','','',''),('350','8','Thuế TNDN của hoạt động chuyển nhượng BĐS còn phải nộp kỳ này (D8=D6-D7)','D8','0','D','TNDN','','','',''),('351','E','Số thuế TNDN phải nộp quyết toán trong kỳ (E=E1+E2+E5)','E','0','0','TNDN','','','',''),('352','1','Thuế TNDN của hoạt động sản xuất kinh doanh','E1','0','E','TNDN','','','',''),('353','2','Thuế TNDN từ hoạt động chuyển nhượng bất động sản (E2=E3+E4)','E2','0','E','TNDN','','','',''),('354','2.1','Thuế TNDN từ hoạt động chuyển nhượng bất động sản','E3','0','E','TNDN','','','',''),('355','2.2','Thuế TNDN từ hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ','E4','0','E','TNDN','','','',''),('356','3','Thuế TNDN phải nộp khác (nếu có)','E5','0','E','TNDN','','','',''),('357','3.1','Trong đó thuế TNDN từ xử lý Quỹ phát triển khoa học công nghệ','E6','0','E','TNDN','','','',''),('358','G','Số thuế TNDN đã tạm nộp (G=G1+G2+G3+G4+G5)','G','0','0','TNDN','','','',''),('359','1','Thuế TNDN đã tạm nộp của hoạt động sản xuất kinh doanh','','0','G','TNDN','','','',''),('360','1.1','Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này','G1','0','G','TNDN','','','',''),('361','1.2','Thuế TNDN đã tạm nộp trong năm','G2','0','G','TNDN','','','',''),('362','2','Thuế TNDN đã tạm nộp của hoạt động chuyển nhượng BĐS','','0','G','TNDN','','','',''),('363','2.1','Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này của hoạt động chuyển nhượng BĐS','G3','0','G','TNDN','','','',''),('364','2.2','Thuế TNDN đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS','G4','0','G','TNDN','','','',''),('365','2.3','Thuế TNDN đã tạm nộp các kỳ trước và trong năm quyết toán của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ','G5','0','G','TNDN','','','',''),('366','H','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp','H','0','0','TNDN','','','',''),('367','1','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động sản xuất kinh doanh (H1=E1+E5-G2)','H1','0','H','TNDN','','','',''),('368','2','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS (H2=E3-G4)','H2','0','H','TNDN','','','',''),('369','3','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ (H3=E4-G5)','H3','0','H','TNDN','','','',''),('370','I','Số thuế TNDN còn phải nộp đến thời hạn nộp hồ sơ khai quyết toán thuế (I=E-G=I1+I2)','I','0','0','TNDN','','','',''),('371','1','Thuế TNDN còn phải nộp của hoạt động sản xuất kinh doanh','I1','0','I','TNDN','','','',''),('372','2','Thuế TNDN còn phải nộp của hoạt động chuyển nhượng BĐS','I2','0','I','TNDN','','','','');
+ALTER TABLE tokhaitndn AUTO_INCREMENT=403;
+CREATE TABLE IF NOT EXISTS `tokhaitndn_tt80` (
+                                              `sott` int(11) NOT NULL,
+                                              `maso` varchar(5) NOT NULL,
+                                              `chitieu` varchar(200) NOT NULL,
+                                              `machitieu` varchar(5) NOT NULL,
+                                              `sotien` bigint(20) NOT NULL,
+                                              `machitieucha` varchar(5) NOT NULL,
+                                              `loaitokhai` varchar(10) NOT NULL,
+                                              `matk` varchar(100) NOT NULL,
+                                              `tkno` varchar(100) NOT NULL,
+                                              `sotiendk` bigint(20) NOT NULL
+                                            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;ALTER TABLE tokhaitndn_tt80 AUTO_INCREMENT=141;
+update mavt set niendo=2025;
+update makh set niendo=2025;
+update masp set niendo=2025;
+update mats set niendo=2025;
+update cptratruoc set niendo=2025;
+update nhatkykiemphieu set niendo=2025;
+update plthuetndnuudai set sotien=0;
+SET FOREIGN_KEY_CHECKS=1;
+COMMIT;

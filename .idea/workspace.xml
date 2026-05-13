@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="026eab44-7ca9-4da8-9f47-3b9c496d3b21" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>themdanhsach_mabp_cuahanghoa</find>
+      <find>de</find>
+      <find>load_danhsach_chietkhau</find>
+      <find>loadListMaKHCon</find>
+      <find>taoma</find>
+      <find>loadListDanhSachTKTheoThangChiTietCuoiKyTheoNhom</find>
+      <find>them</find>
+      <find>this</find>
+      <find>load_danhsach_bangcdtk</find>
+      <find>load_danhsach_bangcd_ketoan</find>
+      <find>loadListPSKT_W_IN</find>
+      <find>loadListChiTietPSKT_IN</find>
+      <find>themChiTietPSKT</find>
+      <find>themPhieuNhapKho</find>
+      <find>GhiSo</find>
+      <find>suaKhoTrongChiTietPSVT</find>
+      <find>suaPhieuNhapKho</find>
+      <find>themTonKhoThangTuTK</find>
+      <find>TinhPhatSinhNhap</find>
+      <find>$DATACISONHATKY</find>
+      <find>$DATASONHATKY</find>
+      <find>DATACTPHIEUGHISO[0]</find>
+      <find>$DATACTPHIEUGHISO[0]</find>
+      <find>load_danhsach_socai_dk_theotk</find>
+      <find>$_GET['tungay'];</find>
+      <find>load_danhsach_muavao</find>
+      <find>load_danhsach_banra_group</find>
+      <find>$LoaiPhieu</find>
+      <find>load_danhsach_taikhoannoco_bangcdkt</find>
+      <find>load_danhsach_bangcd_tk</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>dialog-thietlap_tokhai_phuluckqkd</replace>
+      <replace>grid_editing_buttoan_phatsinh</replace>
+      <replace>dialog-buttoan_phatsinh</replace>
+      <replace>$dir_module_ketoantonghop</replace>
+      <replace>grid_editing_ds_tangtaisan</replace>
+      <replace>dialog-insolieu_bangkhauhao_taisan</replace>
+      <replace>$dir_module_mataisan</replace>
+      <replace>dialog-giamtaisan</replace>
+      <replace>GITS</replace>
+      <replace>dialog-tangtaisan</replace>
+      <replace>xoadialog_danhsach_taisan</replace>
+      <replace>dialog_main_thietminh_baocao_taichinh</replace>
+      <replace>dialog-thietminh_baocao_taichinh</replace>
+      <replace>$DATAPHIEUGHISO</replace>
+      <replace>$DATACTPHIEUGHISO</replace>
+      <replace>$itemCTPHIEUGHISO</replace>
+      <replace>$LoaiPhieu_NoiBo</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/update.php" />
+        <option value="$PROJECT_DIR$/form/frm_thongbao_xuatkho.php" />
+        <option value="$PROJECT_DIR$/libraries/ps_chitiet_mavattu.php" />
+        <option value="$PROJECT_DIR$/modules/soluongtonkho/laythongtininphieutkchitiettheothang.php" />
+        <option value="$PROJECT_DIR$/TCPDF/baocao/inbang_candoi_taikhoan.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/libraries/ketoantonghop.php" />
+        <option value="$PROJECT_DIR$/default.php" />
+        <option value="$PROJECT_DIR$/modules/macongtrinh/taoma.php" />
+        <option value="$PROJECT_DIR$/libraries/mact.php" />
+        <option value="$PROJECT_DIR$/form/frm_dm_mact_form_select.php" />
+        <option value="$USER_HOME$/Desktop/head.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/modules/saoluu/chuyenniendo_nammoi.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/frm_chuyenniendo_nammoi.php" />
+        <option value="$PROJECT_DIR$/form/frm_bangketonkho.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/frm_bangketonkho.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/frm_bangchitiet_nhapkho.php" />
+        <option value="$PROJECT_DIR$/form/frm_bangchitiet_nhapkho.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/gird_bangchitiet_nhapkho.php" />
+        <option value="$PROJECT_DIR$/form/gird_bangchitiet_nhapkho.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/frm_bangchitiet_xuatkho.php" />
+        <option value="$PROJECT_DIR$/form/frm_bangchitiet_xuatkho.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/gird_bangchitiet_xuatkho.php" />
+        <option value="$PROJECT_DIR$/form/gird_bangchitiet_xuatkho.php" />
+        <option value="$PROJECT_DIR$/form/frm_baocao_thietminh_taichinh.php" />
+        <option value="$PROJECT_DIR$/modules/ketoantonghop/xuatexcelthuyetminhtaichinh.php" />
+        <option value="$PROJECT_DIR$/modules/ketoantonghop/laythongtin_bangthuyetminh_taichinh.php" />
+        <option value="$PROJECT_DIR$/modules/ketoantonghop/laythongtininphieu_bangcandoi_ketoan.php" />
+        <option value="$PROJECT_DIR$/TCPDF/baocao/inbang_candoi_ketoan.php" />
+        <option value="$PROJECT_DIR$/libraries/pskt.php" />
+        <option value="$PROJECT_DIR$/modules/pskt/laythongtininphieuthuchi.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/include/topmenu.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/modules/psmavattu/layngayghiso.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/default.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/modules/psmavattu/nhapkho.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/libraries/psmavattu.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/modules/soluongtonkho/laythongtininphieutkchitiettheothang.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/libraries/ps_chitiet_mavattu.php" />
+        <option value="$PROJECT_DIR$/modules/psktkhac/laythongtininphieuthuchi.php" />
+        <option value="$PROJECT_DIR$/TCPDF/baocao/inbang_nhatky_chung.php" />
+        <option value="$PROJECT_DIR$/TCPDF/baocao/inphieu_hachtoan.php" />
+        <option value="$PROJECT_DIR$/modules/ketoantonghop/laythongtinsocai.php" />
+        <option value="$PROJECT_DIR$/modules/baocaothue/laythongtininphieubangkemuavao.php" />
+        <option value="$PROJECT_DIR$/modules/baocaothue/laythongtininphieubangkebanra.php" />
+        <option value="$PROJECT_DIR$/form/frm_bangke_hanghoa_banra.php" />
+        <option value="$PROJECT_DIR$/form/frm_insolieu_bangke_banra.php" />
+        <option value="$PROJECT_DIR$/form/frm_insolieu_bangke_muavao.php" />
+        <option value="$PROJECT_DIR$/libraries/baocaothue.php" />
+        <option value="$PROJECT_DIR$/TCPDF/baocao/inbangke_sochitiet_socai.php" />
+        <option value="$PROJECT_DIR$/../quanly_banhang/form/frm_xuatkhonoibo.php" />
+        <option value="$PROJECT_DIR$/libraries/ketoantonghop.php" />
+        <option value="$PROJECT_DIR$/modules/ketoantonghop/laythongtininphieu_candoi_tk.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../quanly_banhang" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="026eab44-7ca9-4da8-9f47-3b9c496d3b21" name="Default" comment="" />
+      <created>1436228601784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1436228601784</updated>
+      <workItem from="1436228608955" duration="10250000" />
+      <workItem from="1499477438719" duration="2404000" />
+      <workItem from="1499647441842" duration="1212000" />
+      <workItem from="1499755177163" duration="7855000" />
+      <workItem from="1499818423328" duration="16024000" />
+      <workItem from="1499847766421" duration="4521000" />
+      <workItem from="1499907065998" duration="9219000" />
+      <workItem from="1499991557502" duration="22526000" />
+      <workItem from="1500077780449" duration="629000" />
+      <workItem from="1500082645496" duration="5485000" />
+      <workItem from="1500254255049" duration="13903000" />
+      <workItem from="1500337253723" duration="15254000" />
+      <workItem from="1500446531024" duration="9691000" />
+      <workItem from="1500511801697" duration="18182000" />
+      <workItem from="1500602363508" duration="8222000" />
+      <workItem from="1500682820303" duration="595000" />
+      <workItem from="1500855434008" duration="13341000" />
+      <workItem from="1500943387760" duration="17622000" />
+      <workItem from="1501114982487" duration="15680000" />
+      <workItem from="1501203772624" duration="15650000" />
+      <workItem from="1501234788615" duration="854000" />
+      <workItem from="1501461653309" duration="5001000" />
+      <workItem from="1501471949141" duration="597000" />
+      <workItem from="1501472600523" duration="1596000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="216313000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/ketoantonghop/laythongtininphieu_bangtonghop_nokhachhang.php</url>
+          <line>31</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/modules/psmavattu/laythongtininphieutkchitietthang_theonhom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/soluongtonkho/laythongtininphieutkchitiettheothang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/ps_chitiet_mavattu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="1473" column="62" lean-forward="true" selection-start-line="1473" selection-start-column="12" selection-end-line="1473" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_bangketonkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="757" column="111" lean-forward="true" selection-start-line="756" selection-start-column="60" selection-end-line="757" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/form/frm_bangketonkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="786" column="111" lean-forward="false" selection-start-line="786" selection-start-column="111" selection-end-line="786" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/modules/psmavattu/laythongtininphieutkchitietthang_theonhom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/form/gird_bangchitiet_nhapkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="570" column="21" lean-forward="false" selection-start-line="570" selection-start-column="21" selection-end-line="570" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/gird_bangchitiet_xuatkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="588" column="21" lean-forward="false" selection-start-line="588" selection-start-column="21" selection-end-line="588" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/form/gird_bangchitiet_xuatkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="605" column="21" lean-forward="false" selection-start-line="605" selection-start-column="21" selection-end-line="605" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/gird_bangchitiet_nhapkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="583" column="21" lean-forward="false" selection-start-line="583" selection-start-column="21" selection-end-line="583" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_bangchitiet_nhapkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="552" column="21" lean-forward="false" selection-start-line="552" selection-start-column="21" selection-end-line="552" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_bangchitiet_xuatkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="594" column="21" lean-forward="false" selection-start-line="594" selection-start-column="21" selection-end-line="594" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PHPExcel/Examples/14excel5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/form/frm_bangchitiet_xuatkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="612" column="21" lean-forward="false" selection-start-line="612" selection-start-column="21" selection-end-line="612" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/form/frm_bangchitiet_nhapkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="525" column="21" lean-forward="true" selection-start-line="523" selection-start-column="19" selection-end-line="525" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PHPExcel/Examples/30template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/ketoantonghop/xuatexcelthuyetminhtaichinh.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/baocaothue/xuatexcelbangkemuavao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_baocao_thietminh_taichinh.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7667">
+          <caret line="451" column="105" lean-forward="false" selection-start-line="451" selection-start-column="70" selection-end-line="451" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/ketoantonghop/laythongtininphieu_bangcandoi_ketoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/ketoantonghop/laythongtin_bangthuyetminh_taichinh.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_thongbao_phieukhac.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3468">
+          <caret line="204" column="17" lean-forward="true" selection-start-line="204" selection-start-column="17" selection-end-line="204" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/pskt/nhapphieuthuchi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/pskt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="2044" column="806" lean-forward="false" selection-start-line="2044" selection-start-column="806" selection-end-line="2044" selection-end-column="806" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF/baocao/inbang_candoi_ketoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="168" column="83" lean-forward="false" selection-start-line="168" selection-start-column="83" selection-end-line="168" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_phieuthuchi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="2917" column="216" lean-forward="false" selection-start-line="2917" selection-start-column="188" selection-end-line="2917" selection-end-column="216" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/pskt/laythongtininphieuthuchi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/modules/psmavattu/layngayghiso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/include/topmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2482">
+          <caret line="146" column="32" lean-forward="false" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="246" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="100" column="69" lean-forward="false" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/modules/psmavattu/nhapkho.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/libraries/psmavattu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38522">
+          <caret line="2266" column="57" lean-forward="false" selection-start-line="2266" selection-start-column="57" selection-end-line="2266" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/modules/soluongtonkho/laythongtininphieutkchitiettheothang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF/baocao/inbangke_sochitiet_socai - Copy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="46" lean-forward="true" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF/baocao/inbang_nhatky_chung.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/ketoantonghop/laythongtinsocai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_bangke_hanghoa_muavao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/psktkhac/laythongtininphieuthuchi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/libraries/ps_chitiet_mavattu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="1457" column="0" lean-forward="false" selection-start-line="1457" selection-start-column="0" selection-end-line="1457" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF/baocao/inphieu_hachtoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_bangke_hanghoa_banra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/baocaothue/laythongtininphieubangkebanra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/baocaothue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="216" column="85" lean-forward="false" selection-start-line="216" selection-start-column="85" selection-end-line="216" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/baocaothue/laythongtininphieubangkemuavao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="44" column="74" lean-forward="false" selection-start-line="44" selection-start-column="74" selection-end-line="44" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_insolieu_bangke_muavao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="129" column="17" lean-forward="false" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form/frm_insolieu_bangke_banra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="153" column="60" lean-forward="false" selection-start-line="153" selection-start-column="60" selection-end-line="153" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TCPDF/baocao/inbangke_sochitiet_socai.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="241" column="35" lean-forward="true" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../quanly_banhang/form/frm_xuatkhonoibo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="1111" column="56" lean-forward="false" selection-start-line="1111" selection-start-column="56" selection-end-line="1111" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/ketoantonghop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="752" column="36" lean-forward="false" selection-start-line="752" selection-start-column="30" selection-end-line="752" selection-end-column="36" />
+          <folding>
+            <marker date="1501473928104" expanded="true" signature="4465:4681" ph="SELECT seri,... psvt" />
+            <marker date="1501473928104" expanded="true" signature="4700:4896" ph="SELECT seri,... pskt" />
+            <marker date="1501473928104" expanded="true" signature="5237:5745" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="6230:6737" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="7286:7308" ph="SELECT * fro... bangcdtk" />
+            <marker date="1501473928104" expanded="true" signature="7806:8245" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="8262:8517" ph="SELECT dinhk... psvt" />
+            <marker date="1501473928104" expanded="true" signature="9000:9438" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="9456:9711" ph="SELECT dinhk... psvt" />
+            <marker date="1501473928104" expanded="true" signature="10239:10289" ph="SELECT * FRO... sdtkdk" />
+            <marker date="1501473928104" expanded="true" signature="10924:11505" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="11526:12109" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="12130:12705" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="12726:13302" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="13323:13909" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="13930:14517" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="14538:15108" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="15129:15697" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="15718:16095" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="16116:16485" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="17513:17760" ph="SELECT 0 as sdtkdk" />
+            <marker date="1501473928104" expanded="true" signature="17513:18426" ph="SELECT 0 as " />
+            <marker date="1501473928104" expanded="true" signature="17775:18030" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="18447:19123" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="19144:19779" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="19800:20439" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="20460:21115" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="21136:21816" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="21837:22467" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="22488:23116" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="23137:23601" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="23622:24097" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="25149:25780" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="25801:26459" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="26480:27100" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="27121:27741" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="27762:28397" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="28418:29080" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="29101:29716" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="29737:30349" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="30370:30804" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="30825:31266" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="32550:33161" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="33182:33821" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="33842:34448" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="34469:35075" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="35096:35712" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="35733:36376" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="36397:36994" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="37015:37613" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="37634:38055" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="38076:38497" ph="SELECT psvt.... " />
+            <marker date="1501473928104" expanded="true" signature="39099:39614" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="39631:40147" ph="SELECT pskt.... " />
+            <marker date="1501473928104" expanded="true" signature="40164:40666" ph="SELECT tkno1... " />
+            <marker date="1501473928104" expanded="true" signature="40683:41186" ph="SELECT tkno2... " />
+            <marker date="1501473928104" expanded="true" signature="41567:41912" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="41929:42289" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="42306:42667" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="42684:42908" ph="SELECT psvt.... psvt" />
+            <marker date="1501473928104" expanded="true" signature="43663:44009" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="44026:44385" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="44402:44762" ph="SELECT pskt.... pskt" />
+            <marker date="1501473928104" expanded="true" signature="44780:45004" ph="SELECT psvt.... psvt" />
+            <marker date="1501473928104" expanded="true" signature="46188:46588" ph="SELECT chiti... pskt" />
+            <marker date="1501473928104" expanded="true" signature="46605:47006" ph="SELECT chiti... pskt" />
+            <marker date="1501473928104" expanded="true" signature="47024:47248" ph="SELECT psvt.... psvt" />
+            <marker date="1501473928104" expanded="true" signature="48428:48827" ph="SELECT chiti... pskt" />
+            <marker date="1501473928104" expanded="true" signature="48844:49244" ph="SELECT chiti... pskt" />
+            <marker date="1501473928104" expanded="true" signature="49262:49486" ph="SELECT psvt.... psvt" />
+            <marker date="1501473928104" expanded="true" signature="50506:50574" ph="SELECT * FRO... sdtkdk" />
+            <marker date="1501473928104" expanded="true" signature="51089:51167" ph="SELECT * FRO... sdtkdk" />
+            <marker date="1501473928104" expanded="true" signature="52318:52397" ph="SELECT * FRO... sdtkdk" />
+            <marker date="1501473928104" expanded="true" signature="55076:55247" ph="SELECT sott,... bangcdtk" />
+            <marker date="1501473928104" expanded="true" signature="55439:55539" ph="SELECT *,sum... w_dsmabp" />
+            <marker date="1501473928104" expanded="true" signature="56005:56180" ph="SELECT sott,... tmp_bangcdtk" />
+            <marker date="1501473928104" expanded="true" signature="56510:56574" ph="SELECT * FRO... tokhaitndn" />
+            <marker date="1501473928104" expanded="true" signature="56921:56992" ph="SELECT * FRO... tokhaitndn" />
+            <marker date="1501473928104" expanded="true" signature="57335:57397" ph="SELECT * FRO... tokhaitndn" />
+            <marker date="1501473928104" expanded="true" signature="57757:57820" ph="SELECT * FRO... tmp_kqhdkd" />
+            <marker date="1501473928104" expanded="true" signature="58208:58278" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="59883:59965" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="62139:62396" ph="SELECT tmp_d... tmp_dskhcn" />
+            <marker date="1501473928104" expanded="true" signature="62891:63172" ph="SELECT tmp_d... tmp_dskhcn" />
+            <marker date="1501473928104" expanded="true" signature="64255:64538" ph="SELECT tmp_d... tmp_dskhcn" />
+            <marker date="1501473928104" expanded="true" signature="67201:67419" ph="SELECT sdcn.... sdcn" />
+            <marker date="1501473928104" expanded="true" signature="67914:68156" ph="SELECT sdcn.... sdcn" />
+            <marker date="1501473928104" expanded="true" signature="69239:69483" ph="SELECT sdcn.... sdcn" />
+            <marker date="1501473928104" expanded="true" signature="72114:72256" ph="SELECT makh,... cnkh" />
+            <marker date="1501473928104" expanded="true" signature="72678:72750" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="72911:72999" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="73266:73351" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="73657:73742" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="74084:74169" ph="SELECT * FRO... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="74543:74577" ph="select max(s... sdkt" />
+            <marker date="1501473928104" expanded="true" signature="74838:75037" ph="insert into sdkt... " />
+            <marker date="1501473928104" expanded="true" signature="75160:75423" ph="update sdkt " />
+            <marker date="1501473928104" expanded="true" signature="75490:75532" ph="delete from " />
+            <marker date="1501473928104" expanded="true" signature="75794:75834" ph="SELECT * FRO... buttoanps" />
+            <marker date="1501473928104" expanded="true" signature="76227:76250" ph="SELECT * FRO... buttoanps" />
+            <marker date="1501473928104" expanded="true" signature="76351:76388" ph="delete from " />
+            <marker date="1501473928104" expanded="true" signature="76458:76503" ph="delete from " />
+            <marker date="1501473928104" expanded="true" signature="77658:77738" ph="update butto... " />
+            <marker date="1501473928104" expanded="true" signature="78148:78221" ph="insert into pskt... " />
+            <marker date="1501473928104" expanded="true" signature="78278:78402" ph="insert into chitiet_pskt... " />
+            <marker date="1501473928104" expanded="true" signature="78612:78693" ph="update butto... " />
+            <marker date="1501473928104" expanded="true" signature="78722:78823" ph="update pskt " />
+            <marker date="1501473928104" expanded="true" signature="78852:78996" ph="update chiti... " />
+            <marker date="1501473928104" expanded="true" signature="79142:79220" ph="update butto... " />
+            <marker date="1501473928104" expanded="true" signature="79249:79334" ph="update butto... " />
+            <marker date="1501473928104" expanded="true" signature="79364:79464" ph="update pskt " />
+            <marker date="1501473928104" expanded="true" signature="79493:79633" ph="update chiti... " />
+            <marker date="1501473928104" expanded="true" signature="79663:79768" ph="update pskt " />
+            <marker date="1501473928104" expanded="true" signature="79797:79951" ph="update chiti... " />
+            <marker date="1501473928104" expanded="true" signature="80085:80128" ph="select sum(s... buttoanps" />
+            <marker date="1501473928104" expanded="true" signature="80264:80334" ph="select sum(s... tokhaitndn" />
+            <marker date="1501473928104" expanded="true" signature="80466:80534" ph="select sum(s... tokhaitndn" />
+            <marker date="1501473928104" expanded="true" signature="80670:80739" ph="select sum(n... tmp_kqhdkd" />
+            <marker date="1501473928104" expanded="true" signature="80865:80896" ph="update butto... " />
+            <marker date="1501473928104" expanded="true" signature="80965:81000" ph="delete from " />
+            <marker date="1501473928104" expanded="true" signature="81016:81059" ph="delete from " />
+            <marker date="1501473928104" expanded="true" signature="81151:81198" ph="delete from " />
+            <marker date="1501473928104" expanded="true" signature="81290:81366" ph="select * fro... buttoanps" />
+            <marker date="1501473928104" expanded="true" signature="81590:81808" ph="insert into buttoanps... " />
+            <marker date="1501473928104" expanded="true" signature="81935:82196" ph="update butto... " />
+            <marker date="1501473928104" expanded="true" signature="82273:82312" ph="select max(s... buttoanps" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/ketoantonghop/laythongtininphieu_candoi_tk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="44" />
+          <folding>
+            <marker date="1501474013063" expanded="true" signature="2646:2719" ph="insert into bangcdtk... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

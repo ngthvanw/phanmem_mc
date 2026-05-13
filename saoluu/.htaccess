@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine off
+</IfModule>
+AuthName "MySQLDumper"
+AuthType Basic
+AuthUserFile "D:\xampp\htdocs\phanmem_mc\saoluu/.htpasswd"
+require valid-user

@@ -1,0 +1,1 @@
+<?php class config{ const HOST ="" ;const USER ="" ;const PASS = '';const DATA = '2100462770_2017'; } ?> 

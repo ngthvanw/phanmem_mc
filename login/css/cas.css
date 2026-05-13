@@ -1,0 +1,161 @@
+
+@charset "utf-8";
+
+#header {
+    background: url("../images/headerbg.gif") repeat-x scroll 0 0 transparent;
+    height: 43px;
+    margin-bottom: 100px;
+    padding-top: 15px;
+}
+#header h1#app-name {
+    color: #FFFFFF;
+    font-family: Arial,times new roman,helvetica,sans-serif;
+    margin: 0;
+    padding: 0 0 0 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#header div {
+    background: url("../images/logo.jpg") no-repeat scroll 500px 20px transparent;
+    float: right;
+    height: 100px;
+    left: 250px;
+    padding-left: 600px;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#cas #content {
+    background: url("../images/loginBox-bg.png") no-repeat scroll left top transparent;
+    height: 250px;
+    margin: 0 auto;
+    width: 480px;
+	border: 1px solid #8ec1da;
+    background-color: #ddeef6;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px #fff, inset 0 -1px #cbe6f2, 0 0 1px #8ec1da;
+    -o-box-shadow: inset 0 1px 1px #fff, inset 0 -1px #cbe6f2, 0 0 1px #8ec1da;
+    -webkit-box-shadow: inset 0 1px 1px #fff, inset 0 -1px #cbe6f2, 0 0 1px #8ec1da;
+    -moz-box-shadow: inset 0 1px 1px #fff, inset 0 -1px #cbe6f2, 0 0 1px #8ec1da;
+}
+
+body {
+    background: url("../images/bg_login.png") repeat scroll 0 0 #F5F5F5;
+    font: 400 62.5%/1 Verdana,sans-serif;
+    padding-top: 0;
+}
+#cas #softName {
+    color: #DCEFFF;
+    font-family: tahoma;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-left: 70px;
+    padding-top: 15px;
+}
+#cas #login-box {
+    color: #092D4C;
+    font-family: arial;
+    font-size: 12px;
+}
+#cas #login-box table tr td {
+    padding-bottom: 8px;
+	padding-left: 30px;
+}
+#cas #login-box table tr td span {
+    font-size: 11px;
+}
+
+#cas #login-box table tr td input {
+    border: 1px solid #173381;
+    height: 28px;
+}
+#login-box table tr td:first-child {
+    font-weight: bold;
+    text-align: right;
+}
+#login-box table tr td input.btn-submit:hover {
+    cursor: pointer;
+}
+#login-box table tr td input.btn-submit {
+    background: url("../images/login-bt.png") repeat-x scroll left top transparent;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: 30px !important;
+    text-transform: uppercase;
+}
+
+#login-box #status.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+#footer {
+    background: none repeat scroll 0 0 #336EA2;
+    bottom: 0;
+    color: #A3CBEF;
+    font-family: arial;
+    font-size: 12px;
+    padding-bottom: 2px;
+    padding-right: 30px;
+    padding-top: 2px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+input#username, input#password, input#capcha{
+    color: #666;
+    padding-left: 26px;
+}
+
+input#username{
+background: url(../images/user.png) no-repeat 3px center;
+background-size: 20px auto;
+background-color: white;
+}
+
+input#password{
+background: url(../images/pwd.png) no-repeat 3px center;
+background-size: 20px auto;
+background-color: white;
+}
+
+input#capcha{
+    background: url(../images/cap.png) no-repeat 3px center;
+    background-size: 20px auto;
+    background-color: white;
+}
+
+#username, #password, #captcha {
+    width: 180px;
+}
+.btn-reset {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none !important;
+    clear: none;
+    color: #777777;
+    float: none;
+    font-size: 0.9em;
+    letter-spacing: 0;
+    margin: 0 !important;
+}
+
+.btn-reset:hover {
+    cursor: pointer;
+	color: #173381;
+}
+
+.bb_open {
+  background-color: yellow;
+  float: right;
+  height: 60px;
+  line-height: 30px;
+  width: 260px;
+  border-radius: 5px 5px 0 0;
+}

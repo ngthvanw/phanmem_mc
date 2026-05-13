@@ -1,0 +1,560 @@
+char(6) DEFAULT NULL,
+  `mabp` char(4) DEFAULT NULL,
+  `bophan` varchar(60) DEFAULT NULL,
+  `comment` text,
+  `lp` int(1) DEFAULT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `kkh` bigint(13) DEFAULT NULL,
+  `group` varchar(35) DEFAULT NULL,
+  `magroup` bigint(2) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS psvt;
+
+CREATE TABLE `psvt` (
+  `sott` int(6) NOT NULL AUTO_INCREMENT,
+  `sophieu` int(6) NOT NULL,
+  `mapskt` int(11) NOT NULL,
+  `seri` char(10) NOT NULL,
+  `sct` char(12) DEFAULT NULL,
+  `ngayghiso` date DEFAULT NULL,
+  `ngayhoadon` date DEFAULT NULL,
+  `ngaythanhtoan` date DEFAULT NULL,
+  `loaiphieu` int(1) DEFAULT NULL COMMENT '1 nh?p kho, 2 xu?t kho',
+  `quycach` varchar(20) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tkno` char(5) DEFAULT NULL,
+  `tkco` char(5) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `tenkh` varchar(200) NOT NULL,
+  `diachi` varchar(60) DEFAULT NULL,
+  `masothue` char(14) NOT NULL,
+  `makhno` char(14) DEFAULT NULL,
+  `makhco` char(14) DEFAULT NULL,
+  `sl` double(12,3) DEFAULT NULL,
+  `slt` double(12,3) DEFAULT NULL,
+  `dgvnd` double(11,2) DEFAULT NULL,
+  `dgxkvnd` double(11,2) DEFAULT NULL,
+  `gtvnd` bigint(13) DEFAULT NULL,
+  `gtxkvnd` bigint(13) DEFAULT NULL,
+  `gtxk` bigint(13) DEFAULT NULL,
+  `stvnd` bigint(15) DEFAULT NULL,
+  `prepaid` bigint(15) DEFAULT NULL,
+  `debt` bigint(15) DEFAULT NULL,
+  `chuthich` text,
+  `group` varchar(20) DEFAULT NULL,
+  `kho` varchar(40) DEFAULT NULL,
+  `contact` varchar(25) DEFAULT NULL,
+  `payment` int(1) DEFAULT NULL,
+  `rate` double(6,2) DEFAULT NULL,
+  `vat` bigint(13) DEFAULT NULL,
+  `ttdb` bigint(13) DEFAULT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `other` int(1) DEFAULT NULL,
+  `maloai` int(2) DEFAULT NULL,
+  `max` double(9,3) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `min` double(9,3) DEFAULT NULL,
+  `muc` double(9,3) DEFAULT NULL,
+  `sole` int(2) DEFAULT NULL,
+  `way` int(1) DEFAULT NULL,
+  `khbx` varchar(100) DEFAULT NULL,
+  `tenvtbx` varchar(60) DEFAULT NULL,
+  `dvtbx` varchar(5) DEFAULT NULL,
+  `tobx` varchar(60) DEFAULT NULL,
+  `bx` char(1) DEFAULT NULL,
+  `slbx` double(11,2) DEFAULT NULL,
+  `dgbx` double(13,2) DEFAULT NULL,
+  `ttbx` bigint(13) DEFAULT NULL,
+  `tctm` int(5) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `rate1` double(6,2) DEFAULT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `tenkho` varchar(200) NOT NULL,
+  `tlck` double(6,2) DEFAULT NULL,
+  `stck` bigint(13) DEFAULT NULL,
+  `sogiay` varchar(6) DEFAULT NULL,
+  `mauso` char(14) DEFAULT NULL,
+  `loaict` varchar(20) DEFAULT NULL,
+  `cothuegtgt` int(1) NOT NULL,
+  `cochietkhau` int(1) NOT NULL DEFAULT '0',
+  `cobaogomthue` int(1) NOT NULL DEFAULT '0',
+  `tienhang` double NOT NULL,
+  `tienchietkhau` double NOT NULL,
+  `tienthue` double NOT NULL,
+  `tongcong` double NOT NULL,
+  `ghichu1` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  FULLTEXT KEY `ghichu` (`ghichu1`),
+  FULLTEXT KEY `ghichu_2` (`ghichu1`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+INSERT INTO psvt VALUES("1","1","1","ST/14P","0027842","2017-02-23","2017-01-04","2017-01-04","1","","","","","100011","Mua hàng chậm trả","0000001","CN Cty CP TM Bia Sài Gòn Sông Tiền","Ấp Bến có - Xã Nguyệt Hóa - Châu Thành","1500459121005","","","","","","","","","","","","","Mua hàng chậm trả","","","","","","","","","","1","","","","","","","","","","","","","","","","","","0010","Giá Mua Hàng Hóa","","","","","","1","0","0","166500000","0","16650000","183150000","");
+INSERT INTO psvt VALUES("2","2","2","CT/16T","0058744","2017-02-23","2017-01-04","2017-01-04","1","","","","","100011","Mua hàng chậm trả","0000002","CN Cty Pepsico Việt Nam TP Cần Thơ","KCN Trà Nóc II - P.Phước Thới - Q.Ô Môn","0300816663-006","","","","","","","","","","","","","Mua hàng chậm trả","","","","","","","","","","1","","","","","","","","","","","","","","","","","","0010","Giá Mua Hàng Hóa","","","","","","1","0","0","190616783","0","19061678","209678461","");
+INSERT INTO psvt VALUES("3","3","3","18AD/16P","0059566","2017-02-23","2017-01-04","2017-01-04","1","","","","","100010","Mua hàng trả tiền mặt","0000000003","Phan Văn Mai","P.Trung Kiên ,Q.Thốt Nốt,TP.Cần Thơ","","","","","","","","","","","","","","Mua hàng trả tiền mặt","","","","","","","","","","1","","","","","","","","","","","","","","","","","","0010","Giá Mua Hàng Hóa","","","","","","0","0","0","18000000","0","0","18000000","");
+INSERT INTO psvt VALUES("4","4","4","ST/14P","0027837","2017-02-23","2017-01-03","2017-01-03","1","","","","","100011","Mua hàng chậm trả","0000001","CN Cty CP TM Bia Sài Gòn Sông Tiền","Ấp Bến có - Xã Nguyệt Hóa - Châu Thành","1500459121005","","","","","","","","","","","","","Mua hàng chậm trả","","","","","","","","","","1","","","","","","","","","","","","","","","","","","0010","Giá Mua Hàng Hóa","","","","","","1","0","0","442350000","0","44235000","486585000","");
+INSERT INTO psvt VALUES("5","5","5","CL/16P","0001899","2017-02-23","2017-02-23","2017-02-23","1","","","","","100010","Mua hàng trả tiền mặt","000000004","CTY TNHH 1 TV CÔNG LINH","41 Điện Biên Phủ - K.4 - P6 TXTV","2100340412","","","","","","","","","","","","","","","","","","","","","","","1","","","","","","","","","","","","","","","","","","0010","Giá Mua Hàng Hóa","","","","","","1","0","0","16409100","0","1640910","18050010","");
+INSERT INTO psvt VALUES("8","6","1","","","2017-02-23","2017-02-23","2017-02-23","2","","","","","100014","Xuất bán hàng thu tiền mặt","000000004","CTY TNHH 1 TV CÔNG LINH","41 Điện Biên Phủ - K.4 - P6 TXTV","2100340412","","","","","","","","","","","","","Xuất bán hàng thu tiền mặt","","","","","","","","","","1","","","","","","","","","","","","","","","","","","0010","Giá Mua Hàng Hóa","","","","","","1","0","0","13100000","0","1310000","14410000","");
+
+
+
+DROP TABLE IF EXISTS qtttdb;
+
+CREATE TABLE `qtttdb` (
+  `stt` char(3) NOT NULL,
+  `chitieu` varchar(60) DEFAULT NULL,
+  `doanso` double DEFAULT NULL,
+  `thuettdb` double DEFAULT NULL,
+  `prn` int(1) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS quy;
+
+CREATE TABLE `quy` (
+  `mavt` char(6) NOT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `quycach` varchar(35) DEFAULT NULL,
+  `group` varchar(20) DEFAULT NULL,
+  `dvt` char(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sldk` double(12,3) DEFAULT NULL,
+  `gtvndk` bigint(13) DEFAULT NULL,
+  `slxtk` double(13,3) DEFAULT NULL,
+  `gtxvnd` bigint(14) DEFAULT NULL,
+  `slck` double(12,3) DEFAULT NULL,
+  `gtvndck` bigint(13) DEFAULT NULL,
+  `dgxvnd` double(13,3) DEFAULT NULL,
+  `giaban` double DEFAULT NULL,
+  `ttgiaban` double DEFAULT NULL,
+  `rate` double(6,2) DEFAULT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS saoluu;
+
+CREATE TABLE `saoluu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mst` bigint(15) NOT NULL,
+  `tendn` varchar(100) NOT NULL,
+  `tenfile` varchar(100) NOT NULL,
+  `ngayluu` datetime NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO saoluu VALUES("67","2100462770","Công ty kế toán chiến thuật","2100462770_2016_2016-12-28-09-11-07.rar","2016-12-28 09:11:07");
+INSERT INTO saoluu VALUES("68","2100462770","CÔNG TY TNHH KẾ TOÁN VÀ TƯ VẤN THUẾ CHIẾN THUẬT","2100462770_2016_2015-11-09-10-55-01.rar","2015-11-09 10:55:01");
+INSERT INTO saoluu VALUES("69","2100462770","CÔNG TY TNHH KẾ TOÁN VÀ TƯ VẤN THUẾ CHIẾN THUẬT","2100462770_2016_2017-01-17-04-55-39.rar","2017-01-17 04:55:39");
+INSERT INTO saoluu VALUES("70","2100462770","CÔNG TY TNHH KẾ TOÁN VÀ TƯ VẤN THUẾ CHIẾN THUẬT","2100462770_2016_2017-01-23-10-58-19.rar","2017-01-23 10:58:19");
+INSERT INTO saoluu VALUES("71","2100462770","CÔNG TY TNHH KẾ TOÁN VÀ TƯ VẤN THUẾ CHIẾN THUẬT","2100462770_2016_2017-01-25-04-42-28.rar","2017-01-25 04:42:28");
+INSERT INTO saoluu VALUES("72","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-10-04-18-42.rar","2017-02-10 04:18:42");
+INSERT INTO saoluu VALUES("73","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-13-04-32-28.rar","2017-02-13 04:32:28");
+INSERT INTO saoluu VALUES("74","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-17-10-48-09.rar","2017-02-17 10:48:09");
+INSERT INTO saoluu VALUES("75","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-20-04-37-56.rar","2017-02-20 04:37:56");
+INSERT INTO saoluu VALUES("76","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-22-09-55-36.rar","2017-02-22 09:55:36");
+INSERT INTO saoluu VALUES("77","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-22-10-08-27.rar","2017-02-22 10:08:27");
+INSERT INTO saoluu VALUES("78","2100146581","DOANH NGHIỆP TƯ NHÂN DŨNG","2100146581_2017_2017-02-23-03-04-28.rar","2017-02-23 03:04:28");
+
+
+
+DROP TABLE IF EXISTS sdcn;
+
+CREATE TABLE `sdcn` (
+  `maso` char(3) NOT NULL,
+  `maso_` char(3) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `tenkh` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `kho` varchar(5) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `province` varchar(15) DEFAULT NULL,
+  `country` varchar(15) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `fax` varchar(15) DEFAULT NULL,
+  `comment` text,
+  `sdkno` bigint(13) DEFAULT NULL,
+  `sdkco` bigint(13) DEFAULT NULL,
+  `psno` bigint(14) DEFAULT NULL,
+  `psco` bigint(14) DEFAULT NULL,
+  `sckno` bigint(13) DEFAULT NULL,
+  `sckco` bigint(13) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `noqh` char(1) DEFAULT NULL,
+  PRIMARY KEY (`maso`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS sdkt;
+
+CREATE TABLE `sdkt` (
+  `maso` char(3) NOT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tentk` varchar(60) DEFAULT NULL,
+  `shtk` varchar(5) DEFAULT NULL,
+  `sdnodk` bigint(13) DEFAULT NULL,
+  `sdnodks` double(13,3) DEFAULT NULL,
+  `sdcodk` bigint(13) DEFAULT NULL,
+  `sdcodks` double(13,3) DEFAULT NULL,
+  `psno` bigint(14) DEFAULT NULL,
+  `psnos` double(13,3) DEFAULT NULL,
+  `sdnock` bigint(13) DEFAULT NULL,
+  `sdnocks` double(13,3) DEFAULT NULL,
+  `sdcock` bigint(13) DEFAULT NULL,
+  `sdcotks` double(13,3) DEFAULT NULL,
+  `tkct` varchar(15) DEFAULT NULL,
+  `ctnd` char(1) DEFAULT NULL,
+  `ctbp` char(1) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `bophan` varchar(60) DEFAULT NULL,
+  `mabp` char(4) DEFAULT NULL,
+  PRIMARY KEY (`maso`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS socn;
+
+CREATE TABLE `socn` (
+  `stt` char(6) NOT NULL,
+  `sct` char(7) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `datett` date DEFAULT NULL,
+  `dg` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `dvt` varchar(5) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sl` double(12,3) DEFAULT NULL,
+  `dgvnd` double(12,2) DEFAULT NULL,
+  `psno` bigint(14) DEFAULT NULL,
+  `psco` bigint(14) DEFAULT NULL,
+  `add` char(1) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `lp` int(1) DEFAULT NULL,
+  `mavt` char(6) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS socnkh;
+
+CREATE TABLE `socnkh` (
+  `stt` char(6) NOT NULL,
+  `soct` char(7) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `datehd` date DEFAULT NULL,
+  `datett` date DEFAULT NULL,
+  `dg` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `mabp` char(4) DEFAULT NULL,
+  `bophan` varchar(60) DEFAULT NULL,
+  `dvt` varchar(5) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sl` double(12,3) DEFAULT NULL,
+  `dgvnd` double(12,2) DEFAULT NULL,
+  `psno` bigint(14) DEFAULT NULL,
+  `psnos` double(12,2) DEFAULT NULL,
+  `psco` bigint(14) DEFAULT NULL,
+  `pscos` double(12,2) DEFAULT NULL,
+  `group` varchar(20) DEFAULT NULL,
+  `congdon` bigint(15) DEFAULT NULL,
+  `add` char(1) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `lp` int(1) DEFAULT NULL,
+  `mavt` char(6) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS thekho;
+
+CREATE TABLE `thekho` (
+  `stt` char(6) NOT NULL,
+  `sct` char(7) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `datehd` date DEFAULT NULL,
+  `lp` int(1) DEFAULT NULL,
+  `mavt` char(6) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tkno` varchar(5) DEFAULT NULL,
+  `tkco` varchar(5) DEFAULT NULL,
+  `mabp` char(4) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `makhno` char(14) DEFAULT NULL,
+  `makhco` char(14) DEFAULT NULL,
+  `sl` double DEFAULT NULL,
+  `dgvnd` double DEFAULT NULL,
+  `gtvnd` bigint(13) DEFAULT NULL,
+  `gtxkvnd` bigint(13) DEFAULT NULL,
+  `stvnd` bigint(15) DEFAULT NULL,
+  `slck` double(12,3) DEFAULT NULL,
+  `ttck` bigint(15) DEFAULT NULL,
+  `comment` text,
+  `slxb` double(11,2) DEFAULT NULL,
+  `gb` double DEFAULT NULL,
+  `tenkh` varchar(60) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS thue;
+
+CREATE TABLE `thue` (
+  `matk` char(5) NOT NULL,
+  `tentk` varchar(30) DEFAULT NULL,
+  `maso` char(2) DEFAULT NULL,
+  `sodk` bigint(12) DEFAULT NULL,
+  `psno` bigint(12) DEFAULT NULL,
+  `psco` bigint(12) DEFAULT NULL,
+  `psnonam` bigint(12) DEFAULT NULL,
+  `psconam` bigint(12) DEFAULT NULL,
+  `sock` bigint(12) DEFAULT NULL,
+  `mark` int(1) DEFAULT NULL,
+  PRIMARY KEY (`matk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tk;
+
+CREATE TABLE `tk` (
+  `sott` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mavt` char(14) NOT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `quycach` varchar(35) DEFAULT NULL,
+  `manhom` char(6) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sldk` double(12,3) DEFAULT NULL,
+  `gtvndk` bigint(13) DEFAULT NULL,
+  `slntk` double(13,3) DEFAULT NULL,
+  `gtnvnd` bigint(14) DEFAULT NULL,
+  `slxtk` double(13,3) DEFAULT NULL,
+  `gtxvnd` bigint(14) DEFAULT NULL,
+  `slck` double DEFAULT NULL,
+  `gtvnck` double DEFAULT NULL,
+  `dgxvnd` double DEFAULT NULL,
+  `giaban` bigint(13) DEFAULT NULL,
+  `ttgiaban` bigint(15) DEFAULT NULL,
+  `rate` int(2) DEFAULT NULL,
+  `chietkhau` int(2) NOT NULL,
+  `sl` int(1) NOT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(60) DEFAULT NULL,
+  `tenkd` char(200) NOT NULL,
+  PRIMARY KEY (`sott`),
+  FULLTEXT KEY `tenvt` (`tenvt`),
+  FULLTEXT KEY `tenvt_2` (`tenvt`)
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+
+INSERT INTO tk VALUES("25","000001","7 Up standard 24x285ml","1561","Ket","1227","Nước ngọt","Ket","","0.00","0.00","0.000","0","0.000","0","0.000","0","87","42727.26","3717272","0","0","10","0","0","","","7 Up standard 24x285ml");
+INSERT INTO tk VALUES("26","000002","7 Up ket 24x285ml","1561","Ket","1227","Nước ngọt","Ket","","0.00","0.00","0.000","0","0.000","0","0.000","0","50","51818.18","2590909","0","0","10","0","0","","","7 Up ket 24x285ml");
+INSERT INTO tk VALUES("27","000003","7 Up PEP 12x1500ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","130","148909.08","19358180","0","0","10","0","0","","","7 Up PEP 12x1500ml");
+INSERT INTO tk VALUES("28","000004","7 Up PEP 4x6x390ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","81","105454.53","8541817","0","0","10","0","0","","","7 Up PEP 4x6x390ml");
+INSERT INTO tk VALUES("29","000005","7 Up RIVIVE PET 4x6X390ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","90","118181.81","10636363","0","0","10","0","0","","","7 Up RIVIVE PET 4x6X390ml");
+INSERT INTO tk VALUES("30","000006","7 Up RIVIVE lon 4x6X330ml Sleek","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","5","100000","500000","0","0","10","0","0","","","7 Up RIVIVE lon 4x6X330ml Sleek");
+INSERT INTO tk VALUES("31","000007","7 Up lon Sleek 4x6X330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","5","152772.2","763861","0","0","10","0","0","","","7 Up lon Sleek 4x6X330ml");
+INSERT INTO tk VALUES("32","000008","7 Up lon Sleek 4x6X330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","140","155454.54","21763636","0","0","10","0","0","","","7 Up lon Sleek 4x6X330ml");
+INSERT INTO tk VALUES("33","000009","AQUAFINA PET 12x1500ml","1561","Thùng","1229","Nước suối","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","237","69210","16402770","0","0","10","0","0","","","AQUAFINA PET 12x1500ml");
+INSERT INTO tk VALUES("34","000010","AQUAFINA PET 24x500ml","1561","Thùng","1229","Nước suối","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","1441","66270","95495070","0","0","10","0","0","","","AQUAFINA PET 24x500ml");
+INSERT INTO tk VALUES("35","000011","AQUAFINA PET 335ml","1561","Thùng","1229","Nước suối","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","612","60444","36991728","0","0","10","0","0","","","AQUAFINA PET 335ml");
+INSERT INTO tk VALUES("36","000012","AQUAFINA PET 4x5000ml","1561","Thùng","1229","Nước suối","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","99","59981","5938119","0","0","10","0","0","","","AQUAFINA PET 4x5000ml");
+INSERT INTO tk VALUES("37","000013","Bia heineken chai","1561","Kết","1228","Bia","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","32","281091","8994912","0","0","10","0","0","","","Bia heineken chai");
+INSERT INTO tk VALUES("38","000014","Bia heineken chai","1561","Kết","1228","Bia","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","30","290000","8700000","0","0","10","0","0","","","Bia heineken chai");
+INSERT INTO tk VALUES("39","000015","Bia heineken lon","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","127","325584","41349168","0","0","10","0","0","","","Bia heineken lon");
+INSERT INTO tk VALUES("40","000016","Bia TIGER lon","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","23","263638","6063674","0","0","10","0","0","","","Bia TIGER lon");
+INSERT INTO tk VALUES("41","000017","Bia TIGER lon","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","30","270909","8127270","0","0","10","0","0","","","Bia TIGER lon");
+INSERT INTO tk VALUES("42","000018","Bia chai SG Lager 355ml","1561","Kết","1228","Bia","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","1795","92965","166872175","0","0","10","0","0","","","Bia chai SG Lager 355ml");
+INSERT INTO tk VALUES("43","000019","Bia chai SPECIAL 330ml","1561","Kết","1228","Bia","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","665","179600","119434000","0","0","10","0","0","","","Bia chai SPECIAL 330ml");
+INSERT INTO tk VALUES("44","000020","Bia chai sài gòn 355","1561","Kết","1228","Bia","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","675","117000","78975000","0","0","10","0","0","","","Bia chai sai gon 355");
+INSERT INTO tk VALUES("45","000021","Bia chai sài gòn 450","1561","Kết","1228","Bia","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","1765","108000","190620000","0","0","10","0","0","","","Bia chai sai gon 450");
+INSERT INTO tk VALUES("46","000022","Bia lon 333-330ml","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","208","196000","40768000","0","0","10","0","0","","","Bia lon 333-330ml");
+INSERT INTO tk VALUES("47","000023","Bia lon heineken","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","35","332078","11622730","0","0","10","0","0","","","Bia lon heineken");
+INSERT INTO tk VALUES("48","000024","Bia lon SG Lager 330ml","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","749","180000","134820000","0","0","10","0","0","","","Bia lon SG Lager 330ml");
+INSERT INTO tk VALUES("49","000025","Bia lon SPECIAL SG 330ml","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","151","249000","37599000","0","0","10","0","0","","","Bia lon SPECIAL SG 330ml");
+INSERT INTO tk VALUES("50","000026","Bia lon Sagota Light 330ml","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","80","154550","12364000","0","0","10","0","0","","","Bia lon Sagota Light 330ml");
+INSERT INTO tk VALUES("51","000027","Bia lon Sagota vàng 330ml","1561","Thùng","1228","Bia","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","50","154550","7727500","0","0","10","0","0","","","Bia lon Sagota vang 330ml");
+INSERT INTO tk VALUES("52","000028","Cồn","1561","Lít","1228","Bia","Lít","","0.00","0.00","0.000","0","0.000","0","0.000","0","600","15000","9000000","0","0","10","0","0","","","Con");
+INSERT INTO tk VALUES("53","000029","Cồn thơm","1561","Lít","1228","Bia","Lít","","0.00","0.00","0.000","0","0.000","0","0.000","0","40","16060","642400","0","0","10","0","0","","","Con thom");
+INSERT INTO tk VALUES("54","000030","EVERVESS SODA -LON  24x330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","43","90909","3909087","0","0","10","0","0","","","EVERVESS SODA -LON  24x330ml");
+INSERT INTO tk VALUES("55","000031","Lipton trà chanh mật ong PET 4x(6x350ml)","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","103","90909","9363627","0","0","10","0","0","","","Lipton tra chanh mat ong PET 4x(6x350ml)");
+INSERT INTO tk VALUES("56","000032","Mir Cam lon 4x6x330ml Sleek","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","68","125269","8518292","0","0","10","0","0","","","Mir Cam lon 4x6x330ml Sleek");
+INSERT INTO tk VALUES("57","000033","Mir Cam ket 24x300ml","1561","Kết","1227","Nước ngọt","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","144","42722","6151968","0","0","10","0","0","","","Mir Cam ket 24x300ml");
+INSERT INTO tk VALUES("58","000034","Mir Orange 4x6x390ml NEW","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","231","105455","24360105","0","0","10","0","0","","","Mir Orange 4x6x390ml NEW");
+INSERT INTO tk VALUES("59","000035","Mir Orange PET 2x6x1500ml NEW","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","114","142852","16285128","0","0","10","0","0","","","Mir Orange PET 2x6x1500ml NEW");
+INSERT INTO tk VALUES("60","000036","Mir Sar 24x300ml","1561","Kết","1227","Nước ngọt","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","200","42727","8545400","0","0","10","0","0","","","Mir Sar 24x300ml");
+INSERT INTO tk VALUES("61","000037","Mir Sarsi PET 2x6x1500ml NEW","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","199","142764","28410036","0","0","10","0","0","","","Mir Sarsi PET 2x6x1500ml NEW");
+INSERT INTO tk VALUES("62","000038","Mir Sarsi ket 24x300ml","1561","Két","1227","Nước ngọt","Két","","0.00","0.00","0.000","0","0.000","0","0.000","0","416","42717","17770272","0","0","10","0","0","","","Mir Sarsi ket 24x300ml");
+INSERT INTO tk VALUES("65","000041","Mirinda Xaxi PET 4x6x390ml NEW","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","118","105455","12443690","0","0","10","0","0","","","Mirinda Xaxi PET 4x6x390ml NEW");
+INSERT INTO tk VALUES("66","000042","Mountain dew PET 4x6x390ml Promotion","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","199","105455","20985545","0","0","10","0","0","","","Mountain dew PET 4x6x390ml Promotion");
+INSERT INTO tk VALUES("67","000043","Pepsi Light lon cao 24x330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","11","113636","1249996","0","0","10","0","0","","","Pepsi Light lon cao 24x330ml");
+INSERT INTO tk VALUES("68","000044","Pepsi Light lon cao 24x330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","2","118182","236364","0","0","10","0","0","","","Pepsi Light lon cao 24x330ml");
+INSERT INTO tk VALUES("69","000045","Pepsi PET 4x6x390ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","103","105455","10861865","0","0","10","0","0","","","Pepsi PET 4x6x390ml");
+INSERT INTO tk VALUES("70","000046","Pepsi PET 12x1500ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","117","140774","16470558","0","0","10","0","0","","","Pepsi PET 12x1500ml");
+INSERT INTO tk VALUES("71","000047","Pepsi lon 12x330ml Sleek TET","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","262","77727","20364474","0","0","10","0","0","","","Pepsi lon 12x330ml Sleek TET");
+INSERT INTO tk VALUES("72","000048","Pepsi lon Sleek 24x330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","28","152727","4276356","0","0","10","0","0","","","Pepsi lon Sleek 24x330ml");
+INSERT INTO tk VALUES("73","000049","Pepsi lon Sleek 24x330ml TET","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","600","155455","93273000","0","0","10","0","0","","","Pepsi lon Sleek 24x330ml TET");
+INSERT INTO tk VALUES("74","000050","Pepsi lớn 24x300ml","1561","Két","1227","Nước ngọt","Két","","0.00","0.00","0.000","0","0.000","0","0.000","0","394","42725","16833650","0","0","10","0","0","","","Pepsi lon 24x300ml");
+INSERT INTO tk VALUES("75","000051","Sting (Tăng lực)","1561","Két","1227","Nước ngọt","Két","","0.00","0.00","0.000","0","0.000","0","0.000","0","152","67273","10225496","0","0","10","0","0","","","Sting (Tang luc)");
+INSERT INTO tk VALUES("76","000052","Sting PET 4x5x330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","142","129091","18330922","0","0","10","0","0","","","Sting PET 4x5x330ml");
+INSERT INTO tk VALUES("77","000053","Sting Red Btl  24x240ml","1561","Kết","1227","Nước ngọt","Kết","","0.00","0.00","0.000","0","0.000","0","0.000","0","669","83636","55952484","0","0","10","0","0","","","Sting Red Btl  24x240ml");
+INSERT INTO tk VALUES("78","000054","Sting dâu PET  4x6x330ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","1180","144020","169943600","0","0","10","0","0","","","Sting dau PET  4x6x330ml");
+INSERT INTO tk VALUES("79","000055","Sting dâu lon  4x6x330ml Sleek","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","84","159091","13363644","0","0","10","0","0","","","Sting dau lon  4x6x330ml Sleek");
+INSERT INTO tk VALUES("80","000056","Sting  lon  4x6x330ml Sleek TET","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","17","127273","2163641","0","0","10","0","0","","","Sting  lon  4x6x330ml Sleek TET");
+INSERT INTO tk VALUES("81","000057","Trà Matcha PET 4x6x350ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","72","818180","58908960","0","0","10","0","0","","","Tra Matcha PET 4x6x350ml");
+INSERT INTO tk VALUES("82","000058","Trà Matcha PET 4x6x455ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","31","140909","4368179","0","0","10","0","0","","","Tra Matcha PET 4x6x455ml");
+INSERT INTO tk VALUES("83","000059","Trà Matcha PET 4x6x455ml","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","40","131818","5272720","0","0","10","0","0","","","Tra Matcha PET 4x6x455ml");
+INSERT INTO tk VALUES("84","000060","Trà OLong PET 4x(6x350ml)","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","73","95448","6967704","0","0","10","0","0","","","Tra OLong PET 4x(6x350ml)");
+INSERT INTO tk VALUES("85","000061","Trà OLong PET 4x(6x455ml)","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","479","145455","69672945","0","0","10","0","0","","","Tra OLong PET 4x(6x455ml)");
+INSERT INTO tk VALUES("86","000062","Twin -pack KM","1561","Quai","1227","Nước ngọt","Quai","","0.00","0.00","0.000","0","0.000","0","0.000","0","7040","0","0","0","0","10","0","0","","","Twin -pack KM");
+INSERT INTO tk VALUES("87","000063","Twister Cam PET 4x(6x350ml)","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","260","150000","39000000","0","0","10","0","0","","","Twister Cam PET 4x(6x350ml)");
+INSERT INTO tk VALUES("88","000064","Twister Cam PET 4x(6x455ml)","1561","Thùng","1227","Nước ngọt","Thùng","","0.00","0.00","0.000","0","0.000","0","0.000","0","288","163636","47127168","0","0","10","0","0","","","Twister Cam PET 4x(6x455ml)");
+INSERT INTO tk VALUES("90","000065","Twister Pulp 24x240ml","1561","Két","1227","Nước ngọt","Két","","0.00","0.00","0.000","0","0.000","0","0.000","0","39","60910.1","2375494","0","0","10","0","0","","","Twister Pulp 24x240ml");
+INSERT INTO tk VALUES("91","000039","Mir Sarsi LON  12x330ml Seek TET","1561","Thùng","1227","Nước ngọt","Thùng","","","","","","","","","","69","52272.67","3606814","","","10","0","0","","","Mir Sarsi LON  12x330ml Seek TET");
+INSERT INTO tk VALUES("92","000040","Mir Sarsi LON  12x330ml Seek","1561","Thùng","1227","Nước ngọt","Thùng","","","","","","","","","","1994","104545.47","208463667","","","10","0","0","","","Mir Sarsi LON  12x330ml Seek");
+
+
+
+DROP TABLE IF EXISTS tkkt;
+
+CREATE TABLE `tkkt` (
+  `stt` int(6) NOT NULL,
+  `stt1` char(5) DEFAULT NULL,
+  `seri` char(10) DEFAULT NULL,
+  `sct` char(12) DEFAULT NULL,
+  `ngay` date DEFAULT NULL,
+  `ngayhd` date DEFAULT NULL,
+  `dg` varchar(240) DEFAULT NULL,
+  `mabp` char(4) DEFAULT NULL,
+  `bophan` varchar(60) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `tenkh` varchar(60) DEFAULT NULL,
+  `tkdu` char(5) DEFAULT NULL,
+  `tentk` varchar(60) DEFAULT NULL,
+  `tkno` varchar(5) DEFAULT NULL,
+  `tkco` varchar(5) DEFAULT NULL,
+  `psno` bigint(15) DEFAULT NULL,
+  `psnos` double(13,3) DEFAULT NULL,
+  `psco` bigint(15) DEFAULT NULL,
+  `pscos` double(13,3) DEFAULT NULL,
+  `sdno` bigint(13) DEFAULT NULL,
+  `sdnos` double(13,3) DEFAULT NULL,
+  `sdco` bigint(13) DEFAULT NULL,
+  `sdcos` double(13,3) DEFAULT NULL,
+  `add` char(1) DEFAULT NULL,
+  `quy` varchar(4) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tkth;
+
+CREATE TABLE `tkth` (
+  `stt` int(6) NOT NULL,
+  `nd` varchar(40) DEFAULT NULL,
+  `dsm` bigint(13) DEFAULT NULL,
+  `ivat` bigint(13) DEFAULT NULL,
+  `dcdsm` bigint(13) DEFAULT NULL,
+  `dcivat` bigint(13) DEFAULT NULL,
+  `dsb` bigint(13) DEFAULT NULL,
+  `ovat` bigint(13) DEFAULT NULL,
+  `dcdsb` bigint(13) DEFAULT NULL,
+  `dcovat` bigint(13) DEFAULT NULL,
+  `ktvat` bigint(13) DEFAULT NULL,
+  `pnvat` bigint(13) DEFAULT NULL,
+  `ghichu` text,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tkthue;
+
+CREATE TABLE `tkthue` (
+  `tt` int(3) NOT NULL,
+  `pnr` int(1) DEFAULT NULL,
+  `tk` varchar(100) DEFAULT NULL,
+  `qt` varchar(100) DEFAULT NULL,
+  `maso1` varchar(2) DEFAULT NULL,
+  `maso2` varchar(2) DEFAULT NULL,
+  `ds` bigint(13) DEFAULT NULL,
+  `vat` bigint(13) DEFAULT NULL,
+  `gc` text,
+  `sort` bigint(3) DEFAULT NULL,
+  PRIMARY KEY (`tt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS ts;
+
+CREATE TABLE `ts` (
+  `mats` char(6) NOT NULL,
+  `tents` varchar(30) DEFAULT NULL,
+  `datesd` date DEFAULT NULL,
+  `nuocsx` varchar(10) DEFAULT NULL,
+  `cs` varchar(20) DEFAULT NULL,
+  `tyle` bigint(6) DEFAULT NULL,
+  `tgsd` double(5,2) DEFAULT NULL,
+  `sl` double DEFAULT NULL,
+  `dg` bigint(10) DEFAULT NULL,
+  `ng` bigint(14) DEFAULT NULL,
+  `gtcl` bigint(14) DEFAULT NULL,
+  `mkht` bigint(13) DEFAULT NULL,
+  `mkhq` bigint(13) DEFAULT NULL,

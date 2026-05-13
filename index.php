@@ -1,0 +1,15 @@
+<?php
+session_start();
+include("config.php");
+if(!isset($_SESSION['User'])){
+    session_destroy();
+    redirect("login.php");
+}else{
+    if($_SESSION['URI']==$URI){
+        redirect("default.php");
+    }else{
+        session_destroy();
+        redirect("login.php");
+        }
+}
+?>

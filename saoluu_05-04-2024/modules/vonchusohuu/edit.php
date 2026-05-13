@@ -1,0 +1,32 @@
+<?php
+include("../../config.php");
+$OBJ = new mataisan();
+$sott = $_GET['sott'];
+$OBJ->set_SoTT($sott);
+$mats = check_data($_GET['mats']);
+$OBJ->set_MaTaiSan($mats);
+$OBJ->set_TenTaiSan(check_data($_GET['tents']));
+$OBJ->set_TenKD(khu_dau_vn(check_data($_GET['tents'])));
+$OBJ->set_MaTK(check_data($_GET['matk']));
+$OBJ->set_DVT(check_data($_GET['dvt']));
+$OBJ->set_MaNhomTS(check_data($_GET['manhomts']));
+$OBJ->set_TenNhom(check_data($_GET['tenNhomTS']));
+$OBJ->set_MaBoPhan(check_data($_GET['mabp']));
+$OBJ->set_CongSuat(check_data(str_replace(",","",$_GET['congsuat'])));
+$OBJ->set_NuocSX(check_data($_GET['nuocsx']));
+$OBJ->setNgayGhiSo(check_data($_GET['ngayghiso']));
+$OBJ->setNgayHoaDon(check_data($_GET['ngayhoadon']));
+$OBJ->set_NgaySX(check_data($_GET['ngaysx']));
+$OBJ->setNgaySD(check_data($_GET['ngaysd']));
+$OBJ->set_SoLuong(check_data(str_replace(",","",$_GET['soluong'])));
+$OBJ->set_NguyenGia(check_data(str_replace(",","",$_GET['nguyengia'])));
+$OBJ->set_GiaTriConLai(check_data(str_replace(",","",$_GET['giatriconlai'])));
+$OBJ->set_TyLeKH(check_data($_GET['tylekh']));
+$OBJ->set_ThoiGianSD(check_data(str_replace(",","",$_GET['thoigiansd'])));
+$OBJ->set_MucKHThang(check_data(str_replace(",","",$_GET['muckhthang'])));
+$OBJ->set_TKCo(check_data(str_replace(",","",$_GET['tkco'])));
+$OBJ->set_TKNo(check_data(str_replace(",","",$_GET['tkno'])));
+$OBJ->set_ChuThich(check_data($_GET['chuthich']));
+$OBJ->suaTS();
+echo "{\"result\": \"success\"}";
+?>

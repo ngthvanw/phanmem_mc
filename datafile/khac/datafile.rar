@@ -1,0 +1,3364 @@
+SET FOREIGN_KEY_CHECKS=0;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT=0;
+START TRANSACTION;
+DROP TABLE IF EXISTS bangcdkt;
+
+CREATE TABLE `bangcdkt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `matk` char(100) NOT NULL,
+  `matsnv` int(5) NOT NULL,
+  `tentsnv` varchar(200) NOT NULL,
+  `maso` int(5) NOT NULL,
+  `matsnvcha` varchar(5) NOT NULL,
+  `loaitsnv` int(1) NOT NULL,
+  `sodudk` bigint(20) NOT NULL,
+  `soduck` bigint(20) NOT NULL,
+  `thietminh` varchar(10) NOT NULL,
+  `cap` int(11) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+
+INSERT INTO bangcdkt VALUES("39","111,112","1","I. Tiền và các tiền khoản tương đương","110","0","1","0","853187000","","0");
+INSERT INTO bangcdkt VALUES("40","","2","II. Đầu tư tài chính","120","0","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("41","121","3","1. Chứng khoán kinh doanh","121","2","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("42","1281,1288","4","2. Đầu tư nắm giữ đến ngày đáo hạn","122","2","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("43","228","5","3. Đầu tư góp vốn vào đơn vị khác","123","2","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("44","2291,2292","6","4. Dự phòng tổn thất đầu tư tài chính (*)","124","2","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("45","","7","III. Các khoản thu khác","130","0","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("46","131","8","1. Phải thu của khách hàng","131","7","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("47","331","9","2. Trả trước cho người bán","132","7","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("48","1361","10","3. Vốn kinh doanh ở đơn vị trực thuộc","133","7","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("49","1288,1368,1386,1388,334,338,141","11","4. Phải thu khác","134","7","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("50","1381","12","5. Tài sản thiếu chờ xử lý","135","7","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("51","2293","13","6. Dự phòng phải thu khó đòi (*)","136","7","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("52","","14","IV. Hàng tồn kho","140","0","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("53","151,152,153,154,155,156,157","15","1. Hàng tồn kho","141","14","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("54","2294","16","2. Dự phòng giảm giá hàng tồn kho (*)","142","14","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("55","","17","V. Tài sản cố định","150","0","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("56","211","18","- Nguyên giá","151","17","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("57","2141,2142,2143","19","- Giá trị hao mòn lũy kế (*)","152","17","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("58","","20","VI. Bất động sản đầu tư","160","0","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("59","217","21","- Nguyên giá","161","20","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("60","2147","22","- Giá trị hao mòn lũy kế (*)","162","20","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("61","241","23","VII. XDCB dở dang","170","0","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("62","","24","VIII. Tài sản khác","180","0","1","0","375000","","0");
+INSERT INTO bangcdkt VALUES("63","133","25","1. Thuế GTGT được khấu trừ","181","24","1","0","375000","","0");
+INSERT INTO bangcdkt VALUES("64","242,33311,33312,3332,3333,3334,3335,3336,3337,33381,33382,3339","26","2. Tài sản khác","182","24","1","0","0","","0");
+INSERT INTO bangcdkt VALUES("65","","27","I. Nợ phải trả","300","0","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("66","331","28","1. Phải trả người bán","311","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("67","131","29","2. Người mua trả tiền trước","312","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("68","33311,33312,3332,3333,3334,3335,3336,3337,33381,33382,3339","30","3. Thuế và các khoản phải nộp nhà nước","313","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("69","334","31","4. Phải trả người lao động","314","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("70","335,3368,338,1388","32","5. Phải trả khác","315","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("71","341","33","6. Vay và nợ thuê tài chính","316","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("72","3361","34","7. Phải trả nội bộ về vốn kinh doanh","317","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("73","352","35","8. Dự phòng phải trả","318","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("74","353","36","9. Quỹ khen thưởng, phúc lợi","319","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("75","356","37","10. Quỹ phát triển khoa học và công nghệ","320","27","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("76","","38","II. Vốn chủ sở hữu","400","0","2","0","853562000","","0");
+INSERT INTO bangcdkt VALUES("77","4111","39","1. Vốn góp của chủ sở hữu","411","38","2","0","1000000000","","0");
+INSERT INTO bangcdkt VALUES("78","4112","40","2. Thặng dư vốn cổ phần","412","38","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("79","4118","41","3. Vốn khác của chủ sở hữu","413","38","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("80","419","42","4. Cổ phiếu quỹ (*)","414","38","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("81","","45","5. Chênh lệch tỷ giá hối đoái","415","38","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("82","418","46","6. Các quỹ thuộc vốn chủ sở hữu","416","38","2","0","0","","0");
+INSERT INTO bangcdkt VALUES("83","421","47","7. Lợi nhuận sau thuế chưa phân phối","417","38","2","0","-146438000","","0");
+
+
+
+DROP TABLE IF EXISTS bangcdtk;
+
+CREATE TABLE `bangcdtk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `tentk` varchar(200) NOT NULL,
+  `matk` varchar(14) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `cap` int(10) NOT NULL,
+  `_nock` bigint(20) NOT NULL,
+  `_cock` bigint(20) NOT NULL,
+  `matkcha` varchar(6) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangchiphiphanbo;
+
+CREATE TABLE `bangchiphiphanbo` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` char(15) NOT NULL,
+  `tenvt` varchar(500) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `cpphanbo` bigint(20) NOT NULL,
+  `thang` int(2) NOT NULL,
+  `khohang` char(10) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangchitiet_chusohu;
+
+CREATE TABLE `bangchitiet_chusohu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makh` char(14) NOT NULL,
+  `tenkh` varchar(300) NOT NULL,
+  `vondieule` bigint(20) NOT NULL,
+  `vondieuletrongky` bigint(20) NOT NULL,
+  `tyle` float NOT NULL,
+  `vongop` bigint(20) NOT NULL,
+  `vongoptrongky` bigint(20) NOT NULL,
+  `vonchuagop` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangchitiet_laigop;
+
+CREATE TABLE `bangchitiet_laigop` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maspkt` int(11) NOT NULL,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(500) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `soluongxuat` double(13,3) NOT NULL,
+  `thanhtienxuat` bigint(20) NOT NULL,
+  `giavon` double(13,3) NOT NULL,
+  `ngayhoadon` date NOT NULL,
+  `ngayghiso` date NOT NULL,
+  `makh` char(14) NOT NULL,
+  `tenkh` varchar(500) NOT NULL,
+  `sct` char(10) NOT NULL,
+  `seri` char(10) NOT NULL,
+  `giaban` double(13,3) NOT NULL,
+  `thanhtienvon` bigint(20) NOT NULL,
+  `makho` char(4) NOT NULL,
+  `manhom` char(6) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `mavt` (`mavt`,`ngayghiso`),
+  KEY `makh` (`makh`),
+  KEY `imanhom` (`manhom`),
+  KEY `imakho` (`makho`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangdieutraxaydung_congtrinh;
+
+CREATE TABLE `bangdieutraxaydung_congtrinh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` char(14) NOT NULL,
+  `tenct` varchar(500) NOT NULL,
+  `sohopdong` varchar(20) NOT NULL,
+  `ngayhopdong` date NOT NULL,
+  `giatrihopdong` bigint(20) NOT NULL,
+  `ngaykhoicong` date NOT NULL,
+  `ngayhoanthanh` date NOT NULL,
+  `ngaynghiemthu` date NOT NULL,
+  `giatringiemthu` bigint(20) NOT NULL,
+  `phantramhoanthanhnghiemthu` float NOT NULL,
+  `phantramklhttt` float NOT NULL,
+  `quy` char(2) NOT NULL,
+  `mactcha` char(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangdoanhthuthucte;
+
+CREATE TABLE `bangdoanhthuthucte` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` char(14) NOT NULL,
+  `gtcongtrinh` bigint(20) NOT NULL,
+  `tyle` float NOT NULL,
+  `doanhthuthucte` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangdutruvlsxdk;
+
+CREATE TABLE `bangdutruvlsxdk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` varchar(14) NOT NULL,
+  `mavt` varchar(14) NOT NULL,
+  `thang1` double(20,5) NOT NULL,
+  `thang2` double(20,5) NOT NULL,
+  `thang3` double(20,5) NOT NULL,
+  `thang4` double(20,5) NOT NULL,
+  `thang5` double(20,5) NOT NULL,
+  `thang6` double(20,5) NOT NULL,
+  `thang7` double(20,5) NOT NULL,
+  `thang8` double(20,5) NOT NULL,
+  `thang9` double(20,5) NOT NULL,
+  `thang10` double(20,5) NOT NULL,
+  `thang11` double(20,5) NOT NULL,
+  `thang12` double(20,5) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_masp` (`masp`),
+  KEY `index_mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS banggiathanhtieuchuan;
+
+CREATE TABLE `banggiathanhtieuchuan` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` char(14) NOT NULL,
+  `mavt` char(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `dinhmuc` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `loaivl` char(3) NOT NULL,
+  `thang` int(2) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangkechitien;
+
+CREATE TABLE `bangkechitien` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mabangke` char(10) DEFAULT NULL,
+  `hotennguoichi` varchar(300) DEFAULT NULL,
+  `bophan` varchar(300) DEFAULT NULL,
+  `lydochi` varchar(500) DEFAULT NULL,
+  `ngaychi` date DEFAULT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mabangke_UNIQUE` (`mabangke`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangkhtaisan;
+
+CREATE TABLE `bangkhtaisan` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` varchar(14) NOT NULL,
+  `tents` varchar(200) NOT NULL,
+  `tylekh` float NOT NULL,
+  `nguyengia` bigint(20) NOT NULL,
+  `sokh` double NOT NULL,
+  `tkno` varchar(6) NOT NULL,
+  `tkco` varchar(6) NOT NULL,
+  `tienno` bigint(20) NOT NULL,
+  `tienco` bigint(20) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `thang` int(2) NOT NULL,
+  `mabp` varchar(6) NOT NULL,
+  `tenbp` varchar(250) NOT NULL,
+  `gtconlai` bigint(20) NOT NULL,
+  `tgsudung` float NOT NULL,
+  `soluong` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `matk` char(6) NOT NULL,
+  `loaisp` varchar(2) NOT NULL,
+  `daban` int(1) NOT NULL,
+  `soluongts` double NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangkiemtrachungtu;
+
+CREATE TABLE `bangkiemtrachungtu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `soct` varchar(15) NOT NULL,
+  `noidung` text NOT NULL,
+  `chinhsua` text NOT NULL,
+  `ketoanvien` tinyint(1) NOT NULL DEFAULT '0',
+  `truongnhom` tinyint(1) NOT NULL DEFAULT '0',
+  `bangiamdoc` tinyint(1) NOT NULL DEFAULT '0',
+  `thoigianbatdau` bigint(20) NOT NULL,
+  `thoigianketthuc` bigint(20) NOT NULL,
+  `ketoancapnhat` bigint(20) NOT NULL,
+  `truongnhomcapnhat` bigint(20) NOT NULL,
+  `giamdoccapnhat` bigint(20) NOT NULL,
+  `loaiphieu` int(2) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO bangkiemtrachungtu VALUES("1","1...","chi lương","kèm bảng lương","0","0","0","1619592890","0","4","4","4","4");
+
+
+
+DROP TABLE IF EXISTS bangluongnhanvien;
+
+CREATE TABLE `bangluongnhanvien` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `manv` char(12) NOT NULL,
+  `tennv` varchar(500) NOT NULL,
+  `chucvu` varchar(200) NOT NULL,
+  `trinhdo` varchar(200) NOT NULL,
+  `luongcb` bigint(20) NOT NULL,
+  `doanhthu` bigint(20) NOT NULL,
+  `luongkhoan` bigint(20) NOT NULL,
+  `phucapchucvu` bigint(20) NOT NULL,
+  `baohiem` bigint(20) NOT NULL,
+  `thang` char(3) NOT NULL,
+  `thuegtgt` bigint(20) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `phantramthang` float NOT NULL,
+  `phantramquy` float NOT NULL,
+  `phantramnam` float NOT NULL,
+  `tienangiuaca` bigint(20) NOT NULL,
+  `phucapkhongdungbhxh` bigint(20) NOT NULL,
+  `thuethunhap` bigint(20) NOT NULL,
+  `matk1` char(6) NOT NULL,
+  `phantramtk` int(2) NOT NULL,
+  `matk2` char(6) NOT NULL,
+  `loaibp` char(2) NOT NULL,
+  `sapxep` int(11) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangpbchiphi;
+
+CREATE TABLE `bangpbchiphi` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` varchar(14) NOT NULL,
+  `tents` varchar(200) NOT NULL,
+  `tylekh` float NOT NULL,
+  `nguyengia` bigint(20) NOT NULL,
+  `sokh` double NOT NULL,
+  `tkno` varchar(6) NOT NULL,
+  `tkco` varchar(6) NOT NULL,
+  `tienno` bigint(20) NOT NULL,
+  `tienco` bigint(20) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `thang` int(2) NOT NULL,
+  `mabp` varchar(6) NOT NULL,
+  `tenbp` varchar(250) NOT NULL,
+  `gtconlai` bigint(20) NOT NULL,
+  `soluong` bigint(20) NOT NULL,
+  `sothangdk` int(11) NOT NULL,
+  `sothangpbdkconlai` int(11) NOT NULL,
+  `gtdkconlai` bigint(20) NOT NULL,
+  `haohonluykeck` bigint(20) NOT NULL,
+  `sothangconlaick` int(11) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysudung` date NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `trongky` int(1) NOT NULL,
+  `theodoi` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangphanbo_chiphi_sxchung;
+
+CREATE TABLE `bangphanbo_chiphi_sxchung` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `sottxuat` varchar(10) NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  `tenct` varchar(500) NOT NULL,
+  `dodangdk` bigint(20) NOT NULL,
+  `sotiennl` bigint(20) NOT NULL,
+  `tylenl` float(5,2) NOT NULL,
+  `sotiennc` bigint(20) NOT NULL,
+  `tylenc` float(5,2) NOT NULL,
+  `sotienmay` bigint(20) NOT NULL,
+  `tylemay` float(5,2) NOT NULL,
+  `sotiencpsxc` bigint(20) NOT NULL,
+  `tylecpsxc` float(5,2) NOT NULL,
+  `sotiencpsxcpb` bigint(20) NOT NULL,
+  `tylecpsxcpb` float(5,2) NOT NULL,
+  `tongcong` bigint(20) NOT NULL,
+  `doanhthuthuan` bigint(20) NOT NULL,
+  `giathanh` bigint(20) NOT NULL,
+  `lailo` bigint(20) NOT NULL,
+  `dodangck` bigint(20) NOT NULL,
+  `dodangck_` bigint(20) NOT NULL,
+  `mactcha` varchar(14) NOT NULL,
+  `doanhthuhopdong` bigint(20) NOT NULL,
+  `tylethucte` float NOT NULL,
+  `sotienncpb` bigint(20) NOT NULL,
+  `sotiennc622pb` bigint(20) NOT NULL,
+  `sotienpbcpsxccap1` bigint(20) NOT NULL,
+  `sotienpbcpsxccap2` bigint(20) NOT NULL,
+  `sotienpbnccap1` bigint(20) NOT NULL,
+  `sotienpbnccap2` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangthanhtoan_tienthuengoaigio;
+
+CREATE TABLE `bangthanhtoan_tienthuengoaigio` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `hotennguoithue` varchar(300) NOT NULL,
+  `diachi` varchar(300) NOT NULL,
+  `lydothue` varchar(500) NOT NULL,
+  `mathuengoai` char(10) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mathuengoai_UNIQUE` (`mathuengoai`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangthongkethanhpham;
+
+CREATE TABLE `bangthongkethanhpham` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` char(14) NOT NULL,
+  `n1` double NOT NULL,
+  `n2` double NOT NULL,
+  `n3` double NOT NULL,
+  `n4` double NOT NULL,
+  `n5` double NOT NULL,
+  `n6` double NOT NULL,
+  `n7` double NOT NULL,
+  `n8` double NOT NULL,
+  `n9` double NOT NULL,
+  `n10` double NOT NULL,
+  `n11` double NOT NULL,
+  `n12` double NOT NULL,
+  `n13` double NOT NULL,
+  `n14` double NOT NULL,
+  `n15` double NOT NULL,
+  `n16` double NOT NULL,
+  `n17` double NOT NULL,
+  `n18` double NOT NULL,
+  `n19` double NOT NULL,
+  `n20` double NOT NULL,
+  `n21` double NOT NULL,
+  `n22` double NOT NULL,
+  `n23` double NOT NULL,
+  `n24` double NOT NULL,
+  `n25` double NOT NULL,
+  `n26` double NOT NULL,
+  `n27` double NOT NULL,
+  `n28` double NOT NULL,
+  `n29` double NOT NULL,
+  `n30` double NOT NULL,
+  `n31` double NOT NULL,
+  `thang` int(11) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangtk_lp_vlct;
+
+CREATE TABLE `bangtk_lp_vlct` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` char(14) NOT NULL,
+  `mavt` char(14) NOT NULL,
+  `tenvt` varchar(500) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dongia` double NOT NULL,
+  `soluongdutru` double NOT NULL,
+  `soluongthucnhap` double NOT NULL,
+  `tylephantram` double NOT NULL,
+  `sotienchenhlech` bigint(20) NOT NULL,
+  `tk_lp` varchar(100) NOT NULL,
+  `thang` int(11) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangtk_lp_vlsx;
+
+CREATE TABLE `bangtk_lp_vlsx` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` char(14) NOT NULL,
+  `tenvt` varchar(500) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dongia` double NOT NULL,
+  `soluongdutru` double NOT NULL,
+  `soluongthucnhap` double NOT NULL,
+  `tylephantram` double NOT NULL,
+  `sotienchenhlech` bigint(20) NOT NULL,
+  `tk_lp` varchar(100) NOT NULL,
+  `thang` int(11) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangtonghop_danhthu_chiphi_giathanhct;
+
+CREATE TABLE `bangtonghop_danhthu_chiphi_giathanhct` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `sottxuat` varchar(10) NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  `tenct` varchar(500) NOT NULL,
+  `dodangdk` bigint(20) NOT NULL,
+  `sotiennl` bigint(20) NOT NULL,
+  `tylenl` float(5,2) NOT NULL,
+  `sotiennc` bigint(20) NOT NULL,
+  `tylenc` float(5,2) NOT NULL,
+  `sotienmay` bigint(20) NOT NULL,
+  `tylemay` float(5,2) NOT NULL,
+  `sotiencpsxc` bigint(20) NOT NULL,
+  `tylecpsxc` float(5,2) NOT NULL,
+  `sotiencpsxcpb` bigint(20) NOT NULL,
+  `tylecpsxcpb` float(5,2) NOT NULL,
+  `tongcong` bigint(20) NOT NULL,
+  `doanhthuthuan` bigint(20) NOT NULL,
+  `giathanh` bigint(20) NOT NULL,
+  `giathanhtoanbo` bigint(20) NOT NULL,
+  `giathanhdonvi` bigint(20) NOT NULL,
+  `lailo` bigint(20) NOT NULL,
+  `dodangck` bigint(20) NOT NULL,
+  `dodangck_` bigint(20) NOT NULL,
+  `mactcha` varchar(14) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `sotiennltieuchuan` bigint(20) NOT NULL,
+  `sotiennctieuchuan` bigint(20) NOT NULL,
+  `sotienmaytieuchuan` bigint(20) NOT NULL,
+  `sotiencpsxctieuchuan` bigint(20) NOT NULL,
+  `sotienncpb` bigint(20) NOT NULL,
+  `sotiennc622pb` bigint(20) NOT NULL,
+  `hienthi` int(1) NOT NULL,
+  `ctkhoan` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS bangtygianganhang;
+
+CREATE TABLE `bangtygianganhang` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `matk` char(6) NOT NULL,
+  `tygia` int(11) NOT NULL,
+  `sotiennt` double(15,3) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `matk` (`matk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS buttoanps;
+
+CREATE TABLE `buttoanps` (
+  `sott` int(10) NOT NULL AUTO_INCREMENT,
+  `maso` varchar(10) NOT NULL,
+  `noidung` varchar(200) NOT NULL,
+  `tkchinh` varchar(6) NOT NULL,
+  `tkno` varchar(6) NOT NULL,
+  `tkco` varchar(6) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `phantram` float NOT NULL DEFAULT '1',
+  `mabp` varchar(6) NOT NULL,
+  `tudong` int(1) NOT NULL DEFAULT '1',
+  `tiencock` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+
+INSERT INTO buttoanps VALUES("1","TMBPN","Thuế môn bài phải nộp","33391","6422","33391","2000000","1","0001","1","0");
+INSERT INTO buttoanps VALUES("2","KCKPNK","Kết chuyển khoản phải nộp khác","33392","811","33392","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("3","TLPTTK","Tiền lương phải trả","334","6421","334","0","1","0001","0","0");
+INSERT INTO buttoanps VALUES("4","KCLNNT","Kết chuyển lợi nhuận năm trước","4212","4212","4211","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("5","KCLONT","kết chuyển lỗ năm trước","4212","4211","4212","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("6","KCDOTT","Kết chuyển doanh thu bán hàng hóa","5111","5111","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("7","KCDTTP","Kết chuyển doanh thu bán thành phẩm","5112","5112","911","3563648531","1","0001","1","0");
+INSERT INTO buttoanps VALUES("8","KCDTDV","Kết chuyển doanh thu dịch vụ","5113","5113","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("9","KC5118","Kết chuyển doanh thu khác","5118","5118","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("10","KC5151","Kết chuyển doanh thu tài chính","5151","5151","911","74611","1","0001","1","0");
+INSERT INTO buttoanps VALUES("11","KC5152","Kết chuyển doanh thu tài chính","5152","5152","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("12","KC5153","Kết chuyển doanh thu tài chính","5153","5153","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("13","KC5158","Kết chuyển doanh thu tài chính","5158","5158","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("14","KCGVHB","Kết chuyểngiá vốn bán hàng","632","911","632","3614100340","1","0001","1","0");
+INSERT INTO buttoanps VALUES("15","KCCPTC","Kết chuyển chi phí tài chính","635","911","635","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("16","KCCPBH","Kết chuyển chi phí bán hàng","6421","911","6421","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("17","KCCPKD","Kết chuyển chi phí QLDN","6422","911","6422","96048635","1","0001","1","0");
+INSERT INTO buttoanps VALUES("18","KCTNKC","Kết chuyển thu nhập HĐ khác","711","711","911","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("19","KCCPHD","Kết chuyển chi phí HĐ khác","811","911","811","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("20","KCTNDN","Kết chuyển chi phí thuế thu nhập doanh nghiệp","821","911","821","0","0.2","0001","1","0");
+INSERT INTO buttoanps VALUES("21","KCLAKD","Kết chuyển lãi kinh doanh","911","911","4212","0","1","0001","1","0");
+INSERT INTO buttoanps VALUES("22","KCLOKD","Kết chuyển lỗ kinh doanh","911","4212","911","146425833","1","0001","1","0");
+INSERT INTO buttoanps VALUES("23","KCTHDN","Kết chuyển chi phí thuế thu nhập doanh nghiệp","821","821","3334","0","1","0001","1","0");
+
+
+
+DROP TABLE IF EXISTS chitiet_bangke_chitien;
+
+CREATE TABLE `chitiet_bangke_chitien` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `ngaychi` date NOT NULL,
+  `noidungchi` varchar(500) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `mabangke` varchar(10) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS chitiet_bangthanhtoan_thuengoai;
+
+CREATE TABLE `chitiet_bangthanhtoan_thuengoai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `hotenduocthue` varchar(300) DEFAULT NULL,
+  `diachi` varchar(300) DEFAULT NULL,
+  `noidungthue` varchar(500) DEFAULT NULL,
+  `socongthue` double DEFAULT NULL,
+  `dongia` bigint(20) DEFAULT NULL,
+  `thanhtien` bigint(20) DEFAULT NULL,
+  `thuetncn` bigint(20) DEFAULT NULL,
+  `ghichu` varchar(45) DEFAULT NULL,
+  `mathuengoai` char(10) DEFAULT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mathuengoai_UNIQUE` (`mathuengoai`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS chitiet_dinhmuc_ct_vl;
+
+CREATE TABLE `chitiet_dinhmuc_ct_vl` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `masp` varchar(14) NOT NULL,
+  `mahm` char(14) NOT NULL,
+  `tenhm` varchar(300) NOT NULL,
+  `mavt` char(14) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `thue` bigint(20) NOT NULL,
+  KEY `fk_chitiet_dinhmuc_ct_vl_masp_masp` (`masp`),
+  CONSTRAINT `fk_chitiet_dinhmuc_ct_vl_masp_masp` FOREIGN KEY (`masp`) REFERENCES `masp` (`masp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS chitiet_dinhmuc_sp;
+
+CREATE TABLE `chitiet_dinhmuc_sp` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `mapsdm` int(11) NOT NULL,
+  `masp` varchar(14) NOT NULL,
+  `mavt` varchar(14) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dinhmuc` double NOT NULL,
+  `tylehaohoc` double NOT NULL,
+  `dinhmuckecakhauhao` double NOT NULL,
+  `ghichu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS chitiet_pskt;
+
+CREATE TABLE `chitiet_pskt` (
+  `sott` double NOT NULL AUTO_INCREMENT,
+  `mapskt` int(11) NOT NULL,
+  `mauso` varchar(14) DEFAULT NULL,
+  `seri` char(10) NOT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayhoadon` date DEFAULT NULL,
+  `ngaythanhtoan` date DEFAULT NULL,
+  `dgvnd` bigint(10) DEFAULT NULL,
+  `gtvnd1` bigint(14) DEFAULT NULL,
+  `gtvnd2` double DEFAULT NULL,
+  `stvnd` bigint(15) DEFAULT NULL,
+  `stusd` double(12,3) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(1000) DEFAULT NULL,
+  `mand1` char(6) DEFAULT NULL,
+  `noidung1` varchar(1000) NOT NULL,
+  `tkno1` char(6) DEFAULT NULL,
+  `tkco1` int(6) DEFAULT NULL,
+  `thuesuat1` char(2) NOT NULL,
+  `mand2` varchar(6) DEFAULT NULL,
+  `noidung2` varchar(1000) NOT NULL,
+  `tkno2` char(6) DEFAULT NULL,
+  `tkco2` int(6) DEFAULT NULL,
+  `tongtien` double NOT NULL,
+  `makhno` char(14) DEFAULT NULL,
+  `makhco` char(14) DEFAULT NULL,
+  `tenkhachhang` varchar(1000) NOT NULL,
+  `diachikh` varchar(200) NOT NULL,
+  `maloai` int(1) DEFAULT NULL,
+  `chuthich` text,
+  `loaiphieu` int(1) NOT NULL,
+  `sophieu` bigint(14) NOT NULL,
+  `cothuegtgt` int(1) NOT NULL,
+  `dungchung` int(1) NOT NULL DEFAULT '0',
+  `baogomthue` int(1) NOT NULL DEFAULT '0',
+  `chungtugoc` int(1) NOT NULL DEFAULT '1',
+  `thoigiannhap` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `loaitokhai` int(11) NOT NULL DEFAULT '1',
+  `chiphikhongloaitru` int(11) NOT NULL,
+  `btps` int(11) NOT NULL,
+  `tygia` double NOT NULL,
+  `sotiennt` double NOT NULL,
+  `sotiennt1` double NOT NULL,
+  `tongtiennt` double NOT NULL,
+  `loaihddt` int(1) NOT NULL,
+  `mabimat` char(10) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `mavt_pbchiphi` varchar(500) NOT NULL,
+  `congaykhaithue` int(1) NOT NULL,
+  `ngaykhaithue` date NOT NULL,
+  `loaihanghoadichvu` int(1) NOT NULL DEFAULT '1',
+  `chungtuthamchieu` char(20) NOT NULL,
+  `masothuekh` varchar(15) NOT NULL,
+  `duandautu` int(1) NOT NULL,
+  `capnhat_chungtugoc` datetime NOT NULL,
+  `capnhat_chiphikhongloaitru` datetime NOT NULL,
+  `lacongtrinh` int(1) NOT NULL,
+  `duyetcpduoctru` int(1) NOT NULL DEFAULT '1',
+  `tiencpduocduyet` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `tkno1` (`tkno1`,`tkco1`,`tkno2`,`tkco2`,`sophieu`),
+  KEY `index_loaiphieu` (`loaiphieu`),
+  KEY `fk_chitiet_pskt_mabp_masp` (`mabp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS chitiet_psvt;
+
+CREATE TABLE `chitiet_psvt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mapskt` int(11) NOT NULL COMMENT 'mapsvt',
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) NOT NULL,
+  `dvt` varchar(20) NOT NULL,
+  `soluongnhap` double NOT NULL,
+  `donggianhap` double NOT NULL,
+  `thanhtienchuack` bigint(20) NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `thuesuat` char(2) NOT NULL,
+  `chietkhau` float NOT NULL,
+  `tienchietkhau` double NOT NULL,
+  `thue` double NOT NULL,
+  `sophieu` bigint(14) NOT NULL,
+  `dathem` int(1) NOT NULL DEFAULT '1',
+  `kho` varchar(6) NOT NULL,
+  `tenkd` char(200) NOT NULL,
+  `dongiamt` double NOT NULL,
+  `thanhtienmt` bigint(20) NOT NULL,
+  `chietkhaubh` float NOT NULL,
+  `tienchietkhaubh` bigint(20) NOT NULL,
+  `vaokho` varchar(6) NOT NULL,
+  `thuenk` bigint(20) NOT NULL,
+  `thuettdb` bigint(20) NOT NULL,
+  `phivc` bigint(20) NOT NULL,
+  `phibx` bigint(20) NOT NULL,
+  `tygiant` double NOT NULL,
+  `nguyentent` double NOT NULL,
+  `thanhtiennt` double NOT NULL,
+  `cpmuahang` bigint(20) NOT NULL,
+  `sapxep` char(1) NOT NULL,
+  `thuetmp` bigint(20) NOT NULL,
+  `mavt_pbchiphi` varchar(500) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `mavt` (`mavt`),
+  KEY `index_tenvt` (`tenvt`(255)),
+  KEY `index_sophieu` (`sophieu`),
+  KEY `sapxep` (`sapxep`),
+  FULLTEXT KEY `FULLTEXT_tenkd` (`tenkd`),
+  CONSTRAINT `fk_chitiet_psvt_mavt_mavt` FOREIGN KEY (`mavt`) REFERENCES `mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS cnkh;
+
+CREATE TABLE `cnkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makh` varchar(14) NOT NULL,
+  `tenkh` varchar(700) NOT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `matk` varchar(6) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `nock_` bigint(20) NOT NULL,
+  `cock_` bigint(20) NOT NULL,
+  `nontdk` double NOT NULL,
+  `contdk` double NOT NULL,
+  `nontps` double NOT NULL,
+  `contps` double NOT NULL,
+  `nontck` double NOT NULL,
+  `contck` double NOT NULL,
+  `nontck_` double NOT NULL,
+  `contck_` double NOT NULL,
+  `loaitien` char(3) NOT NULL,
+  `manhom` int(4) NOT NULL,
+  `makh_matk` char(21) NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS cpdodangdk;
+
+CREATE TABLE `cpdodangdk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` varchar(14) NOT NULL,
+  `soduco` bigint(20) NOT NULL,
+  `soduno` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='cpdodangdk';
+
+
+
+
+DROP TABLE IF EXISTS cptratruoc;
+
+CREATE TABLE `cptratruoc` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` char(14) NOT NULL,
+  `matscha` char(14) NOT NULL,
+  `tents` varchar(300) DEFAULT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysd` date DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `ngaysx` date NOT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tylekh` bigint(6) DEFAULT NULL,
+  `thoigiansd` double DEFAULT NULL,
+  `soluong` double DEFAULT NULL,
+  `dongia` double DEFAULT NULL,
+  `nguyengia` double DEFAULT NULL,
+  `giatriconlai` double DEFAULT NULL,
+  `muckhthang` double NOT NULL,
+  `muckhquy` double DEFAULT NULL,
+  `muckhnam` double NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `chuthich` text,
+  `mabp` char(6) NOT NULL,
+  `bophan` varchar(200) NOT NULL,
+  `manhomts` char(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `khauhao` int(1) NOT NULL DEFAULT '1',
+  `niendo` char(4) NOT NULL,
+  `cpkhongduoctru` int(1) NOT NULL,
+  `theodoi` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mats` (`mats`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS ct_nhapvattu_ct;
+
+CREATE TABLE `ct_nhapvattu_ct` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` char(14) NOT NULL,
+  `sophieu` bigint(14) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `mact` char(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS dinhkhoan_psvt;
+
+CREATE TABLE `dinhkhoan_psvt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `sophieu` bigint(20) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `sotien` double NOT NULL,
+  `tongtien` double NOT NULL,
+  `sotiennt` double NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `sophieu` (`sophieu`,`tkno`,`tkco`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS dinhmucxemay;
+
+CREATE TABLE `dinhmucxemay` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `mats` char(14) NOT NULL,
+  `maloaiduong` int(4) NOT NULL,
+  `tenloaiduong` varchar(400) NOT NULL,
+  `sokm` double(10,2) NOT NULL,
+  `litkmdau` double(10,2) NOT NULL,
+  `tongdau` double(15,4) NOT NULL,
+  `pptinh` int(1) NOT NULL,
+  `ghichu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS doichieu_xoahoadon;
+
+CREATE TABLE `doichieu_xoahoadon` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `loaphieu` int(11) NOT NULL,
+  `mauso` varchar(20) NOT NULL,
+  `kyhieu` varchar(10) NOT NULL,
+  `quy` char(3) NOT NULL,
+  `hoadon` char(7) NOT NULL,
+  `hople` int(11) NOT NULL,
+  `liendo` int(11) NOT NULL,
+  `thaythe` char(7) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS duyetbangcdtk;
+
+CREATE TABLE `duyetbangcdtk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `tentk` varchar(200) NOT NULL,
+  `matk` varchar(14) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `cap` int(10) NOT NULL,
+  `_nock` bigint(20) NOT NULL,
+  `_cock` bigint(20) NOT NULL,
+  `nguoiduyet` varchar(20) NOT NULL,
+  `matkcha` varchar(6) NOT NULL,
+  `truongnhomduyet` int(1) NOT NULL,
+  `giamdocduyet` int(1) NOT NULL,
+  `ngaytruongphong` datetime NOT NULL,
+  `ngaygiamdoc` datetime NOT NULL,
+  `_nockduyet` bigint(20) NOT NULL,
+  `_cockduyet` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  `nhanvienduyet` int(1) NOT NULL,
+  `ruiro` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `matk` (`matk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS duyetcnkh;
+
+CREATE TABLE `duyetcnkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makh` varchar(14) NOT NULL,
+  `tenkh` varchar(700) NOT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `matk` varchar(6) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `nock_` bigint(20) NOT NULL,
+  `cock_` bigint(20) NOT NULL,
+  `nontdk` double NOT NULL,
+  `contdk` double NOT NULL,
+  `nontps` double NOT NULL,
+  `contps` double NOT NULL,
+  `nontck` double NOT NULL,
+  `contck` double NOT NULL,
+  `nontck_` double NOT NULL,
+  `contck_` double NOT NULL,
+  `loaitien` char(3) NOT NULL,
+  `manhom` int(4) NOT NULL,
+  `nguoiduyet` varchar(20) NOT NULL,
+  `matkcha` varchar(6) NOT NULL,
+  `truongnhomduyet` int(1) NOT NULL DEFAULT '0',
+  `giamdocduyet` int(1) NOT NULL DEFAULT '0',
+  `ngaytruongphong` datetime NOT NULL,
+  `ngaygiamdoc` datetime NOT NULL,
+  `_nockduyet` bigint(20) NOT NULL,
+  `_cockduyet` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  `nhanvienduyet` int(1) NOT NULL DEFAULT '0',
+  `makh_matk` char(21) NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS duyetsocai;
+
+CREATE TABLE `duyetsocai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `matk` char(6) NOT NULL,
+  `tungay_denngay` varchar(200) NOT NULL,
+  `sodu` bigint(20) NOT NULL,
+  `ngayduyet` datetime NOT NULL,
+  `nguoiduyet` char(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS kyketoan;
+
+CREATE TABLE `kyketoan` (
+  `sott` int(11) NOT NULL,
+  `tungay` date NOT NULL,
+  `denngay` date NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS luuchuyentiente;
+
+CREATE TABLE `luuchuyentiente` (
+  `sott` int(11) NOT NULL,
+  `machitieu` char(5) NOT NULL,
+  `chitieu` varchar(200) NOT NULL,
+  `maso` char(5) NOT NULL,
+  `thietminh` varchar(10) NOT NULL,
+  `sodudk` bigint(20) NOT NULL,
+  `soduck` bigint(20) NOT NULL,
+  `tkno` char(100) NOT NULL,
+  `tkco` char(100) NOT NULL,
+  `machitieucha` varchar(5) NOT NULL,
+  `loaibang` int(1) NOT NULL,
+  `cap` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO luuchuyentiente VALUES("1","i","I. Lưu chuyển tiền từ hoạt động kinh doanh","","","0","0","","","0","0","1");
+INSERT INTO luuchuyentiente VALUES("9","","Lưu chuyển tiền thuần từ hoạt động kinh doanh","20","","0","0","","","0","0","1");
+INSERT INTO luuchuyentiente VALUES("10","ii","II. Lưu chuyển tiền từ hoạt động đầu tư","","","0","0","","","0","0","1");
+INSERT INTO luuchuyentiente VALUES("18","","Lưu chuyển tiền thuần từ hoạt động đầu tư","30","","0","0","","","0","0","1");
+INSERT INTO luuchuyentiente VALUES("19","iii","III. Lưu chuyển tiền từ hoạt động tài chính","","","0","0","","","","0","1");
+INSERT INTO luuchuyentiente VALUES("26","","Lưu chuyển tiền thuần từ hoạt động tài chính","40","","0","0","","","","0","1");
+INSERT INTO luuchuyentiente VALUES("27","","Lưu chuyển tiền thuần trong kỳ (50 = 20+30+40)","50","","0","0","","","","0","1");
+INSERT INTO luuchuyentiente VALUES("28","","Tiền và tương đương tiền đầu kỳ","60","","0","0","","","0","0","1");
+INSERT INTO luuchuyentiente VALUES("29","","Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ","61","","0","0","","","","0","2");
+INSERT INTO luuchuyentiente VALUES("30","","Tiền và tương đương tiền cuối kỳ (70 = 50 + 60 + 61)","70","","0","0","","","0","0","1");
+
+
+
+DROP TABLE IF EXISTS mabp;
+
+CREATE TABLE `mabp` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `mabp` char(4) NOT NULL,
+  `tenbp` varchar(100) NOT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  `diachi` varchar(100) NOT NULL,
+  `shtk` char(3) NOT NULL,
+  `ghichu` text NOT NULL,
+  UNIQUE KEY `mabp` (`mabp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO mabp VALUES("9","0001","Toàn bộ","Toan bo","","122","Không được xóa và thay dổi mã");
+
+
+
+DROP TABLE IF EXISTS mact;
+
+CREATE TABLE `mact` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` char(14) NOT NULL,
+  `tenct` varchar(200) NOT NULL,
+  `mactcha` char(14) NOT NULL,
+  `diachi` varchar(100) NOT NULL,
+  `makh` char(10) NOT NULL,
+  `so_hd` char(20) NOT NULL,
+  `ngayhd` date NOT NULL,
+  `ngay_kc` date NOT NULL,
+  `ngay_ht` date NOT NULL,
+  `giatri_hd` bigint(12) NOT NULL,
+  `vatlieu` bigint(12) NOT NULL,
+  `nhancong` bigint(12) NOT NULL,
+  `may` bigint(12) NOT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  PRIMARY KEY (`mact`),
+  KEY `sott` (`sott`),
+  KEY `tenct` (`tenct`(191)),
+  KEY `mact` (`mact`),
+  KEY `mactcha` (`mactcha`),
+  FULLTEXT KEY `mact_2` (`mact`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  FULLTEXT KEY `fmact` (`mact`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+DROP TABLE IF EXISTS makh;
+
+CREATE TABLE `makh` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `makh` char(14) NOT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `tenkh` varchar(1000) DEFAULT NULL,
+  `matk` char(6) DEFAULT NULL,
+  `makhcha` char(14) NOT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `diachi` varchar(1000) DEFAULT NULL,
+  `dienthoai` char(20) DEFAULT NULL,
+  `hanmucno` bigint(12) DEFAULT NULL,
+  `noth` bigint(12) DEFAULT NULL,
+  `noqh` bigint(12) DEFAULT NULL,
+  `nonh` bigint(12) DEFAULT NULL,
+  `nodh` bigint(12) DEFAULT NULL,
+  `noxau` bigint(12) DEFAULT NULL,
+  `ngaytra` date DEFAULT NULL,
+  `ghichu` text,
+  `tenkd` varchar(1000) DEFAULT NULL,
+  `rank` bigint(20) NOT NULL DEFAULT '1',
+  `loaitien` char(3) NOT NULL DEFAULT 'VND',
+  `manhom` int(11) NOT NULL DEFAULT '1001',
+  `niendo` char(4) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `fk_makh_manhom_manhom` (`manhom`),
+  KEY `index_makhcha` (`makhcha`),
+  KEY `makh` (`makh`),
+  FULLTEXT KEY `fmakh` (`makh`),
+  FULLTEXT KEY `masothue` (`masothue`),
+  FULLTEXT KEY `fmtm` (`makh`,`tenkd`,`masothue`),
+  CONSTRAINT `fk_makh_manhom_manhom` FOREIGN KEY (`manhom`) REFERENCES `manhomkh` (`manhom`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS makho;
+
+CREATE TABLE `makho` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makho` char(4) NOT NULL,
+  `tenkho` varchar(100) DEFAULT NULL,
+  `diachi` varchar(40) DEFAULT NULL,
+  `ghichu` text,
+  `tenkhokd` varchar(100) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `makho` (`makho`),
+  KEY `tenkhokd` (`tenkhokd`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO makho VALUES("1","0010","Kho chung","","","kho");
+
+
+
+DROP TABLE IF EXISTS maloaiduong;
+
+CREATE TABLE `maloaiduong` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maduong` int(4) NOT NULL,
+  `tenduong` varchar(400) NOT NULL,
+  `ghichu` text NOT NULL,
+  `pptinh` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `maduong` (`maduong`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+INSERT INTO maloaiduong VALUES("1","1001","Quốc lộ","","1");
+INSERT INTO maloaiduong VALUES("2","1002","Tỉnh lộ","","1");
+INSERT INTO maloaiduong VALUES("3","1003","Hương lộ","","1");
+INSERT INTO maloaiduong VALUES("4","1004","Đường Đal","","1");
+INSERT INTO maloaiduong VALUES("5","1005","Định mức theo kilomet đường","","2");
+
+
+
+DROP TABLE IF EXISTS mand;
+
+CREATE TABLE `mand` (
+  `sott` int(6) NOT NULL AUTO_INCREMENT,
+  `mand` char(6) NOT NULL,
+  `tennoidung` varchar(250) DEFAULT NULL,
+  `rate_tax` char(2) DEFAULT NULL,
+  `tkno` varchar(6) DEFAULT NULL,
+  `tkco` varchar(6) DEFAULT NULL,
+  `ghichu` text,
+  `mapl` varchar(4) DEFAULT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  `rank` int(10) DEFAULT NULL,
+  `tennoidung_en` varchar(250) NOT NULL,
+  `tennoidung_cn` varchar(250) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mand` (`mand`),
+  FULLTEXT KEY `fmtm` (`mand`,`tenkd`)
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8;
+
+INSERT INTO mand VALUES("8","100000","Thuế GTGT đầu vào","10","1331","1331","","CHI","Thue GTGT dau vao","27","","");
+INSERT INTO mand VALUES("10","100002","Thu tiền khách hàng","10","1111","131","","THU","Thu tien khach hang","3","","");
+INSERT INTO mand VALUES("11","100003","Trả nợ khách hàng","10","331","","","CHI","Tra no khach hang","3","","");
+INSERT INTO mand VALUES("12","100004","Chi phí tiền điện","10","6422","1111","","CHI","Chi phi tien dien","16","","");
+INSERT INTO mand VALUES("13","100005","Chi phí tiền nước","5","6422","1111","","CHI","Chi phi tien nuoc","5","","");
+INSERT INTO mand VALUES("14","100006","Khấu hao TSCĐ","0","6422","","","CHI","Khau hao TSCD","5","","");
+INSERT INTO mand VALUES("15","100007","Chi phí trả lãi vay","0","635","1111","","CHI","Chi phi tra lai vay","8","","");
+INSERT INTO mand VALUES("16","100008","Chi phí văn phòng phẩm","10","6422","1111","","CHI","Chi phi van phong pham","12","","");
+INSERT INTO mand VALUES("17","100009","Chi phí cơm tiếp khách","10","6422","1111","","CHI","Chi phi com tiep khach","10","","");
+INSERT INTO mand VALUES("18","100010","Mua hàng trả tiền mặt","0","","1111","","NHAP","Mua hang tra tien mat","28","","");
+INSERT INTO mand VALUES("19","100011","Mua hàng chậm trả","0","","331","","NHAP","Mua hang cham tra","17","","");
+INSERT INTO mand VALUES("20","100012","Nhập kho từ sản xuất","0","","154","","CHI","Nhap kho tu san xuat","7","","");
+INSERT INTO mand VALUES("21","100013","Nhập khuyến mãi","0","","711","","CHI","Nhap khuyen mai","2","","");
+INSERT INTO mand VALUES("22","100014","Xuất bán hàng thu tiền mặt","10","1111","5111","","XUAT","Xuat ban hang thu tien mat","21","","");
+INSERT INTO mand VALUES("24","100016","Nhập Khuyến mãi","kk","","711","","NHAP","Nhap Khuyen mai","1","","");
+INSERT INTO mand VALUES("25","100020","Xuất bán hàng ghi nợ","10","131","5111","","XUAT","Xuat ban hang ghi no","5","","");
+INSERT INTO mand VALUES("26","100021","Xuất bán hàng do hao hụt","10","6422","","","XUAT","Xuat ban hang do hao hut","1","","");
+INSERT INTO mand VALUES("27","100029","Vay ngân hàng","10","1111","1111","","THU","Vay ngan hang","1","","");
+INSERT INTO mand VALUES("28","100030","Phí bảo vệ môi trường","0","6422","1111","","CHI","Phi bao ve moi truong","6","","");
+INSERT INTO mand VALUES("29","100031","Chi phí điện thoại","10","6422","1111","","CHI","Chi phi dien thoai","8","","");
+INSERT INTO mand VALUES("30","100017","Chi mua xăng, dầu DO","10","6422","1111","","CHI","Chi mua xang, dau DO","7","","");
+INSERT INTO mand VALUES("31","100032","Chi phi khac","10","6422","1111","","CHI","Chi phi khac","3","","");
+INSERT INTO mand VALUES("33","100035","Tiền Điện","","","","","","Tien Dien","1","","");
+INSERT INTO mand VALUES("37","100037","Nộp Thuế TNDN","0","3334","1111","","CHI","Nop Thue TNDN","1","","");
+INSERT INTO mand VALUES("38","100038","Nộp thuế Môn bài","0","33391","1111","","CHI","Nop thue Mon bai","1","","");
+INSERT INTO mand VALUES("39","100039","Chi lương nhân viên","0","334","1111","","CHI","Chi luong nhan vien","1","","");
+INSERT INTO mand VALUES("40","100040","Phí dịch vụ Ngân hàng","0","6422","1111","","CHI","Phi dich vu Ngan hang","3","","");
+INSERT INTO mand VALUES("41","100041","Rút tiền gửi","0","1111","1121","","CHI","Rut tien gui","1","","");
+INSERT INTO mand VALUES("42","100042","Thu lãi vay, lãi tiền gửi","0","1121","5151","","THU","Thu lai vay, lai tien gui","1","","");
+INSERT INTO mand VALUES("89","_XKHSX","Xuất nguyên liệu cho công trình","0","621","152","","XUAT","Xuat nguyen lieu cho cong trinh","2","","");
+INSERT INTO mand VALUES("90","100090","Khấu hao tài sản cố định","0","6421","","","KHAC","Khau hao tai san co dinh","0","","");
+INSERT INTO mand VALUES("91","100091","Phân bổ chi phí trả trước","0","6421","","","KHAC","Phan bo chi phi tra truoc","0","","");
+INSERT INTO mand VALUES("92","100092","Khấu trừ thuế GTGT","0","3331","1331","","KHAC","Khau tru thue GTGT","0","","");
+INSERT INTO mand VALUES("93","100093","Bút toán chi phí sãn xuất,kinh doanh dỡ dang","0","154","632","","KHAC","But toan chi phi san xuat,kinh doanh do dang","0","","");
+INSERT INTO mand VALUES("94","100094","Phân bổ chi phí sản xuất chung","0","821","3334","","KHAC","Phan bo chi phi san xuat chung","0","","");
+INSERT INTO mand VALUES("95","100095","KC tăng giảm thuế TNDN","0","154","627","","KHAC","KC tang giam thue TNDN","0","","");
+INSERT INTO mand VALUES("96","100096","KC tăng giảm lợi nhuận phân phối năm nay","0","911","821","","KHAC","KC tang giam loi nhuan nam nay","0","","");
+INSERT INTO mand VALUES("99","100099","Kết chuyển giá vốn bán hàng","0","632","","","KHAC","Ket chuyen gia von ban hang","0","","");
+INSERT INTO mand VALUES("100","_ATS01","Tăng do mua mới hoặc bổ sung","0","6422","","","TATS","Tang do mua moi hoac bo sung","0","","");
+INSERT INTO mand VALUES("101","_ATS02","Tăng do trang bị thêm TSCĐ","0","6422","","","TATS","Tang do trang bi them TSCD","0","","");
+INSERT INTO mand VALUES("102","_ATS03","Tăng do đánh giá lại","0","6422","","","TATS","Tang do danh gia lai","0","","");
+INSERT INTO mand VALUES("103","_ATS04","Giảm do thanh lý nhượng giá","0","","","","GITS","Giam do thanh ly nhuong gia","0","","");
+INSERT INTO mand VALUES("104","_ATS05","Giảm do giảm vốn","0","","","","GITS","Giam do giam von","0","","");
+INSERT INTO mand VALUES("105","_ATS06","Giảm do đánh giá lại, tháo gỡ","0","","","","GITS","Giam do danh gia lai, thao go","0","","");
+INSERT INTO mand VALUES("106","100106","Phí dịch vụ kế toán","10","6421","1111","","CHI","Phi dich vu ke toan","3","","");
+INSERT INTO mand VALUES("107","KCCPBH","Kết chuyển chi phí bán hàng","0","911","6421","","KHAC","Kết chuyển chi phí bán hàng","0","","");
+INSERT INTO mand VALUES("108","KCCPHD","Kết chuyển chi phí HĐ khác","0","911","811","","KHAC","Kết chuyển chi phí HĐ khác","0","","");
+INSERT INTO mand VALUES("109","KCCPKD","Kết chuyển chi phí QLDN","0","911","6422","","KHAC","Kết chuyển chi phí QLDN","0","","");
+INSERT INTO mand VALUES("110","KCCPTC","Kết chuyển chi phí tài chính","0","911","635","","KHAC","Kết chuyển chi phí tài chính","0","","");
+INSERT INTO mand VALUES("111","KCDOTT","Kết chuyển doanh thu bán hàng hóa","0","5111","911","","KHAC","Kết chuyển doanh thu bán hàng hóa","0","","");
+INSERT INTO mand VALUES("112","KCDTDV","Kết chuyển doanh thu dịch vụ","0","5113","911","","KHAC","Kết chuyển doanh thu dịch vụ","0","","");
+INSERT INTO mand VALUES("113","KCDTTC","Kết chuyển doanh thu tài chính","0","5151","911","","KHAC","Kết chuyển doanh thu tài chính","0","","");
+INSERT INTO mand VALUES("114","KCDTTP","Kết chuyển doanh thu bán thành phẩm","0","5112","911","","KHAC","Kết chuyển doanh thu bán thành phẩm","0","","");
+INSERT INTO mand VALUES("115","KCGVHB","Kết chuyển giá vốn bán hàng","0","911","632","","KHAC","Kết chuyển giá vốn bán hàng","0","","");
+INSERT INTO mand VALUES("116","KCKPNK","Kết chuyển khoản phải nộp khác","0","811","33393","","KHAC","Kết chuyển khoản phải nộp khác","0","","");
+INSERT INTO mand VALUES("117","KCLAKD","Kết chuyển lãi kinh doanh","0","911","4212","","KHAC","Kết chuyển lãi kinh doanh","0","","");
+INSERT INTO mand VALUES("118","KCLNNT","Kết chuyển lợi nhuận năm trước","0","4212","4211","","KHAC","Kết chuyển lợi nhuận năm trước","0","","");
+INSERT INTO mand VALUES("119","KCLOKD","Kết chuyển lỗ kinh doanh","0","4212","911","","KHAC","Kết chuyển lỗ kinh doanh","0","","");
+INSERT INTO mand VALUES("120","KCLONT","kết chuyển lỗ năm trước","0","4211","4212","","KHAC","kết chuyển lỗ năm trước","0","","");
+INSERT INTO mand VALUES("121","KCTNDN","Kết chuyển chi phí thuế thu nhập doanh nghiệp","0","911","821","","KHAC","Kết chuyển chi phí thuế thu nhập doanh nghiệp","0","","");
+INSERT INTO mand VALUES("122","KCTNKC","Kết chuyển thu nhập HĐ khác","0","711","911","","KHAC","Kết chuyển thu nhập HĐ khác","0","","");
+INSERT INTO mand VALUES("123","TLPTTK","Tiền lương phải trả","0","6422","334","","KHAC","Tiền lương phải trả","0","","");
+INSERT INTO mand VALUES("124","TMBPN","Thuế môn bài phải nộp","0","6422","33381","","KHAC","Thuế môn bài phải nộp","0","","");
+INSERT INTO mand VALUES("125","KCTHDN","Kết chuyển thuế TNDN","0","3334","821","","KHAC","Kết chuyển thuế TNDN","0","","");
+INSERT INTO mand VALUES("126","100001","Thuế GTGT đầu ra","10","33311","33311","","THU","Thue GTGT dau ra","1","","");
+INSERT INTO mand VALUES("127","KC5118","Kết chuyển doanh thu khác","0","5118","911","","KHAC","Kết chuyển doanh thu khác","0","","");
+INSERT INTO mand VALUES("128","_NGLNT","Nộp thuế ngoại tỉnh","0","33311","33311","","CHI","Nop thue ngoai tinh","","","");
+INSERT INTO mand VALUES("129","KC5151","Kết chuyển doanh thu tài chính","0","5151","911","","KHAC","Kết chuyển doanh thu tài chính","","","");
+INSERT INTO mand VALUES("130","KC5152","Kết chuyển doanh thu tài chính","0","5152","911","","KHAC","Kết chuyển doanh thu tài chính","","","");
+INSERT INTO mand VALUES("131","KC5153","Kết chuyển doanh thu tài chính","0","5153","911","","KHAC","Kết chuyển doanh thu tài chính","","","");
+INSERT INTO mand VALUES("132","KC5158","Kết chuyển doanh thu tài chính","0","5158","911","","KHAC","Kết chuyển doanh thu tài chính","","","");
+INSERT INTO mand VALUES("136","100136","Doanh thu lắp đặt hệ thống ĐMT","10","","5112","","THU","Doanh thu lap dat he thong DMT","3","","");
+INSERT INTO mand VALUES("139","100139","Mua sắm công cụ dụng cụ","10","6422","1111","","CHI","Mua sám cong cụ dụng cụ","2","","");
+INSERT INTO mand VALUES("143","100143","Phí dịch vụ kế toán","kk","6422","1111","","CHI","Phi dich vu ké toán","2","","");
+INSERT INTO mand VALUES("145","100145","Phí lưu dữ liệu điện toán đám mây","10","6422","1111","","CHI","Phi luu dũ liẹu diẹn toán dám may","2","","");
+INSERT INTO mand VALUES("148","100148","Nộp tiền mặt vào TK","0","","1111","","CHI","Nop tien mat vao TK","3","","");
+INSERT INTO mand VALUES("153","100153","Vốn góp chủ sở hữu","0","","4111","","THU","Von gop chu so huu","2","","");
+INSERT INTO mand VALUES("157","100157","Nộp Thuế GTGT đầu ra","0","33311","1111","","CHI","Nop Thue GTGT dau ra","2","","");
+
+
+
+DROP TABLE IF EXISTS manhanvien;
+
+CREATE TABLE `manhanvien` (
+  `sott` int(10) unsigned NOT NULL,
+  `manhanvien` int(6) NOT NULL AUTO_INCREMENT,
+  `tennv` varchar(100) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `diachi` varchar(500) NOT NULL,
+  `dienthoai` varchar(15) NOT NULL,
+  `luongcb` double NOT NULL,
+  `namsinh` date NOT NULL,
+  `mabp` char(4) NOT NULL,
+  `mabpgoc` varchar(6) NOT NULL,
+  `gioitinh` int(1) NOT NULL,
+  `crdate` date NOT NULL,
+  `tenkd` char(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `chucdanh` varchar(200) NOT NULL,
+  `trinhdo` varchar(200) NOT NULL,
+  `masothue` char(10) NOT NULL,
+  `ngaybdhopdong` date NOT NULL,
+  `ngaykthopdong` date NOT NULL,
+  `phantramthang` float NOT NULL,
+  `phantramquy` float NOT NULL,
+  `phantramnam` float NOT NULL,
+  `tinhluong` char(2) NOT NULL,
+  `phucapchucvu` bigint(20) NOT NULL,
+  `baohiem` bigint(20) NOT NULL,
+  `giamtrugiacanh` bigint(20) NOT NULL,
+  `tienangiuaca` bigint(20) NOT NULL,
+  `phucapkhongdungbhxh` bigint(20) NOT NULL,
+  `thuethunhap` bigint(20) NOT NULL,
+  `matk1` char(6) NOT NULL,
+  `phantramtk` int(2) NOT NULL,
+  `matk2` char(6) NOT NULL,
+  `loaibp` char(2) NOT NULL,
+  `sapxep` int(11) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_manhanvien_mabp_mabp` (`mabp`),
+  KEY `manhanvien` (`manhanvien`),
+  CONSTRAINT `fk_manhanvien_mabp_mabp` FOREIGN KEY (`mabp`) REFERENCES `mabp` (`mabp`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+INSERT INTO manhanvien VALUES("1","1","Trang Long Hải","334001864","Khóm 9, Phường 9, TP. Trà Vinh","","8500000","0000-00-00","0001","","1","0000-00-00","Trang Long Hai","","Cán bộ Quản lý","1","8206927113","0000-00-00","0000-00-00","0","0","0","CB","0","0","99000000","0","0","0","6422","100","","","0");
+INSERT INTO manhanvien VALUES("2","2","Thạch Phúc","334636703","Xã Hiệp Hòa, huyện Cầu Ngang","","8000000","0000-00-00","0001","","1","0000-00-00","Thach Phuc","","Lái xe","5","8462100483","0000-00-00","0000-00-00","0","0","0","CB","0","0","66000000","0","0","0","627","100","","CT","0");
+INSERT INTO manhanvien VALUES("3","3","Trần Văn Tuấn","334679770","ấp Đại Thôn, xã Phước Hảo, huyện Châu Thành","","8000000","0000-00-00","0001","","1","0000-00-00","Tran Van Tuan","","Cán bộ kỹ thuật","5","8011569314","0000-00-00","0000-00-00","0","0","0","CB","0","0","66000000","0","0","0","627","100","","CT","0");
+INSERT INTO manhanvien VALUES("4","4","Trần Tấn Phát","334872111","ấp Đại Thôn, xã Phước Hảo, huyện Châu Thành","","8000000","0000-00-00","0001","","1","0000-00-00","Tran Tan Phat","","Cán bộ kỹ thuật","5","8333873855","0000-00-00","0000-00-00","0","0","0","CB","0","0","66000000","0","0","0","627","100","","CT","0");
+
+
+
+DROP TABLE IF EXISTS manhom;
+
+CREATE TABLE `manhom` (
+  `sott` int(11) NOT NULL,
+  `manhom` int(4) NOT NULL AUTO_INCREMENT,
+  `tennhom` varchar(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `rank` int(11) NOT NULL,
+  PRIMARY KEY (`manhom`),
+  KEY `manhom` (`manhom`),
+  FULLTEXT KEY `tennhom` (`tennhom`),
+  FULLTEXT KEY `tennhom_2` (`tennhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=1231 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO manhom VALUES("100","1100","Thành Phẩm","","0");
+INSERT INTO manhom VALUES("99","1200","Nhóm dịch vụ","","0");
+INSERT INTO manhom VALUES("5","1230","Hàng hóa","","53");
+
+
+
+DROP TABLE IF EXISTS manhomkh;
+
+CREATE TABLE `manhomkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `manhom` int(11) NOT NULL,
+  `tennhom` varchar(500) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `u_manhom` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+INSERT INTO manhomkh VALUES("1","1001","Khác","");
+INSERT INTO manhomkh VALUES("10","1010","Nhân viên","");
+
+
+
+DROP TABLE IF EXISTS manhomts;
+
+CREATE TABLE `manhomts` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `manhom` char(14) NOT NULL,
+  `tennhom` varchar(200) NOT NULL,
+  `manhomcha` varchar(14) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+INSERT INTO manhomts VALUES("1","000001","Thiết bị, dụng cụ quản lý","","");
+INSERT INTO manhomts VALUES("2","000002","Cây lâu năm, súc vật làm việc","","");
+INSERT INTO manhomts VALUES("3","000003","TSCĐ khác","","");
+INSERT INTO manhomts VALUES("4","000004","Quyền sử dụng đất","","");
+INSERT INTO manhomts VALUES("5","000005","Chi phí thành lập doanh nghiệp","","");
+INSERT INTO manhomts VALUES("6","000006","Bằng phát minh, bằng sáng chế...","","");
+INSERT INTO manhomts VALUES("7","000007","TSCĐ vô hình khác","","");
+
+
+
+DROP TABLE IF EXISTS masp;
+
+CREATE TABLE `masp` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `masp` varchar(14) NOT NULL,
+  `tensp` varchar(1000) NOT NULL,
+  `maspcha` varchar(14) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `tenkd` varchar(255) NOT NULL,
+  `makh` varchar(14) NOT NULL,
+  `diachi` varchar(300) NOT NULL,
+  `namsx` date NOT NULL,
+  `gthopdong` bigint(20) NOT NULL,
+  `ngaykhoicong` date NOT NULL,
+  `ngayhoanthanh` date NOT NULL,
+  `vatlieu` bigint(20) NOT NULL,
+  `nhancong` bigint(20) NOT NULL,
+  `may` bigint(20) NOT NULL,
+  `quyettoan` int(11) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `chonchuyen` char(1) NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  `diabanuudai` char(10) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `masp` (`masp`),
+  UNIQUE KEY `mats` (`masp`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `index_maspcha` (`maspcha`),
+  KEY `index_diabanuudia` (`diabanuudai`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  FULLTEXT KEY `fmasp` (`masp`),
+  FULLTEXT KEY `fmt` (`masp`,`tenkd`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS matk;
+
+CREATE TABLE `matk` (
+  `sott` int(10) unsigned NOT NULL,
+  `matk` char(6) NOT NULL,
+  `tentk` varchar(255) DEFAULT NULL,
+  `matkcha` char(4) NOT NULL,
+  `loaitk` varchar(60) DEFAULT NULL,
+  `mats` char(3) DEFAULT NULL,
+  `mangv` char(3) DEFAULT NULL,
+  `nhomtk` char(10) DEFAULT NULL,
+  `shtk` int(6) NOT NULL,
+  `ghichu` text,
+  `ngaytao` date DEFAULT NULL,
+  `rank` bigint(20) NOT NULL DEFAULT '0',
+  `tentk_en` varchar(250) NOT NULL,
+  `tentk_cn` varchar(250) NOT NULL,
+  PRIMARY KEY (`matk`),
+  KEY `rank` (`rank`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO matk VALUES("1","111","Tiền mặt","0","1","110","","TT","111","","2016-11-29","15","","");
+INSERT INTO matk VALUES("2","1111","Tiền Việt Nam","111","1","110","","TT","111","","2016-11-09","53","","");
+INSERT INTO matk VALUES("3","1112","Ngoại tệ","111","1","110","","TT","111","","2016-11-09","11","","");
+INSERT INTO matk VALUES("4","112","Tiền gửi ngân hàng","0","1","110","","TT","112","","2016-11-09","17","","");
+INSERT INTO matk VALUES("5","1121","Tiền việt nam","112","1","110","","TT","112","","2016-11-26","9","","");
+INSERT INTO matk VALUES("7","112101","Tiền gửi ngân hàng ViettinBank","1121","1","110","","TT","112","","2022-05-17","40","","");
+INSERT INTO matk VALUES("6","112102","Tiền gửi ngân hàng Sacombank","1121","1","110","","TT","112","","2017-03-29","18","","");
+INSERT INTO matk VALUES("8","1122","Ngoại tệ","112","1","110","","TT","112","","2016-11-08","10","","");
+INSERT INTO matk VALUES("138","112201","Tiền gửi ngân hàng BIDV","1122","1","110","","TT","112","","2017-04-21","1","","");
+INSERT INTO matk VALUES("9","121","Chứng khoán kinh doanh","0","1","121","","TT","121","","2016-11-08","9","","");
+INSERT INTO matk VALUES("10","128","Đầu tư nắm giữ đến ngày đáo hạn","0","1","122","","TT","128","","2016-11-08","3","","");
+INSERT INTO matk VALUES("11","1281","Tiền gửi có kỳ hạn","128","1","122","","TT","128","","2016-11-08","5","","");
+INSERT INTO matk VALUES("12","1288","Các khoản đầu tư khác nắm giữ đến ngày đáo","128","1","122","","TT","128","","2016-11-09","0","","");
+INSERT INTO matk VALUES("13","131","Phải thu của khách hàng","0","1","130","","TT","131","","2016-11-08","5","","");
+INSERT INTO matk VALUES("14","133","Thuế GTGT được khấu trừ","0","1","110","","TT","133","","2017-03-16","1","","");
+INSERT INTO matk VALUES("15","1331","Thuế GTGT được khấu trừ của hàng hóa, dịch vụ","133","1","110","","TT","133","","2017-01-25","0","","");
+INSERT INTO matk VALUES("16","1332","Thuế GTGT được khấu trừ của TSCĐ","133","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("133","136","Phải thu nội bộ","0","1","130","","TT","136","","2016-11-08","1","","");
+INSERT INTO matk VALUES("134","1361","Vốn kinh doanh ở đơn vị trực thuộc","136","1","133","","TT","136","","2016-11-08","0","","");
+INSERT INTO matk VALUES("135","1368","Phải thu nội bộ khác","136","1","134","","TT","136","","2016-11-08","1","","");
+INSERT INTO matk VALUES("17","138","Phải thu khác","0","1","130","","TT","138","","2016-11-08","0","","");
+INSERT INTO matk VALUES("18","1381","Tài sản thiếu chờ xử lý","138","1","135","","TT","138","","2016-11-08","0","","");
+INSERT INTO matk VALUES("19","1386","Cầm cố, thế chấp, ký quỹ, ký cược","138","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("20","1388","Phải thu khác","138","1","110","","TT","0","","2016-11-07","1","","");
+INSERT INTO matk VALUES("21","141","Tạm ứng","0","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("22","151","Hàng mua đang đi đường","0","1","110","","TT","0","","2016-11-07","17","","");
+INSERT INTO matk VALUES("23","152","nguyên vật liệu","0","1","110","","TT","0","","2016-11-07","6","","");
+INSERT INTO matk VALUES("24","153","Công cụ, dụng cụ","0","1","110","","TT","0","","2016-11-07","5","","");
+INSERT INTO matk VALUES("25","154","Chi phí sản xuất, kinh doanh dở dang","0","1","110","","TT","0","","2016-11-07","8","","");
+INSERT INTO matk VALUES("26","155","Thành phẩm","0","1","110","","TT","0","","2016-11-07","8","","");
+INSERT INTO matk VALUES("27","156","Hàng hóa","0","1","110","","TT","0","","2016-11-07","3","","");
+INSERT INTO matk VALUES("200","1561","Giá trị hàng mua","156","1","110","","TT","156","","2017-02-10","4","","");
+INSERT INTO matk VALUES("201","1562","Chi phí mua hàng","156","1","110","","TT","156","","2017-02-10","1","","");
+INSERT INTO matk VALUES("28","157","hàng gửi đi bán","0","1","110","","TT","0","","2016-11-07","2","","");
+INSERT INTO matk VALUES("29","211","Tài sản cố định","0","1","150","","TT","211","","2016-11-08","0","","");
+INSERT INTO matk VALUES("30","2111","TSCĐ hữu hình","211","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("31","2112","TSCĐ thuê tài chính","211","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("32","2113","TSCĐ vô hình","211","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("33","214","Hao mòn tài sản cố định","0","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("34","2141","Hao mòn TSCĐ hữu hình","214","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("35","2142","Hao mòn TSCĐ thuê tài chính","214","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("36","2143","Hao mòn TSCĐ vô hình","214","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("37","2147","Hao mòn bất động sản đâu tư","214","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("38","217","Bất động sản đầu tư","0","1","160","","TT","217","","2016-11-08","0","","");
+INSERT INTO matk VALUES("39","228","Đầu tư góp vốn vào đơn vị khác","0","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("40","2281","Đầu tư góp vốn vào liên doanh liên kết","228","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("41","2288","Đầu tư khác","228","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("42","229","Dự phòng tổn thất tài sản","0","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("43","2291","Dự phòng giảm giá chứng khoán kinh doanh","229","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("44","2292","Dự phòng tổn thất đầu tư vào đơn vị khác","229","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("45","2293","Dự phòng phải thu khó đòi","229","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("46","2294","Dự phòng giảm giá hàng tồn kho","229","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("47","241","Xây dựng cơ bản dở dang","0","1","170","","TT","241","","2016-11-08","0","","");
+INSERT INTO matk VALUES("48","2411","Mua sắm TSCĐ","241","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("49","2412","Xây dựng cơ bản","241","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("50","2413","Sửa chữa lớn TSCĐ","241","1","110","","TT","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("51","242","Chi phí trả trước","0","1","110","","TT","0","","2016-11-07","1","","");
+INSERT INTO matk VALUES("53","331","Phải trả cho người bán","0","2","311","","TT","331","","2016-11-08","4","","");
+INSERT INTO matk VALUES("54","333","Thuế và các khoản phải nộp Nhà nước","0","2","413","","TT","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("55","3331","Thuế giá trị gia tăng phải nộp","333","2","413","","TT","333","","2016-11-08","1","","");
+INSERT INTO matk VALUES("56","33311","Thuế GTGT đầu ra","3331","2","413","","TT","333","","2017-03-10","0","","");
+INSERT INTO matk VALUES("57","33312","Thuế GTGT hàng nhập khẩu","3331","2","413","","TT","333","","2017-03-10","0","","");
+INSERT INTO matk VALUES("58","3332","Thuế tiêu thụ đặc biệt","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("59","3333","Thuế xuất, nhập khẩu","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("60","3334","Thuế thu nhập doanh nghiệp","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("61","3335","Thuế thu nhập cá nhân","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("62","3336","Thuế tài nguyên","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("63","3337","Thuế nhà đất tiền thuê đất","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("64","3338","Thuế bảo vệ môi trường và các khoản thu khác","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("65","33381","Thuế bảo vệ môi trường","3338","2","413","","NO","333","","2017-03-10","0","","");
+INSERT INTO matk VALUES("66","33382","Các loại thuế khác","3338","2","413","","TT","333","","2017-03-10","0","","");
+INSERT INTO matk VALUES("67","3339","Phí, lệ phí và các khoản phải nộp khác","333","2","413","","NO","333","","2016-11-08","0","","");
+INSERT INTO matk VALUES("208","33391","Phí, lệ phí môn bài","3339","2","413","","NO","333","","2021-11-30","0","","");
+INSERT INTO matk VALUES("209","33392","Các khoản phải nộp khác","3339","2","413","","NO","333","","2018-09-17","0","","");
+INSERT INTO matk VALUES("68","334","Phải trả người lao động","0","2","414","","NO","334","","2016-11-08","0","","");
+INSERT INTO matk VALUES("69","335","Chi phí phải trả","0","2","350","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("70","336","Phải trả nội bộ","0","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("71","3361","Phải trả nội bộ về vốn kinh doanh","336","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("72","3368","Phải trả nội bộ khác","336","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("73","338","Phải trả phải nộp khác","0","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("74","3381","Tài sản thừa chờ giải quyết","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("75","3382","Kinh phí công đoàn","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("76","3383","Bảo hiểm xã hội","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("77","3384","Bảo hiểm y tế","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("78","3385","Bảo hiểm thất nghiệp","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("79","3386","Nhận ký quỹ , ký cược","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("80","3387","Doanh thu chưa thực hiện","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("81","3388","Phải trả phải nộp","338","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("82","341","Vay và nợ thuê tài chính","0","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("83","3411","Các khoản đi vay","341","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("202","34111","Các khoản đi vay ngắn hạn","3411","1","360","","TT","341","","2018-09-17","0","","");
+INSERT INTO matk VALUES("203","34112","Các khoản đi dài ngắn hạn","3411","1","360","","TT","341","","2018-09-17","0","","");
+INSERT INTO matk VALUES("84","3412","Nợ thuê tài chính","341","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("85","352","Dự phòng phải trả","0","2","360","","NO","352","","2016-11-08","0","","");
+INSERT INTO matk VALUES("86","3521","Dự phòng bảo hành sản phẩm hàng hóa","352","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("87","3522","Dự phòng bảo hành công trình xây dựng","352","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("88","3524","Dự phòng phải trả khác","352","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("89","353","Quỹ khen thưởng phúc lợi","0","2","418","","NO","353","","2016-11-08","0","","");
+INSERT INTO matk VALUES("136","3531","Quỹ khen thưởng","353","2","418","","NO","353","","2016-12-16","1","","");
+INSERT INTO matk VALUES("90","3532","Quỹ phúc lợi","353","2","418","","NO","353","","2016-11-08","0","","");
+INSERT INTO matk VALUES("91","3533","Quỹ phúc lợi đã hình thành TSCĐ","353","2","418","","NO","353","","2016-11-08","0","","");
+INSERT INTO matk VALUES("92","3534","Quỹ thưởng ban quản lý điều hành công ty","353","2","418","","NO","353","","2016-11-08","0","","");
+INSERT INTO matk VALUES("93","356","Quỹ phát triển khoa học và công nghệ","0","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("94","3561","Quỹ phát triển khoa học và công nghệ","356","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("95","3562","Quỹ phát triển khoa học và công nghệ đã hình t","356","2","360","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("105","411","Vốn đầu tư của chủ sở hữu","0","3","400","","KHAC","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("106","4111","Vốn góp của chủ sở hữu","411","3","410","","KHAC","411","","2016-12-26","0","","");
+INSERT INTO matk VALUES("107","4112","Thặng dư vốn cổ phần","411","3","410","","KHAC","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("108","4118","Vốn khác","411","3","410","","NO","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("109","413","Chênh lệch tỷ giá hối đoái","0","3","410","","KHAC","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("110","418","Các quỹ thuộc vốn chủ sở hữu","0","3","410","","KHAC","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("111","419","Cổ phiếu quỹ","0","3","410","","KHAC","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("112","421","Lợi nhuận sau thuế chưa phân phối","0","3","420","","KHAC","0","","2016-11-07","0","","");
+INSERT INTO matk VALUES("139","4211","Lợi nhuận sau thuế chưa phân phối năm trước","421","3","420","","KHAC","421","","2017-06-28","0","","");
+INSERT INTO matk VALUES("113","4212","Lợi nhuận sau thuế chưa phân phối năm nay","421","3","420","","KHAC","421","","2016-11-08","0","","");
+INSERT INTO matk VALUES("114","511","Doanh thu bán hàng và cung cấp dịch vụ","0","4","510","","KHAC","511","","2016-11-08","0","","");
+INSERT INTO matk VALUES("115","5111","Doanh thu bán hàng hóa","511","4","510","","KHAC","511","","2016-11-08","0","","");
+INSERT INTO matk VALUES("116","5112","Doanh thu bán thành phẩm","511","4","510","","KHAC","511","","2016-11-25","0","","");
+INSERT INTO matk VALUES("117","5113","Doanh thu cung cấp dịch vụ","511","4","510","","KHAC","511","","2016-11-08","0","","");
+INSERT INTO matk VALUES("118","5118","Doanh thu khác","511","4","510","","KHAC","511","","2016-11-08","0","","");
+INSERT INTO matk VALUES("119","515","Doanh thu hoạt động tài chính","0","4","510","","KHAC","515","","2016-11-08","0","","");
+INSERT INTO matk VALUES("207","5151","Doanh thu hoạt động tài chính","515","4","510","","KHAC","515","","2018-09-17","0","","");
+INSERT INTO matk VALUES("120","611","Mua hàng","0","5","610","","KHAC","611","","2016-11-08","0","","");
+INSERT INTO matk VALUES("137","621","Chi phí nguyên vật liệu","0","1","110","","TT","621","","2017-04-17","0","","");
+INSERT INTO matk VALUES("204","622","Chi phí nhân công","0","1","110","","TT","622","","2018-09-17","0","","");
+INSERT INTO matk VALUES("205","623","Chi phí ca máy","0","1","110","","TT","623","","2018-09-17","0","","");
+INSERT INTO matk VALUES("206","627","Chi phí sản xuất chung","0","1","110","","TT","627","","2018-09-17","0","","");
+INSERT INTO matk VALUES("121","631","Giá thành sản xuất","0","5","630","","KHAC","631","","2016-11-08","0","","");
+INSERT INTO matk VALUES("122","632","Giá vốn bán hàng","0","5","630","","KHAC","632","","2016-11-08","0","","");
+INSERT INTO matk VALUES("123","635","Chi phí tài chính","0","5","640","","KHAC","635","","2016-11-08","0","","");
+INSERT INTO matk VALUES("124","642","Chi phí quản lý kinh doanh","0","5","640","","KHAC","642","","2016-11-08","0","","");
+INSERT INTO matk VALUES("125","6421","Chi phí bán hàng","642","5","642","","KHAC","642","","2016-11-08","1","","");
+INSERT INTO matk VALUES("126","6422","Chi phí quản lý doanh nghiệp","642","5","640","","KHAC","642","","2016-11-08","12","","");
+INSERT INTO matk VALUES("127","711","Thu nhập khác","0","6","710","","KHAC","711","","2016-11-08","0","","");
+INSERT INTO matk VALUES("128","811","Chi phí khác","0","7","810","","KHAC","811","","2016-11-08","0","","");
+INSERT INTO matk VALUES("129","821","Chi phí thuế thu nhập doanh nghiệp","0","7","820","","KHAC","821","","2016-11-08","0","","");
+INSERT INTO matk VALUES("130","911","Xác định kết quả kinh doanh","0","8","910","","KHAC","911","","2016-11-08","0","","");
+INSERT INTO matk VALUES("210","112202","Tiền gửi ngân hàng Sacombank","1122","1","110","","TT","112","","2019-08-21","0","","");
+
+
+
+DROP TABLE IF EXISTS mats;
+
+CREATE TABLE `mats` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` char(14) NOT NULL,
+  `tents` varchar(300) DEFAULT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysd` date DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `ngaysx` date NOT NULL,
+  `congsuat` varchar(200) DEFAULT NULL,
+  `tylekh` bigint(6) DEFAULT NULL,
+  `thoigiansd` double DEFAULT NULL,
+  `soluong` double DEFAULT NULL,
+  `dongia` double DEFAULT NULL,
+  `nguyengia` double DEFAULT NULL,
+  `giatriconlai` double DEFAULT NULL,
+  `muckhthang` double NOT NULL,
+  `muckhquy` double DEFAULT NULL,
+  `muckhnam` double NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `chuthich` text,
+  `mabp` char(6) NOT NULL,
+  `bophan` varchar(200) NOT NULL,
+  `manhomts` char(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `matscha` varchar(14) NOT NULL,
+  `khauhao` int(1) NOT NULL DEFAULT '1',
+  `ngaygiam` date NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `sohuu` varchar(200) NOT NULL,
+  `matkgiam` char(6) NOT NULL,
+  `cpkhongduoctru` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mats` (`mats`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS mavt;
+
+CREATE TABLE `mavt` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) DEFAULT NULL,
+  `quycach` varchar(35) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dvtp` varchar(100) NOT NULL,
+  `kl` double NOT NULL,
+  `kt` double NOT NULL,
+  `mavtcha` char(6) NOT NULL COMMENT 'kh�ng s? d?ng',
+  `manhom` int(4) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `matk` char(5) NOT NULL,
+  `ghichu` text NOT NULL,
+  `giaban` double NOT NULL,
+  `giabansi` double NOT NULL,
+  `giamua` double NOT NULL,
+  `rate` char(2) NOT NULL,
+  `mark` char(1) NOT NULL,
+  `congvao` bigint(10) NOT NULL,
+  `trura` bigint(10) NOT NULL,
+  `dp` int(2) NOT NULL COMMENT 'chi?t kh?u t�nh %',
+  `max` double NOT NULL,
+  `min` double NOT NULL,
+  `muc` double NOT NULL,
+  `tenkd` varchar(1000) NOT NULL,
+  `sl` int(1) DEFAULT '0',
+  `loaivl` char(3) NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `pbchiphi` int(1) NOT NULL,
+  `sapxep` char(1) NOT NULL,
+  `tkdoanhthu` char(6) NOT NULL,
+  `mavttt` char(20) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  `heso` double NOT NULL DEFAULT '1',
+  PRIMARY KEY (`mavt`),
+  UNIQUE KEY `umavt` (`mavt`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `sott` (`sott`),
+  KEY `mavt` (`mavt`),
+  KEY `fk_mavt_manhom_manhom` (`manhom`),
+  KEY `index_tenvt` (`tenvt`(255)),
+  KEY `sapxep` (`sapxep`),
+  KEY `id_mavttt` (`mavttt`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  CONSTRAINT `fk_mavt_manhom_manhom` FOREIGN KEY (`manhom`) REFERENCES `manhom` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO mavt VALUES("1652778943","NC-001","Nhân công","","Công","","0","0","","1200","Nhóm dịch vụ","622","","0","0","0","","","0","0","0","0","0","0","Nhan cong","0","NC","","0","","5113","","1","1");
+INSERT INTO mavt VALUES("1652778944","SXC-01","Chi phí chung cố định","","","","0","0","","1200","Nhóm dịch vụ","627","","0","0","0","","","0","0","0","0","0","0","Chi phí chung co dinh","0","SXC","","0","","5113","","2","1");
+INSERT INTO mavt VALUES("1652778945","SXC-02","Chi phí chung biến đổi","","","","0","0","","1200","Nhóm dịch vụ","627","","0","0","0","","","0","0","0","0","0","0","Chi phí chung bien doi","0","SXC","","0","","5113","","3","1");
+
+
+
+DROP TABLE IF EXISTS my_stopwords;
+
+CREATE TABLE `my_stopwords` (
+  `value` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS nhaphoadon;
+
+CREATE TABLE `nhaphoadon` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(500) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `manhom` char(10) NOT NULL,
+  `matk` char(10) NOT NULL,
+  `tkdoanhthu` char(10) NOT NULL,
+  `tenkd` varchar(500) NOT NULL,
+  `soluong` double(15,3) NOT NULL,
+  `dongia` double(15,3) NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `chietkhau` bigint(20) NOT NULL,
+  `thuesuat` char(4) NOT NULL,
+  `tienthue` bigint(20) NOT NULL,
+  `sophieu` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `id_mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS nhatkykiemphieu;
+
+CREATE TABLE `nhatkykiemphieu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `lanthu` int(11) NOT NULL,
+  `tuso` varchar(11) NOT NULL,
+  `denso` int(11) NOT NULL,
+  `ngaynhap` date NOT NULL,
+  `gionhap` time NOT NULL,
+  `loaiphieu` int(11) NOT NULL,
+  `nguoinhap` varchar(20) NOT NULL,
+  `gt1` bigint(20) NOT NULL,
+  `gt2` bigint(20) NOT NULL,
+  `ngaycuoi` date NOT NULL,
+  `matk` char(6) NOT NULL,
+  `niendo` int(4) NOT NULL,
+  `truongnhomduyet` tinyint(4) NOT NULL,
+  `giamdocduyet` tinyint(4) NOT NULL,
+  `nguoiduyet` varchar(50) NOT NULL,
+  `ngayduyet` datetime NOT NULL,
+  `ghichu` text NOT NULL,
+  `machinhanh` char(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS nhatkylamviec;
+
+CREATE TABLE `nhatkylamviec` (
+  `sott` bigint(20) NOT NULL AUTO_INCREMENT,
+  `hanhdong` char(10) NOT NULL,
+  `loaiphieu` char(10) NOT NULL,
+  `dulieu` text NOT NULL,
+  `dulieukd` text NOT NULL,
+  `dulieumahoa` char(50) NOT NULL,
+  `thoigianghi` datetime NOT NULL,
+  `nguoighi` char(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `dulieumahoa` (`dulieumahoa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS plchuyenlo;
+
+CREATE TABLE `plchuyenlo` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(10) NOT NULL,
+  `nampslo` int(5) NOT NULL,
+  `solophatsinh` bigint(20) NOT NULL,
+  `sochuyenkytruoc` bigint(20) NOT NULL,
+  `sochuyentrongky` bigint(20) NOT NULL,
+  `sochuyenkysau` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umaso` (`maso`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+INSERT INTO plchuyenlo VALUES("1","2021_2020","2020","0","0","0","0","");
+INSERT INTO plchuyenlo VALUES("2","2021_2019","2019","0","0","0","0","");
+INSERT INTO plchuyenlo VALUES("3","2021_2018","2018","0","0","0","0","");
+INSERT INTO plchuyenlo VALUES("4","2021_2017","2017","0","0","0","0","");
+INSERT INTO plchuyenlo VALUES("5","2021_2016","2016","0","0","0","0","");
+
+
+
+DROP TABLE IF EXISTS plgdlk;
+
+CREATE TABLE `plgdlk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(10) NOT NULL,
+  `namps` int(5) NOT NULL,
+  `chiphilaivay` bigint(20) NOT NULL,
+  `laitiengui` bigint(20) NOT NULL,
+  `laivaytrutiengui` bigint(20) NOT NULL,
+  `chiphikhauhao` bigint(20) NOT NULL,
+  `loinhuanthuan` bigint(20) NOT NULL,
+  `ebitda` bigint(20) NOT NULL,
+  `laivayduoctru` bigint(20) NOT NULL,
+  `chiphilaivaykhongduoctru` bigint(20) NOT NULL,
+  `chiphilaivaykhongduoctruchuyentiep` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umaso` (`maso`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+INSERT INTO plgdlk VALUES("1","2021_2020","2020","0","0","0","0","0","0","0","0","0","");
+INSERT INTO plgdlk VALUES("2","2021_2019","2019","0","0","0","0","0","0","0","0","0","");
+INSERT INTO plgdlk VALUES("3","2021_2018","2018","0","0","0","0","0","0","0","0","0","");
+INSERT INTO plgdlk VALUES("4","2021_2017","2017","0","0","0","0","0","0","0","0","0","");
+INSERT INTO plgdlk VALUES("5","2021_2016","2016","0","0","0","0","0","0","0","0","0","");
+INSERT INTO plgdlk VALUES("6","2021_2021","2021","396453236","4235674","392217562","198564237","112346789","703128588","210938576","181278986","181278986","");
+
+
+
+DROP TABLE IF EXISTS plthuetndnuudai;
+
+CREATE TABLE `plthuetndnuudai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `machitieu` char(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieucha` char(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `phantram` int(11) NOT NULL,
+  `nam` varchar(10) NOT NULL,
+  `ketunam` varchar(10) NOT NULL,
+  `chonuudai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umachitieu` (`machitieu`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+
+INSERT INTO plthuetndnuudai VALUES("1","1.1","Doanh nghiệp sản xuất mới thành lập từ dự án đầu tư.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("2","1.2","Doanh nghiệp di chuyển địa điểm ra khỏi đô thị theo quy hoạch đã được cơ quan có thẩm quyền phê duyệt.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("3","1.3","Doanh nghiệp mới thành lập từ dự án đầu tư vào ngành nghề, lĩnh vực ưu đãi đầu tư.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("4","1.4","Doanh nghiệp mới thành lập từ dự án đầu tư vào ngành nghề, lĩnh vực đặc biệt ưu đãi đầu tư.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("5","1.5","Doanh nghiệp mới thành lập từ dự án đầu tư vào nghành nghề, lĩnh vực ưu đãi đầu tư theo quy định tại Nghị định số 124/2008/NĐ-CP.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("6","1.6","Doanh nghiệp mới thành lập từ dự án đầu tư vào địa bàn thuộc Danh mục địa bàn có điều kiện kinh tế - xã hội khó khăn.","1","0","0","","","1");
+INSERT INTO plthuetndnuudai VALUES("7","1.7","Doanh nghiệp mới thành lập từ dự án đầu tư vào địa bàn thuộc Danh mục địa bàn có điều kiện kinh tế - xã hội đặc biệt khó khăn, khu kinh tế, khu công nghệ cao.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("8","1.8","Doanh nghiệp thành lập mới trong lĩnh vực xã hội hoá hoặc có thu nhập từ hoạt động xã hội hoá.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("9","1.9","Hợp tác xã dịch vụ nông nghiệp, Quỹ tín dụng nhân dân.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("10","1.10","Ưu đãi theo Giấy phép đầu tư, Giấy chứng nhận ưu đãi đầu tư.","1","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("11","3","Xác định số thuế TNDN chênh lệch do doanh nghiệp hưởng thuế suất ưu đãi","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("12","3.1","Tổng thu nhập tính thuế được hưởng thuế suất ưu đãi","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("13","3.2","Thuế TNDN tính theo thuế suất ưu đãi","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("14","3.3","Thuế TNDN tính theo thuế suất phổ thông (20%)","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("15","3.4","Thuế TNDN chênh lệch ([4]=[3]-[2])","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("16","4","Xác định số thuế được miễn, giảm trong kỳ tính thuế","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("17","4.1","Tổng thu nhập tính thuế được miễn thuế hoặc giảm thuế","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("18","4.2","Thuế suất thuế TNDN ưu đãi áp dụng (%)","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("19","4.3","Thuế thu nhập doanh nghiệp phải nộp","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("20","4.4","Tỷ lệ thuế TNDN được miễn hoặc giảm (%)","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("21","4.5","Thuế TNDN được miễn, giảm","3","0","0","","","0");
+INSERT INTO plthuetndnuudai VALUES("22","2.1","- Thuế suất thuế thu nhập doanh nghiệp ưu đãi: [PhanTram]%","2","0","17","","","0");
+INSERT INTO plthuetndnuudai VALUES("23","2.2","- Thời hạn áp dụng thuế suất ưu đãi [SoNam] năm, kể từ năm [Nam]","2","0","0","10","2020","0");
+INSERT INTO plthuetndnuudai VALUES("24","2.3","- Thời gian miễn thuế [SoNam] năm, kể từ năm [Nam]","2","0","0","2","2021","0");
+INSERT INTO plthuetndnuudai VALUES("25","2.4","- Thời gian giảm 50% số thuế phải nộp: [SoNam] năm, kể từ năm [Nam]","2","0","0","4","2023","0");
+
+
+
+DROP TABLE IF EXISTS pscptt;
+
+CREATE TABLE `pscptt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) DEFAULT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngaysx` date NOT NULL,
+  `thoigiansd` double NOT NULL,
+  `thoigiansdconlai` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `mats` char(14) DEFAULT NULL,
+  `tents` varchar(500) DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `soluong` double NOT NULL,
+  `dongia` bigint(10) NOT NULL,
+  `gtvnd` bigint(14) DEFAULT NULL,
+  `nguyengia` bigint(14) NOT NULL,
+  `giatriconlai` bigint(14) NOT NULL,
+  `tylekh` double NOT NULL,
+  `tgsd` double(7,3) DEFAULT NULL,
+  `muckhthang` bigint(13) NOT NULL,
+  `muckhquy` bigint(13) NOT NULL,
+  `muckhnam` bigint(13) NOT NULL,
+  `matk` char(7) DEFAULT NULL,
+  `tkno` char(7) DEFAULT NULL,
+  `tkco` char(7) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(500) DEFAULT NULL,
+  `comment` text,
+  `tanggiam` int(1) NOT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `ngayhoadon` date NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `manhomts` varchar(6) NOT NULL,
+  `tennhomts` varchar(255) NOT NULL,
+  `mapsts` int(11) NOT NULL,
+  `thamchieu` bigint(14) NOT NULL,
+  `loaisp` varchar(2) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_pscptt_mats_mats` (`mats`),
+  CONSTRAINT `fk_pscptt_mats_mats` FOREIGN KEY (`mats`) REFERENCES `cptratruoc` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS pskt;
+
+CREATE TABLE `pskt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `sophieu` bigint(14) NOT NULL,
+  `mapskt` int(11) NOT NULL,
+  `ngayghiso` date NOT NULL,
+  `tkno` char(6) DEFAULT NULL,
+  `tentkno` varchar(200) NOT NULL,
+  `tkco` char(6) DEFAULT NULL,
+  `tentkco` varchar(200) NOT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `tenkh` varchar(1000) NOT NULL,
+  `makh_nh` varchar(14) NOT NULL,
+  `tenkh_nh` varchar(1000) DEFAULT NULL,
+  `diachi` varchar(200) NOT NULL,
+  `masothue` char(15) NOT NULL,
+  `loaiphieu` int(2) DEFAULT NULL,
+  `tongcong` double NOT NULL,
+  `dathem` int(1) NOT NULL,
+  `tendangnhap` varchar(20) NOT NULL,
+  `btps` int(11) NOT NULL,
+  `tongcongnt` double NOT NULL,
+  `lacanhan` int(1) NOT NULL,
+  `tencanhan` varchar(200) NOT NULL,
+  `machinhanh` char(14) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_pskt_makh_makh` (`makh`),
+  KEY `index_tkco` (`tkco`),
+  KEY `index_ngayghiso` (`ngayghiso`),
+  KEY `index_sophieu` (`sophieu`),
+  KEY `index_mapskt` (`mapskt`),
+  KEY `index_macn` (`machinhanh`),
+  CONSTRAINT `fk_pskt_makh_makh` FOREIGN KEY (`makh`) REFERENCES `makh` (`makh`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS psts;
+
+CREATE TABLE `psts` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) DEFAULT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngaysx` date NOT NULL,
+  `ngaygiam` date NOT NULL,
+  `thoigiansd` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `mats` char(14) DEFAULT NULL,
+  `tents` varchar(500) DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `soluong` double NOT NULL,
+  `dongia` bigint(10) NOT NULL,
+  `gtvnd` bigint(14) DEFAULT NULL,
+  `nguyengia` bigint(14) NOT NULL,
+  `giatriconlai` bigint(14) NOT NULL,
+  `tylekh` double NOT NULL,
+  `tgsd` double(7,3) DEFAULT NULL,
+  `muckhthang` bigint(13) NOT NULL,
+  `muckhquy` bigint(13) NOT NULL,
+  `muckhnam` bigint(13) NOT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tkno` char(5) DEFAULT NULL,
+  `tkco` char(5) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(500) DEFAULT NULL,
+  `comment` text,
+  `tanggiam` int(1) NOT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `ngayhoadon` date NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `manhomts` varchar(6) NOT NULL,
+  `tennhomts` varchar(255) NOT NULL,
+  `mapsts` int(11) NOT NULL,
+  `thamchieu` bigint(14) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_psts_mats_mats` (`mats`),
+  CONSTRAINT `fk_psts_mats_mats` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS psvoncsh;
+
+CREATE TABLE `psvoncsh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mapsvoncsh` int(11) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngayhoadon` date NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `makh` char(14) NOT NULL,
+  `mabp` char(14) NOT NULL,
+  `bophan` varchar(300) NOT NULL,
+  `mand` char(14) NOT NULL,
+  `noidung` varchar(300) NOT NULL,
+  `vondieule` bigint(20) NOT NULL,
+  `vongop` bigint(20) NOT NULL,
+  `tanggiam` int(1) NOT NULL,
+  `ghichu` text NOT NULL,
+  `tenkd` varchar(300) NOT NULL,
+  `vondieuletrongky` bigint(20) NOT NULL,
+  `vongoptrongky` bigint(20) NOT NULL,
+  `tyle` double NOT NULL,
+  `vonchuagop` bigint(20) NOT NULL,
+  `vondieuleusd` double NOT NULL,
+  `vongopusd` double NOT NULL,
+  `vondieuletrongkyusd` double NOT NULL,
+  `vongoptrongkyusd` double NOT NULL,
+  `vonchuagopusd` double NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS psvt;
+
+CREATE TABLE `psvt` (
+  `sott` int(6) NOT NULL AUTO_INCREMENT,
+  `sophieu` bigint(14) NOT NULL,
+  `mapskt` int(11) NOT NULL,
+  `seri` char(10) NOT NULL,
+  `sct` char(12) DEFAULT NULL,
+  `ngayghiso` date DEFAULT NULL,
+  `ngayhoadon` date DEFAULT NULL,
+  `ngaythanhtoan` date DEFAULT NULL,
+  `loaiphieu` int(1) DEFAULT NULL COMMENT '1 nh?p kho, 2 xu?t kho',
+  `quycach` varchar(20) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tkno` char(5) DEFAULT NULL,
+  `tkco` char(5) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `noidung` varchar(1000) DEFAULT NULL,
+  `mand2` varchar(6) NOT NULL,
+  `noidung2` varchar(1000) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `tenkh` varchar(1000) DEFAULT NULL,
+  `diachi` varchar(200) DEFAULT NULL,
+  `masothue` char(14) NOT NULL,
+  `makhno` char(14) DEFAULT NULL,
+  `makhco` char(14) DEFAULT NULL,
+  `sl` double(12,3) DEFAULT NULL,
+  `slt` double(12,3) DEFAULT NULL,
+  `dgvnd` double(11,2) DEFAULT NULL,
+  `dgxkvnd` double(11,2) DEFAULT NULL,
+  `gtvnd` bigint(13) DEFAULT NULL,
+  `gtxkvnd` bigint(13) DEFAULT NULL,
+  `gtxk` bigint(13) DEFAULT NULL,
+  `stvnd` bigint(15) DEFAULT NULL,
+  `prepaid` bigint(15) DEFAULT NULL,
+  `debt` bigint(15) DEFAULT NULL,
+  `chuthich` text,
+  `group` varchar(20) DEFAULT NULL,
+  `kho` char(4) NOT NULL,
+  `contact` varchar(25) DEFAULT NULL,
+  `payment` int(1) DEFAULT NULL,
+  `rate` double(6,2) DEFAULT NULL,
+  `vat` bigint(13) DEFAULT NULL,
+  `ttdb` bigint(13) DEFAULT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `other` int(1) DEFAULT NULL,
+  `maloai` int(2) DEFAULT NULL,
+  `max` double(9,3) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `min` double(9,3) DEFAULT NULL,
+  `muc` double(9,3) DEFAULT NULL,
+  `sole` int(2) DEFAULT NULL,
+  `way` int(1) DEFAULT NULL,
+  `khbx` varchar(100) DEFAULT NULL,
+  `tenvtbx` varchar(60) DEFAULT NULL,
+  `dvtbx` varchar(5) DEFAULT NULL,
+  `tobx` varchar(60) DEFAULT NULL,
+  `bx` char(1) DEFAULT NULL,
+  `slbx` double(11,2) DEFAULT NULL,
+  `dgbx` double(13,2) DEFAULT NULL,
+  `ttbx` bigint(13) DEFAULT NULL,
+  `tctm` int(5) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `rate1` double(6,2) DEFAULT NULL,
+  `makho` char(20) DEFAULT NULL,
+  `tenkho` varchar(1000) NOT NULL,
+  `tlck` double(6,2) DEFAULT NULL,
+  `stck` bigint(13) DEFAULT NULL,
+  `sogiay` varchar(6) DEFAULT NULL,
+  `mauso` char(14) DEFAULT NULL,
+  `loaict` varchar(20) DEFAULT NULL,
+  `cothuegtgt` int(1) NOT NULL,
+  `cochietkhau` int(1) NOT NULL DEFAULT '0',
+  `cobaogomthue` int(1) NOT NULL DEFAULT '0',
+  `dungchung` int(1) NOT NULL DEFAULT '0' COMMENT '0 : dung rieng 1:dung chung',
+  `tienhang` double NOT NULL,
+  `tienchietkhau` double NOT NULL,
+  `tienthue` double NOT NULL,
+  `tongcong` double NOT NULL,
+  `ghichu1` text NOT NULL,
+  `phimoitruong` double NOT NULL,
+  `dathem` int(1) NOT NULL,
+  `tendangnhap` varchar(20) NOT NULL,
+  `chungtugoc` int(1) NOT NULL DEFAULT '1',
+  `thoigiannhap` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nhanvien` varchar(100) NOT NULL,
+  `vaokho` varchar(6) NOT NULL,
+  `tienckbanhang` bigint(20) NOT NULL,
+  `taixe` varchar(200) NOT NULL,
+  `loaitokhai` int(11) NOT NULL DEFAULT '1',
+  `chietkhaudoanhso` bigint(20) NOT NULL,
+  `chiphikhongloaitru` int(11) NOT NULL,
+  `tongcongnt` double NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `loaihddt` int(1) NOT NULL,
+  `mabimat` char(10) NOT NULL,
+  `congaykhaithue` int(1) NOT NULL,
+  `ngaykhaithue` date NOT NULL,
+  `loaihanghoadichvu` int(1) NOT NULL DEFAULT '1',
+  `chungtuthamchieu` char(20) NOT NULL,
+  `duandautu` int(1) NOT NULL,
+  `capnhat_chungtugoc` datetime NOT NULL,
+  `capnhat_chiphikhongloaitru` datetime NOT NULL,
+  `tencanhan` char(200) NOT NULL,
+  `lacongtrinh` int(1) NOT NULL,
+  `duyetcpduoctru` int(1) NOT NULL DEFAULT '1',
+  `tiencpduocduyet` bigint(20) NOT NULL,
+  `machinhanh` char(14) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_psvt_mand_mand` (`mand`),
+  KEY `fk_psvt_makh_makh` (`makh`),
+  KEY `index_mapskt` (`mapskt`),
+  KEY `index_loaiphieu` (`loaiphieu`),
+  KEY `index_kho` (`kho`),
+  KEY `index_sophieu` (`sophieu`),
+  KEY `index_ngayghiso` (`ngayghiso`),
+  KEY `index_macn` (`machinhanh`),
+  CONSTRAINT `fk_psvt_makh_makh` FOREIGN KEY (`makh`) REFERENCES `makh` (`makh`),
+  CONSTRAINT `fk_psvt_makho_makho` FOREIGN KEY (`kho`) REFERENCES `makho` (`makho`),
+  CONSTRAINT `fk_psvt_mand_mand` FOREIGN KEY (`mand`) REFERENCES `mand` (`mand`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS saoluu;
+
+CREATE TABLE `saoluu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mst` bigint(15) NOT NULL,
+  `tendn` varchar(100) NOT NULL,
+  `tenfile` varchar(100) NOT NULL,
+  `ngayluu` datetime NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+DROP TABLE IF EXISTS sdcn;
+
+CREATE TABLE `sdcn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(3) NOT NULL,
+  `maso_` char(3) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `tenkh` varchar(60) DEFAULT NULL,
+  `matk` char(5) NOT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `kho` varchar(5) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `province` varchar(15) DEFAULT NULL,
+  `country` varchar(15) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `fax` varchar(15) DEFAULT NULL,
+  `comment` text,
+  `sdkno` bigint(13) NOT NULL,
+  `sdkco` bigint(13) NOT NULL,
+  `psno` bigint(14) NOT NULL,
+  `psco` bigint(14) NOT NULL,
+  `sckno` bigint(13) NOT NULL,
+  `sckco` bigint(13) NOT NULL,
+  `date` date DEFAULT NULL,
+  `noqh` char(1) DEFAULT NULL,
+  `tygiapt` bigint(20) NOT NULL,
+  `tygiaptr` bigint(20) NOT NULL,
+  `thanhtienntpt` double NOT NULL,
+  `thanhtienntptr` double NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_makh` (`makh`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS sdkt;
+
+CREATE TABLE `sdkt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `matk` char(100) NOT NULL,
+  `loaitk` char(6) NOT NULL,
+  `matsnv` int(5) NOT NULL,
+  `tentsnv` varchar(200) NOT NULL,
+  `maso` int(5) NOT NULL,
+  `matsnvcha` varchar(5) NOT NULL,
+  `loaitsnv` int(1) NOT NULL,
+  `sodudk` bigint(20) NOT NULL,
+  `soduck` bigint(20) NOT NULL,
+  `thietminh` varchar(10) NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+
+INSERT INTO sdkt VALUES("1","111,112","NO","1","I. Tiền và các tiền khoản tương đương","110","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("2","","NO","2","II. Đầu tư tài chính","120","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("3","121","NO","3","1. Chứng khoán kinh doanh","121","2","1","0","0","","0");
+INSERT INTO sdkt VALUES("4","1281,1288","NO","4","2. Đầu tư nắm giữ đến ngày đáo hạn","122","2","1","0","0","","0");
+INSERT INTO sdkt VALUES("5","228","NO","5","3. Đầu tư góp vốn vào đơn vị khác","123","2","1","0","0","","0");
+INSERT INTO sdkt VALUES("6","2291,2292","CO","6","4. Dự phòng tổn thất đầu tư tài chính (*)","124","2","1","0","0","","0");
+INSERT INTO sdkt VALUES("7","","NO","7","III. Các khoản thu khác","130","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("8","131","NO","8","1. Phải thu của khách hàng","131","7","1","0","0","","0");
+INSERT INTO sdkt VALUES("9","331","NO","9","2. Trả trước cho người bán","132","7","1","0","0","","0");
+INSERT INTO sdkt VALUES("10","1361","NO","10","3. Vốn kinh doanh ở đơn vị trực thuộc","133","7","1","0","0","","0");
+INSERT INTO sdkt VALUES("11","1288,1368,1386,1388,334,338,141","NO","11","4. Phải thu khác","134","7","1","0","0","","0");
+INSERT INTO sdkt VALUES("12","1381","NO","12","5. Tài sản thiếu chờ xử lý","135","7","1","0","0","","0");
+INSERT INTO sdkt VALUES("13","2293","CO","13","6. Dự phòng phải thu khó đòi (*)","136","7","1","0","0","","0");
+INSERT INTO sdkt VALUES("14","","NO","14","IV. Hàng tồn kho","140","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("15","151,152,153,154,155,156,157","NO","15","1. Hàng tồn kho","141","14","1","0","0","","0");
+INSERT INTO sdkt VALUES("16","2294","CO","16","2. Dự phòng giảm giá hàng tồn kho (*)","142","14","1","0","0","","0");
+INSERT INTO sdkt VALUES("17","","NO","17","V. Tài sản cố định","150","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("18","211","NO","18","- Nguyên giá","151","17","1","0","0","","0");
+INSERT INTO sdkt VALUES("19","2141,2142,2143","CO","19","- Giá trị hao mòn lũy kế (*)","152","17","1","0","0","","0");
+INSERT INTO sdkt VALUES("20","","NO","20","VI. Bất động sản đầu tư","160","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("21","217","NO","21","- Nguyên giá","161","20","1","0","0","","0");
+INSERT INTO sdkt VALUES("22","2147","CO","22","- Giá trị hao mòn lũy kế (*)","162","20","1","0","0","","0");
+INSERT INTO sdkt VALUES("23","241","NO","23","VII. XDCB dở dang","170","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("24","","NO","24","VIII. Tài sản khác","180","0","1","0","0","","0");
+INSERT INTO sdkt VALUES("25","133","NO","25","1. Thuế GTGT được khấu trừ","181","24","1","0","0","","0");
+INSERT INTO sdkt VALUES("26","242,33311,33312,3332,3333,3334,3335,3336,3337,33381,33382,3339","NO","26","2. Tài sản khác","182","24","1","0","0","","0");
+INSERT INTO sdkt VALUES("27","","CO","27","I. Nợ phải trả","300","0","2","0","0","","0");
+INSERT INTO sdkt VALUES("28","331","CO","28","1. Phải trả người bán","311","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("29","131","CO","29","2. Người mua trả tiền trước","312","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("30","33311,33312,3332,3333,3334,3335,3336,3337,33381,33382,3339","CO","30","3. Thuế và các khoản phải nộp nhà nước","313","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("31","334","CO","31","4. Phải trả người lao động","314","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("32","335,3368,338,1388","CO","32","5. Phải trả khác","315","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("33","341","CO","33","6. Vay và nợ thuê tài chính","316","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("34","3361","CO","34","7. Phải trả nội bộ về vốn kinh doanh","317","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("35","352","CO","35","8. Dự phòng phải trả","318","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("36","353","CO","36","9. Quỹ khen thưởng, phúc lợi","319","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("37","356","CO","37","10. Quỹ phát triển khoa học và công nghệ","320","27","2","0","0","","0");
+INSERT INTO sdkt VALUES("38","","CO","38","II. Vốn chủ sở hữu","400","0","2","0","0","","0");
+INSERT INTO sdkt VALUES("39","4111","CO","39","1. Vốn góp của chủ sở hữu","411","38","2","0","0","","0");
+INSERT INTO sdkt VALUES("40","4112","CO","40","2. Thặng dư vốn cổ phần","412","38","2","0","0","","0");
+INSERT INTO sdkt VALUES("41","4118","CO","41","3. Vốn khác của chủ sở hữu","413","38","2","0","0","","0");
+INSERT INTO sdkt VALUES("42","419","NO","42","4. Cổ phiếu quỹ (*)","414","38","2","0","0","","0");
+INSERT INTO sdkt VALUES("43","","CO","45","5. Chênh lệch tỷ giá hối đoái","415","38","2","0","0","","0");
+INSERT INTO sdkt VALUES("44","418","CO","46","6. Các quỹ thuộc vốn chủ sở hữu","416","38","2","0","0","","0");
+INSERT INTO sdkt VALUES("45","421","CTN","47","7. Lợi nhuận sau thuế chưa phân phối","417","38","2","0","0","","0");
+
+
+
+DROP TABLE IF EXISTS sdtkdk;
+
+CREATE TABLE `sdtkdk` (
+  `sott` int(10) NOT NULL AUTO_INCREMENT,
+  `matk` varchar(14) NOT NULL,
+  `tentk` varchar(200) NOT NULL,
+  `soduno` bigint(20) NOT NULL,
+  `soduco` bigint(20) NOT NULL,
+  `cttheobophan` int(1) NOT NULL,
+  `chitiettheond` char(1) NOT NULL,
+  `matkcha` int(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `sodupsno` bigint(20) NOT NULL,
+  `sodupsco` bigint(20) NOT NULL,
+  `tygia` bigint(20) NOT NULL,
+  `sotiennt` double(15,3) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_matkcha` (`matkcha`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8;
+
+INSERT INTO sdtkdk VALUES("1","111","Tiền mặt","0","0","0","","0","","610000000","2280758300","0","0.000");
+INSERT INTO sdtkdk VALUES("2","1111","Tiền Việt Nam","0","0","0","","111","","610000000","2280758300","0","0.000");
+INSERT INTO sdtkdk VALUES("3","112","Tiền gửi ngân hàng","0","0","0","","0","","4339359362","4338115410","0","0.000");
+INSERT INTO sdtkdk VALUES("4","1121","Tiền việt nam","0","0","0","","112","","4339359362","4338115410","0","0.000");
+INSERT INTO sdtkdk VALUES("5","112101","Tiền gửi ngân hàng ViettinBank","0","0","0","","1121","","4339359362","4338115410","0","0.000");
+INSERT INTO sdtkdk VALUES("6","131","Phải thu của khách hàng","0","0","0","","0","","0","2050000000","0","0.000");
+INSERT INTO sdtkdk VALUES("7","133","Thuế GTGT được khấu trừ","0","0","0","","0","","337823155","0","0","0.000");
+INSERT INTO sdtkdk VALUES("8","1331","Thuế GTGT được khấu trừ của hàng hóa, dịch vụ","0","0","0","","133","","337823155","0","0","0.000");
+INSERT INTO sdtkdk VALUES("9","156","Hàng hóa","0","0","1","","0","","3374428522","0","0","0.000");
+INSERT INTO sdtkdk VALUES("10","1561","Giá trị hàng mua","0","0","1","","156","","3374428522","0","0","0.000");
+INSERT INTO sdtkdk VALUES("11","242","Chi phí trả trước","0","0","0","","0","","3383000","0","0","0.000");
+INSERT INTO sdtkdk VALUES("12","331","Phải trả cho người bán","0","0","0","","0","","3726857375","3724637377","0","0.000");
+INSERT INTO sdtkdk VALUES("13","334","Phải trả người lao động","0","0","0","","0","","0","65000000","0","0.000");
+INSERT INTO sdtkdk VALUES("14","515","Doanh thu hoạt động tài chính","0","0","0","","0","","0","18362","0","0.000");
+INSERT INTO sdtkdk VALUES("15","5151","Doanh thu hoạt động tài chính","0","0","0","","515","","0","18362","0","0.000");
+INSERT INTO sdtkdk VALUES("16","642","Chi phí quản lý kinh doanh","0","0","0","","0","","66678035","0","0","0.000");
+INSERT INTO sdtkdk VALUES("17","6422","Chi phí quản lý doanh nghiệp","0","0","0","","642","","66678035","0","0","0.000");
+INSERT INTO sdtkdk VALUES("18","1112","Ngoại tệ","0","0","0","","111","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("19","112102","Tiền gửi ngân hàng Sacombank","0","0","0","","1121","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("20","1122","Ngoại tệ","0","0","0","","112","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("21","112201","Tiền gửi ngân hàng BIDV","0","0","0","","1122","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("22","121","Chứng khoán kinh doanh","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("23","128","Đầu tư nắm giữ đến ngày đáo hạn","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("24","1281","Tiền gửi có kỳ hạn","0","0","0","","128","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("25","1288","Các khoản đầu tư khác nắm giữ đến ngày đáo","0","0","0","","128","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("26","1332","Thuế GTGT được khấu trừ của TSCĐ","0","0","0","","133","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("27","136","Phải thu nội bộ","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("28","1361","Vốn kinh doanh ở đơn vị trực thuộc","0","0","0","","136","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("29","1368","Phải thu nội bộ khác","0","0","0","","136","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("30","138","Phải thu khác","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("31","1381","Tài sản thiếu chờ xử lý","0","0","0","","138","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("32","1386","Cầm cố, thế chấp, ký quỹ, ký cược","0","0","0","","138","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("33","1388","Phải thu khác","0","0","0","","138","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("34","141","Tạm ứng","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("35","151","Hàng mua đang đi đường","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("36","152","Nguyên vật liệu","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("37","153","Công cụ, dụng cụ","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("38","154","Chi phí sản xuất, kinh doanh dở dang","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("39","155","Thành phẩm","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("40","1562","Chi phí mua hàng","0","0","0","","156","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("41","157","hàng gửi đi bán","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("42","211","Tài sản cố định","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("43","2111","TSCĐ hữu hình","0","0","0","","211","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("44","2112","TSCĐ thuê tài chính","0","0","0","","211","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("45","2113","TSCĐ vô hình","0","0","0","","211","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("46","214","Hao mòn tài sản cố định","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("47","2141","Hao mòn TSCĐ hữu hình","0","0","0","","214","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("48","2142","Hao mòn TSCĐ thuê tài chính","0","0","0","","214","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("49","2143","Hao mòn TSCĐ vô hình","0","0","0","","214","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("50","2147","Hao mòn bất động sản đâu tư","0","0","0","","214","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("51","217","Bất động sản đầu tư","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("52","228","Đầu tư góp vốn vào đơn vị khác","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("53","2281","Đầu tư góp vốn vào liên doanh liên kết","0","0","0","","228","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("54","2288","Đầu tư khác","0","0","0","","228","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("55","229","Dự phòng tổn thất tài sản","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("56","2291","Dự phòng giảm giá chứng khoán kinh doanh","0","0","0","","229","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("57","2292","Dự phòng tổn thất đầu tư vào đơn vị khác","0","0","0","","229","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("58","2293","Dự phòng phải thu khó đòi","0","0","0","","229","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("59","2294","Dự phòng giảm giá hàng tồn kho","0","0","0","","229","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("60","241","Xây dựng cơ bản dở dang","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("61","2411","Mua sắm TSCĐ","0","0","0","","241","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("62","2412","Xây dựng cơ bản","0","0","0","","241","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("63","2413","Sửa chữa lớn TSCĐ","0","0","0","","241","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("64","333","Thuế và các khoản phải nộp Nhà nước","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("65","3331","Thuế giá trị gia tăng phải nộp","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("66","33311","Thuế GTGT đầu ra","0","0","0","","3331","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("67","33312","Thuế GTGT hàng nhập khẩu","0","0","0","","3331","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("68","3332","Thuế tiêu thụ đặc biệt","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("69","3333","Thuế xuất, nhập khẩu","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("70","3334","Thuế thu nhập doanh nghiệp","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("71","3335","Thuế thu nhập cá nhân","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("72","3336","Thuế tài nguyên","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("73","3337","Thuế nhà đất tiền thuê đất","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("74","3338","Thuế bảo vệ môi trường và các khoản thu khác","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("75","33381","Thuế bảo vệ môi trường","0","0","0","","3338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("76","33382","Các loại thuế khác","0","0","0","","3338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("77","3339","Phí, lệ phí và các khoản phải nộp khác","0","0","0","","333","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("78","33391","Phí, lệ phí môn bài","0","0","0","","3339","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("79","33392","Các khoản phải nộp khác","0","0","0","","3339","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("80","335","Chi phí phải trả","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("81","336","Phải trả nội bộ","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("82","3361","Phải trả nội bộ về vốn kinh doanh","0","0","0","","336","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("83","3368","Phải trả nội bộ khác","0","0","0","","336","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("84","338","Phải trả phải nộp khác","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("85","3381","Tài sản thừa chờ giải quyết","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("86","3382","Kinh phí công đoàn","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("87","3383","Bảo hiểm xã hội","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("88","3384","Bảo hiểm y tế","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("89","3385","Bảo hiểm thất nghiệp","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("90","3386","Nhận ký quỹ , ký cược","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("91","3387","Doanh thu chưa thực hiện","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("92","3388","Phải trả phải nộp","0","0","0","","338","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("93","341","Vay và nợ thuê tài chính","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("94","3411","Các khoản đi vay","0","0","0","","341","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("95","34111","Các khoản đi vay ngắn hạn","0","0","0","","3411","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("96","34112","Các khoản đi dài ngắn hạn","0","0","0","","3411","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("97","3412","Nợ thuê tài chính","0","0","0","","341","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("98","352","Dự phòng phải trả","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("99","3521","Dự phòng bảo hành sản phẩm hàng hóa","0","0","0","","352","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("100","3522","Dự phòng bảo hành công trình xây dựng","0","0","0","","352","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("101","3524","Dự phòng phải trả khác","0","0","0","","352","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("102","353","Quỹ khen thưởng phúc lợi","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("103","3531","Quỹ khen thưởng","0","0","0","","353","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("104","3532","Quỹ phúc lợi","0","0","0","","353","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("105","3533","Quỹ phúc lợi đã hình thành TSCĐ","0","0","0","","353","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("106","3534","Quỹ thưởng ban quản lý điều hành công ty","0","0","0","","353","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("107","356","Quỹ phát triển khoa học và công nghệ","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("108","3561","Quỹ phát triển khoa học và công nghệ","0","0","0","","356","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("109","3562","Quỹ phát triển khoa học và công nghệ đã hình t","0","0","0","","356","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("110","411","Vốn đầu tư của chủ sở hữu","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("111","4111","Vốn góp của chủ sở hữu","0","0","0","","411","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("112","4112","Thặng dư vốn cổ phần","0","0","0","","411","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("113","4118","Vốn khác","0","0","0","","411","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("114","413","Chênh lệch tỷ giá hối đoái","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("115","418","Các quỹ thuộc vốn chủ sở hữu","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("116","419","Cổ phiếu quỹ","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("117","421","Lợi nhuận sau thuế chưa phân phối","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("118","4211","Lợi nhuận sau thuế chưa phân phối năm trước","0","0","0","","421","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("119","4212","Lợi nhuận sau thuế chưa phân phối năm nay","0","0","0","","421","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("120","511","Doanh thu bán hàng và cung cấp dịch vụ","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("121","5111","Doanh thu bán hàng hóa","0","0","0","","511","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("122","5112","Doanh thu bán thành phẩm","0","0","0","","511","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("123","5113","Doanh thu cung cấp dịch vụ","0","0","0","","511","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("124","5118","Doanh thu khác","0","0","0","","511","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("125","611","Mua hàng","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("126","621","Chi phí nguyên vật liệu","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("127","622","Chi phí nhân công","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("128","623","Chi phí ca máy","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("129","627","Chi phí sản xuất chung","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("130","631","Giá thành sản xuất","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("131","632","Giá vốn bán hàng","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("132","635","Chi phí tài chính","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("133","6421","Chi phí bán hàng","0","0","0","","642","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("134","711","Thu nhập khác","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("135","811","Chi phí khác","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("136","821","Chi phí thuế thu nhập doanh nghiệp","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("137","911","Xác định kết quả kinh doanh","0","0","0","","0","","0","0","0","0.000");
+INSERT INTO sdtkdk VALUES("138","112202","Tiền gửi ngân hàng Sacombank","0","0","0","","1122","","0","0","0","0.000");
+
+
+
+DROP TABLE IF EXISTS socn;
+
+CREATE TABLE `socn` (
+  `stt` char(6) NOT NULL,
+  `sct` char(7) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `datett` date DEFAULT NULL,
+  `dg` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `dvt` varchar(5) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sl` double(12,3) DEFAULT NULL,
+  `dgvnd` double(12,2) DEFAULT NULL,
+  `psno` bigint(14) DEFAULT NULL,
+  `psco` bigint(14) DEFAULT NULL,
+  `add` char(1) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `lp` int(1) DEFAULT NULL,
+  `mavt` char(6) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS socnkh;
+
+CREATE TABLE `socnkh` (
+  `stt` char(6) NOT NULL,
+  `soct` char(7) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `datehd` date DEFAULT NULL,
+  `datett` date DEFAULT NULL,
+  `dg` varchar(60) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `mand` char(6) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `mabp` char(4) DEFAULT NULL,
+  `bophan` varchar(60) DEFAULT NULL,
+  `dvt` varchar(5) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sl` double(12,3) DEFAULT NULL,
+  `dgvnd` double(12,2) DEFAULT NULL,
+  `psno` bigint(14) DEFAULT NULL,
+  `psnos` double(12,2) DEFAULT NULL,
+  `psco` bigint(14) DEFAULT NULL,
+  `pscos` double(12,2) DEFAULT NULL,
+  `group` varchar(20) DEFAULT NULL,
+  `congdon` bigint(15) DEFAULT NULL,
+  `add` char(1) DEFAULT NULL,
+  `sort` int(3) DEFAULT NULL,
+  `lp` int(1) DEFAULT NULL,
+  `mavt` char(6) DEFAULT NULL,
+  PRIMARY KEY (`stt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS sodu_hoadon_dauky_nhap;
+
+CREATE TABLE `sodu_hoadon_dauky_nhap` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `kyhieu` varchar(20) NOT NULL,
+  `tuso` varchar(300) NOT NULL,
+  `denso` varchar(300) NOT NULL,
+  `loaphieu` int(11) NOT NULL DEFAULT '1',
+  `quy` varchar(10) NOT NULL,
+  `soquyen` varchar(10) NOT NULL,
+  `mauso` varchar(20) NOT NULL,
+  `loaiphieu` char(3) NOT NULL DEFAULT 'DK',
+  `huy` varchar(300) NOT NULL,
+  `sudung` varchar(300) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS soluonghanghoaxuatkhau;
+
+CREATE TABLE `soluonghanghoaxuatkhau` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` varchar(20) NOT NULL,
+  `thang1` double(20,5) NOT NULL,
+  `thang2` double(20,5) NOT NULL,
+  `thang3` double(20,5) NOT NULL,
+  `thang4` double(20,5) NOT NULL,
+  `thang5` double(20,5) NOT NULL,
+  `thang6` double(20,5) NOT NULL,
+  `thang7` double(20,5) NOT NULL,
+  `thang8` double(20,5) NOT NULL,
+  `thang9` double(20,5) NOT NULL,
+  `thang10` double(20,5) NOT NULL,
+  `thang11` double(20,5) NOT NULL,
+  `thang12` double(20,5) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_masp` (`masp`),
+  CONSTRAINT `fk_slhhxk_masp` FOREIGN KEY (`masp`) REFERENCES `masp` (`masp`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tk;
+
+CREATE TABLE `tk` (
+  `sott` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `quycach` varchar(35) DEFAULT NULL,
+  `manhom` char(6) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sldk` double(12,3) DEFAULT NULL,
+  `gtvndk` bigint(13) DEFAULT NULL,
+  `slntk` double(13,3) DEFAULT NULL,
+  `gtnvnd` bigint(14) DEFAULT NULL,
+  `slxtk` double(13,3) DEFAULT NULL,
+  `gtxvnd` bigint(14) DEFAULT NULL,
+  `slck` double DEFAULT NULL,
+  `gtvnck` double DEFAULT NULL,
+  `dgxvnd` double DEFAULT NULL,
+  `giaban` bigint(13) DEFAULT NULL,
+  `ttgiaban` bigint(15) DEFAULT NULL,
+  `rate` char(2) DEFAULT NULL,
+  `chietkhau` int(2) NOT NULL,
+  `sl` int(1) NOT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(60) DEFAULT NULL,
+  `tenkd` char(200) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_tk_mavt_mavt` (`mavt`),
+  KEY `fk_tk_makho_makho` (`makho`),
+  CONSTRAINT `fk_tk_makho_makho` FOREIGN KEY (`makho`) REFERENCES `makho` (`makho`),
+  CONSTRAINT `fk_tk_mavt_mavt` FOREIGN KEY (`mavt`) REFERENCES `mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tk_tmp;
+
+CREATE TABLE `tk_tmp` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `matk` int(5) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double(12,2) NOT NULL,
+  `thanhtien` double NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tkkc_tmp;
+
+CREATE TABLE `tkkc_tmp` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `matk` int(6) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double(10,2) NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `thuesuat` int(2) NOT NULL,
+  `makho` varchar(6) NOT NULL,
+  `tenkho` varchar(200) NOT NULL,
+  `quycach` varchar(50) NOT NULL,
+  `manhom` varchar(6) NOT NULL,
+  `tennhom` varchar(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tkthang;
+
+CREATE TABLE `tkthang` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `matk` int(6) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double(10,3) NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `soluongnhap` double(12,3) NOT NULL,
+  `thanhtiennhap` bigint(20) NOT NULL,
+  `soluongxuat` double(12,3) NOT NULL,
+  `thanhtienxuat` bigint(20) NOT NULL,
+  `thanhtientonck` bigint(20) NOT NULL,
+  `dongiabinhquan` double(12,3) NOT NULL,
+  `soluongtonck` double(12,3) NOT NULL,
+  `thuesuat` char(2) NOT NULL,
+  `makho` char(4) NOT NULL,
+  `tenkho` varchar(200) NOT NULL,
+  `quycach` varchar(50) NOT NULL,
+  `manhom` varchar(6) NOT NULL,
+  `tennhom` varchar(200) NOT NULL,
+  `thang` int(2) NOT NULL,
+  `giaban` double(10,2) NOT NULL,
+  `sophieu_nxk` bigint(20) NOT NULL,
+  `ngs` date NOT NULL,
+  `nhd` date NOT NULL,
+  `sottct` char(10) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_thang` (`thang`),
+  KEY `index_mavt` (`mavt`),
+  KEY `index_makho` (`makho`),
+  KEY `index_sophieu` (`sophieu_nxk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tkthue;
+
+CREATE TABLE `tkthue` (
+  `tt` int(3) NOT NULL,
+  `pnr` int(1) DEFAULT NULL,
+  `tk` varchar(100) DEFAULT NULL,
+  `qt` varchar(100) DEFAULT NULL,
+  `maso1` varchar(2) DEFAULT NULL,
+  `maso2` varchar(2) DEFAULT NULL,
+  `ds` bigint(13) DEFAULT NULL,
+  `vat` bigint(13) DEFAULT NULL,
+  `gc` text,
+  `sort` bigint(3) DEFAULT NULL,
+  PRIMARY KEY (`tt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp;
+
+CREATE TABLE `tmp` (
+  `tomcat` varchar(3) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `apache` varchar(3) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MEMORY DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_bangcdtk;
+
+CREATE TABLE `tmp_bangcdtk` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `tentk` varchar(200) NOT NULL,
+  `matk` varchar(14) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `cap` int(10) NOT NULL,
+  `_nock` bigint(20) NOT NULL,
+  `_cock` bigint(20) NOT NULL,
+  `matkcha` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_bangke_daura;
+
+CREATE TABLE `tmp_bangke_daura` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) NOT NULL,
+  `sct` char(10) NOT NULL,
+  `ngayhoadon` date NOT NULL,
+  `ngayghiso` date NOT NULL,
+  `tenkh` varchar(500) NOT NULL,
+  `thuesuat` double NOT NULL,
+  `masothue` char(14) NOT NULL,
+  `tenvt` varchar(500) NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `thue` bigint(20) NOT NULL,
+  `mapskt` int(11) NOT NULL,
+  `ngaythanhtoan` int(11) NOT NULL,
+  `makh` char(14) NOT NULL,
+  `matkthue` char(6) NOT NULL,
+  `sophieu` int(11) NOT NULL,
+  `tkco` char(6) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `ngayhoadon` (`ngayhoadon`),
+  KEY `makh` (`makh`),
+  KEY `sophieu` (`sophieu`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_dskhcn;
+
+CREATE TABLE `tmp_dskhcn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makh` varchar(14) NOT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `matk` varchar(8) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_makh` (`makh`),
+  KEY `index_makhcha` (`makhcha`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_hachtoanluongthang;
+
+CREATE TABLE `tmp_hachtoanluongthang` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `tkno` char(6) NOT NULL,
+  `tkco1` char(6) NOT NULL,
+  `tkco2` char(6) NOT NULL,
+  `sotien1` bigint(20) NOT NULL,
+  `sotien2` bigint(20) NOT NULL,
+  `mabp` char(14) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_kqhdkd;
+
+CREATE TABLE `tmp_kqhdkd` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` varchar(2) NOT NULL,
+  `chitieu` varchar(200) NOT NULL,
+  `thietminh` varchar(20) NOT NULL,
+  `namnay` bigint(20) NOT NULL,
+  `namtruoc` bigint(20) NOT NULL,
+  `quy` varchar(4) NOT NULL,
+  `cap` int(11) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_mabp_pskt;
+
+CREATE TABLE `tmp_mabp_pskt` (
+  `sophieu` int(6) NOT NULL,
+  `mapskt` int(11) NOT NULL,
+  `mabp` char(10) DEFAULT NULL,
+  `tenbp` varchar(200) NOT NULL,
+  `mavt` varchar(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `soluongnhap` double NOT NULL,
+  `thang` int(2) DEFAULT NULL,
+  `dongiabinhquan` double(12,3) NOT NULL,
+  `thanhtien` double NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `thanhtienco` bigint(20) NOT NULL,
+  `loaiphieu` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_mabp_psvt;
+
+CREATE TABLE `tmp_mabp_psvt` (
+  `sophieu` int(6) NOT NULL,
+  `mapskt` int(11) NOT NULL,
+  `mabp` char(10) DEFAULT NULL,
+  `tenbp` varchar(200) NOT NULL,
+  `mavt` varchar(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `soluongnhap` double NOT NULL,
+  `thang` int(2) DEFAULT NULL,
+  `dongiabinhquan` double(12,3) NOT NULL,
+  `thanhtien` double NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `thanhtienco` bigint(20) NOT NULL,
+  `loaiphieu` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_tkdk;
+
+CREATE TABLE `tmp_tkdk` (
+  `sott` int(10) unsigned NOT NULL DEFAULT '0',
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(500) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `quycach` varchar(35) DEFAULT NULL,
+  `manhom` char(6) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sldk` double(12,3) DEFAULT NULL,
+  `gtvndk` bigint(13) DEFAULT NULL,
+  `slntk` double(13,3) DEFAULT NULL,
+  `gtnvnd` bigint(14) DEFAULT NULL,
+  `slxtk` double(13,3) DEFAULT NULL,
+  `gtxvnd` bigint(14) DEFAULT NULL,
+  `slck` double DEFAULT NULL,
+  `gtvnck` double DEFAULT NULL,
+  `dgxvnd` double DEFAULT NULL,
+  `giaban` bigint(13) DEFAULT NULL,
+  `ttgiaban` bigint(15) DEFAULT NULL,
+  `rate` char(2) DEFAULT NULL,
+  `chietkhau` int(2) NOT NULL,
+  `sl` int(1) NOT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(60) DEFAULT NULL,
+  `tenkd` char(200) NOT NULL,
+  KEY `index_mavt` (`mavt`),
+  KEY `index_manhom` (`manhom`),
+  KEY `index_makho` (`makho`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_tkhientai;
+
+CREATE TABLE `tmp_tkhientai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(20) NOT NULL,
+  `slton` double NOT NULL,
+  `giavon` bigint(20) NOT NULL,
+  `kho` varchar(6) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_tknvlhienthai;
+
+CREATE TABLE `tmp_tknvlhienthai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `soluong` double NOT NULL,
+  `ghichu` text NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_mavt` (`mavt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_tknvlhienthai_dk;
+
+CREATE TABLE `tmp_tknvlhienthai_dk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `soluong` double NOT NULL,
+  `ghichu` text NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_tknvlhienthai_xuat;
+
+CREATE TABLE `tmp_tknvlhienthai_xuat` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `soluong` double NOT NULL,
+  `ghichu` text NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tmp_tksphienthai;
+
+CREATE TABLE `tmp_tksphienthai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `thang1` double NOT NULL,
+  `thang2` double NOT NULL,
+  `thang3` double NOT NULL,
+  `thang4` double NOT NULL,
+  `thang5` double NOT NULL,
+  `thang6` double NOT NULL,
+  `thang7` double NOT NULL,
+  `thang8` double NOT NULL,
+  `thang9` double NOT NULL,
+  `thang10` double NOT NULL,
+  `thang11` double NOT NULL,
+  `thang12` double NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tokhaithue;
+
+CREATE TABLE `tokhaithue` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `matkhai` char(5) NOT NULL,
+  `gthh` double NOT NULL,
+  `thue` double NOT NULL,
+  `thang` varchar(8) NOT NULL,
+  `loaitokhai` int(11) NOT NULL DEFAULT '1',
+  `lydotanggiam` text NOT NULL,
+  `chitietdsbr` text NOT NULL,
+  `loikhaibosung` int(1) NOT NULL,
+  `thuegtgttanggiam` bigint(15) NOT NULL,
+  `machinhanh` char(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tokhaithue_bvmt;
+
+CREATE TABLE `tokhaithue_bvmt` (
+  `sott` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `loaiks` char(10) NOT NULL,
+  `tenloai` varchar(500) NOT NULL,
+  `maloaiks` char(1) NOT NULL,
+  `dvt` char(50) NOT NULL,
+  `tendvt` varchar(50) NOT NULL,
+  `soluong` double NOT NULL,
+  `mucphi` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `loaitokhai` char(1) NOT NULL,
+  `thang` char(10) NOT NULL,
+  `ghichu` varchar(200) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tokhaithue_tn;
+
+CREATE TABLE `tokhaithue_tn` (
+  `sott` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `loaiks` char(10) NOT NULL,
+  `tenloai` varchar(500) NOT NULL,
+  `maloaiks` char(1) NOT NULL,
+  `dvt` char(50) NOT NULL,
+  `tendvt` varchar(50) NOT NULL,
+  `soluong` double NOT NULL,
+  `mucphi` double NOT NULL,
+  `thuesuat` float NOT NULL,
+  `thueandinh` bigint(20) NOT NULL,
+  `thuephatsinh` bigint(20) NOT NULL,
+  `thuegiam` bigint(20) NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `loaitokhai` char(1) NOT NULL,
+  `thang` char(10) NOT NULL,
+  `ghichu` varchar(200) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+DROP TABLE IF EXISTS tokhaitndn;
+
+CREATE TABLE `tokhaitndn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` varchar(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieu` varchar(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `machitieucha` varchar(5) NOT NULL,
+  `loaitokhai` varchar(10) NOT NULL,
+  `matk` varchar(100) NOT NULL,
+  `tkno` varchar(100) NOT NULL,
+  `sotiendk` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=373 DEFAULT CHARSET=utf8;
+
+INSERT INTO tokhaitndn VALUES("94","","1. Doanh thu bán hàng và cung cấp dịch vụ","01","0","0","XDKQKD","511","","0");
+INSERT INTO tokhaitndn VALUES("95","","2. Các khoản giảm trừ doanh thu","02","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("96","","3. Doanh thu thuần về bán hàng và cung cấp dịch vụ (10=01-02)","10","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("97","","4. Giá vốn bán hàng","11","0","0","XDKQKD","","632","0");
+INSERT INTO tokhaitndn VALUES("98","","5. Lợi nhuận gộp về bán hàng và  cung cấp dịch vụ (20=10-11)","20","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("99","","6. Doanh thu hoạt động tài chính","21","0","0","XDKQKD","515","","0");
+INSERT INTO tokhaitndn VALUES("100","","7. Chi phí tài chính","22","0","0","XDKQKD","","635","0");
+INSERT INTO tokhaitndn VALUES("101","","- Trong đó: Chi phí lãi vay","23","0","1","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("102","","8. Chi phí quản lý kinh doanh","24","0","0","XDKQKD","","642","0");
+INSERT INTO tokhaitndn VALUES("103","","9. Lợi nhuận thuần từ hoạt động kinh doanh (30=20+21-22-24)","30","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("104","","10. Thu nhập khác","31","0","0","XDKQKD","711","","0");
+INSERT INTO tokhaitndn VALUES("105","","11. Chi phí khác","32","0","0","XDKQKD","","811","0");
+INSERT INTO tokhaitndn VALUES("106","","12. Lợi nhuận khác (40= 31-32)","40","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("107","","13. Tổng lợi nhuận kế toán trước thuế (50=30+40)","50","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("108","","14. Chi phí thuế TNDN","51","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("109","","15. Lợi nhuận sau thuế thu nhập doanh nghiệp (60 = 50-51)","60","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("110","","- Trong đó: Tiền lương","25","0","0","XDKQKD","334","","0");
+INSERT INTO tokhaitndn VALUES("200","","Kết quả kinh doanh ghi nhận theo báo cáo tài chính","","0","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("201","1","Doanh thu bán hàng và cung cấp dịch vụ","4","3563648531","0","PLKQKD","511","","0");
+INSERT INTO tokhaitndn VALUES("202","","Trong đó: - Doanh thu bán hàng hoá, dịch vụ xuất khẩu","5","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("203","2","Các khoản giảm trừ doanh thu ([06]=[07]+[08]+[09])","6","0","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("204","a","Chiết khấu thương mại","7","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("205","b","Giảm giá hàng bán","8","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("206","c","Giá trị hàng bán bị trả lại","9","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("207","3","Doanh thu hoạt động tài chính","10","74611","0","PLKQKD","515","","0");
+INSERT INTO tokhaitndn VALUES("208","","Trong đó: Doanh thu từ lãi tiền gửi","11","74611","3","PLKQKD","515","","0");
+INSERT INTO tokhaitndn VALUES("209","4","Chi phí sản xuất, kinh doanh hàng hoá, dịch vụ ([12]=[13]+[14]+[15])","12","3710148975","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("210","a","Giá vốn hàng bán","13","3614100340","1","PLKQKD","","632","0");
+INSERT INTO tokhaitndn VALUES("211","b","Chi phí bán hàng","14","0","1","PLKQKD","","6421","0");
+INSERT INTO tokhaitndn VALUES("212","c","Chi phí quản lý doanh nghiệp","15","96048635","1","PLKQKD","","6422","0");
+INSERT INTO tokhaitndn VALUES("213","5","Chi phí tài chính","16","0","0","PLKQKD","","635","0");
+INSERT INTO tokhaitndn VALUES("214","","Trong đó: Chi phí lãi tiền vay","17","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("215","6","Lợi nhuận thuần từ hoạt động kinh doanh ([18]=[04]-[06]+[10]-[12]-[16])","18","-146425833","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("216","7","Thu nhập khác","19","0","0","PLKQKD","711","","0");
+INSERT INTO tokhaitndn VALUES("217","8","Chi phí khác","20","0","0","PLKQKD","","811","0");
+INSERT INTO tokhaitndn VALUES("218","9","Lợi nhuận khác ([21]=[19]-[20])","21","0","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("219","10","Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp ([22]=[18]+[21])","22","-146425833","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn VALUES("301","A","Kết quả kinh doanh ghi nhận theo báo cáo tài chính","A","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("302","1","Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp","A1","-146425833","A","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("303","B","Xác định thu nhập chịu thuế theo Luật thuế thu nhập doanh nghiệp","B","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("304","1","Điều chỉnh tăng tổng lợi nhuận trước thuế thu nhập doanh nghiệp  (B1= B2+B3+B4+B5+B6 +B7)","B1","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("305","1.1","Các khoản điều chỉnh tăng doanh thu","B2","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("306","1.2","Chi phí của phần doanh thu điều chỉnh giảm","B3","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("307","1.3","Các khoản chi không được trừ khi xác định thu nhập chịu thuế","B4","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("308","1.4","Thuế thu nhập đã nộp cho phần thu nhập nhận được ở nước ngoài","B5","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("309","1.5","Điều chỉnh tăng lợi nhuận do xác định giá thị trường đối với  giao dịch liên kết","B6","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("310","1.6","Các khoản điều chỉnh làm tăng lợi nhuận trước thuế khác","B7","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("311","2","Điều chỉnh giảm tổng lợi nhuận trước thuế thu nhập doanh nghiệp (B8=B9+B10+B11+B12)","B8","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("312","2.1","Giảm trừ các khoản doanh thu đã tính thuế năm trước","B9","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("313","2.2","Chi phí của phần doanh thu điều chỉnh tăng","B10","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("314","2.3","Chi phí lãi vay không được trừ kỳ trước được chuyển sang kỳ này của doanh  nghiệp có giao dịch liên kết","B11","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("315","2.4","Các khoản điều chỉnh làm giảm lợi nhuận trước thuế khác","B12","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("316","3","Tổng thu nhập chịu thuế (B13=A1+B1-B8)","B13","-146425833","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("317","3.1","Thu nhập chịu thuế từ hoạt động sản xuất kinh doanh","B14","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("318","3.2","Thu nhập chịu thuế từ hoạt động chuyển nhượng bất động sản (B14=B12-B13)","B15","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("319","C","Xác định thuế thu nhập doanh nghiệp ( TNDN) phải nộp từ hoạt động sản xuất kinh doanh","C","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("320","1","Thu nhập chịu thuế (C1 = B14)","C1","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("321","2","Thu nhập miễn thuế","C2","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("322","3","Chuyển lỗ và bù trừ lãi, lỗ (C3=C3a+C3b)","C3","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("323","3.1","Lỗ từ hoạt động SXKD được chuyển trong kỳ","C3a","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("324","3.2","Lỗ từ chuyển nhượng BĐS được bù trừ với lãi của hoạt động SXKD","C3b","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("325","4","Thu nhập tính thuế (TNTT) (C4=C1-C2-C3)","C4","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("326","5","Trích lập quỹ khoa học công nghệ (nếu có)","C5","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("327","6","TNTT sau khi đã trích lập quỹ khoa học công nghệ (C6=C4-C5=C7+C8)","C6","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("329","6.1","+ Thu nhập tính thuế áp dụng thuế suất 20%","C7","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("330","6.2","+ Thu nhập tính thuế tính theo thuế suất không ưu đãi khác","C8","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("331","6.3","+ Thuế suất không ưu đãi khác (%)","C8a","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("332","7","Thuế TNDN từ hoạt ðộng SXKD tính theo thuế suất không ưu đãi(C9 =(C7 x 20%) + (C8 x C8a))","C9","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("333","8","Thuế TNDN được ưu đãi theo Luật thuế TNDN (C10 = C11 + C12 + C13)","C10","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("334","8.1","Trong đó: +Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi","C11","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("335","8.2","+ Thuế TNDN được miễn trong kỳ","C12","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("336","8.3","+ Thuế TNDN được giảm trong kỳ","C13","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("337","9","Thuế TNDN được miễn, giảm theo Hiệp định thuế","C14","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("338","10","Thuế TNDN được miễn, giảm theo từng thời kỳ","C15","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("340","11","Thuế thu nhập đã nộp ở nước ngoài được trừ trong kỳ tính thuế","C16","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("341","12","Thuế TNDN phải nộp của hoạt động sản xuất kinh doanh(C17=C9-C10-C14-C15-C16)","C17","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("342","D","Thuế TNDN phải nộp từ hoạt động chuyển nhượng BĐS","D","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("343","1","Thu nhập chịu thuế (D1 = B15)","D1","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("344","2","Lỗ từ hoạt động chuyển nhượng BĐS được chuyển trong kỳ","D2","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("345","3","Thu nhập tính thuế (D3=D1-D2)","D3","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("346","4","Trích lập quỹ khoa học công nghệ (nếu có)","D4","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("347","5","TNTT sau khi đã trích lập quỹ khoa học công nghệ (D5=D3-D4)","D5","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("348","6","Thuế TNDN phải nộp của hoạt động chuyển nhượng BĐS trong kỳ","D6","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("349","7","Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư - kinh doanh nhà ở xã hội để bán, cho thuê, cho thuê mua","D7","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("350","8","Thuế TNDN của hoạt động chuyển nhượng BĐS còn phải nộp kỳ này (D8=D6-D7)","D8","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("351","E","Số thuế TNDN phải nộp quyết toán trong kỳ (E=E1+E2+E5)","E","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("352","1","Thuế TNDN của hoạt động sản xuất kinh doanh","E1","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("353","2","Thuế TNDN từ hoạt động chuyển nhượng bất động sản (E2=E3+E4)","E2","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("354","2.1","Thuế TNDN từ hoạt động chuyển nhượng bất động sản","E3","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("355","2.2","Thuế TNDN từ hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ","E4","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("356","3","Thuế TNDN phải nộp khác (nếu có)","E5","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("357","3.1","Trong đó thuế TNDN từ xử lý Quỹ phát triển khoa học công nghệ","E6","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("358","G","Số thuế TNDN đã tạm nộp (G=G1+G2+G3+G4+G5)","G","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("359","1","Thuế TNDN đã tạm nộp của hoạt động sản xuất kinh doanh","","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("360","1.1","Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này","G1","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("361","1.2","Thuế TNDN đã tạm nộp trong năm","G2","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("362","2","Thuế TNDN đã tạm nộp của hoạt động chuyển nhượng BĐS","","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("363","2.1","Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này của hoạt động chuyển nhượng BĐS","G3","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("364","2.2","Thuế TNDN đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS","G4","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("365","2.3","Thuế TNDN đã tạm nộp các kỳ trước và trong năm quyết toán của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ","G5","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("366","H","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp","H","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("367","1","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động sản xuất kinh doanh (H1=E1+E5-G2)","H1","0","H","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("368","2","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS (H2=E3-G4)","H2","0","H","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("369","3","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ (H3=E4-G5)","H3","0","H","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("370","I","Số thuế TNDN còn phải nộp đến thời hạn nộp hồ sơ khai quyết toán thuế (I=E-G=I1+I2)","I","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("371","1","Thuế TNDN còn phải nộp của hoạt động sản xuất kinh doanh","I1","0","I","TNDN","","","0");
+INSERT INTO tokhaitndn VALUES("372","2","Thuế TNDN còn phải nộp của hoạt động chuyển nhượng BĐS","I2","0","I","TNDN","","","0");
+
+
+
+DROP TABLE IF EXISTS tokhaitndn_tt80;
+
+CREATE TABLE `tokhaitndn_tt80` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` varchar(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieu` varchar(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `machitieucha` varchar(5) NOT NULL,
+  `loaitokhai` varchar(10) NOT NULL,
+  `matk` varchar(100) NOT NULL,
+  `tkno` varchar(100) NOT NULL,
+  `sotiendk` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
+
+INSERT INTO tokhaitndn_tt80 VALUES("1","A","Kết quả kinh doanh ghi nhận theo báo cáo tài chính","A","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("2","1","Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp","A1","0","A","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("3","B","Xác định thu nhập chịu thuế theo Luật thuế thu nhập doanh nghiệp","B","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("4","1","Điều chỉnh tăng tổng lợi nhuận trước thuế thu nhập doanh nghiệp  (B1= B2+B3+B4+B5+B6 +B7)","B1","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("5","1.1","Các khoản điều chỉnh tăng doanh thu","B2","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("6","1.2","Chi phí của phần doanh thu điều chỉnh giảm","B3","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("7","1.3","Các khoản chi không được trừ khi xác định thu nhập chịu thuế","B4","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("8","1.4","Thuế thu nhập đã nộp cho phần thu nhập nhận được ở nước ngoài","B5","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("9","1.5","Điều chỉnh tăng lợi nhuận do xác định giá thị trường đối với  giao dịch liên kết","B6","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("10","1.6","Các khoản điều chỉnh làm tăng lợi nhuận trước thuế khác","B7","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("11","2","Điều chỉnh giảm tổng lợi nhuận trước thuế thu nhập doanh nghiệp (B8=B9+B10+B11+B12)","B8","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("12","2.1","Giảm trừ các khoản doanh thu đã tính thuế năm trước","B9","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("13","2.2","Chi phí của phần doanh thu điều chỉnh tăng","B10","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("14","2.3","Chi phí lãi vay không được trừ kỳ trước được chuyển sang kỳ này của doanh  nghiệp có giao dịch liên kết","B11","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("15","2.4","Các khoản điều chỉnh làm giảm lợi nhuận trước thuế khác","B12","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("16","3","Tổng thu nhập chịu thuế (B13=A1+B1-B8)","B13","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("17","3.1","Thu nhập chịu thuế từ hoạt động sản xuất kinh doanh","B14","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("18","3.2","Thu nhập chịu thuế từ hoạt động chuyển nhượng bất động sản (B14=B12-B13)","B15","0","B","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("19","C","Xác định thuế thu nhập doanh nghiệp ( TNDN) phải nộp từ hoạt động sản xuất kinh doanh","C","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("20","1","Thu nhập chịu thuế (C1 = B14)","C1","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("21","2","Thu nhập miễn thuế","C2","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("22","3","Chuyển lỗ và bù trừ lãi, lỗ (C3=C3a+C3b)","C3","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("23","3.1","Lỗ từ hoạt động SXKD được chuyển trong kỳ","C3a","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("24","3.2","Lỗ từ chuyển nhượng BĐS được bù trừ với lãi của hoạt động SXKD","C3b","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("25","4","Thu nhập tính thuế (TNTT) (C4=C1-C2-C3)","C4","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("26","5","Trích lập quỹ khoa học công nghệ (nếu có)","C5","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("27","6","TNTT sau khi đã trích lập quỹ khoa học công nghệ (C6=C4-C5=C7+C8)","C6","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("29","6.1","+ Thu nhập tính thuế áp dụng thuế suất 20%","C7","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("30","6.2","+ Thu nhập tính thuế tính theo thuế suất không ưu đãi khác","C8","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("31","6.3","+ Thuế suất không ưu đãi khác (%)","C8a","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("32","7","Thuế TNDN từ hoạt ðộng SXKD tính theo thuế suất không ýu ðãi\r\n(C9 =(C7 x 20%) + (C8 x C8a))","C9","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("33","8","Thuế TNDN được ưu đãi theo Luật thuế TNDN (C10 = C11 + C12 + C13)","C10","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("34","8.1","Trong đó: +Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi","C11","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("35","8.2","+ Thuế TNDN được miễn trong kỳ","C12","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("36","8.3","+ Thuế TNDN được giảm trong kỳ","C13","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("37","9","Thuế TNDN được miễn, giảm theo Hiệp định thuế","C14","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("38","10","Thuế TNDN được miễn, giảm theo từng thời kỳ","C15","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("40","11","Thuế thu nhập đã nộp ở nước ngoài được trừ trong kỳ tính thuế","C16","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("41","12","Thuế TNDN phải nộp của hoạt động sản xuất kinh doanh\r\n(C17=C9-C10-C14-C15-C16)","C17","0","C","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("42","D","Thuế TNDN phải nộp từ hoạt động chuyển nhượng BĐS","D","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("43","1","Thu nhập chịu thuế (D1 = B15)","D1","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("44","2","Lỗ từ hoạt động chuyển nhượng BĐS được chuyển trong kỳ","D2","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("45","3","Thu nhập tính thuế (D3=D1-D2)","D3","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("46","4","Trích lập quỹ khoa học công nghệ (nếu có)","D4","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("47","5","TNTT sau khi đã trích lập quỹ khoa học công nghệ (D5=D3-D4)","D5","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("48","6","Thuế TNDN phải nộp của hoạt động chuyển nhượng BĐS trong kỳ","D6","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("49","7","Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư - kinh doanh nhà ở xã hội để bán, cho thuê, cho thuê mua","D7","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("50","8","Thuế TNDN của hoạt động chuyển nhượng BĐS còn phải nộp kỳ này (D8=D6-D7)","D8","0","D","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("51","E","Số thuế TNDN phải nộp quyết toán trong kỳ (E=E1+E2+E5)","E","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("52","1","Thuế TNDN của hoạt động sản xuất kinh doanh","E1","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("53","2","Thuế TNDN từ hoạt động chuyển nhượng bất động sản (E2=E3+E4)","E2","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("54","2.1","Thuế TNDN từ hoạt động chuyển nhượng bất động sản","E3","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("55","2.2","Thuế TNDN từ hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ","E4","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("56","3","Thuế TNDN phải nộp khác (nếu có)","E5","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("57","3.1","Trong đó thuế TNDN từ xử lý Quỹ phát triển khoa học công nghệ","E6","0","E","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("58","G","Số thuế TNDN đã tạm nộp (G=G1+G2+G3+G4+G5)","G","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("59","1","Thuế TNDN đã tạm nộp của hoạt động sản xuất kinh doanh","","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("60","1.1","Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này","G1","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("61","1.2","Thuế TNDN đã tạm nộp trong năm","G2","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("62","2","Thuế TNDN đã tạm nộp của hoạt động chuyển nhượng BĐS","","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("63","2.1","Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này của hoạt động chuyển nhượng BĐS","G3","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("64","2.2","Thuế TNDN đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS","G4","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("65","2.3","Thuế TNDN đã tạm nộp các kỳ trước và trong năm quyết toán của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ","G5","0","G","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("66","H","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp","H","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("67","1","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động sản xuất kinh doanh (H1=E1+E5-G2)","H1","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("68","2","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS (H2=E3-G4)","H2","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("69","3","Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ (H3=E4-G5)","H3","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("70","I","Số thuế TNDN còn phải nộp đến thời hạn nộp hồ sơ khai quyết toán thuế (I=E-G=I1+I2)","I","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("71","1","Thuế TNDN còn phải nộp của hoạt động sản xuất kinh doanh","I1","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("72","2","Thuế TNDN còn phải nộp của hoạt động chuyển nhượng BĐS","I2","0","0","TNDN","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("74","","Kết quả kinh doanh ghi nhận theo báo cáo tài chính","","0","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("75","1","Doanh thu bán hàng và cung cấp dịch vụ","1","3563636364","0","PLKQKD","511","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("76","","Trong đó: - Doanh thu bán hàng hoá, dịch vụ xuất khẩu","2","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("77","2","Các khoản giảm trừ doanh thu ([03]=[04]+[05]+[06]+[07])","3","0","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("78","a","Chiết khấu thương mại","4","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("79","b","Giảm giá hàng bán","5","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("80","c","Giá trị hàng bán bị trả lại","6","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("81","d","Thuế tiêu thụ đặc biệt, thuế xuất khẩu, thuế giá trị gia tăng theo phương pháp trực tiếp phải nộp","7","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("82","3","Doanh thu hoạt động tài chính","8","74611","0","PLKQKD","515","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("83","4","Chi phí sản xuất, kinh doanh hàng hoá, dịch vụ ([09]=[10]+[11]+[12])","9","3710148975","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("84","a","Giá vốn hàng bán","10","3614100340","1","PLKQKD","","632","1259099800");
+INSERT INTO tokhaitndn_tt80 VALUES("85","b","Chi phí bán hàng","11","0","1","PLKQKD","","6421","7841587179");
+INSERT INTO tokhaitndn_tt80 VALUES("86","c","Chi phí quản lý doanh nghiệp","12","96048635","1","PLKQKD","","6422","0");
+INSERT INTO tokhaitndn_tt80 VALUES("87","5","Chi phí tài chính","13","0","0","PLKQKD","","635","0");
+INSERT INTO tokhaitndn_tt80 VALUES("88","","Trong đó: Chi phí lãi tiền vay dùng cho sản xuất, kinh doanh","14","0","1","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("89","6","Lợi nhuận thuần từ hoạt động kinh doanh ([15]=[01]-[03]+[08]-[09]-[13])","15","-146438000","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("90","7","Thu nhập khác","16","0","0","PLKQKD","711","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("91","8","Chi phí khác","17","0","0","PLKQKD","","811","0");
+INSERT INTO tokhaitndn_tt80 VALUES("92","9","Lợi nhuận khác ([18]=[16]-[17])","18","0","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("93","10","Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp ([19]=[15]+[18])","19","-146438000","0","PLKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("94","","1. Doanh thu bán hàng và cung cấp dịch vụ","01","0","0","XDKQKD","511","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("95","","2. Các khoản giảm trừ doanh thu","02","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("96","","3. Doanh thu thuần về bán hàng và cung cấp dịch vụ (10=01-02)","10","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("97","","4. Giá vốn bán hàng","11","0","0","XDKQKD","","632","0");
+INSERT INTO tokhaitndn_tt80 VALUES("98","","5. Lợi nhuận gộp về bán hàng và  cung cấp dịch vụ (20=10-11)","20","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("99","","6. Doanh thu hoạt động tài chính","21","0","0","XDKQKD","515","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("100","","7. Chi phí tài chính","22","0","0","XDKQKD","635","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("101","","- Trong đó: Chi phí lãi vay","23","0","1","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("102","","8. Chi phí quản lý kinh doanh","24","0","0","XDKQKD","","642","0");
+INSERT INTO tokhaitndn_tt80 VALUES("103","","9. Lợi nhuận thuần từ hoạt động kinh doanh (30=20+21-22-24)","30","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("104","","10. Thu nhập khác","31","0","0","XDKQKD","711","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("105","","11. Chi phí khác","32","0","0","XDKQKD","","811","0");
+INSERT INTO tokhaitndn_tt80 VALUES("106","","12. Lợi nhuận khác (40= 31-32)","40","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("107","","13. Tổng lợi nhuận kế toán trước thuế (50=30+40)","50","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("108","","14. Chi phí thuế TNDN","51","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("109","","15. Lợi nhuận sau thuế thu nhập doanh nghiệp (60 = 50-51)","60","0","0","XDKQKD","","","0");
+INSERT INTO tokhaitndn_tt80 VALUES("110","","- Trong đó: Tiền lương","25","0","0","XDKQKD","334","","0");
+
+
+
+DROP TABLE IF EXISTS tonkhohoadon;
+
+CREATE TABLE `tonkhohoadon` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `loaiphieu` int(11) NOT NULL,
+  `kyhieu` varchar(20) NOT NULL,
+  `dktuso` int(11) NOT NULL,
+  `dkdenso` int(11) NOT NULL,
+  `ntuso` int(11) NOT NULL,
+  `ndenso` int(11) NOT NULL,
+  `pstuso` int(11) NOT NULL,
+  `psdenso` int(11) NOT NULL,
+  `huyso` text NOT NULL,
+  `xoaso` text NOT NULL,
+  `tontuso` int(11) NOT NULL,
+  `tondenso` int(11) NOT NULL,
+  `quy` int(1) NOT NULL,
+  `mauso` varchar(40) NOT NULL,
+  `soquyen` int(11) NOT NULL,
+  `mat` varchar(300) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+SET FOREIGN_KEY_CHECKS=1;
+COMMIT;

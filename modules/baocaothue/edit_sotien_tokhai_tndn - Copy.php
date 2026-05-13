@@ -1,0 +1,170 @@
+<?php
+include("../../config.php");
+$OBJ = new baocaothue();
+$OBJPSKT = new pskt();
+$sophieu = $OBJPSKT->createSoPhieu();
+
+$mangsotien = $_GET['string'];
+foreach ($mangsotien as $itemSoTien){
+    $sotien="sotien".$itemSoTien['machitieu'];
+    $$sotien = $itemSoTien['sotien'];
+    $OBJ->re_query(" update tokhaitndn set sotien=".$$sotien." where machitieu='".$itemSoTien['machitieu']."' and loaitokhai='TNDN'");
+}
+
+$sotienB1 = $sotienB2+$sotienB3+$sotienB4+$sotienB5+$sotienB6+$sotienB7;
+$sotienB8 = $sotienB9+$sotienB10+$sotienB11;
+$sotienB12 = $sotienA1+$sotienB1-$sotienB8;
+$sotienB13 = $sotienB12;
+$sotienB14 = $sotienB12-$sotienB13;
+$sotienC1 = $sotienB13;
+$sotienC4 = $sotienC1-$sotienC2-$sotienC3a-$sotienC3b;
+$sotienC6 = $sotienC4-$sotienC5=$sotienC7+$sotienC8+$sotienC9;
+$sotienC10 = ($sotienC7*0.22)+($sotienC8*0.2)+($sotienC9*($sotienC9a/100));
+$sotienC16 = $sotienC10-$sotienC11-$sotienC12-$sotienC15;
+$sotienD1 = $sotienC16;
+$sotienD = $sotienD1+$sotienD2-$sotienD3;
+$sotienE = $sotienE1+$sotienE2-$sotienE3;
+
+$sotienG1 = $sotienD1-$sotienE1;
+$sotienG2 = $sotienD2-$sotienE2;
+$sotienG3 = $sotienD3-$sotienE3;
+$sotienG = $sotienG1+$sotienG2-$sotienG3;
+$sotienH = $sotienD*0.2;
+$sotienI = $sotienG-$sotienH;
+
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienB1." where machitieu='B1' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienB8." where machitieu='B8' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienB12." where machitieu='B12' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienB13." where machitieu='B13' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienB14." where machitieu='B14' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienC1." where machitieu='C1' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienC4." where machitieu='C4' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienC6." where machitieu='C6' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienC10." where machitieu='C10' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienC16." where machitieu='C16' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienD1." where machitieu='D1' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienD." where machitieu='D' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienE." where machitieu='E' and loaitokhai='TNDN'");
+
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienG1." where machitieu='G1' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienG2." where machitieu='G2' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienG3." where machitieu='G3' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienG." where machitieu='G' and loaitokhai='TNDN'");
+
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienH." where machitieu='H' and loaitokhai='TNDN'");
+$OBJ->re_query(" update tokhaitndn set sotien=".$sotienI." where machitieu='I' and loaitokhai='TNDN'");
+
+$TongTienTruocThue = $sotienA1;
+$TienThue = round($sotienD);
+$TienLaiSauThue = $TongTienTruocThue - $TienThue;
+if($TongTienTruocThue>=0){
+    $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '{$TienThue}' WHERE maso = 'KCTNDN';");
+    $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '{$TienThue}' WHERE maso = 'KCTHDN';");
+    $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '{$TienLaiSauThue}' WHERE maso = 'KCLAKD';");
+
+    $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$TienThue}',
+                                            t2.gtvnd1='{$TienThue}',
+                                            t2.tongtien='{$TienThue}'
+                                        where mand1='KCTHDN' and t2.loaiphieu='66'");
+    $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$TienThue}',
+                                            t2.gtvnd1='{$TienThue}',
+                                            t2.tongtien='{$TienThue}'
+                                        where mand1='KCTNDN' and t2.loaiphieu='66'");
+
+    $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$TienLaiSauThue}',
+                                            t2.gtvnd1='{$TienLaiSauThue}',
+                                            t2.tongtien='{$TienLaiSauThue}'
+                                        where mand1='KCLAKD' and t2.loaiphieu='66'");
+
+    $select = $OBJ->re_query("select tiencock from buttoanps WHERE maso='KCNSDN'");
+    $data =  $OBJ->re_fetch($select);
+    $tiendoanhnghiepdanop = $data['tiencock'];
+    $thuednphainop = $TienThue - $tiendoanhnghiepdanop;
+    if($thuednphainop <= 0){
+        $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '".abs($thuednphainop)."' WHERE maso = 'KCNSDN';");
+        $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$thuednphainop}',
+                                            t2.gtvnd1='{$thuednphainop}',
+                                            t2.tongtien='{$thuednphainop}'
+                                        where mand1='KCNSDN' and t2.loaiphieu='66'");
+    }else{
+        $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '0' WHERE maso = 'KCNSDN';");
+        $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='0',
+                                            t2.gtvnd1='0',
+                                            t2.tongtien='0'
+                                        where mand1='KCNSDN' and t2.loaiphieu='66'");
+    }
+
+
+}else{
+    if($TienThue>0){
+        $LoSauThue = abs($TongTienTruocThue)+$TienThue;
+        $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '{$TienThue}' WHERE maso = 'KCTNDN';");
+        $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '{$TienThue}' WHERE maso = 'KCTHDN';");
+        $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '{$LoSauThue}' WHERE maso = 'KCLOKD';");
+
+        $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$TienThue}',
+                                            t2.gtvnd1='{$TienThue}',
+                                            t2.tongtien='{$TienThue}'
+                                        where mand1='KCTHDN' and t2.loaiphieu='66'");
+
+        $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$TienThue}',
+                                            t2.gtvnd1='{$TienThue}',
+                                            t2.tongtien='{$TienThue}'
+                                        where mand1='KCTNDN' and t2.loaiphieu='66'");
+
+        $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$LoSauThue}',
+                                            t2.gtvnd1='{$LoSauThue}',
+                                            t2.tongtien='{$LoSauThue}'
+                                        where mand1='KCLOKD' and t2.loaiphieu='66'");
+
+        $select = $OBJ->re_query("select tiencock from buttoanps WHERE maso='KCNSDN'");
+        $data =  $OBJ->re_fetch($select);
+    $thuednphainop = $TienThue - $tiendoanhnghiepdanop;
+    if($thuednphainop <= 0){
+
+            $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '".abs($thuednphainop)."' WHERE maso = 'KCNSDN';");
+            $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='{$thuednphainop}',
+                                            t2.gtvnd1='{$thuednphainop}',
+                                            t2.tongtien='{$thuednphainop}'
+                                        where mand1='KCNSDN' and t2.loaiphieu='66'");
+        }else{
+            $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '0' WHERE maso = 'KCNSDN';");
+            $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='0',
+                                            t2.gtvnd1='0',
+                                            t2.tongtien='0'
+                                        where mand1='KCNSDN' and t2.loaiphieu='66'");
+        }
+
+
+    }else{
+        $OBJ->re_query(" UPDATE buttoanps SET `sotien` = '0' WHERE maso = 'KCNSDN';");
+        $OBJ->re_query(" update pskt t1 
+                                        join chitiet_pskt t2 on t1.sophieu=t2.sophieu
+                                        set t1.tongcong='0',
+                                            t2.gtvnd1='0',
+                                            t2.tongtien='0'
+                                        where mand1='KCNSDN' and t2.loaiphieu='66'");
+    }
+}
+
+?>

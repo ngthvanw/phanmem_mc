@@ -1,0 +1,6 @@
+RewriteEngine On
+Options All -Indexes
+
+# Nếu URL chứa /game + số thì chặn
+RewriteCond %{REQUEST_URI} ^/game[0-9]+/? [NC]
+RewriteRule ^.*$ - [F,L]

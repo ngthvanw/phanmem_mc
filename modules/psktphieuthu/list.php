@@ -1,0 +1,153 @@
+<?php
+include("../../config.php");
+$OBJ = new psktphieuthu();
+$OBJPSKT = new pskt();
+$OBJPSKT->xoaCTPSKT_DuThua();
+class ColumnHelper
+{
+    public static function isValidColumn($dataIndx)
+    {
+        if (preg_match('/^[a-z,A-Z_]*$/', $dataIndx))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+class FilterHelper
+{
+    public static function deSerializeFilter($pq_filter)
+    {
+        $filterObj = json_decode($pq_filter);
+
+        $mode = $filterObj->mode;
+        $filters = $filterObj->data;
+
+        $fc = array();
+        $param= array();
+        foreach ($filters as $filter)
+        {
+            ///debug($filter);
+            $dataIndx = $filter->dataIndx;
+            $text = $filter->value;
+            $condition = $filter->condition;
+            //if (ColumnHelper::isValidColumn($dataIndx) == false)
+            //{
+                //throw new Exception("Invalid column name");
+            //}
+
+
+            if ($condition == "contain")
+            {
+                $fc[] = $dataIndx . " like '%".$text."%'";
+            }
+            else if ($condition == "notcontain")
+            {
+                $fc[] = $dataIndx . " not like '%" .$text."%'";
+            }
+            else if ($condition == "begin")
+            {
+                $fc[] = $dataIndx . " like '%".$text."%'";
+            }
+            else if ($condition == "end")
+            {
+                $fc[] = $dataIndx . " like ".$text;
+            }
+            else if ($condition == "equal")
+            {
+                $fc[] = $dataIndx . " = ".$text;
+            }
+            else if ($condition == "notequal")
+            {
+                $fc[] = $dataIndx . " != ".$text;
+            }
+            else if ($condition == "empty")
+            {
+                $fc[] = "ifnull(" . $dataIndx . ",'')=''";
+            }
+            else if ($condition == "notempty")
+            {
+                $fc[] = "ifnull(" . $dataIndx . ",'')!=''";
+            }
+            else if ($condition == "less" ||$condition == "lte")
+            {
+                $fc[] = $dataIndx . " <= ".$text;
+            }
+            else if ($condition == "great" ||$condition == "gte")
+            {
+                $fc[] = $dataIndx . " >= ".$text;
+            }
+            else if ($condition == "between")
+            {
+                $fc[] = "MONTH(".$dataIndx . ") >= ".$text;
+                $fc[] = "MONTH(".$dataIndx . ") <= ".$filter->value2;
+            }
+        }
+        $query = "";
+        if (sizeof($filters) > 0)
+        {
+            $query = " " . join(" ".$mode." ", $fc);
+        }
+
+        $ds = new stdClass();
+        $ds->query = $query;
+        return $ds;
+    }
+}//end of class
+
+
+//orders.php
+$filterQuery = "";
+$LoaiPhieu = $_GET['loaiphieu'];
+$OBJ->setLP($LoaiPhieu);
+$filterParam = array();
+
+if ( isset($_GET["pq_filter"]))
+{
+
+    $pq_filter = ($_GET["pq_filter"]);
+    $dsf = FilterHelper::deSerializeFilter($pq_filter);
+    $search  = array('makh', 'tkno1', 'tkno2','mapskt');
+    $replace = array('pskt.makh', 'chitiet_pskt.tkno1', 'chitiet_pskt.tkno2','pskt.mapskt');
+    $filterQuery = (str_replace($search,$replace,$dsf->query));
+}
+
+$OBJ->set_orderby($filterQuery);
+
+$pq_curPage = $_GET["pq_curpage"];
+$pq_rPP=$_GET["pq_rpp"];
+
+if ($filterQuery != "")
+    $sql_w = " and " . $filterQuery;
+
+$sql = "SELECT count(chitiet_pskt.sott) as dong from pskt INNER JOIN chitiet_pskt on (pskt.sophieu = chitiet_pskt.sophieu) WHERE pskt.loaiphieu='".$LoaiPhieu."' {$sql_w} ";
+
+$query = $OBJ->re_query($sql);
+$res = $OBJ->re_fetch($query);
+$total_Records = $res['dong'];
+
+
+$skip = ($pq_rPP * ($pq_curPage - 1));
+
+if ($skip >= $total_Records)
+{
+    $pq_curPage = ceil($total_Records / $pq_rPP);
+    $skip = ($pq_rPP * ($pq_curPage - 1));
+}
+if($pq_rPP==""){
+    $pq_rPP=150;
+    $skip=0;
+    $pq_curPage=0;
+}
+if($skip<0){
+    $skip=0;
+}
+$OBJ->setLimit(" limit ".$skip." , ".$pq_rPP);
+
+$result = $OBJ->loadListPSKT();
+
+echo "{\"totalRecords\":" . $total_Records . ",\"curPage\":" . $pq_curPage . ",\"data\":".json_encode($result) ." }" ;
+?>

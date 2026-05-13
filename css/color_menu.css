@@ -1,0 +1,74 @@
+@-webkit-keyframes mymove {
+    0% {opacity: 1.0;
+    text-shadow: 0 0 20px #00c6ff;
+}
+ 
+50% {
+    opacity: 0;
+    text-shadow: none;
+}
+ 
+100% {
+    opacity: 1.0;
+    text-shadow: 0 0 20px #00c6ff;
+}
+}
+ 
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    }
+ 
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+ 
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    };
+}
+.clock {
+    width: 50%;
+    margin: 0 auto;
+    padding: 3px;
+    border: 1px solid #fff;
+    color: #fff;
+    opacity: 0.8;
+}
+ 
+#Date {
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 0 0 5px blue;
+}
+ 
+ul.dongho {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+ 
+ul.dongho li {
+    display: inline;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 5px red;
+}
+ 
+#point {
+    position: relative;
+    -moz-animation: mymove 1s ease infinite;
+    -webkit-animation: mymove 1s ease infinite;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+input[disabled='disabled']{
+    color:gray;
+}

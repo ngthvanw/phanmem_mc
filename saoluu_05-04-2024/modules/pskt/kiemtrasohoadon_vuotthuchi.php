@@ -1,0 +1,42 @@
+<?php
+include("../../config.php");
+$LoaiPhieu = $_GET['loaiphieu'];;
+$makh = $_GET['makh'];
+$ngayhoadon = $_GET['ngayhoadon'];
+$sohoadon = $_GET['sohoadon'];
+$kyhieu = $_GET['kyhieu'];
+$sottpsct = $_GET['sottpsct'];
+$tk = $_GET['tk'];
+$tongtien = str_replace(",","",$_GET['tongtien']);
+$OBJ = new pskt();
+$OBJ->setLP($LoaiPhieu);
+$OBJ->setMaKH($makh);
+$OBJ->setNgayHD($ngayhoadon);
+$OBJ->setMaTKCo($tk);
+
+$tontai = $OBJ->kiemTraTrungSoHoaDon_VuotXuat();
+//debug($tontai);
+$tongtientru = 0;
+$sophieu="";
+$sohoadon_str="";
+    $sotien="";
+    foreach ($tontai as $item){
+        $sophieu.=$item['mapsktxuat'].",";
+        $sohoadon_str.=$item['sct'].",";
+        $sotien+=$item['tongtienphieu'];
+        if($sottpsct==trim($item['sott']) && $tk==1111){
+            $tongtientru+= $item['tongtienphieu'];
+        }
+    }
+    $tamtinhtien = ($sotien+$tongtien)-$tongtientru;
+    if($tamtinhtien>=20000000 && $tk==1111){
+        if ($tontai == FALSE) {
+            echo "CẢNH BÁO !\n\n Tổng tiền số phiếu này là ".number_format($tamtinhtien,0,",",".")." VNĐ đã vượt quá 20.000.000 VNĐ . Hoá đơn này sẽ bị XUẤT TOÁN kèm theo bị PHẠT .\n\n Bạn có muốn tiếp tục ?";
+        } else {
+            echo "CẢNH BÁO !\n\n Tổng tiền số phiếu " . substr($sophieu, 0, -1) . " của hóa đơn " . substr($sohoadon_str, 0, -1) . " là ".number_format($tamtinhtien,0,",",".")." VNĐ đã vượt quá 20.000.000 VNĐ . Hoá đơn này sẽ bị XUẤT TOÁN kèm theo bị PHẠT .\n\n Bạn có muốn tiếp tục ?";
+        }
+    }else{
+        echo "K";
+    }
+
+?>

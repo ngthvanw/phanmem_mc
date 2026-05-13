@@ -1,0 +1,37 @@
+<?php
+    include("../../config.php");
+    $OBJ = new dmsanpham();
+	$OBJ->set_SoTT(check_data($_GET['sott']));
+    $OBJ->set_MaCT(check_data($_GET['masp']));
+    $OBJ->set_TenCT(check_data($_GET['tensp']));
+    $OBJ->set_TenKD(khu_dau_vn(check_data($_GET['tensp'])));
+    $OBJ->set_MaCTCha(check_data($_GET['maspcha']));
+	$OBJ->set_DVT(check_data($_GET['dvt']));
+    $OBJ->set_MaKH(check_data($_GET['makh']));
+    $OBJ->set_DiaChi(check_data($_GET['diachi']));
+    $OBJ->set_GiaTriHD(check_data($_GET['gthopdong']));
+    $OBJ->set_NgayKC(check_data($_GET['ngaykhoicong']));
+    $OBJ->set_NgayHT(check_data($_GET['ngayhoanthanh']));
+    $OBJ->set_VatLieu(check_data($_GET['vatlieu']));
+    $OBJ->set_NhanCong(check_data($_GET['nhancong']));
+    $OBJ->set_May(check_data($_GET['may']));
+    $OBJ->setDaQuyetToan(check_data($_GET['quyettoan']));
+    $OBJ->setLoaiSP(check_data($_GET['loaisp']));
+    $OBJ->setNamSX(check_data($_GET['namsx']));
+    $OBJ->setGhiChu(check_data($_GET['ghichu']));
+    $OBJ->setDiaBanUuDai(check_data($_GET['diabanuudai']));
+    $OBJ->re_query("ALTER TABLE `masp` ADD `diabanuudai` CHAR(10) NOT NULL, ADD INDEX `index_diabanuudia` (`diabanuudai`);");
+    $OBJ->re_query("ALTER TABLE `masp` CHANGE `maspcha` `maspcha` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `masp` CHANGE `masp` `masp` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `bangdutruvlsxdk` CHANGE `masp` `masp` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `bangthongkethanhpham` CHANGE `masp` `masp` CHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `bangphanbo_chiphi_sxchung` CHANGE `mact` `mact` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `banggiathanhtieuchuan` CHANGE `masp` `masp` CHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `bangtonghop_danhthu_chiphi_giathanhct` CHANGE `mact` `mact` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `chitiet_dinhmuc_sp` CHANGE `masp` `masp` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+    $OBJ->re_query("ALTER TABLE `soluonghanghoaxuatkhau` CHANGE `masp` `masp` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
+	$OBJ->re_query("ALTER TABLE `psvt` CHANGE `makho` `makho` CHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;");
+	$OBJ->re_query("ALTER TABLE `chitiet_pskt` CHANGE `mabp` `mabp` CHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL;");
+    $OBJ->suaMaSP();
+    echo "{\"result\": \"success\"}";
+?>

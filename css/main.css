@@ -1,0 +1,91 @@
+html{
+    margin:0;
+    padding:0;
+}
+body, html {
+        height: 100%;
+        margin:0; 
+    }
+input:focus{
+	border:1px solid red !important;
+	background:yellow;
+}
+select:focus{
+	border:1px solid red !important;
+	background:yellow;
+}
+.ui-button:focus{
+	border:1px solid red !important;
+	background:yellow;
+}
+.pq-grid-cell:focus{
+	border:1px solid red !important;
+	background:yellow;
+}
+#box{
+    min-width: 900px;
+}
+#border-box{
+    width: 100%;
+}
+#top-banner{
+    width: 100%;
+    background: url('images/templates/banner.jpg') no-repeat;height:70px;
+}
+tr{
+    padding:0px;
+    margin: 0px;
+}
+td{
+    padding:0px;
+    margin: 0px;
+}
+.box-content{
+    border: 1px solid #7ec6e3;
+    height: auto;
+    margin-bottom: 20px;
+    width:100%;
+}
+.box-content-head{
+    border: 1px solid red;
+    height: 40px;
+    border: 0px;
+    z-index: 200000;
+    width:100%;
+}
+.box-content-main{
+    border: 1px solid red;
+    height: 100%;
+    border: 0px;
+    border-bottom: 1px solid #7ec6e3;
+    z-index: 200000;
+    width:100%;
+}
+.box-content-body{
+    border: 1px solid #7ec6e3;
+    height: auto;
+    width:100%;
+}
+.box-content-head-body{
+    /*border: 1px solid red;*/.
+    height: 10px;
+    border: 0px;
+    /*border-bottom: 1px solid #7ec6e3;*/
+    z-index: 200000;
+    width:100%;
+}
+.box-content-main-body{
+    border: 1px solid red;
+    border: 0px;
+    border-bottom: 0px solid #000000;
+    z-index: 200;
+    width:100%;
+    /*overflow: auto;*/
+}
+ .tab_focused {
+    background: #abcdef;
+  }
+:focus {
+   
+}
+ 

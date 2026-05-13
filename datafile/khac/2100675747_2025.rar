@@ -1,0 +1,939 @@
+SET FOREIGN_KEY_CHECKS=0;
+SET SQL_MODE=NO_AUTO_VALUE_ON_ZERO;
+SET AUTOCOMMIT=0;
+START TRANSACTION;
+ALTER TABLE bangcdkt AUTO_INCREMENT=339;
+DROP TABLE IF EXISTS bangcdtk;
+
+CREATE TABLE `bangcdtk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `tentk` varchar(200) NOT NULL,
+  `matk` varchar(14) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `cap` int(10) NOT NULL,
+  `_nock` bigint(20) NOT NULL,
+  `_cock` bigint(20) NOT NULL,
+  `matkcha` varchar(6) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+
+TRUNCATE bangcdtk;DROP TABLE IF EXISTS sdtkdk;
+
+CREATE TABLE `sdtkdk` (
+  `sott` int(10) NOT NULL AUTO_INCREMENT,
+  `matk` varchar(14) NOT NULL,
+  `tentk` varchar(200) NOT NULL,
+  `soduno` bigint(20) NOT NULL,
+  `soduco` bigint(20) NOT NULL,
+  `cttheobophan` int(1) NOT NULL,
+  `chitiettheond` char(1) NOT NULL,
+  `matkcha` int(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `sodupsno` bigint(20) NOT NULL,
+  `sodupsco` bigint(20) NOT NULL,
+  `tygia` bigint(20) NOT NULL,
+  `sotiennt` double(15,3) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_matkcha` (`matkcha`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8;
+
+TRUNCATE sdtkdk;INSERT INTO sdtkdk (sott,matk,tentk,soduno,soduco,sodupsno,sodupsco,matkcha,cttheobophan,tygia,sotiennt) VALUES ('1','111','Tiền mặt','0','0','1523449530','1971113530','0','0','',''),('2','1111','&nbsp#*#&nbsp#*#&nbsp#*#Tiền Việt Nam','74547000','0','1523449530','1971113530','111','0','',''),('3','112','Tiền gửi ngân hàng','0','0','658702998','297120198','0','0','',''),('4','1121','&nbsp#*#&nbsp#*#&nbsp#*#Tiền việt nam','0','0','658702998','297120198','112','0','',''),('5','112101','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Tiền gửi ngân hàng Sacombank 99254','363448395','0','658702998','297120198','1121','0','',''),('6','131','Phải thu của khách hàng','616958553','16825920','1389591112','796487919','0','1','',''),('7','133','Thuế GTGT được khấu trừ','0','0','88886433','167262252','0','0','',''),('8','1331','&nbsp#*#&nbsp#*#&nbsp#*#Thuế GTGT được khấu trừ của hàng hóa, dịch vụ','17378718','0','88886433','167262252','133','0','',''),('9','138','Phải thu khác','0','0','0','0','0','0','',''),('10','1381','&nbsp#*#&nbsp#*#&nbsp#*#Tài sản thiếu chờ xử lý','1261439','0','0','0','138','0','',''),('11','152','nguyên vật liệu','1124830366','0','795715109','699995722','0','0','',''),('12','154','Chi phí sản xuất, kinh doanh dở dang','96000000','0','1430508385','1334508385','0','0','',''),('13','155','Thành phẩm','45408000','0','1724821638','1986732831','0','0','',''),('14','242','Chi phí trả trước','2206063','0','0','0','0','0','',''),('15','331','Phải trả cho người bán','0','1233171286','878414197','1116679299','0','0','',''),('16','333','Thuế và các khoản phải nộp Nhà nước','0','0','169262252','175039300','0','0','',''),('17','3331','&nbsp#*#&nbsp#*#&nbsp#*#Thuế giá trị gia tăng phải nộp','0','0','167262252','167262252','333','0','',''),('18','33311','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Thuế GTGT đầu ra','0','0','167262252','167262252','3331','0','',''),('19','3334','&nbsp#*#&nbsp#*#&nbsp#*#Thuế thu nhập doanh nghiệp','0','5777048','0','5777048','333','0','',''),('20','3339','&nbsp#*#&nbsp#*#&nbsp#*#Phí, lệ phí và các khoản phải nộp khác','0','0','2000000','2000000','333','0','',''),('21','33391','&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#&nbsp#*#Phí, lệ phí môn bài','0','0','2000000','2000000','3339','0','',''),('22','334','Phải trả người lao động','0','0','390240000','390240000','0','0','',''),('23','335','Chi phí phải trả','0','0','893527','893527','0','0','',''),('24','338','Phải trả phải nộp khác','0','0','15360000','67584000','0','0','',''),('25','3383','&nbsp#*#&nbsp#*#&nbsp#*#Bảo hiểm xã hội','0','62073306','15360000','67584000','338','0','',''),('26','411','Vốn đầu tư của chủ sở hữu','0','0','0','0','0','0','',''),('27','4111','&nbsp#*#&nbsp#*#&nbsp#*#Vốn góp của chủ sở hữu','0','1000000000','0','0','411','0','',''),('28','421','Lợi nhuận sau thuế chưa phân phối','0','0','30924898','93113116','0','0','',''),('29','4211','&nbsp#*#&nbsp#*#&nbsp#*#Lợi nhuận sau thuế chưa phân phối năm trước','37997244','0','30924898','0','421','0','',''),('30','4212','&nbsp#*#&nbsp#*#&nbsp#*#Lợi nhuận sau thuế chưa phân phối năm nay','0','62188218','0','93113116','421','0','',''),('31','511','Doanh thu bán hàng và cung cấp dịch vụ','0','0','2090778150','2090778150','0','0','',''),('32','5112','&nbsp#*#&nbsp#*#&nbsp#*#Doanh thu bán thành phẩm','0','0','2090778150','2090778150','511','0','',''),('33','515','Doanh thu hoạt động tài chính','0','0','6009','6009','0','0','',''),('34','5151','&nbsp#*#&nbsp#*#&nbsp#*#Doanh thu hoạt động tài chính','0','0','6009','6009','515','0','',''),('35','621','Chi phí nguyên vật liệu','0','0','699995722','699995722','0','0','',''),('36','622','Chi phí nhân công','0','0','435648000','435648000','0','0','',''),('37','627','Chi phí sản xuất chung','0','0','294864663','294864663','0','0','',''),('38','632','Giá vốn bán hàng','0','0','1986732831','1986732831','0','0','',''),('39','642','Chi phí quản lý kinh doanh','0','0','36086062','36086062','0','0','',''),('40','6421','&nbsp#*#&nbsp#*#&nbsp#*#Chi phí bán hàng','0','0','36086062','36086062','642','0','',''),('41','821','Chi phí thuế thu nhập doanh nghiệp','0','0','5777048','5777048','0','0','',''),('42','911','Xác định kết quả kinh doanh','0','0','2090784159','2090784159','0','0','','');
+ALTER TABLE bangchitiet_laigop AUTO_INCREMENT=172;
+DROP TABLE IF EXISTS banggiathanhtieuchuan;
+
+CREATE TABLE `banggiathanhtieuchuan` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `masp` char(20) NOT NULL,
+  `mavt` char(14) NOT NULL,
+  `tenvt` varchar(200) NOT NULL,
+  `dvt` varchar(50) NOT NULL,
+  `dinhmuc` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `loaivl` char(3) NOT NULL,
+  `thang` int(2) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8;
+
+INSERT INTO banggiathanhtieuchuan VALUES('165','CHACA-001','HH220007','Chả cá ( Surimi ) đông lạnh','Kg','0.66','29629','19555','','3'),('166','CHACA-001','HH220011','TA dầu Olita 25kg','Can','0.001','669312.214','669','','3'),('167','CHACA-001','HH220005','Bột mì cá trê nâu','Kg','0.165','12081.818','1993','','3'),('168','CHACA-001','NC-001','Nhân công','Công','1','28040','28040','NC','3'),('169','CHACA-001','SXC-01','Chi phí chung cố định','','0','0','16301','SXC','3'),('170','CHACA-002','HH220004','Bột mì con cừu','Kg','0.165','12244.457','2020','','3'),('171','CHACA-002','HH220011','TA dầu Olita 25kg','Can','0.001','669312.214','669','','3'),('172','CHACA-002','HH230017','Chả cá biển đông lạnh','Kg','0.66','32000','21120','','3'),('173','CHACA-002','NC-001','Nhân công','Công','1','26739','26739','NC','3'),('174','CHACA-002','SXC-01','Chi phí chung cố định','','0','0','15544','SXC','3');
+ALTER TABLE banggiathanhtieuchuan AUTO_INCREMENT=205;
+ALTER TABLE bangluongnhanvien AUTO_INCREMENT=175;
+DROP TABLE IF EXISTS chitiet_dinhmuc_ct_vl;
+
+CREATE TABLE `chitiet_dinhmuc_ct_vl` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `masp` varchar(14) NOT NULL,
+  `mahm` char(14) NOT NULL,
+  `tenhm` varchar(300) NOT NULL,
+  `mavt` char(20) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `soluong` double NOT NULL,
+  `dongia` double NOT NULL,
+  `thanhtien` bigint(20) NOT NULL,
+  `thue` bigint(20) NOT NULL,
+  KEY `fk_chitiet_dinhmuc_ct_vl_masp_masp` (`masp`),
+  KEY `fk_chitiet_dinhmuc_ct_vl_mahm_masp` (`mahm`),
+  CONSTRAINT `fk_chitiet_dinhmuc_ct_vl_mahm_masp` FOREIGN KEY (`mahm`) REFERENCES `masp` (`masp`),
+  CONSTRAINT `fk_chitiet_dinhmuc_ct_vl_masp_masp` FOREIGN KEY (`masp`) REFERENCES `masp` (`masp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS chitiet_dinhmuc_sp;
+
+CREATE TABLE `chitiet_dinhmuc_sp` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `mapsdm` int(11) NOT NULL,
+  `masp` varchar(20) NOT NULL,
+  `mavt` varchar(20) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dinhmuc` double NOT NULL,
+  `tylehaohoc` double NOT NULL,
+  `dinhmuckecakhauhao` double NOT NULL,
+  `ghichu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO chitiet_dinhmuc_sp VALUES('0','0','CHACA-001','HH220007','Kg','0.66','0','0.66',''),('0','0','CHACA-001','HH220011','Can','0.001','0','0.001',''),('0','0','CHACA-001','HH220005','Kg','0.165','0','0.165',''),('0','0','CHACA-002','HH220004','Kg','0.165','0','0.165',''),('0','0','CHACA-002','HH220011','Can','0.001','0','0.001',''),('0','0','CHACA-002','HH230017','Kg','0.66','0','0.66',''),('0','0','CHACA-001','NC-001','Công','1','0','0','Tự động phân bổ'),('0','0','CHACA-001','SXC-01','SXC','1','0','0','Tự động phân bổ'),('0','0','CHACA-002','NC-001','Công','1','0','0','Tự động phân bổ'),('0','0','CHACA-002','SXC-01','SXC','1','0','0','Tự động phân bổ');
+ALTER TABLE chitiet_pskt AUTO_INCREMENT=124177337829199;
+ALTER TABLE chitiet_psvt AUTO_INCREMENT=242;
+DROP TABLE IF EXISTS cnkh;
+
+CREATE TABLE `cnkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makh` varchar(14) NOT NULL,
+  `tenkh` varchar(700) NOT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `matk` varchar(6) NOT NULL,
+  `nodk` bigint(20) NOT NULL,
+  `codk` bigint(20) NOT NULL,
+  `nops` bigint(20) NOT NULL,
+  `cops` bigint(20) NOT NULL,
+  `nock` bigint(20) NOT NULL,
+  `cock` bigint(20) NOT NULL,
+  `nock_` bigint(20) NOT NULL,
+  `cock_` bigint(20) NOT NULL,
+  `nontdk` double NOT NULL,
+  `contdk` double NOT NULL,
+  `nontps` double NOT NULL,
+  `contps` double NOT NULL,
+  `nontck` double NOT NULL,
+  `contck` double NOT NULL,
+  `nontck_` double NOT NULL,
+  `contck_` double NOT NULL,
+  `loaitien` char(3) NOT NULL,
+  `manhom` int(4) NOT NULL,
+  `makh_matk` char(21) NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+
+TRUNCATE cnkh;DROP TABLE IF EXISTS sdcn;
+
+CREATE TABLE `sdcn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(3) NOT NULL,
+  `maso_` char(3) DEFAULT NULL,
+  `makh` char(14) DEFAULT NULL,
+  `makhcha` varchar(14) NOT NULL,
+  `tenkh` varchar(60) DEFAULT NULL,
+  `matk` char(5) NOT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `kho` varchar(5) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `province` varchar(15) DEFAULT NULL,
+  `country` varchar(15) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `fax` varchar(15) DEFAULT NULL,
+  `comment` text,
+  `sdkno` bigint(13) NOT NULL,
+  `sdkco` bigint(13) NOT NULL,
+  `psno` bigint(14) NOT NULL,
+  `psco` bigint(14) NOT NULL,
+  `sckno` bigint(13) NOT NULL,
+  `sckco` bigint(13) NOT NULL,
+  `date` date DEFAULT NULL,
+  `noqh` char(1) DEFAULT NULL,
+  `tygiapt` bigint(20) NOT NULL,
+  `tygiaptr` bigint(20) NOT NULL,
+  `thanhtienntpt` double NOT NULL,
+  `thanhtienntptr` double NOT NULL,
+  `phanloai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `index_makh` (`makh`),
+  KEY `index_matk` (`matk`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+
+TRUNCATE cnkh;INSERT INTO sdcn (makh,makhcha,matk,sdkno,sdkco,thanhtienntpt,thanhtienntptr,tygiapt,tygiaptr) VALUES ('0108994205','0','131','304462800','0','0','0','0','0'),('1801802007','0','131','4600000','0','0','0','0','0'),('2100675747','0','131','0','0','0','0','0','0'),('0315085254','2100675747','131','122017536','0','0','0','0','0'),('0318967141','2100675747','131','64500001','0','0','0','0','0'),('220015','0','131','17029440','0','0','0','0','0'),('230030','0','131','0','10000000','0','0','0','0'),('2400036','0','131','0','0','0','0','0','0'),('2400036-01','2400036','131','0','6825920','0','0','0','0'),('2500104','0','131','0','0','0','0','0','0'),('2500110','0','131','9538560','0','0','0','0','0'),('2500112','0','131','46440216','0','0','0','0','0'),('2500114','0','131','27058000','0','0','0','0','0'),('2500120','0','131','16560000','0','0','0','0','0'),('6001808305','0','131','4752000','0','0','0','0','0'),('HCM','0','131','0','0','0','0','0','0'),('HCM-01','HCM','131','0','0','0','0','0','0'),('0300942001-021','0','331','0','94814799','0','0','0','0'),('0300942001-027','0','331','0','185953254','0','0','0','0'),('1501084323','0','331','0','67711032','0','0','0','0'),('1800156858-007','0','331','0','26880000','0','0','0','0'),('1900421683','0','331','0','845892201','0','0','0','0'),('2100462770','0','331','0','9720000','0','0','0','0'),('2100608765','0','331','0','2200000','0','0','0','0'),('2500108','0','331','0','0','0','0','0','0'),('0301103908-062','0','335','0','893527','0','0','0','0'),('2100675747','0','335','893527','0','0','0','0','0'),('230030','0','3388','0','11400000','0','0','0','0');
+DROP TABLE IF EXISTS cpdodangdk;
+
+CREATE TABLE `cpdodangdk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` varchar(14) NOT NULL,
+  `soduco` bigint(20) NOT NULL,
+  `soduno` bigint(20) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8 COMMENT='cpdodangdk';
+
+TRUNCATE cpdodangdk;DROP TABLE IF EXISTS cptratruoc;
+
+CREATE TABLE `cptratruoc` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` char(14) NOT NULL,
+  `matscha` char(14) NOT NULL,
+  `tents` varchar(300) DEFAULT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysd` date DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `ngaysx` date NOT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tylekh` bigint(6) DEFAULT NULL,
+  `thoigiansd` double DEFAULT NULL,
+  `soluong` double DEFAULT NULL,
+  `dongia` double DEFAULT NULL,
+  `nguyengia` double DEFAULT NULL,
+  `giatriconlai` double DEFAULT NULL,
+  `muckhthang` double NOT NULL,
+  `muckhquy` double DEFAULT NULL,
+  `muckhnam` double NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `chuthich` text,
+  `mabp` char(6) NOT NULL,
+  `bophan` varchar(200) NOT NULL,
+  `manhomts` char(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `khauhao` int(1) NOT NULL DEFAULT '1',
+  `niendo` char(4) NOT NULL,
+  `cpkhongduoctru` int(1) NOT NULL,
+  `theodoi` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mats` (`mats`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO cptratruoc VALUES('1','CPVP','0','CHI PHÍ VĂN PHÒNG','Gói','6421','0000-00-00','','2023-10-27','','0','0','0','0','0','0','0','0','0','','','','','','1535','CHI PHI VAN PHONG','1','2024','0','1'),('2','CPVP-01','CPVP','Gói cước VNPT 1 năm','Gói','6421','2023-07-24','','0000-00-00','','0','0','0','0','0','0','0','0','0','','','','','','1535','Goi cuoc VNPT 1 nam','1','2024','0','1'),('3','CPVP-02','CPVP','Gói cước VNPT 3 năm','Gói','6421','2024-07-22','','0000-00-00','','0','0','0','0','0','0','0','0','0','','','','','','1535','Goi cuoc VNPT 3 nam','1','2024','0','1');
+ALTER TABLE dinhkhoan_psvt AUTO_INCREMENT=1027;
+DROP TABLE IF EXISTS dinhmucxemay;
+
+CREATE TABLE `dinhmucxemay` (
+  `sott` int(11) NOT NULL DEFAULT '0',
+  `mats` char(14) NOT NULL,
+  `maloaiduong` int(4) NOT NULL,
+  `tenloaiduong` varchar(400) NOT NULL,
+  `sokm` double(10,2) NOT NULL,
+  `litkmdau` double(10,2) NOT NULL,
+  `tongdau` double(15,4) NOT NULL,
+  `pptinh` int(1) NOT NULL,
+  `ghichu` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS mact;
+
+CREATE TABLE `mact` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mact` char(14) NOT NULL,
+  `tenct` varchar(200) NOT NULL,
+  `mactcha` char(14) NOT NULL,
+  `diachi` varchar(100) NOT NULL,
+  `makh` char(10) NOT NULL,
+  `so_hd` char(20) NOT NULL,
+  `ngayhd` date NOT NULL,
+  `ngay_kc` date NOT NULL,
+  `ngay_ht` date NOT NULL,
+  `giatri_hd` bigint(12) NOT NULL,
+  `vatlieu` bigint(12) NOT NULL,
+  `nhancong` bigint(12) NOT NULL,
+  `may` bigint(12) NOT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  PRIMARY KEY (`mact`),
+  KEY `sott` (`sott`),
+  KEY `tenct` (`tenct`(191)),
+  KEY `mact` (`mact`),
+  KEY `mactcha` (`mactcha`),
+  FULLTEXT KEY `mact_2` (`mact`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  FULLTEXT KEY `fmact` (`mact`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS makh;
+
+CREATE TABLE `makh` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `makh` char(14) NOT NULL,
+  `masothue` char(14) DEFAULT NULL,
+  `tenkh` varchar(1000) DEFAULT NULL,
+  `matk` char(6) DEFAULT NULL,
+  `makhcha` char(20) NOT NULL,
+  `sile` char(1) DEFAULT NULL,
+  `diachi` varchar(1000) DEFAULT NULL,
+  `dienthoai` char(20) DEFAULT NULL,
+  `hanmucno` bigint(12) DEFAULT NULL,
+  `noth` bigint(12) DEFAULT NULL,
+  `noqh` bigint(12) DEFAULT NULL,
+  `nonh` bigint(12) DEFAULT NULL,
+  `nodh` bigint(12) DEFAULT NULL,
+  `noxau` bigint(12) DEFAULT NULL,
+  `ngaytra` date DEFAULT NULL,
+  `ghichu` text,
+  `tenkd` varchar(1000) DEFAULT NULL,
+  `rank` bigint(20) NOT NULL DEFAULT '1',
+  `loaitien` char(3) NOT NULL DEFAULT 'VND',
+  `manhom` int(11) NOT NULL DEFAULT '1001',
+  `niendo` char(4) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `stt` (`stt`),
+  UNIQUE KEY `idx_makh_makh` (`makh`),
+  KEY `fk_makh_manhom_manhom` (`manhom`),
+  KEY `index_makhcha` (`makhcha`),
+  KEY `makh` (`makh`),
+  FULLTEXT KEY `fmakh` (`makh`),
+  FULLTEXT KEY `masothue` (`masothue`),
+  FULLTEXT KEY `fmtm` (`makh`,`tenkd`,`masothue`),
+  CONSTRAINT `fk_makh_manhom_manhom` FOREIGN KEY (`manhom`) REFERENCES `manhomkh` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+
+INSERT INTO makh VALUES('39','2100675747','2100675747','DOANH NGHIỆP TƯ NHÂN ĐỊNH AN TRÀ VINH','','0','','Ấp Bến Có, Xã Nguyệt Hóa, Huyện Châu Thành, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','DOANH NGHIEP TU NHAN DINH AN TRA VINH','1','VND','1001','2024','','39'),('40','0315085254','0315085254','CÔNG TY TNHH MTV THỰC PHẨM ÀO ÀO','','2100675747','','280B4 Lương Định Của, Khu Phố 1, Phường An Phú, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY TNHH MTV THUC PHAM AO AO','1','VND','1001','2024','','40'),('41','2400036','','KHÁCH LẺ','','0','','.','','','','','','','','0000-00-00','','KHACH LE','1','VND','1001','2024','','41'),('42','2100462770','2100462770','CÔNG TY TNHH KẾ TOÁN VÀ TƯ VẤN THUẾ CHIẾN THUẬT','','0','','57A đường Bạch Đằng, Phường 4, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','CONG TY TNHH KE TOAN VA TU VAN THUE CHIEN THUAT','1','VND','1001','2024','','42'),('43','0106869738-043','0106869738-043','TRUNG TÂM KINH DOANH VNPT - TRÀ VINH - CHI NHÁNH TỔNG CÔNG TY DỊCH VỤ VIỄN THÔNG','','0','','Số 83 Lê Lợi, Phường 4, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','TRUNG TAM KINH DOANH VNPT - TRA VINH - CHI NHANH TONG CONG TY DICH VU VIEN THONG','1','VND','1001','2024','','43'),('44','0315517835','0315517835','CÔNG TY TNHH CÔNG NGHIỆP ĐỨC HOÀ','','0','','51K1/8 Bến Bình Đông, Phường 14, Quận 8, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY TNHH CONG NGHIEP DUC HOA','1','VND','1001','2024','','44'),('45','0300942001-027','0300942001-027','CÔNG TY ĐIỆN LỰC TRÀ VINH - TỔNG CÔNG TY ĐIỆN LỰC MIỀN NAM TNHH','','0','','Số 02, Hùng Vương, Khóm 1, Phường 4, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','CONG TY DIEN LUC TRA VINH - TONG CONG TY DIEN LUC MIEN NAM TNHH','1','VND','1001','2024','','45'),('46','0309486875','0309486875','CÔNG TY TNHH MỘT THÀNH VIÊN SẢN XUẤT THƯƠNG MẠI DỊCH VỤ XUẤT NHẬP KHẨU KIM CƯƠNG','','0','','27 Đường số 3, Phường Trường Thạnh, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY TNHH MOT THANH VIEN SAN XUAT THUONG MAI DICH VU XUAT NHAP KHAU KIM CUONG','1','VND','1001','2024','','46'),('47','1501084323','1501084323','CÔNG TY TNHH MTV THIÊN HƯƠNG SƯỞNG','','0','','Số 12 đường Nguyễn Thái Học, Phường 1, Thành phố Vĩnh Long, Tỉnh Vĩnh Long, Việt Nam','','','','','','','','','','CONG TY TNHH MTV THIEN HUONG SUONG','1','VND','1001','2024','','47'),('48','0316826970','0316826970','CÔNG TY TNHH THƯƠNG MẠI KỸ THUẬT SINA','','0','','Số 5/18/10 Trương Đăng Quế, Phường 1, Quận Gò Vấp, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY TNHH THUONG MAI KY THUAT SINA','1','VND','1001','2024','','48'),('49','1900598440','1900598440','CÔNG TY TNHH MỘT THÀNH VIÊN THỦY SẢN TRƯỜNG PHÚC','','0','','Ấp Canh Điền, Xã Long Điền Tây, Huyện Đông Hải, Tỉnh Bạc Liêu, Việt Nam','','','','','','','','','','CONG TY TNHH MOT THANH VIEN THUY SAN TRUONG PHUC','1','VND','1001','2024','','49'),('50','1800387982','1800387982','CÔNG TY TNHH   CÔNG NGHIỆP IN BAO BÌ HOÀNG LỘC','','0','','68 - 69, Xô Viết Nghệ Tĩnh, Phường An Cư, Quận Ninh Kiều, Thành phố Cần Thơ, Việt Nam','','','','','','','','','','CONG TY TNHH   CONG NGHIEP IN BAO BI HOANG LOC','1','VND','1001','2024','','50'),('51','0304188681','0304188681','CÔNG TY CỔ PHẦN XUẤT NHẬP KHẨU-THƯƠNG MẠI-SẢN XUẤT- HÓA CHẤT ĐẮC TRƯỜNG PHÁT','','0','','1229C Quốc Lộ 1A, Khu phố 5, Phường Bình Trị Đông B, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY CO PHAN XUAT NHAP KHAU-THUONG MAI-SAN XUAT- HOA CHAT DAC TRUONG PHAT','1','VND','1001','2024','','51'),('52','2100168546','2100168546','CÔNG TY TNHH THƯƠNG MẠI-DỊCH VỤ ĐỨC HƯNG','','0','','Số 82 Độc Lập, Phường 3, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','CONG TY TNHH THUONG MAI-DICH VU DUC HUNG','1','VND','1001','2024','','52'),('53','1900421683','1900421683','CÔNG TY TNHH MỘT THÀNH VIÊN THỦY SẢN HOA TUẤN','','0','','Ấp 4, Cảng cá Gành Hào, Thị trấn Gành Hào, Huyện Đông Hải, Tỉnh Bạc Liêu, Việt Nam','','','','','','','','','','CONG TY TNHH MOT THANH VIEN THUY SAN HOA TUAN','1','VND','1001','2024','','53'),('54','HCM','','THÀNH PHỐ HỒ CHÍ MINH','','0','','HCM','','','','','','','','','','THANH PHO HO CHI MINH','1','VND','1001','2024','','54'),('55','HCM-01','0316277223','CÔNG TY TNHH HD KOREA','','HCM','','số 8 đường số 1, Phường An Lạc A, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY TNHH HD KOREA','1','VND','1001','2024','','55'),('56','HCM-02','0314324894','CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ GREEN FOODS','','HCM','','515 Hồ Học Lãm, Phường An Lạc, Quận Bình Tân, Thành phố Hồ Chí Minh, Việt Nam','','','','','','','','','','CONG TY TNHH SAN XUAT THUONG MAI DICH VU GREEN FOODS','1','VND','1001','2024','','56'),('57','220015','','Kim Thị Thanh Nga','','0','','Trà Vinh','','','','','','','','','','Kim Thi Thanh Nga','1','VND','1001','2024','','57'),('58','0301103908-062','0301103908-062','NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN SÀI GÒN THƯƠNG TÍN- CHI NHÁNH TRÀ VINH','','0','','Số 555, Nguyễn Đáng, Khóm 3, Phường 6, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','','','','','','','','','NGAN HANG THUONG MAI CO PHAN SAI GON THUONG TIN- CHI NHANH TRA VINH','1','VND','1001','2024','','58'),('59','220017','','BẢO HIỂM XÃ HỘI TỈNH TRÀ VINH','','0','','Trà Vinh','','','','','','','','','','BAO HIEM XA HOI TINH TRA VINH','1','VND','1001','2024','','59'),('60','TRAVINH','','TRÀ VINH','','0','','Trà Vinh','','','','','','','','','','TRA VINH','1','VND','1001','2024','','60'),('61','TRAVINH-01','','DUYÊN HẢI','','TRAVINH','','Duyên Hải, Trà Vinh','','','','','','','','','','DUYEN HAI','1','VND','1001','2024','','61'),('62','TRAVINH-01-001','','Bán lẻ','','TRAVINH-01','','Trà Vinh','','','','','','','','','','Ban le','1','VND','1001','2024','','62'),('63','TRAVINH-02','','TRÀ CÚ','','TRAVINH','','Trà Cú, Trà Vinh','','','','','','','','','','TRA CU','1','VND','1001','2024','','63'),('64','TRAVINH-02-001','','Bán lẻ','','TRAVINH-02','','Trà Vinh','','','','','','','','','','Ban le','1','VND','1001','2024','','64'),('65','CANTHO','','CẦN THƠ','','0','','Cần Thơ','','','','','','','','','','CAN THO','1','VND','1001','2024','','65'),('66','CANTHO-01','','Bán lẻ','','CANTHO','','Cần Thơ','','','','','','','','','','Ban le','1','VND','1001','2024','','66'),('67','TRAVINH-03','','CÀNG LONG','','TRAVINH','','Càng Long, Trà Vnh','','','','','','','','','','CANG LONG','1','VND','1001','2024','','67'),('68','TRAVINH-03-001','','Bán lẻ','','TRAVINH-03','','Càng Long, Trà Vinh','','','','','','','','','','Ban le','1','VND','1001','2024','','68'),('69','230027','2100664992','CÔNG TY TNHH TM-DV ĐỊNH AN TRÀ VINH','','0','','Khóm 3, TT Định An, Huyện Trà Cú, tỉnh Trà Vinh','','','','','','','','','','CONG TY TNHH TM-DV DINH AN TRA VINH','1','VND','1001','2024','','69'),('70','0108994205','0108994205','CÔNG TY TNHH THANH HÀ FOOD VIỆT NAM','','0','','Số 65 đường Đào Cam Mộc, Tổ 35, Thị Trấn Đông Anh, Huyện Đông Anh, TP Hà Nội, Việt Nam','','','','','','','','','','CONG TY TNHH THANH HA FOOD VIET NAM','1','VND','1001','2024','','70'),('71','8459833868-001','8459833868-001','TRẦN VĂN TÌNH','','0','','Số 142 Lương Nhữ Hộc, phường Khuê Trung, Quận Cẩm Lệ, TP Đà Nẵng','','','','','','','','','','TRAN VAN TINH','1','VND','1001','2024','','71'),('72','230030','','KHO BẠC NHÀ NƯỚC CHÂU THÀNH','','0','','','','','','','','','','','','KHO BAC NHA NUOC CHAU THANH','1','VND','1001','2024','','72'),('73','230031','','CÔNG TY TNHH KẾ TOÁN VÀ TƯ VẤN THUẾ CHIẾN THUẬT','','0','','','','','','','','','','','','CONG TY TNHH KE TOAN VA TU VAN THUE CHIEN THUAT','1','VND','1001','2024','','73'),('74','230032','','DOANH NGHIỆP TƯ NHÂN ĐỊNH AN','','0','','','','','','','','','','','','DOANH NGHIEP TU NHAN DINH AN','1','VND','1001','2024','','74'),('75','0402237224','0402237224','CÔNG TY TNHH MTV FROZEN FOOD','','0','','P. Hòa Minh, Q. Liên Chiều, Tp. Đà Nẵng','','','','','','','','','','CONG TY TNHH MTV FROZEN FOOD','1','VND','1001','2024','','75'),('76','2400038','','TỐNG VĂN TUẤN','','0','','','','','','','','','','','','TONG VAN TUAN','1','VND','1001','2024','','76'),('93176092261982','6001808305','6001808305','CÔNG TY TNHH THỰC PHẨM ONIGIRI VIỆT','','0','','02 Nguyễn Trác, Phường Buôn Ma Thuột, Tỉnh Đắk Lắk, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUC PHAM ONIGIRI VIET','1','VND','1001','','','123'),('93176092270748','1801802007','1801802007','CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ THỰC PHẨM HIẾU TOÀN','','0','','216/13C, Đường Tầm Vu, Phường Tân An, Thành phố Cần Thơ, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUONG MAI DICH VU THUC PHAM HIEU TOAN','1','VND','1001','','','124'),('93176092349960','0318967141','0318967141','CÔNG TY TNHH TM AN VY FOOD','','2100675747','','C6/32 Đường Võ Văn Vân, Xã Tân Vĩnh Lộc, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH TM AN VY FOOD','1','VND','1001','','','125'),('93176161546055','2100608765','2100608765','CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN MUỐI TRÀ VINH','','0','','Số 131, khóm 2, Xã Càng Long, Tỉnh Vĩnh Long, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TRACH NHIEM HUU HAN MOT THANH VIEN MUOI TRA VINH','1','VND','1001','','','126'),('93176716854854','0317306692','0317306692','CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ KHÁNH TÂM','','0','','178/2A Phan Đăng Lưu, Phường Đức Nhuận, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH SAN XUAT THUONG MAI DICH VU KHANH TAM','1','VND','1001','','','127'),('93176717270032','0300942001-021','0300942001-021','CÔNG TY ĐIỆN LỰC VĨNH LONG','','0','','Số 11, Đại Lộ Đồng Khởi, Phường An Hội, Tỉnh Vĩnh Long, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY DIEN LUC VINH LONG','1','VND','1001','','','129'),('124174556293795','2500077','4201962290','CÔNG TY TNHH DỊCH VỤ THƯƠNG MẠI HUỲNH GIA','','0','','Lô số 10 đường B8, Khu đô thị VCN Phước Long II, Phường Phước Long, Thành phố Nha Trang, Tỉnh Khánh Hoà, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH DICH VU THUONG MAI HUYNH GIA','1','VND','1001','','','102'),('124174556320851','2500103','0315842017','CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ THỰC PHẨM TRÙM FOOD','','0','','19B/14 Đường số 22, Khu phố 7, Phường Linh Đông, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUONG MAI DICH VU THUC PHAM TRUM FOOD','1','VND','1001','','','103'),('124174556356540','2500104','1801780032','CÔNG TY TNHH TM DV MÌ CAY ITADA','','0','','116b-116c đường 3/2, Phường Xuân Khánh, Quận Ninh Kiều, Thành phố Cần Thơ, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH TM DV MI CAY ITADA','1','VND','1001','','','104'),('124175090551729','2500105','2100570945','HỢP TÁC XÃ XÂY DỰNG MÔI TRƯỜNG TRÀ VINH','','0','','Số 09/91B Phạm Ngũ Lão,K4,P1, Phường 1, Thành phố Trà Vinh, Tỉnh Trà Vinh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','HOP TAC XA XAY DUNG MOI TRUONG TRA VINH','1','VND','1001','','','105'),('124175090928393','2500106','0317230073','CÔNG TY TNHH THƯƠNG MẠI - DỊCH VỤ LIAN FOOD','','0','','82B đường 275 khu phố 5, Phường Hiệp Phú, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUONG MAI - DICH VU LIAN FOOD','1','VND','1001','','','106'),('124175090991176','2500107','1101822368','CÔNG TY TNHH THƯƠNG MẠI IN BAO BÌ TÂN THÀNH LONG','','0','','Một phần Lô E3 và Lô E4, Đường N2 Khu công nghiệp Cầu Tràm,, Xã Long Trạch, Huyện Cần Đước, Tỉnh Long An, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUONG MAI IN BAO BI TAN THANH LONG','1','VND','1001','','','107'),('124175090998487','2500108','3500100791','CÔNG TY TRÁCH NHIỆM HỮU HẠN CHẾ BIẾN THUỶ SẢN TIẾN ĐẠT','','0','','Khu phố Cát Hải, Xã Tân Hải, Thành phố Phú Mỹ, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TRACH NHIEM HUU HAN CHE BIEN THUY SAN TIEN DAT','1','VND','1001','','','108'),('124175099204136','2500109','3703084665','CÔNG TY TNHH THỰC PHẨM Y THƯƠNG','','0','','169 Đường 30/04, Khu Phố Hiệp Thắng, Phường Bình Thắng, Thành phố Dĩ An, Tỉnh Bình Dương, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUC PHAM Y THUONG','1','VND','1001','','','109'),('124175307028242','2500110','3401238414','CÔNG TY TNHH MỸ LINH FOODS','','0','','Số 01 - 03 Lý Tự Trọng, Phường Phan Thiết, Tỉnh Lâm Đồng, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH MY LINH FOODS','1','VND','1001','','','110'),('124175307967235','2500111','8884796886-001','HỘ KINH DOANH CỬA HÀNG HIẾU TOÀN','','0','','216/13C, đường Tầm Vu, Thành phố Cần Thơ, Việt Nam','','0','0','0','0','0','0','0000-00-00','','HO KINH DOANH CUA HANG HIEU TOAN','1','VND','1001','','','111'),('124175307985013','2500112','0317731062','CÔNG TY TNHH THƯƠNG MẠI NHI NHI FOOD','','0','','25 Đường số 22, Phường Bình Hưng Hoà, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH THUONG MAI NHI NHI FOOD','1','VND','1001','','','112'),('124175310751244','2500113','2100234326-008','TRUNG TÂM PHÂN TÍCH - KIỂM NGHIỆM TVU','','0','','Số 126, đường Nguyễn Thiện Thành, khóm 4, Phường Hoà Thuận, Tỉnh Vĩnh Long, Việt Nam','','0','0','0','0','0','0','0000-00-00','','TRUNG TAM PHAN TICH - KIEM NGHIEM TVU','1','VND','1001','','','113'),('124175310789748','2500114','0318314424','CÔNG TY TNHH TM DV PHÚC LỘC KOREA','','0','','Số 506/4 đường Lạc Long Quân, Phường Hoà Bình, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH TM DV PHUC LOC KOREA','1','VND','1001','','','114'),('124175310796993','2500115','8021980756-001','VÒNG MỸ LIÊN','','0','','213/1 Khuông Việt, Phường Tân Phú, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','VONG MY LIEN','1','VND','1001','','','115'),('124175310877287','2500116','8475045448-001','LÊ HỒ MINH CHIẾN','','0','','47A Lê Thúc Hoạch, Phường Phú Thọ Hoà, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','LE HO MINH CHIEN','1','VND','1001','','','116'),('124175310893661','2500117','1201678728','CÔNG TY TNHH TM NGUYÊN LIỆU HƯNG PHÁT','','0','','152 Yersin, Phường Đạo Thạnh, Tỉnh Đồng Tháp, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH TM NGUYEN LIEU HUNG PHAT','1','VND','1001','','','117'),('124175310900546','2500118','0316958769','CÔNG TY TNHH SẢN XUẤT VÀ THƯƠNG MẠI THỰC PHẨM AQUA','','0','','469/30B Nguyễn Oanh, Phường Gò Vấp, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH SAN XUAT VA THUONG MAI THUC PHAM AQUA','1','VND','1001','','','118'),('124175310910835','2500119','8424632818','HỘ KINH DOANH ULSAN SOUL','','0','','R9 Tôn Đức Thắng, Tỉnh Lâm Đồng, Việt Nam','','0','0','0','0','0','0','0000-00-00','','HO KINH DOANH ULSAN SOUL','1','VND','1001','','','119'),('124175310955953','2500120','0106360411','CÔNG TY TNHH DELMAR VIỆT NAM','','0','','Nhà vườn 26 - Khu đô thị Trung Văn, Phường Đại Mỗ, Thành phố Hà Nội, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CONG TY TNHH DELMAR VIET NAM','1','VND','1001','','','120'),('124175634525626','1800156858-007','1800156858-007','CHI NHÁNH CÔNG TY TNHH  HAI THÀNH VIÊN  HẢI SẢN  404- XÍ NGHIỆP SẢN XUẤT BAO BÌ','','0','','404 Lê Hồng Phong, Phường Bình Thủy, Thành phố Cần Thơ, Việt Nam','','0','0','0','0','0','0','0000-00-00','','CHI NHANH CONG TY TNHH  HAI THANH VIEN  HAI SAN  404- XI NGHIEP SAN XUAT BAO BI','1','VND','1001','','','121'),('124175636553351','079190007543','079190007543','VÒNG MỸ LIÊN','','0','','213/1Khuông Việt, Phường Tân Phú, Thành phố Hồ Chí Minh, Việt Nam','','0','0','0','0','0','0','0000-00-00','','VONG MY LIEN','1','VND','1001','','','122'),('124177337725597','2400036-01','','Bùi Như Ngọc','','2400036','','Số 79/7, Bình Phó A, Long Tuyền , Bình Thủy, Cần Thơ','','0','0','0','0','0','0','0000-00-00','','Bui Nhu Ngoc','1','VND','1001','','','130');
+ALTER TABLE makh AUTO_INCREMENT=161;
+DROP TABLE IF EXISTS makho;
+
+CREATE TABLE `makho` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `makho` char(4) NOT NULL,
+  `tenkho` varchar(100) DEFAULT NULL,
+  `diachi` varchar(40) DEFAULT NULL,
+  `ghichu` text,
+  `tenkhokd` varchar(100) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `makho` (`makho`),
+  KEY `tenkhokd` (`tenkhokd`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO makho VALUES('1','0010','Kho chung','','','kho');
+DROP TABLE IF EXISTS maloaiduong;
+
+CREATE TABLE `maloaiduong` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maduong` int(4) NOT NULL,
+  `tenduong` varchar(400) NOT NULL,
+  `ghichu` text NOT NULL,
+  `pptinh` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `maduong` (`maduong`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+INSERT INTO maloaiduong VALUES('1','1001','Quốc lộ','','1'),('2','1002','Tỉnh lộ','','1'),('3','1003','Hương lộ','','1'),('4','1004','Đường Đal','','1'),('5','1005','Định mức theo kilomet đường','','2');
+DROP TABLE IF EXISTS mand;
+
+CREATE TABLE `mand` (
+  `sott` int(6) NOT NULL AUTO_INCREMENT,
+  `mand` char(6) NOT NULL,
+  `tennoidung` varchar(1000) DEFAULT NULL,
+  `rate_tax` char(2) DEFAULT NULL,
+  `tkno` varchar(6) DEFAULT NULL,
+  `tkco` varchar(6) DEFAULT NULL,
+  `ghichu` text,
+  `mapl` varchar(4) DEFAULT NULL,
+  `tenkd` varchar(100) NOT NULL,
+  `rank` int(10) DEFAULT NULL,
+  `tennoidung_en` varchar(250) NOT NULL,
+  `tennoidung_cn` varchar(250) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mand` (`mand`),
+  FULLTEXT KEY `fmtm` (`mand`,`tenkd`)
+) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8;
+
+INSERT INTO mand VALUES('8','100000','Thuế GTGT đầu vào','10','1331','1331','','CHI','Thue GTGT dau vao','27','',''),('10','100002','Thu tiền khách hàng','10','1111','131','','THU','Thu tien khach hang','3','',''),('11','100003','Trả nợ khách hàng','10','331','','','CHI','Tra no khach hang','3','',''),('12','100004','Chi phí tiền điện','10','627','','','CHI','Chi phi tien dien','3','',''),('13','100005','Chi phí tiền nước','5','6422','1111','','CHI','Chi phi tien nuoc','5','',''),('14','100006','Khấu hao TSCĐ','0','6422','','','CHI','Khau hao TSCD','5','',''),('15','100007','Chi phí trả lãi vai','0','635','1111','','CHI','Chi phi tra lai vai','8','',''),('16','100008','Chi phí văn phòng phẩm','10','6422','1111','','CHI','Chi phi van phong pham','12','',''),('17','100009','Chi phí cơm tiếp khách','10','6422','1111','','CHI','Chi phi com tiep khach','10','',''),('18','100010','Mua hàng trả tiền mặt','0','','1111','','NHAP','Mua hang tra tien mat','28','',''),('19','100011','Mua hàng chậm trả','0','','331','','NHAP','Mua hang cham tra','17','',''),('20','100012','Nhập kho từ sản xuất','0','','154','','CHI','Nhap kho tu san xuat','7','',''),('21','100013','Nhập khuyến mãi','0','','711','','CHI','Nhap khuyen mai','2','',''),('22','100014','Xuất bán hàng thu tiền mặt','10','1111','5111','','XUAT','Xuat ban hang thu tien mat','21','',''),('24','100016','Nhập Khuyến mãi','kk','','711','','NHAP','Nhap Khuyen mai','1','',''),('25','100020','Xuất bán hàng ghi nợ','10','131','5111','','XUAT','Xuat ban hang ghi no','5','',''),('26','100021','Xuất bán hàng do hao hụt','10','6422','','','XUAT','Xuat ban hang do hao hut','1','',''),('27','100029','Vay ngân hàng','10','1111','1111','','THU','Vay ngan hang','1','',''),('28','100030','Phí bảo vệ môi trường','0','6422','1111','','CHI','Phi bao ve moi truong','6','',''),('29','100031','Chi phí điện thoại','10','6422','1111','','CHI','Chi phi dien thoai','8','',''),('30','100017','Chi mua xăng, dầu DO','10','6422','1111','','CHI','Chi mua xang, dau DO','7','',''),('31','100032','Chi phi khac','10','6422','1111','','CHI','Chi phi khac','3','',''),('33','100035','Tiền Điện','','','','','','Tien Dien','1','',''),('37','100037','Nộp Thuế TNDN','0','3334','1111','','CHI','Nop Thue TNDN','1','',''),('38','100038','Nộp thuế Môn bài','0','33391','1111','','CHI','Nop thue Mon bai','1','',''),('39','100039','Chi lương nhân viên','0','334','1111','','CHI','Chi luong nhan vien','1','',''),('40','100040','Phí dịch vụ ngân hàng','10','6421','335','','CHI','Phi dich vu ngan hang','1','',''),('41','100041','Rút tiền gửi','0','1111','1121','','CHI','Rut tien gui','1','',''),('42','100042','Lãi tiền gửi','0','','5151','','THU','Lai tien gui','2','',''),('89','_XKHSX','Xuất nguyên liệu cho công trình','0','621','152','','XUAT','Xuat nguyen lieu cho cong trinh','2','',''),('90','100090','Khấu hao tài sản cố định','0','6421','','','KHAC','Khau hao tai san co dinh','0','',''),('91','100091','Phân bổ chi phí trả trước','0','6421','','','KHAC','Phan bo chi phi tra truoc','0','',''),('92','100092','Khấu trừ thuế GTGT','0','3331','1331','','KHAC','Khau tru thue GTGT','0','',''),('93','100093','Bút toán chi phí sãn xuất,kinh doanh dỡ dang','0','154','632','','KHAC','But toan chi phi san xuat,kinh doanh do dang','0','',''),('94','100094','Phân bổ chi phí sản xuất chung','0','821','3334','','KHAC','Phan bo chi phi san xuat chung','0','',''),('95','100095','KC tăng giảm thuế TNDN','0','154','627','','KHAC','KC tang giam thue TNDN','0','',''),('96','100096','KC tăng giảm lợi nhuận phân phối năm nay','0','911','821','','KHAC','KC tang giam loi nhuan nam nay','0','',''),('99','100099','Kết chuyển giá vốn bán hàng','0','632','','','KHAC','Ket chuyen gia von ban hang','0','',''),('100','_ATS01','Tăng do mua mới hoặc bổ sung','0','6422','','','TATS','Tang do mua moi hoac bo sung','0','',''),('101','_ATS02','Tăng do trang bị thêm TSCĐ','0','6422','','','TATS','Tang do trang bi them TSCD','0','',''),('102','_ATS03','Tăng do đánh giá lại','0','6422','','','TATS','Tang do danh gia lai','0','',''),('103','_ATS04','Giảm do thanh lý nhượng giá','0','','','','GITS','Giam do thanh ly nhuong gia','0','',''),('104','_ATS05','Giảm do giảm vốn','0','','','','GITS','Giam do giam von','0','',''),('105','_ATS06','Giảm do đánh giá lại, tháo gỡ','0','','','','GITS','Giam do danh gia lai, thao go','0','',''),('106','100106','Phí dịch vụ kế toán','10','6421','1111','','CHI','Phi dich vu ke toan','3','',''),('107','KCCPBH','Kết chuyễn chi phí bán hàng','0','911','6421','','KHAC','Kết chuyễn chi phí bán hàng','0','',''),('108','KCCPHD','Kết chuyễn chi phí HĐ khác','0','911','811','','KHAC','Kết chuyễn chi phí HĐ khác','0','',''),('109','KCCPKD','Kết chuyễn chi phí QLDN','0','911','6422','','KHAC','Kết chuyễn chi phí QLDN','0','',''),('110','KCCPTC','Kết chuyễn chi phí tài chính','0','911','635','','KHAC','Kết chuyễn chi phí tài chính','0','',''),('111','KCDOTT','Kết chuyễn doanh thu bán hàng hóa','0','5111','911','','KHAC','Kết chuyễn doanh thu bán hàng hóa','0','',''),('112','KCDTDV','Kết chuyễn doanh thu dịch vụ','0','5113','911','','KHAC','Kết chuyễn doanh thu dịch vụ','0','',''),('113','KCDTTC','Kết chuyễn doanh thu tài chính','0','5151','911','','KHAC','Kết chuyễn doanh thu tài chính','0','',''),('114','KCDTTP','Kết chuyễn doanh thu bán thành phẩm','0','5112','911','','KHAC','Kết chuyễn doanh thu bán thành phẩm','0','',''),('115','KCGVHB','Kết chuyễn giá vốn bán hàng','0','911','632','','KHAC','Kết chuyễn giá vốn bán hàng','0','',''),('116','KCKPNK','Kết chuyển khoản phải nộp khác','0','811','33393','','KHAC','Kết chuyển khoản phải nộp khác','0','',''),('117','KCLAKD','Kết chuyễn lãi kinh doanh','0','911','4212','','KHAC','Kết chuyễn lãi kinh doanh','0','',''),('118','KCLNNT','Kết chuyển lợi nhuận năm trước','0','4212','4211','','KHAC','Kết chuyển lợi nhuận năm trước','0','',''),('119','KCLOKD','Kết chuyễn lỗ kinh doanh','0','4212','911','','KHAC','Kết chuyễn lỗ kinh doanh','0','',''),('120','KCLONT','kết chuyễn lỗ năm trước','0','4211','4212','','KHAC','kết chuyễn lỗ năm trước','0','',''),('121','KCTNDN','Kết chuyễn chi phí thuế thu nhập doanh nghiệp','0','911','821','','KHAC','Kết chuyễn chi phí thuế thu nhập doanh nghiệp','0','',''),('122','KCTNKC','Kết chuyễn thu nhập HĐ khác','0','711','911','','KHAC','Kết chuyễn thu nhập HĐ khác','0','',''),('123','TLPTTK','Tiền lương phải trả','0','6422','334','','KHAC','Tiền lương phải trả','0','',''),('124','TMBPN','Thuế môn bài phải nộp','0','6422','33381','','KHAC','Thuế môn bài phải nộp','0','',''),('125','KCTHDN','Kết chuyển thuế TNDN','0','3334','821','','KHAC','Kết chuyển thuế TNDN','0','',''),('126','100001','Thuế GTGT đầu ra','10','33311','33311','','THU','Thue GTGT dau ra','1','',''),('127','KC5118','Kết chuyển doanh thu khác','0','5118','911','','KHAC','Kết chuyển doanh thu khác','0','',''),('128','_NGLNT','Nộp thuế ngoại tỉnh','0','33311','33311','','CHI','Nop thue ngoai tinh','0','',''),('129','KC5151','Kết chuyển doanh thu tài chính','0','5151','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('130','KC5152','Kết chuyển doanh thu tài chính','0','5152','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('131','KC5153','Kết chuyển doanh thu tài chính','0','5153','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('132','KC5158','Kết chuyển doanh thu tài chính','0','5158','911','','KHAC','Kết chuyển doanh thu tài chính','0','',''),('136','100136','Doanh thu lắp đặt hệ thống ĐMT','10','','5112','','THU','Doanh thu lap dat he thong DMT','3','',''),('139','100139','Mua sắm công cụ dụng cụ','10','6422','1111','','CHI','Mua sám cong cụ dụng cụ','2','',''),('143','100143','Phí dịch vụ kế toán','kk','6422','1111','','CHI','Phi dich vu ké toán','2','',''),('145','100145','Phí lưu dữ liệu điện toán đám mây','10','6422','1111','','CHI','Phi luu dũ liẹu diẹn toán dám may','2','',''),('148','100148','Nộp tiền mặt vào TK','0','','1111','','CHI','Nop tien mat vao TK','3','',''),('153','100153','Vốn góp chủ sở hữu','0','','4111','','THU','Von gop chu so huu','2','',''),('157','100157','Nộp Thuế GTGT đầu ra','0','33311','1111','','CHI','Nop Thue GTGT dau ra','2','',''),('160','100160','Chi phí bằng tiền khác','10','6421','','','CHI','Chi phi bang tien khac','4','',''),('162','100162','Chi phí chung','10','627','','','CHI','Chi phi chung','3','',''),('164','100164','Nộp BHXH','0','3383','','','CHI','Nop BHXH','2','',''),('168','100168','Chi phí trả trước','10','242','1111','','CHI','Chi phi tra truoc','1','',''),('170','100170','Trích BHXH','10','6422','','','CHI','Trich BHXH','1','',''),('172','100172','xuất kho sản xuất','0','621','152','','XUAT','xuat kho san xuat','1','',''),('174','100174','Nhập kho sản xuất','0','155','154','','NHAP','Nhap kho san xuat','1','',''),('176','100176','điều chỉnh giảm thuế GTGT được khấu trừ','10','1381','1331','','THU','dieu chinh giam thue GTGT duoc khau tru','1','',''),('178','100178','Thu nhập khác','10','','711','','THU','Thu nhap khac','1','',''),('180','100180','thanh toán VNPT-CA','10','6422','','','CHI','thanh toan VNPT-CA','1','',''),('182','100182','K/C CP NHÂN CÔNG','10','622','154','','CHI','K/C CP NHAN CONG','1','',''),('184','100184','K/C CP NGUYÊN VẬT LIỆU','10','','621','','CHI','K/C CP NGUYEN VAT LIEU','1','',''),('186','100186','K/C CP SẢN XUẤT CHUNG','10','','627','','CHI','K/C CP SAN XUAT CHUNG','1','',''),('188','100188','K/C CP GIÁ VỐN BÁN HÀNG','10','155','632','','CHI','K/C CP GIA VON BAN HANG','1','',''),('190','100190','Thu tiền phí vệ sinh rác thải sinh hoạt','8','6421','','','CHI','Thu tien phi ve sinh rac thai sinh hoat','1','',''),('192','100192','K/C CP NHAN CONG','10','','622','','CHI','K/C CP NHAN CONG','1','',''),('194','100194','Nhập kho từ sản xuất','0','','155','','CHI','Nhap kho tu san xuat','1','',''),('196','100196','KHAC','0','335','1111','','CHI','KHAC','1','','');
+ALTER TABLE mand AUTO_INCREMENT=227;
+DROP TABLE IF EXISTS manhanvien;
+
+CREATE TABLE `manhanvien` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `manhanvien` int(6) NOT NULL AUTO_INCREMENT,
+  `tennv` varchar(100) NOT NULL,
+  `socmnd` char(12) NOT NULL,
+  `diachi` varchar(500) NOT NULL,
+  `dienthoai` varchar(15) NOT NULL,
+  `luongcb` double NOT NULL,
+  `namsinh` date NOT NULL,
+  `mabp` char(4) NOT NULL,
+  `mabpgoc` varchar(6) NOT NULL,
+  `gioitinh` int(1) NOT NULL,
+  `crdate` date NOT NULL,
+  `tenkd` char(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `chucdanh` varchar(200) NOT NULL,
+  `trinhdo` varchar(200) NOT NULL,
+  `masothue` char(14) NOT NULL,
+  `ngaybdhopdong` date NOT NULL,
+  `ngaykthopdong` date NOT NULL,
+  `phantramthang` float NOT NULL,
+  `phantramquy` float NOT NULL,
+  `phantramnam` float NOT NULL,
+  `tinhluong` char(2) NOT NULL,
+  `phucapchucvu` bigint(20) NOT NULL,
+  `phicongdoan` bigint(20) NOT NULL,
+  `baohiem` bigint(20) NOT NULL,
+  `baohiemyt` bigint(20) NOT NULL,
+  `baohiemtn` bigint(20) NOT NULL,
+  `kinhphicongdoan` bigint(20) NOT NULL,
+  `dn_baohiem` bigint(20) NOT NULL,
+  `dn_baohiemyt` bigint(20) NOT NULL,
+  `dn_baohiemtn` bigint(20) NOT NULL,
+  `giamtrugiacanh` bigint(20) NOT NULL,
+  `tienangiuaca` bigint(20) NOT NULL,
+  `phucapkhongdungbhxh` bigint(20) NOT NULL,
+  `thuethunhap` bigint(20) NOT NULL,
+  `matk1` char(6) NOT NULL,
+  `phantramtk` int(2) NOT NULL,
+  `matk2` char(6) NOT NULL,
+  `loaibp` char(2) NOT NULL,
+  `sapxep` int(11) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_manhanvien_mabp_mabp` (`mabp`),
+  KEY `manhanvien` (`manhanvien`),
+  CONSTRAINT `fk_manhanvien_mabp_mabp` FOREIGN KEY (`mabp`) REFERENCES `mabp` (`mabp`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+INSERT INTO manhanvien VALUES('1','5','Kim Thị Thanh Nga','123456789','','','4000000','0000-00-00','1011','','0','0000-00-00','Kim Thi Thanh Nga','','Kế toán','1','','0000-00-00','0000-00-00','0','0','0','CB','0','0','420000','0','0','0','860000','0','0','0','0','0','0','6422','100','','SP','0'),('2','6','Ngô Thị Điệp','123654789','','','4000000','0000-00-00','1010','','0','0000-00-00','Ngo Thi Diep','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','420000','0','0','0','860000','0','0','0','0','0','0','622','100','','SP','0'),('3','7','Trần Lang','456789165','','','4000000','0000-00-00','1010','','1','0000-00-00','Tran Lang','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','420000','0','0','0','860000','0','0','0','0','0','0','622','100','','SP','0'),('4','8','Ngô Công Trạng','456987125','','','4000000','0000-00-00','1010','','1','0000-00-00','Ngo Cong Trang','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','420000','0','0','0','860000','0','0','0','0','0','0','622','100','','SP','0'),('5','9','Diệp Lộc','145632798','','','4000000','0000-00-00','1010','','0','0000-00-00','Diep Loc','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','420000','0','0','0','860000','0','0','0','0','0','0','622','100','','SP','0'),('124174307371047','10','Ngô Thị Điệp','084187002361','Ấp Giồng Giữa, Định An, Trà Cú, Trà Vinh','','4400000','0000-00-00','0001','','0','0000-00-00','Ngo Thi Diep','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','462000','0','0','0','946000','0','0','0','730000','3000000','0','622','100','','SP','0'),('124174307380283','11','Ngô Công Trạng','084201001051','Ấp Giồng Giữa, Định An, Trà Cú, Trà Vinh','','4400000','0000-00-00','0001','','1','0000-00-00','Ngo Cong Trang','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','462000','0','0','0','946000','0','0','0','730000','3000000','0','622','100','','SP','0'),('124174307388085','12','Trần Lang','084087010654','Âp Ba Cụm, Ngọc Biên, Trà Cú, Trà Vinh','','4400000','0000-00-00','0001','','1','0000-00-00','Tran Lang','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','462000','0','0','0','946000','0','0','0','730000','3000000','0','622','100','','SP','0'),('124174307400858','13','Tống Văn Trung','084084009099','Ấp Tân Ngại, Lương Hòa A, Châu Thành, Trà Vinh','','4400000','0000-00-00','0001','','1','0000-00-00','Tong Van Trung','','Công nhân','5','','0000-00-00','0000-00-00','0','0','0','CB','0','0','462000','0','0','0','946000','0','0','0','730000','3000000','0','622','100','','SP','0');
+DROP TABLE IF EXISTS manhom;
+
+CREATE TABLE `manhom` (
+  `sott` int(11) NOT NULL,
+  `manhom` int(4) NOT NULL AUTO_INCREMENT,
+  `tennhom` varchar(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `rank` int(11) NOT NULL,
+  PRIMARY KEY (`manhom`),
+  KEY `manhom` (`manhom`),
+  FULLTEXT KEY `tennhom` (`tennhom`),
+  FULLTEXT KEY `tennhom_2` (`tennhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=1231 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO manhom VALUES('100','1100','Thành Phẩm','','0'),('99','1200','Nhóm dịch vụ','','0'),('5','1230','Hàng hóa','','53');
+ALTER TABLE manhom AUTO_INCREMENT=1261;
+DROP TABLE IF EXISTS manhomkh;
+
+CREATE TABLE `manhomkh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `manhom` int(11) NOT NULL,
+  `tennhom` varchar(500) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `u_manhom` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+INSERT INTO manhomkh VALUES('1','1001','Khác',''),('10','1010','Nhân viên','');
+DROP TABLE IF EXISTS masp;
+
+CREATE TABLE `masp` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `masp` varchar(20) NOT NULL,
+  `tensp` varchar(1000) NOT NULL,
+  `maspcha` varchar(20) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `ghichu` text NOT NULL,
+  `tenkd` varchar(1000) DEFAULT NULL,
+  `makh` varchar(14) NOT NULL,
+  `diachi` varchar(300) NOT NULL,
+  `namsx` date NOT NULL,
+  `gthopdong` bigint(20) NOT NULL,
+  `ngaykhoicong` date NOT NULL,
+  `ngayhoanthanh` date NOT NULL,
+  `vatlieu` bigint(20) NOT NULL,
+  `nhancong` bigint(20) NOT NULL,
+  `may` bigint(20) NOT NULL,
+  `quyettoan` bigint(20) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  `chonchuyen` char(1) NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  `diabanuudai` char(10) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `masp` (`masp`),
+  UNIQUE KEY `mats` (`masp`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `index_maspcha` (`maspcha`),
+  KEY `index_diabanuudia` (`diabanuudai`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  FULLTEXT KEY `fmasp` (`masp`),
+  FULLTEXT KEY `fmt` (`masp`,`tenkd`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+INSERT INTO masp VALUES('0','0001','Toàn Bộ','0','Cái','','Toan Bo','','','0000-00-00','0','0000-00-00','0000-00-00','0','0','0','0','','','','4',''),('25168981781248','CHACA-001','chả cá chiên','CHACA','Kg','','cha ca chien','','','0000-00-00','0','0000-00-00','0000-00-00','0','0','0','0','SP','','2024','1',''),('25168981783040','CHACA','CHẢ CÁ CHIÊN','0','Kg','','CHA CA CHIEN','','','0000-00-00','0','0000-00-00','0000-00-00','0','0','0','0','SP','','2024','2',''),('25168981785080','CHACA-002','Chả cá chiên ( 450g/gói )','CHACA','Kg','','Cha ca chien ( 450g/goi )','','','0000-00-00','0','0000-00-00','0000-00-00','0','0','0','0','SP','','2024','3','');
+DROP TABLE IF EXISTS matk;
+
+CREATE TABLE `matk` (
+  `sott` int(10) unsigned NOT NULL,
+  `matk` char(6) NOT NULL,
+  `tentk` varchar(255) DEFAULT NULL,
+  `matkcha` char(4) NOT NULL,
+  `loaitk` varchar(60) DEFAULT NULL,
+  `mats` char(3) DEFAULT NULL,
+  `mangv` char(3) DEFAULT NULL,
+  `nhomtk` char(10) DEFAULT NULL,
+  `shtk` int(6) NOT NULL,
+  `ghichu` text,
+  `ngaytao` date DEFAULT NULL,
+  `rank` bigint(20) NOT NULL DEFAULT '0',
+  `tentk_en` varchar(250) NOT NULL,
+  `tentk_cn` varchar(250) NOT NULL,
+  PRIMARY KEY (`matk`),
+  KEY `rank` (`rank`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO matk VALUES('1','111','Tiền mặt','0','1','110','','TT','111','','2016-11-29','15','',''),('2','1111','Tiền Việt Nam','111','1','110','','TT','111','','2016-11-09','53','',''),('3','1112','Ngoại tệ','111','1','110','','TT','111','','2016-11-09','11','',''),('4','112','Tiền gửi ngân hàng','0','1','110','','TT','112','','2016-11-09','17','',''),('5','1121','Tiền việt nam','112','1','110','','TT','112','','2016-11-26','9','',''),('7','112101','Tiền gửi ngân hàng Sacombank 99254','1121','1','110','','TT','112','','2023-07-24','50','',''),('6','112102','Tiền gửi ngân hàng Sacombank','1121','1','110','','TT','112','','2017-03-29','18','',''),('8','1122','Ngoại tệ','112','1','110','','TT','112','','2016-11-08','10','',''),('138','112201','Tiền gửi ngân hàng BIDV','1122','1','110','','TT','112','','2017-04-21','1','',''),('9','121','Chứng khoán kinh doanh','0','1','121','','TT','121','','2016-11-08','9','',''),('10','128','Đầu tư nắm giữ đến ngày đáo hạn','0','1','122','','TT','128','','2016-11-08','3','',''),('11','1281','Tiền gửi có kỳ hạn','128','1','122','','TT','128','','2016-11-08','5','',''),('12','1288','Các khoản đầu tư khác nắm giữ đến ngày đáo','128','1','122','','TT','128','','2016-11-09','0','',''),('13','131','Phải thu của khách hàng','0','1','130','','TT','131','','2016-11-08','5','',''),('14','133','Thuế GTGT được khấu trừ','0','1','110','','TT','133','','2017-03-16','1','',''),('15','1331','Thuế GTGT được khấu trừ của hàng hóa, dịch vụ','133','1','110','','TT','133','','2017-01-25','0','',''),('16','1332','Thuế GTGT được khấu trừ của TSCĐ','133','1','110','','TT','0','','2016-11-07','0','',''),('133','136','Phải thu nội bộ','0','1','130','','TT','136','','2016-11-08','1','',''),('134','1361','Vốn kinh doanh ở đơn vị trực thuộc','136','1','133','','TT','136','','2016-11-08','0','',''),('135','1368','Phải thu nội bộ khác','136','1','134','','TT','136','','2016-11-08','1','',''),('17','138','Phải thu khác','0','1','130','','TT','138','','2016-11-08','0','',''),('18','1381','Tài sản thiếu chờ xử lý','138','1','135','','TT','138','','2016-11-08','0','',''),('19','1386','Cầm cố, thế chấp, ký quỹ, ký cược','138','1','110','','TT','0','','2016-11-07','0','',''),('20','1388','Phải thu khác','138','1','110','','TT','0','','2016-11-07','1','',''),('21','141','Tạm ứng','0','1','110','','TT','0','','2016-11-07','0','',''),('22','151','Hàng mua đang đi đường','0','1','110','','TT','0','','2016-11-07','17','',''),('23','152','nguyên vật liệu','0','1','110','','TT','0','','2016-11-07','6','',''),('24','153','Công cụ, dụng cụ','0','1','110','','TT','0','','2016-11-07','5','',''),('25','154','Chi phí sản xuất, kinh doanh dở dang','0','1','110','','TT','0','','2016-11-07','8','',''),('26','155','Thành phẩm','0','1','110','','TT','0','','2016-11-07','8','',''),('27','156','Hàng hóa','0','1','110','','TT','0','','2016-11-07','3','',''),('200','1561','Giá trị hàng mua','156','1','110','','TT','156','','2017-02-10','4','',''),('201','1562','Chi phí mua hàng','156','1','110','','TT','156','','2017-02-10','1','',''),('28','157','hàng gửi đi bán','0','1','110','','TT','0','','2016-11-07','2','',''),('29','211','Tài sản cố định','0','1','150','','TT','211','','2016-11-08','0','',''),('30','2111','TSCĐ hữu hình','211','1','110','','TT','0','','2016-11-07','0','',''),('31','2112','TSCĐ thuê tài chính','211','1','110','','TT','0','','2016-11-07','0','',''),('32','2113','TSCĐ vô hình','211','1','110','','TT','0','','2016-11-07','0','',''),('33','214','Hao mòn tài sản cố định','0','1','110','','TT','0','','2016-11-07','0','',''),('34','2141','Hao mòn TSCĐ hữu hình','214','1','110','','TT','0','','2016-11-07','0','',''),('35','2142','Hao mòn TSCĐ thuê tài chính','214','1','110','','TT','0','','2016-11-07','0','',''),('36','2143','Hao mòn TSCĐ vô hình','214','1','110','','TT','0','','2016-11-07','0','',''),('37','2147','Hao mòn bất động sản đâu tư','214','1','110','','TT','0','','2016-11-07','0','',''),('38','217','Bất động sản đầu tư','0','1','160','','TT','217','','2016-11-08','0','',''),('39','228','Đầu tư góp vốn vào đơn vị khác','0','1','110','','TT','0','','2016-11-07','0','',''),('40','2281','Đầu tư góp vốn vào liên doanh liên kết','228','1','110','','TT','0','','2016-11-07','0','',''),('41','2288','Đầu tư khác','228','1','110','','TT','0','','2016-11-07','0','',''),('42','229','Dự phòng tổn thất tài sản','0','1','110','','TT','0','','2016-11-07','0','',''),('43','2291','Dự phòng giảm giá chứng khoán kinh doanh','229','1','110','','TT','0','','2016-11-07','0','',''),('44','2292','Dự phòng tổn thất đầu tư vào đơn vị khác','229','1','110','','TT','0','','2016-11-07','0','',''),('45','2293','Dự phòng phải thu khó đòi','229','1','110','','TT','0','','2016-11-07','0','',''),('46','2294','Dự phòng giảm giá hàng tồn kho','229','1','110','','TT','0','','2016-11-07','0','',''),('47','241','Xây dựng cơ bản dở dang','0','1','170','','TT','241','','2016-11-08','0','',''),('48','2411','Mua sắm TSCĐ','241','1','110','','TT','0','','2016-11-07','0','',''),('49','2412','Xây dựng cơ bản','241','1','110','','TT','0','','2016-11-07','0','',''),('50','2413','Sửa chữa lớn TSCĐ','241','1','110','','TT','0','','2016-11-07','0','',''),('51','242','Chi phí trả trước','0','1','110','','TT','0','','2016-11-07','1','',''),('53','331','Phải trả cho người bán','0','2','311','','TT','331','','2016-11-08','4','',''),('54','333','Thuế và các khoản phải nộp Nhà nước','0','2','413','','TT','333','','2016-11-08','0','',''),('55','3331','Thuế giá trị gia tăng phải nộp','333','2','413','','TT','333','','2016-11-08','1','',''),('56','33311','Thuế GTGT đầu ra','3331','2','413','','TT','333','','2017-03-10','0','',''),('57','33312','Thuế GTGT hàng nhập khẩu','3331','2','413','','TT','333','','2017-03-10','0','',''),('58','3332','Thuế tiêu thụ đặc biệt','333','2','413','','NO','333','','2016-11-08','0','',''),('59','3333','Thuế xuất, nhập khẩu','333','2','413','','NO','333','','2016-11-08','0','',''),('60','3334','Thuế thu nhập doanh nghiệp','333','2','413','','NO','333','','2016-11-08','0','',''),('61','3335','Thuế thu nhập cá nhân','333','2','413','','NO','333','','2016-11-08','0','',''),('62','3336','Thuế tài nguyên','333','2','413','','NO','333','','2016-11-08','0','',''),('63','3337','Thuế nhà đất tiền thuê đất','333','2','413','','NO','333','','2016-11-08','0','',''),('64','3338','Thuế bảo vệ môi trường và các khoản thu khác','333','2','413','','NO','333','','2016-11-08','0','',''),('65','33381','Thuế bảo vệ môi trường','3338','2','413','','NO','333','','2017-03-10','0','',''),('66','33382','Các loại thuế khác','3338','2','413','','TT','333','','2017-03-10','0','',''),('67','3339','Phí, lệ phí và các khoản phải nộp khác','333','2','413','','NO','333','','2016-11-08','0','',''),('208','33391','Phí, lệ phí môn bài','3339','2','413','','NO','333','','2021-11-30','0','',''),('209','33392','Các khoản phải nộp khác','3339','2','413','','NO','333','','2018-09-17','0','',''),('68','334','Phải trả người lao động','0','2','414','','NO','334','','2016-11-08','0','',''),('69','335','Chi phí phải trả','0','2','350','','NO','0','','2016-11-07','0','',''),('70','336','Phải trả nội bộ','0','2','360','','NO','0','','2016-11-07','0','',''),('71','3361','Phải trả nội bộ về vốn kinh doanh','336','2','360','','NO','0','','2016-11-07','0','',''),('72','3368','Phải trả nội bộ khác','336','2','360','','NO','0','','2016-11-07','0','',''),('73','338','Phải trả phải nộp khác','0','2','360','','NO','0','','2016-11-07','0','',''),('74','3381','Tài sản thừa chờ giải quyết','338','2','360','','NO','0','','2016-11-07','0','',''),('75','3382','Kinh phí công đoàn','338','2','360','','NO','0','','2016-11-07','0','',''),('76','3383','Bảo hiểm xã hội','338','2','360','','NO','0','','2016-11-07','1','',''),('77','3384','Bảo hiểm y tế','338','2','360','','NO','0','','2016-11-07','0','',''),('78','3385','Bảo hiểm thất nghiệp','338','2','360','','NO','0','','2016-11-07','0','',''),('79','3386','Nhận ký quỹ , ký cược','338','2','360','','NO','0','','2016-11-07','0','',''),('80','3387','Doanh thu chưa thực hiện','338','2','360','','NO','0','','2016-11-07','0','',''),('81','3388','Phải trả phải nộp','338','2','360','','NO','0','','2016-11-07','0','',''),('82','341','Vay và nợ thuê tài chính','0','2','360','','NO','0','','2016-11-07','0','',''),('83','3411','Các khoản đi vay','341','2','360','','NO','0','','2016-11-07','0','',''),('202','34111','Các khoản đi vay ngắn hạn','3411','1','360','','TT','341','','2018-09-17','0','',''),('203','34112','Các khoản đi dài ngắn hạn','3411','1','360','','TT','341','','2018-09-17','0','',''),('84','3412','Nợ thuê tài chính','341','2','360','','NO','0','','2016-11-07','0','',''),('85','352','Dự phòng phải trả','0','2','360','','NO','352','','2016-11-08','0','',''),('86','3521','Dự phòng bảo hành sản phẩm hàng hóa','352','2','360','','NO','0','','2016-11-07','0','',''),('87','3522','Dự phòng bảo hành công trình xây dựng','352','2','360','','NO','0','','2016-11-07','0','',''),('88','3524','Dự phòng phải trả khác','352','2','360','','NO','0','','2016-11-07','0','',''),('89','353','Quỹ khen thưởng phúc lợi','0','2','418','','NO','353','','2016-11-08','0','',''),('136','3531','Quỹ khen thưởng','353','2','418','','NO','353','','2016-12-16','1','',''),('90','3532','Quỹ phúc lợi','353','2','418','','NO','353','','2016-11-08','0','',''),('91','3533','Quỹ phúc lợi đã hình thành TSCĐ','353','2','418','','NO','353','','2016-11-08','0','',''),('92','3534','Quỹ thưởng ban quản lý điều hành công ty','353','2','418','','NO','353','','2016-11-08','0','',''),('93','356','Quỹ phát triển khoa học và công nghệ','0','2','360','','NO','0','','2016-11-07','0','',''),('94','3561','Quỹ phát triển khoa học và công nghệ','356','2','360','','NO','0','','2016-11-07','0','',''),('95','3562','Quỹ phát triển khoa học và công nghệ đã hình t','356','2','360','','NO','0','','2016-11-07','0','',''),('105','411','Vốn đầu tư của chủ sở hữu','0','3','400','','KHAC','0','','2016-11-07','0','',''),('106','4111','Vốn góp của chủ sở hữu','411','3','410','','KHAC','411','','2016-12-26','0','',''),('107','4112','Thặng dư vốn cổ phần','411','3','410','','KHAC','0','','2016-11-07','0','',''),('108','4118','Vốn khác','411','3','410','','NO','0','','2016-11-07','0','',''),('109','413','Chênh lệch tỷ giá hối đoái','0','3','410','','KHAC','0','','2016-11-07','0','',''),('110','418','Các quỹ thuộc vốn chủ sở hữu','0','3','410','','KHAC','0','','2016-11-07','0','',''),('111','419','Cổ phiếu quỹ','0','3','410','','KHAC','0','','2016-11-07','0','',''),('112','421','Lợi nhuận sau thuế chưa phân phối','0','3','420','','KHAC','0','','2016-11-07','0','',''),('139','4211','Lợi nhuận sau thuế chưa phân phối năm trước','421','3','420','','KHAC','421','','2017-06-28','0','',''),('113','4212','Lợi nhuận sau thuế chưa phân phối năm nay','421','3','420','','KHAC','421','','2016-11-08','0','',''),('114','511','Doanh thu bán hàng và cung cấp dịch vụ','0','4','510','','KHAC','511','','2016-11-08','0','',''),('115','5111','Doanh thu bán hàng hóa','511','4','510','','KHAC','511','','2016-11-08','0','',''),('116','5112','Doanh thu bán thành phẩm','511','4','510','','KHAC','511','','2016-11-25','0','',''),('117','5113','Doanh thu cung cấp dịch vụ','511','4','510','','KHAC','511','','2016-11-08','0','',''),('118','5118','Doanh thu khác','511','4','510','','KHAC','511','','2016-11-08','0','',''),('119','515','Doanh thu hoạt động tài chính','0','4','510','','KHAC','515','','2016-11-08','0','',''),('207','5151','Doanh thu hoạt động tài chính','515','4','510','','KHAC','515','','2018-09-17','0','',''),('120','611','Mua hàng','0','5','610','','KHAC','611','','2016-11-08','0','',''),('137','621','Chi phí nguyên vật liệu','0','1','110','','TT','621','','2017-04-17','0','',''),('204','622','Chi phí nhân công','0','1','110','','TT','622','','2018-09-17','0','',''),('205','623','Chi phí ca máy','0','1','110','','TT','623','','2018-09-17','0','',''),('206','627','Chi phí sản xuất chung','0','1','110','','TT','627','','2018-09-17','0','',''),('121','631','Giá thành sản xuất','0','5','630','','KHAC','631','','2016-11-08','0','',''),('122','632','Giá vốn bán hàng','0','5','630','','KHAC','632','','2016-11-08','0','',''),('123','635','Chi phí tài chính','0','5','640','','KHAC','635','','2016-11-08','0','',''),('124','642','Chi phí quản lý kinh doanh','0','5','640','','KHAC','642','','2016-11-08','0','',''),('125','6421','Chi phí bán hàng','642','5','642','','KHAC','642','','2016-11-08','1','',''),('126','6422','Chi phí quản lý doanh nghiệp','642','5','640','','KHAC','642','','2016-11-08','12','',''),('127','711','Thu nhập khác','0','6','710','','KHAC','711','','2016-11-08','0','',''),('128','811','Chi phí khác','0','7','810','','KHAC','811','','2016-11-08','0','',''),('129','821','Chi phí thuế thu nhập doanh nghiệp','0','7','820','','KHAC','821','','2016-11-08','0','',''),('130','911','Xác định kết quả kinh doanh','0','8','910','','KHAC','911','','2016-11-08','0','',''),('210','112202','Tiền gửi ngân hàng Sacombank','1122','1','110','','TT','112','','2019-08-21','1','','');
+DROP TABLE IF EXISTS mats;
+
+CREATE TABLE `mats` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mats` char(14) NOT NULL,
+  `tents` varchar(300) DEFAULT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `matk` char(6) NOT NULL,
+  `ngaysd` date DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `ngaysx` date NOT NULL,
+  `congsuat` varchar(200) DEFAULT NULL,
+  `tylekh` bigint(6) DEFAULT NULL,
+  `thoigiansd` double DEFAULT NULL,
+  `soluong` double DEFAULT NULL,
+  `dongia` double DEFAULT NULL,
+  `nguyengia` double DEFAULT NULL,
+  `giatriconlai` double DEFAULT NULL,
+  `muckhthang` double NOT NULL,
+  `muckhquy` double DEFAULT NULL,
+  `muckhnam` double NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `chuthich` text,
+  `mabp` char(6) NOT NULL,
+  `bophan` varchar(200) NOT NULL,
+  `manhomts` char(6) NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `matscha` varchar(14) NOT NULL,
+  `khauhao` int(1) NOT NULL DEFAULT '1',
+  `ngaygiam` date NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `sohuu` varchar(200) NOT NULL,
+  `matkgiam` char(6) NOT NULL,
+  `cpkhongduoctru` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `mats` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS mavt;
+
+CREATE TABLE `mavt` (
+  `sott` bigint(20) unsigned NOT NULL,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) DEFAULT NULL,
+  `quycach` varchar(35) NOT NULL,
+  `dvt` varchar(100) NOT NULL,
+  `dvtp` varchar(100) NOT NULL,
+  `kl` double NOT NULL,
+  `kt` double NOT NULL,
+  `mavtcha` char(6) NOT NULL COMMENT 'kh�ng s? d?ng',
+  `manhom` int(4) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `matk` char(5) NOT NULL,
+  `ghichu` text NOT NULL,
+  `giaban` double NOT NULL,
+  `giabansi` double NOT NULL,
+  `giamua` double NOT NULL,
+  `rate` char(2) NOT NULL,
+  `mark` char(1) NOT NULL,
+  `congvao` bigint(10) NOT NULL,
+  `trura` bigint(10) NOT NULL,
+  `dp` int(2) NOT NULL COMMENT 'chi?t kh?u t�nh %',
+  `max` double NOT NULL,
+  `min` double NOT NULL,
+  `muc` double NOT NULL,
+  `tenkd` varchar(1000) NOT NULL,
+  `sl` int(1) DEFAULT '0',
+  `loaivl` char(3) NOT NULL,
+  `niendo` char(4) NOT NULL,
+  `pbchiphi` int(1) NOT NULL,
+  `sapxep` char(1) NOT NULL,
+  `tkdoanhthu` char(6) NOT NULL,
+  `mavttt` char(20) NOT NULL,
+  `stt` int(11) NOT NULL AUTO_INCREMENT,
+  `heso` double NOT NULL DEFAULT '1',
+  PRIMARY KEY (`mavt`),
+  UNIQUE KEY `umavt` (`mavt`),
+  UNIQUE KEY `stt` (`stt`),
+  KEY `sott` (`sott`),
+  KEY `mavt` (`mavt`),
+  KEY `fk_mavt_manhom_manhom` (`manhom`),
+  KEY `index_tenvt` (`tenvt`(255)),
+  KEY `sapxep` (`sapxep`),
+  KEY `id_mavttt` (`mavttt`),
+  FULLTEXT KEY `tenkd` (`tenkd`),
+  CONSTRAINT `fk_mavt_manhom_manhom` FOREIGN KEY (`manhom`) REFERENCES `manhom` (`manhom`)
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
+
+TRUNCATE mavt;INSERT INTO mavt VALUES ('52','CHACA','CHẢ CÁ CHIÊN','','Kg','','0','0','','1100','','155','','51111.111','0','0','0','','0','0','0','0','0','0','CHA CA CHIEN','0','','2024','0','','5112','','52','1'),('53','CHACA-001','chả cá chiên','','Kg','','0','0','','1100','Thành Phẩm','155','','38580.2463','0','0','8','','0','0','0','0','0','0','cha ca chien','0','','2024','0','','5112','','53','1'),('54','CHACA-002','Chả cá chiên ( 450g/gói )','','Kg','Kg','0','0','','1100','Thành Phẩm','155','','43724.28','0','0','8','','0','0','0','0','0','0','Cha ca chien ( 450g/goi )','0','','2024','0','','5112','','54','10.8'),('124174556364383','CHACA-003','Chả cá chiên','','Gói','','0','0','','1100','','155','','22000','0','0','8','','0','0','0','0','0','0','Cha ca chien','0','','','0','','5112','','83','0'),('124175099122288','CHACA-004','Chả cá chiên loại 2 (450gr/gói)','','Kg/Thùng','Kg','0','0','','1100','Thành Phẩm','155','','36008.231','0','388888.89','8','','0','0','0','0','0','0','Cha ca chien loai 2 (450gr/goi)','0','','','0','','5112','','91','10.8'),('124175306830546','CHACA-005','Chả cá chiên loại 1 (450gr/gói)','','Kg/Thùng','Kg','0','0','','1100','Thành Phẩm','155','','42009.602','0','42009.60185','8','','0','0','0','0','0','0','Cha ca chien loai 1 (450gr/goi)','0','','','0','','5112','','92','10.8'),('124175634788935','CHACA-006','Chả cá chiên ( dạng tròn)','','Kg','','0','0','','1100','Thành Phẩm','155','','43000','0','0','8','','0','0','0','0','0','0','Cha ca chien ( dang tron)','0','','','0','','5112','','94','0'),('124175634979089','CHACA-007','Chả cá chiên ( Hàn Quốc bọc màu đỏ)','','Kg','','0','0','','1100','Thành Phẩm','155','','44000','0','0','8','','0','0','0','0','0','0','Cha ca chien ( Han Quoc boc mau do)','0','','','0','','5112','','95','0'),('124175636534728','CHACA-008','Chả cá chiên dạng sợi ( 500g/gói)','','Kg','','0','0','','1100','Hàng hóa','155','','50000','0','0','8','','0','0','0','0','0','0','Cha ca chien dang soi ( 500g/goi)','0','','','0','','5112','','97','0'),('55','HH220004','Bột mì con cừu','','Kg','','0','0','','1230','','152','','0','0','11700','10','','0','0','0','0','0','0','Bot mi con cuu','0','','2024','0','','5111','','55','1'),('56','HH220005','Bột mì cá trê nâu','','Kg','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Bot mi ca tre nau','0','','2024','0','','5111','','56','1'),('57','HH220006','Phụ gia thực phẩm D-Xylose CL','','Kg','','0','0','','1230','','152','','0','0','0','5','','0','0','0','0','0','0','Phu gia thuc pham D-Xylose CL','0','','2024','0','','5111','','57','1'),('58','HH220007','Chả cá ( Surimi ) đông lạnh','','Kg','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Cha ca ( Surimi ) dong lanh','0','','2024','0','','5111','','58','1'),('59','HH220008','Thùng chả cá viên 10.8kg Green ( 01T1 ) (53*23*17) 5t','','Cái','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Thung cha ca vien 10.8kg Green ( 01T1 ) (53*23*17) 5t','0','','2024','0','','5111','','59','1'),('60','HH220009','Thùng chả cá viên 10.8kg Black ( 01T2 ) (53*23*17) 5t','','Cái','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Thung cha ca vien 10.8kg Black ( 01T2 ) (53*23*17) 5t','0','','2024','0','','5111','','60','1'),('61','HH220010','Hóa chất Sodium Tripoly Phosphate','','Kg','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Hoa chat Sodium Tripoly Phosphate','0','','2024','0','','5111','','61','1'),('62','HH220011','TA dầu Olita 25kg','','Can','','0','0','','1230','','152','','0','0','861111.1','10','','0','0','0','0','0','0','TA dau Olita 25kg','0','','2024','0','','5111','','62','1'),('63','HH230015','Bột mì 1A xanh dương','','Kg','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Bot mi 1A xanh duong','0','','2024','0','','5111','','63','1'),('64','HH230016','Bột mì cá trê xanh','','Kg','','0','0','','1230','','152','','0','0','0','10','','0','0','0','0','0','0','Bot mi ca tre xanh','0','','2024','0','','5111','','64','1'),('65','HH230017','Chả cá biển đông lạnh','','Kg','','0','0','','1230','','152','','23778.644','0','27000','10','','0','0','0','0','0','0','Cha ca bien dong lanh','0','','2024','0','','5111','','65','1'),('124175090710358','HH2500084','Gluten lúa mì','','Kg','','0','0','','1230','','152','','0','0','46296','8','','0','0','0','0','0','0','Gluten lua mi','0','','','0','','5111','','84','0'),('124175090954990','HH2500085','Nguyên liệu thực phẩm : EGG ALBUMEN POWDER-HIGH GEL','','Kg','','0','0','','1230','','152','','0','0','222727.27','10','','0','0','0','0','0','0','Nguyen lieu thuc pham : EGG ALBUMEN POWDER-HIGH GEL','0','','','0','','5111','','85','0'),('124175090958167','HH2500086','Phụ gia thực phẩm: Carfosel 994','','Kg','','0','0','','1230','','152','','0','0','78703.7','10','','0','0','0','0','0','0','Phu gia thuc pham: Carfosel 994','0','','','0','','5111','','86','0'),('124175090971784','HH2500087','Phụ gia D-Xylose','','Kg','','0','0','','1230','Hàng hóa','152','','0','0','152380.95','5','','0','0','0','0','0','0','Phu gia D-Xylose','0','','','0','','5111','','87','0'),('124175090993636','HH2500088','Túi chả cá hàn quốc','','Túi','','0','0','','1230','','152','','0','0','450','8','','0','0','0','0','0','0','Tui cha ca han quoc','0','','','0','','5111','','88','0'),('124175091020187','HH2500089','Thịt cá xô xay đông lạnh độ dai 200 up','','Kg','','0','0','','1230','','152','','0','0','41000','8','','0','0','0','0','0','0','Thit ca xo xay dong lanh do dai 200 up','0','','','0','','5111','','89','0'),('124175091020965','HH2500090','Thịt cá xô xay đông lạnh','','Kg','','0','0','','1230','','152','','0','0','30000','8','','0','0','0','0','0','0','Thit ca xo xay dong lanh','0','','','0','','5111','','90','0'),('124175634531039','HH2500093','Thùng carton 5LT, tráng PE, Chả cá viên chiên','','Cái','','0','0','','1230','','152','','0','0','10370.3703','8','','0','0','0','0','0','0','Thung carton 5LT, trang PE, Cha ca vien chien','0','','','0','','5111','','93','0'),('93176161469077','HH2500098','Chả cá chiên ( 450g/gói *24 gói/thùng)','','Kg','Kg','0','0','','1100','','155','','51750','0','0','8','','0','0','0','0','0','0','Cha ca chien ( 450g/goi *24 goi/thung)','0','','','0','','5112','','98','0'),('93176282617689','HH2500099','Chả cá chiên ( 450g/gói *24 gói/thùng).','','Kg','Kg','0','0','','1100','','155','','39814.815','0','0','8','','0','0','0','0','0','0','Cha ca chien ( 450g/goi *24 goi/thung).','0','','','0','','5112','','99','0'),('93176717190764','HH2500100','Chả cá chiên ( 450g/gói *24 gói/thùng).','','Kg','Kg','0','0','','1100','','155','','47372.954','0','0','8','','0','0','0','0','0','0','Cha ca chien ( 450g/goi *24 goi/thung).','0','','','0','','5112','','100','0'),('93176717239179','HH2500101','Muối hạt trắng','','Tấn','','0','0','','1230','','152','','0','0','2200000','k','','0','0','0','0','0','0','Muoi hat trang','0','','','0','','5111','','101','0'),('66','NC-001','Nhân công','','Công','','0','0','','1200','','622','','0','0','0','10','','0','0','0','0','0','0','Nhan cong','0','NC','2024','0','','5113','','66','1'),('67','SXC-01','Chi phí chung cố định','','','','0','0','','1200','','627','','0','0','0','10','','0','0','0','0','0','0','Chi phí chung co dinh','0','SXC','2024','0','','5113','','67','1'),('68','SXC-02','Chi phí chung biến đổi','','','','0','0','','1200','','627','','0','0','0','10','','0','0','0','0','0','0','Chi phí chung bien doi','0','SXC','2024','0','','5113','','68','1');
+ALTER TABLE mavt AUTO_INCREMENT=132;
+DROP TABLE IF EXISTS nhatkykiemphieu;
+
+CREATE TABLE `nhatkykiemphieu` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `lanthu` int(11) NOT NULL,
+  `tuso` varchar(11) NOT NULL,
+  `denso` int(11) NOT NULL,
+  `ngaynhap` date NOT NULL,
+  `gionhap` time NOT NULL,
+  `loaiphieu` int(11) NOT NULL,
+  `nguoinhap` varchar(20) NOT NULL,
+  `gt1` bigint(20) NOT NULL,
+  `gt2` bigint(20) NOT NULL,
+  `ngaycuoi` date NOT NULL,
+  `matk` char(6) NOT NULL,
+  `niendo` int(4) NOT NULL,
+  `truongnhomduyet` tinyint(4) NOT NULL,
+  `giamdocduyet1` tinyint(4) NOT NULL,
+  `nguoiduyet1` varchar(20) NOT NULL,
+  `ngayduyet1` datetime NOT NULL,
+  `giamdocduyet` tinyint(4) NOT NULL,
+  `nguoiduyet` varchar(50) NOT NULL,
+  `ngayduyet` datetime NOT NULL,
+  `ghichu` text NOT NULL,
+  `machinhanh` char(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+
+TRUNCATE nhatkykiemphieu;INSERT INTO nhatkykiemphieu VALUES ('57','1','IV','0','2026-02-26','15:21:29','10','Dung','289','0','0000-00-00','','0','1','0','','0000-00-00 00:00:00','0','','0000-00-00 00:00:00','','2100675747'),('55','1','IV-2025','0','2026-02-26','15:20:04','9','Dung','0','-17378718','0000-00-00','','0','1','1','Thanh','2026-02-27 03:59:55','0','','0000-00-00 00:00:00','','2100675747');
+ALTER TABLE nhatkylamviec AUTO_INCREMENT=428;
+DROP TABLE IF EXISTS plchuyenlo;
+
+CREATE TABLE `plchuyenlo` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(10) NOT NULL,
+  `nampslo` int(5) NOT NULL,
+  `solophatsinh` bigint(20) NOT NULL,
+  `sochuyenkytruoc` bigint(20) NOT NULL,
+  `sochuyentrongky` bigint(20) NOT NULL,
+  `sochuyenkysau` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umaso` (`maso`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+INSERT INTO plchuyenlo VALUES('1','2021_2020','2020','0','0','0','0',''),('2','2021_2019','2019','0','0','0','0',''),('3','2021_2018','2018','0','0','0','0',''),('4','2021_2017','2017','0','0','0','0',''),('5','2021_2016','2016','0','0','0','0','');
+DROP TABLE IF EXISTS plgdlk;
+
+CREATE TABLE `plgdlk` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` char(10) NOT NULL,
+  `namps` int(5) NOT NULL,
+  `chiphilaivay` bigint(20) NOT NULL,
+  `laitiengui` bigint(20) NOT NULL,
+  `laivaytrutiengui` bigint(20) NOT NULL,
+  `chiphikhauhao` bigint(20) NOT NULL,
+  `loinhuanthuan` bigint(20) NOT NULL,
+  `ebitda` bigint(20) NOT NULL,
+  `laivayduoctru` bigint(20) NOT NULL,
+  `chiphilaivaykhongduoctru` bigint(20) NOT NULL,
+  `chiphilaivaykhongduoctruchuyentiep` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umaso` (`maso`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+INSERT INTO plgdlk VALUES('1','2021_2020','2020','0','0','0','0','0','0','0','0','0',''),('2','2021_2019','2019','0','0','0','0','0','0','0','0','0',''),('3','2021_2018','2018','0','0','0','0','0','0','0','0','0',''),('4','2021_2017','2017','0','0','0','0','0','0','0','0','0',''),('5','2021_2016','2016','0','0','0','0','0','0','0','0','0',''),('6','2021_2021','2021','396453236','4235674','392217562','198564237','112346789','703128588','210938576','181278986','181278986','');
+DROP TABLE IF EXISTS plthuetndnuudai;
+
+CREATE TABLE `plthuetndnuudai` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `machitieu` char(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieucha` char(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `phantram` int(11) NOT NULL,
+  `nam` varchar(10) NOT NULL,
+  `ketunam` varchar(10) NOT NULL,
+  `chonuudai` int(1) NOT NULL,
+  PRIMARY KEY (`sott`),
+  UNIQUE KEY `umachitieu` (`machitieu`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+
+INSERT INTO plthuetndnuudai VALUES('1','1.1','Doanh nghiệp sản xuất mới thành lập từ dự án đầu tư.','1','0','0','','','0'),('2','1.2','Doanh nghiệp di chuyển địa điểm ra khỏi đô thị theo quy hoạch đã được cơ quan có thẩm quyền phê duyệt.','1','0','0','','','0'),('3','1.3','Doanh nghiệp mới thành lập từ dự án đầu tư vào ngành nghề, lĩnh vực ưu đãi đầu tư.','1','0','0','','','0'),('4','1.4','Doanh nghiệp mới thành lập từ dự án đầu tư vào ngành nghề, lĩnh vực đặc biệt ưu đãi đầu tư.','1','0','0','','','0'),('5','1.5','Doanh nghiệp mới thành lập từ dự án đầu tư vào nghành nghề, lĩnh vực ưu đãi đầu tư theo quy định tại Nghị định số 124/2008/NĐ-CP.','1','0','0','','','0'),('6','1.6','Doanh nghiệp mới thành lập từ dự án đầu tư vào địa bàn thuộc Danh mục địa bàn có điều kiện kinh tế - xã hội khó khăn.','1','0','0','','','1'),('7','1.7','Doanh nghiệp mới thành lập từ dự án đầu tư vào địa bàn thuộc Danh mục địa bàn có điều kiện kinh tế - xã hội đặc biệt khó khăn, khu kinh tế, khu công nghệ cao.','1','0','0','','','0'),('8','1.8','Doanh nghiệp thành lập mới trong lĩnh vực xã hội hoá hoặc có thu nhập từ hoạt động xã hội hoá.','1','0','0','','','0'),('9','1.9','Hợp tác xã dịch vụ nông nghiệp, Quỹ tín dụng nhân dân.','1','0','0','','','0'),('10','1.10','Ưu đãi theo Giấy phép đầu tư, Giấy chứng nhận ưu đãi đầu tư.','1','0','0','','','0'),('11','3','Xác định số thuế TNDN chênh lệch do doanh nghiệp hưởng thuế suất ưu đãi','3','0','0','','','0'),('12','3.1','Tổng thu nhập tính thuế được hưởng thuế suất ưu đãi','3','0','0','','','0'),('13','3.2','Thuế TNDN tính theo thuế suất ưu đãi','3','0','0','','','0'),('14','3.3','Thuế TNDN tính theo thuế suất phổ thông (20%)','3','0','0','','','0'),('15','3.4','Thuế TNDN chênh lệch ([4]=[3]-[2])','3','0','0','','','0'),('16','4','Xác định số thuế được miễn, giảm trong kỳ tính thuế','3','0','0','','','0'),('17','4.1','Tổng thu nhập tính thuế được miễn thuế hoặc giảm thuế','3','0','0','','','0'),('18','4.2','Thuế suất thuế TNDN ưu đãi áp dụng (%)','3','0','0','','','0'),('19','4.3','Thuế thu nhập doanh nghiệp phải nộp','3','0','0','','','0'),('20','4.4','Tỷ lệ thuế TNDN được miễn hoặc giảm (%)','3','0','0','','','0'),('21','4.5','Thuế TNDN được miễn, giảm','3','0','0','','','0'),('22','2.1','- Thuế suất thuế thu nhập doanh nghiệp ưu đãi: [PhanTram]%','2','0','17','','','0'),('23','2.2','- Thời hạn áp dụng thuế suất ưu đãi [SoNam] năm, kể từ năm [Nam]','2','0','0','10','2020','0'),('24','2.3','- Thời gian miễn thuế [SoNam] năm, kể từ năm [Nam]','2','0','0','2','2021','0'),('25','2.4','- Thời gian giảm 50% số thuế phải nộp: [SoNam] năm, kể từ năm [Nam]','2','0','0','4','2023','0');
+DROP TABLE IF EXISTS pscptt;
+
+CREATE TABLE `pscptt` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) DEFAULT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngaysx` date NOT NULL,
+  `thoigiansd` double NOT NULL,
+  `thoigiansdconlai` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `mats` char(14) DEFAULT NULL,
+  `tents` varchar(500) DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `soluong` double NOT NULL,
+  `dongia` bigint(10) NOT NULL,
+  `gtvnd` bigint(14) DEFAULT NULL,
+  `nguyengia` bigint(14) NOT NULL,
+  `giatriconlai` bigint(14) NOT NULL,
+  `tylekh` double NOT NULL,
+  `tgsd` double(7,3) DEFAULT NULL,
+  `muckhthang` bigint(13) NOT NULL,
+  `muckhquy` bigint(13) NOT NULL,
+  `muckhnam` bigint(13) NOT NULL,
+  `matk` char(7) DEFAULT NULL,
+  `tkno` char(7) DEFAULT NULL,
+  `tkco` char(7) DEFAULT NULL,
+  `mand` char(10) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(500) DEFAULT NULL,
+  `comment` text,
+  `tanggiam` int(1) NOT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `ngayhoadon` date NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `manhomts` varchar(6) NOT NULL,
+  `tennhomts` varchar(255) NOT NULL,
+  `mapsts` int(11) NOT NULL,
+  `thamchieu` bigint(18) NOT NULL,
+  `loaisp` varchar(2) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_pscptt_mats_mats` (`mats`),
+  CONSTRAINT `fk_pscptt_mats_mats` FOREIGN KEY (`mats`) REFERENCES `cptratruoc` (`mats`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+TRUNCATE pscptt;ALTER TABLE pskt AUTO_INCREMENT=1574;
+DROP TABLE IF EXISTS psts;
+
+CREATE TABLE `psts` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` char(10) DEFAULT NULL,
+  `sct` varchar(12) DEFAULT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngaysx` date NOT NULL,
+  `ngaygiam` date NOT NULL,
+  `thoigiansd` double NOT NULL,
+  `ngaysd` date NOT NULL,
+  `mats` char(14) DEFAULT NULL,
+  `tents` varchar(500) DEFAULT NULL,
+  `nuocsx` varchar(100) DEFAULT NULL,
+  `congsuat` varchar(20) DEFAULT NULL,
+  `tenvt` varchar(60) DEFAULT NULL,
+  `noidung` varchar(60) DEFAULT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `soluong` double NOT NULL,
+  `dongia` bigint(10) NOT NULL,
+  `gtvnd` bigint(14) DEFAULT NULL,
+  `nguyengia` bigint(14) NOT NULL,
+  `giatriconlai` bigint(14) NOT NULL,
+  `tylekh` double NOT NULL,
+  `tgsd` double(7,3) DEFAULT NULL,
+  `muckhthang` bigint(13) NOT NULL,
+  `muckhquy` bigint(13) NOT NULL,
+  `muckhnam` bigint(13) NOT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `tkno` char(5) DEFAULT NULL,
+  `tkco` char(5) DEFAULT NULL,
+  `mand` char(10) DEFAULT NULL,
+  `mabp` char(20) DEFAULT NULL,
+  `bophan` varchar(500) DEFAULT NULL,
+  `comment` text,
+  `tanggiam` int(1) NOT NULL,
+  `ref` int(1) DEFAULT NULL,
+  `khac` int(1) DEFAULT NULL,
+  `mark` char(1) DEFAULT NULL,
+  `clink` int(5) DEFAULT NULL,
+  `chuthich` text,
+  `ngayhoadon` date NOT NULL,
+  `tenkd` varchar(200) NOT NULL,
+  `manhomts` varchar(6) NOT NULL,
+  `tennhomts` varchar(255) NOT NULL,
+  `mapsts` int(11) NOT NULL,
+  `thamchieu` bigint(18) NOT NULL,
+  `loaisp` char(2) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_psts_mats_mats` (`mats`),
+  CONSTRAINT `fk_psts_mats_mats` FOREIGN KEY (`mats`) REFERENCES `mats` (`mats`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+TRUNCATE psts;DROP TABLE IF EXISTS psvoncsh;
+
+CREATE TABLE `psvoncsh` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mapsvoncsh` int(11) NOT NULL,
+  `tkno` char(6) NOT NULL,
+  `ngayghiso` date NOT NULL,
+  `ngayhoadon` date NOT NULL,
+  `tkco` char(6) NOT NULL,
+  `makh` char(14) NOT NULL,
+  `mabp` char(14) NOT NULL,
+  `bophan` varchar(300) NOT NULL,
+  `mand` char(14) NOT NULL,
+  `noidung` varchar(300) NOT NULL,
+  `vondieule` bigint(20) NOT NULL,
+  `vongop` bigint(20) NOT NULL,
+  `tanggiam` int(1) NOT NULL,
+  `ghichu` text NOT NULL,
+  `tenkd` varchar(300) NOT NULL,
+  `vondieuletrongky` bigint(20) NOT NULL,
+  `vongoptrongky` bigint(20) NOT NULL,
+  `tyle` double NOT NULL,
+  `vonchuagop` bigint(20) NOT NULL,
+  `vondieuleusd` double NOT NULL,
+  `vongopusd` double NOT NULL,
+  `vondieuletrongkyusd` double NOT NULL,
+  `vongoptrongkyusd` double NOT NULL,
+  `vonchuagopusd` double NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE psvt AUTO_INCREMENT=206;
+ALTER TABLE sdtkdk AUTO_INCREMENT=169;
+DROP TABLE IF EXISTS sodu_hoadon_dauky_nhap;
+
+CREATE TABLE `sodu_hoadon_dauky_nhap` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `kyhieu` varchar(20) NOT NULL,
+  `tuso` varchar(300) NOT NULL,
+  `denso` varchar(300) NOT NULL,
+  `loaphieu` int(11) NOT NULL DEFAULT '1',
+  `quy` varchar(10) NOT NULL,
+  `soquyen` varchar(10) NOT NULL,
+  `mauso` varchar(20) NOT NULL,
+  `loaiphieu` char(3) NOT NULL DEFAULT 'DK',
+  `huy` varchar(300) NOT NULL,
+  `sudung` varchar(300) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+TRUNCATE sodu_hoadon_dauky_nhap;INSERT INTO sodu_hoadon_dauky_nhap (kyhieu,tuso,denso,loaphieu,quy,soquyen,mauso,loaiphieu) VALUES ('C25TDA','125','413','1','0','413','1','DK');
+DROP TABLE IF EXISTS thongtinchung;
+
+CREATE TABLE `thongtinchung` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `noidung` text NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+INSERT INTO thongtinchung VALUES('1','0:::0:0:0:nho:tt133:0:::::::::::::0:::::VN:::0:0:1:0:::0:1:0:0:0:0:0',''),('2','2#*#1#*#1','');
+DROP TABLE IF EXISTS tk;
+
+CREATE TABLE `tk` (
+  `sott` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mavt` char(20) NOT NULL,
+  `tenvt` varchar(1000) DEFAULT NULL,
+  `matk` char(5) DEFAULT NULL,
+  `quycach` varchar(35) DEFAULT NULL,
+  `manhom` char(6) NOT NULL,
+  `tennhom` varchar(100) NOT NULL,
+  `dvt` varchar(50) DEFAULT NULL,
+  `dvtp` varchar(5) DEFAULT NULL,
+  `kl` double(7,2) DEFAULT NULL,
+  `kt` double(7,2) DEFAULT NULL,
+  `sldk` double(12,3) DEFAULT NULL,
+  `gtvndk` bigint(13) DEFAULT NULL,
+  `slntk` double(13,3) DEFAULT NULL,
+  `gtnvnd` bigint(14) DEFAULT NULL,
+  `slxtk` double(13,3) DEFAULT NULL,
+  `gtxvnd` bigint(14) DEFAULT NULL,
+  `slck` double DEFAULT NULL,
+  `gtvnck` double DEFAULT NULL,
+  `dgxvnd` double DEFAULT NULL,
+  `giaban` bigint(13) DEFAULT NULL,
+  `ttgiaban` bigint(15) DEFAULT NULL,
+  `rate` char(2) DEFAULT NULL,
+  `chietkhau` int(2) NOT NULL,
+  `sl` int(1) NOT NULL,
+  `makho` char(4) DEFAULT NULL,
+  `kho` varchar(60) DEFAULT NULL,
+  `tenkd` char(200) NOT NULL,
+  PRIMARY KEY (`sott`),
+  KEY `fk_tk_mavt_mavt` (`mavt`),
+  KEY `fk_tk_makho_makho` (`makho`),
+  CONSTRAINT `fk_tk_makho_makho` FOREIGN KEY (`makho`) REFERENCES `makho` (`makho`),
+  CONSTRAINT `fk_tk_mavt_mavt` FOREIGN KEY (`mavt`) REFERENCES `mavt` (`mavt`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+TRUNCATE tk;INSERT INTO tk(sott,mavt,tenvt,matk,dvt,gtvnck,dgxvnd,slck,rate,makho,kho,quycach,manhom,tennhom) VALUES ('3553','CHACA','CHẢ C&Aacute#*# CHI&Ecirc#*#N','155','Kg','0.000','0','-173.000','0','0010','','','1100','Thành Phẩm'),('3554','CHACA-001','chả c&aacute#*# chi&ecirc#*#n','155','Kg','0.000','0','-2060.000','8','0010','','','1100','Thành Phẩm'),('3555','CHACA-002','Chả c&aacute#*# chi&ecirc#*#n ( 450g/g&oacute#*#i )','155','Kg','48464.872','-621988473','-12833.800','8','0010','','','1100','Thành Phẩm'),('3556','CHACA-003','Chả c&aacute#*# chi&ecirc#*#n','155','Gói','0.000','0','-24.000','8','0010','','','1100','Thành Phẩm'),('3557','CHACA-004','Chả c&aacute#*# chi&ecirc#*#n loại 2 (450gr/g&oacute#*#i)','155','Kg/Thùng','0.000','0','-11345.000','8','0010','','','1100','Thành Phẩm'),('3558','CHACA-005','Chả c&aacute#*# chi&ecirc#*#n loại 1 (450gr/g&oacute#*#i)','155','Kg/Thùng','0.000','0','-18224.400','8','0010','','','1100','Thành Phẩm'),('3559','CHACA-006','Chả c&aacute#*# chi&ecirc#*#n ( dạng tr&ograve#*#n)','155','Kg','0.000','0','-884.000','8','0010','','','1100','Thành Phẩm'),('3560','CHACA-007','Chả c&aacute#*# chi&ecirc#*#n ( H&agrave#*#n Quốc bọc m&agrave#*#u đỏ)','155','Kg','0.000','0','-10.000','8','0010','','','1100','Thành Phẩm'),('3561','CHACA-008','Chả c&aacute#*# chi&ecirc#*#n dạng sợi ( 500g/g&oacute#*#i)','155','Kg','0.000','0','-100.000','8','0010','','','1100','Thành Phẩm'),('3562','HH2500098','Chả c&aacute#*# chi&ecirc#*#n ( 450g/g&oacute#*#i *24 g&oacute#*#i/th&ugrave#*#ng)','155','Kg','0.000','0','-107.000','8','0010','','','1100','Thành Phẩm'),('3563','HH2500099','Chả c&aacute#*# chi&ecirc#*#n ( 450g/g&oacute#*#i *24 g&oacute#*#i/th&ugrave#*#ng).','155','Kg','0.000','0','-3456.000','8','0010','','','1100','Thành Phẩm'),('3564','HH2500100','Chả c&aacute#*# chi&ecirc#*#n ( 450g/g&oacute#*#i *24 g&oacute#*#i/th&ugrave#*#ng).','155','Kg','0.000','0','-43.000','8','0010','','','1100','Thành Phẩm'),('3565','HH220004','Bột m&igrave#*# con cừu','152','Kg','11946.763','158000502','13225.382','10','0010','','','1230','Hàng hóa'),('3566','HH220005','Bột m&igrave#*# c&aacute#*# tr&ecirc#*# n&acirc#*#u','152','Kg','12081.818','22689655','1878.000','10','0010','','','1230','Hàng hóa'),('3567','HH220006','Phụ gia thực phẩm D-Xylose CL','152','Kg','0.000','0','0.000','5','0010','','','1230','Hàng hóa'),('3568','HH220007','Chả c&aacute#*# ( Surimi ) đ&ocirc#*#ng lạnh','152','Kg','0.000','0','0.000','10','0010','','','1230','Hàng hóa'),('3569','HH220008','Th&ugrave#*#ng chả c&aacute#*# vi&ecirc#*#n 10.8kg Green ( 01T1 ) (53*23*17) 5t','152','Cái','0.000','0','0.000','10','0010','','','1230','Hàng hóa'),('3570','HH220009','Th&ugrave#*#ng chả c&aacute#*# vi&ecirc#*#n 10.8kg Black ( 01T2 ) (53*23*17) 5t','152','Cái','0.000','0','0.000','10','0010','','','1230','Hàng hóa'),('3571','HH220010','H&oacute#*#a chất Sodium Tripoly Phosphate','152','Kg','0.000','0','0.000','10','0010','','','1230','Hàng hóa'),('3572','HH220011','TA dầu Olita 25kg','152','Can','779471.828','13571384','17.411','10','0010','','','1230','Hàng hóa'),('3573','HH230015','Bột m&igrave#*# 1A xanh dương','152','Kg','12800.000','5632000','440.000','10','0010','','','1230','Hàng hóa'),('3574','HH230016','Bột m&igrave#*# c&aacute#*# tr&ecirc#*# xanh','152','Kg','12330.000','14302800','1160.000','10','0010','','','1230','Hàng hóa'),('3575','HH230017','Chả c&aacute#*# biển đ&ocirc#*#ng lạnh','152','Kg','23778.644','740170427','31127.530','10','0010','','','1230','Hàng hóa'),('3576','HH2500084','Gluten l&uacute#*#a m&igrave#*#','152','Kg','43179.692','14033400','325.000','8','0010','','','1230','Hàng hóa'),('3577','HH2500085','Nguy&ecirc#*#n liệu thực phẩm : EGG ALBUMEN POWDER-HIGH GEL','152','Kg','222727.280','5568182','25.000','10','0010','','','1230','Hàng hóa'),('3578','HH2500086','Phụ gia thực phẩm: Carfosel 994','152','Kg','78226.717','4693603','60.000','10','0010','','','1230','Hàng hóa'),('3579','HH2500087','Phụ gia D-Xylose','152','Kg','152380.960','3809524','25.000','5','0010','','','1230','Hàng hóa'),('3580','HH2500088','T&uacute#*#i chả c&aacute#*# h&agrave#*#n quốc','152','Túi','450.000','9270000','20600.000','8','0010','','','1230','Hàng hóa'),('3581','HH2500089','Thịt c&aacute#*# x&ocirc#*# xay đ&ocirc#*#ng lạnh độ dai 200 up','152','Kg','41000.000','82000000','2000.000','8','0010','','','1230','Hàng hóa'),('3582','HH2500090','Thịt c&aacute#*# x&ocirc#*# xay đ&ocirc#*#ng lạnh','152','Kg','30000.000','24000000','800.000','8','0010','','','1230','Hàng hóa'),('3583','HH2500093','Th&ugrave#*#ng carton 5LT, tr&aacute#*#ng PE, Chả c&aacute#*# vi&ecirc#*#n chi&ecirc#*#n','152','Cái','10370.370','24888889','2400.000','8','0010','','','1230','Hàng hóa'),('3584','HH2500101','Muối hạt trắng','152','Tấn','2200000.000','2200000','1.000','k','0010','','','1230','Hàng hóa');
+ALTER TABLE tkthang AUTO_INCREMENT=3615;
+ALTER TABLE tmp_dskhcn AUTO_INCREMENT=478;
+ALTER TABLE tmp_hachtoanluongthang AUTO_INCREMENT=2251;
+CREATE TABLE IF NOT EXISTS `tmp_taikhoanchung_623_627` (`sott` int(11) NOT NULL AUTO_INCREMENT,
+																			  `matk` char(10) NOT NULL,
+																			  `sotien` bigint(20) NOT NULL,
+																			  `ghichu` text NOT NULL,
+																			  `lan` int(1) NOT NULL DEFAULT '1',
+																			  PRIMARY KEY (`sott`)) ENGINE = InnoDB;CREATE TABLE IF NOT EXISTS `tmp_taikhoanchung_623_627_phanbo` (
+																				  `sott` int(11) NOT NULL AUTO_INCREMENT,
+																				  `matk` char(10) NOT NULL,
+																				  `sotien` bigint(20) NOT NULL,
+																				  `ghichu` text NOT NULL,
+																				  `lan` int(1) NOT NULL DEFAULT '1',
+																				  PRIMARY KEY (`sott`)) ENGINE = InnoDB;DROP TABLE IF EXISTS tmp_tknvlhienthai_xuat;
+
+CREATE TABLE `tmp_tknvlhienthai_xuat` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `mavt` varchar(14) NOT NULL,
+  `soluong` double NOT NULL,
+  `ghichu` text NOT NULL,
+  `mact` varchar(14) NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE tokhaithue AUTO_INCREMENT=1209;
+DROP TABLE IF EXISTS tokhaitndn;
+
+CREATE TABLE `tokhaitndn` (
+  `sott` int(11) NOT NULL AUTO_INCREMENT,
+  `maso` varchar(5) NOT NULL,
+  `chitieu` varchar(500) NOT NULL,
+  `machitieu` varchar(5) NOT NULL,
+  `sotien` bigint(20) NOT NULL,
+  `machitieucha` varchar(5) NOT NULL,
+  `loaitokhai` varchar(10) NOT NULL,
+  `matk` varchar(100) NOT NULL,
+  `tkno` varchar(100) NOT NULL,
+  `sotiendk` bigint(20) NOT NULL,
+  `ghichu` text NOT NULL,
+  PRIMARY KEY (`sott`)
+) ENGINE=InnoDB AUTO_INCREMENT=373 DEFAULT CHARSET=utf8;
+
+TRUNCATE tokhaitndn;INSERT INTO tokhaitndn VALUES ('94','','1. Doanh thu bán hàng và cung cấp dịch vụ','01','0','0','XDKQKD','511','','2090778150',''),('95','','2. Các khoản giảm trừ doanh thu','02','0','0','XDKQKD','','','0',''),('96','','3. Doanh thu thuần về bán hàng và cung cấp dịch vụ (10=01-02)','10','0','0','XDKQKD','','','2090778150',''),('97','','4. Giá vốn bán hàng','11','0','0','XDKQKD','','632','1986732831',''),('98','','5. Lợi nhuận gộp về bán hàng và  cung cấp dịch vụ (20=10-11)','20','0','0','XDKQKD','','','104045319',''),('99','','6. Doanh thu hoạt động tài chính','21','0','0','XDKQKD','515','','6009',''),('100','','7. Chi phí tài chính','22','0','0','XDKQKD','','635','0',''),('101','','- Trong đó: Chi phí lãi vay','23','0','1','XDKQKD','','','0',''),('102','','8. Chi phí quản lý kinh doanh','24','0','0','XDKQKD','','642','36086062',''),('103','','9. Lợi nhuận thuần từ hoạt động kinh doanh (30=20+21-22-24)','30','0','0','XDKQKD','','','67965266',''),('104','','10. Thu nhập khác','31','0','0','XDKQKD','711','','0',''),('105','','11. Chi phí khác','32','0','0','XDKQKD','','811','0',''),('106','','12. Lợi nhuận khác (40= 31-32)','40','0','0','XDKQKD','','','0',''),('107','','13. Tổng lợi nhuận kế toán trước thuế (50=30+40)','50','0','0','XDKQKD','','','67965266',''),('108','','14. Chi phí thuế TNDN','51','0','0','XDKQKD','','','5777048',''),('109','','15. Lợi nhuận sau thuế thu nhập doanh nghiệp (60 = 50-51)','60','0','0','XDKQKD','','','62188218',''),('110','','- Trong đó: Tiền lương','25','0','0','XDKQKD','334','','390240000',''),('200','','Kết quả kinh doanh ghi nhận theo báo cáo tài chính','','0','0','PLKQKD','','','',''),('201','1','Doanh thu bán hàng và cung cấp dịch vụ','4','0','0','PLKQKD','511','','',''),('202','','Trong đó: - Doanh thu bán hàng hoá, dịch vụ xuất khẩu','5','0','1','PLKQKD','','','',''),('203','2','Các khoản giảm trừ doanh thu ([06]=[07]+[08]+[09])','6','0','0','PLKQKD','','','',''),('204','a','Chiết khấu thương mại','7','0','1','PLKQKD','','','',''),('205','b','Giảm giá hàng bán','8','0','1','PLKQKD','','','',''),('206','c','Giá trị hàng bán bị trả lại','9','0','1','PLKQKD','','','',''),('207','3','Doanh thu hoạt động tài chính','10','0','0','PLKQKD','515','','2090778150',''),('208','','Trong đó: Doanh thu từ lãi tiền gửi','11','0','3','PLKQKD','515','','1986732831',''),('209','4','Chi phí sản xuất, kinh doanh hàng hoá, dịch vụ ([12]=[13]+[14]+[15])','12','0','0','PLKQKD','','','',''),('210','a','Giá vốn hàng bán','13','0','1','PLKQKD','','632','',''),('211','b','Chi phí bán hàng','14','0','1','PLKQKD','','6421','',''),('212','c','Chi phí quản lý doanh nghiệp','15','0','1','PLKQKD','','6422','',''),('213','5','Chi phí tài chính','16','0','0','PLKQKD','','635','',''),('214','','Trong đó: Chi phí lãi tiền vay','17','0','1','PLKQKD','','','',''),('215','6','Lợi nhuận thuần từ hoạt động kinh doanh ([18]=[04]-[06]+[10]-[12]-[16])','18','0','0','PLKQKD','','','',''),('216','7','Thu nhập khác','19','0','0','PLKQKD','711','','',''),('217','8','Chi phí khác','20','0','0','PLKQKD','','811','104045319',''),('218','9','Lợi nhuận khác ([21]=[19]-[20])','21','0','0','PLKQKD','','','6009',''),('219','10','Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp ([22]=[18]+[21])','22','0','0','PLKQKD','','','0',''),('301','A','Kết quả kinh doanh ghi nhận theo báo cáo tài chính','A','0','0','TNDN','','','',''),('302','1','Tổng lợi nhuận kế toán trước thuế thu nhập doanh nghiệp','A1','0','A','TNDN','','','',''),('303','B','Xác định thu nhập chịu thuế theo Luật thuế thu nhập doanh nghiệp','B','0','0','TNDN','','','',''),('304','1','Điều chỉnh tăng tổng lợi nhuận trước thuế thu nhập doanh nghiệp  (B1= B2+B3+B4+B5+B6 +B7)','B1','0','B','TNDN','','','',''),('305','1.1','Các khoản điều chỉnh tăng doanh thu','B2','0','B','TNDN','','','',''),('306','1.2','Chi phí của phần doanh thu điều chỉnh giảm','B3','0','B','TNDN','','','',''),('307','1.3','Các khoản chi không được trừ khi xác định thu nhập chịu thuế','B4','0','B','TNDN','','','',''),('308','1.4','Thuế thu nhập đã nộp cho phần thu nhập nhận được ở nước ngoài','B5','0','B','TNDN','','','',''),('309','1.5','Điều chỉnh tăng lợi nhuận do xác định giá thị trường đối với  giao dịch liên kết','B6','0','B','TNDN','','','',''),('310','1.6','Các khoản điều chỉnh làm tăng lợi nhuận trước thuế khác','B7','0','B','TNDN','','','',''),('311','2','Điều chỉnh giảm tổng lợi nhuận trước thuế thu nhập doanh nghiệp (B8=B9+B10+B11+B12)','B8','0','B','TNDN','','','',''),('312','2.1','Giảm trừ các khoản doanh thu đã tính thuế năm trước','B9','0','B','TNDN','','','',''),('313','2.2','Chi phí của phần doanh thu điều chỉnh tăng','B10','0','B','TNDN','','','',''),('314','2.3','Chi phí lãi vay không được trừ kỳ trước được chuyển sang kỳ này của doanh  nghiệp có giao dịch liên kết','B11','0','B','TNDN','','','',''),('315','2.4','Các khoản điều chỉnh làm giảm lợi nhuận trước thuế khác','B12','0','B','TNDN','','','',''),('316','3','Tổng thu nhập chịu thuế (B13=A1+B1-B8)','B13','0','B','TNDN','','','',''),('317','3.1','Thu nhập chịu thuế từ hoạt động sản xuất kinh doanh','B14','0','B','TNDN','','','',''),('318','3.2','Thu nhập chịu thuế từ hoạt động chuyển nhượng bất động sản','B15','0','B','TNDN','','','',''),('319','C','Xác định thuế thu nhập doanh nghiệp ( TNDN) phải nộp từ hoạt động sản xuất kinh doanh','C','0','0','TNDN','','','',''),('320','1','Thu nhập chịu thuế (C1 = B14)','C1','0','C','TNDN','','','',''),('321','2','Thu nhập miễn thuế','C2','0','C','TNDN','','','',''),('322','3','Chuyển lỗ và bù trừ lãi, lỗ (C3=C3a+C3b)','C3','0','C','TNDN','','','',''),('323','3.1','Lỗ từ hoạt động SXKD được chuyển trong kỳ','C3a','0','C','TNDN','','','',''),('324','3.2','Lỗ từ chuyển nhượng BĐS được bù trừ với lãi của hoạt động SXKD','C3b','0','C','TNDN','','','',''),('325','4','Thu nhập tính thuế (TNTT) (C4=C1-C2-C3)','C4','0','C','TNDN','','','',''),('326','5','Trích lập quỹ khoa học công nghệ (nếu có)','C5','0','C','TNDN','','','',''),('327','6','TNTT sau khi đã trích lập quỹ khoa học công nghệ (C6=C4-C5=C7+C8)','C6','0','C','TNDN','','','',''),('329','6.1','+ Thu nhập tính thuế áp dụng thuế suất 20%','C7','0','C','TNDN','','','',''),('330','6.2','+ Thu nhập tính thuế tính theo thuế suất không ưu đãi khác','C8','0','C','TNDN','','','',''),('331','6.3','+ Thuế suất không ưu đãi khác (%)','C8a','0','C','TNDN','','','',''),('332','7','Thuế TNDN từ hoạt ðộng SXKD tính theo thuế suất không ưu đãi(C9 =(C7 x 20%) + (C8 x C8a))','C9','0','C','TNDN','','','',''),('333','8','Thuế TNDN được ưu đãi theo Luật thuế TNDN (C10 = C11 + C12 + C13)','C10','0','C','TNDN','','','',''),('334','8.1','Trong đó: +Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi','C11','0','C','TNDN','','','',''),('335','8.2','+ Thuế TNDN được miễn trong kỳ','C12','0','C','TNDN','','','',''),('336','8.3','+ Thuế TNDN được giảm trong kỳ','C13','0','C','TNDN','','','',''),('337','9','Thuế TNDN được miễn, giảm theo Hiệp định thuế','C14','0','C','TNDN','','','',''),('338','10','Thuế TNDN được miễn, giảm theo từng thời kỳ','C15','0','C','TNDN','','','',''),('340','11','Thuế thu nhập đã nộp ở nước ngoài được trừ trong kỳ tính thuế','C16','0','C','TNDN','','','',''),('341','12','Thuế TNDN phải nộp của hoạt động sản xuất kinh doanh(C17=C9-C10-C14-C15-C16)','C17','0','C','TNDN','','','',''),('342','D','Thuế TNDN phải nộp từ hoạt động chuyển nhượng BĐS','D','0','0','TNDN','','','',''),('343','1','Thu nhập chịu thuế (D1 = B15)','D1','0','D','TNDN','','','',''),('344','2','Lỗ từ hoạt động chuyển nhượng BĐS được chuyển trong kỳ','D2','0','D','TNDN','','','',''),('345','3','Thu nhập tính thuế (D3=D1-D2)','D3','0','D','TNDN','','','',''),('346','4','Trích lập quỹ khoa học công nghệ (nếu có)','D4','0','D','TNDN','','','',''),('347','5','TNTT sau khi đã trích lập quỹ khoa học công nghệ (D5=D3-D4)','D5','0','D','TNDN','','','',''),('348','6','Thuế TNDN phải nộp của hoạt động chuyển nhượng BĐS trong kỳ','D6','0','D','TNDN','','','',''),('349','7','Thuế TNDN chênh lệch do áp dụng mức thuế suất ưu đãi đối với thu nhập từ thực hiện dự án đầu tư - kinh doanh nhà ở xã hội để bán, cho thuê, cho thuê mua','D7','0','D','TNDN','','','',''),('350','8','Thuế TNDN của hoạt động chuyển nhượng BĐS còn phải nộp kỳ này (D8=D6-D7)','D8','0','D','TNDN','','','',''),('351','E','Số thuế TNDN phải nộp quyết toán trong kỳ (E=E1+E2+E5)','E','0','0','TNDN','','','',''),('352','1','Thuế TNDN của hoạt động sản xuất kinh doanh','E1','0','E','TNDN','','','',''),('353','2','Thuế TNDN từ hoạt động chuyển nhượng bất động sản (E2=E3+E4)','E2','0','E','TNDN','','','',''),('354','2.1','Thuế TNDN từ hoạt động chuyển nhượng bất động sản','E3','0','E','TNDN','','','',''),('355','2.2','Thuế TNDN từ hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ','E4','0','E','TNDN','','','',''),('356','3','Thuế TNDN phải nộp khác (nếu có)','E5','0','E','TNDN','','','',''),('357','3.1','Trong đó thuế TNDN từ xử lý Quỹ phát triển khoa học công nghệ','E6','0','E','TNDN','','','',''),('358','G','Số thuế TNDN đã tạm nộp (G=G1+G2+G3+G4+G5)','G','0','0','TNDN','','','',''),('359','1','Thuế TNDN đã tạm nộp của hoạt động sản xuất kinh doanh','','0','G','TNDN','','','',''),('360','1.1','Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này','G1','0','G','TNDN','','','',''),('361','1.2','Thuế TNDN đã tạm nộp trong năm','G2','0','G','TNDN','','','',''),('362','2','Thuế TNDN đã tạm nộp của hoạt động chuyển nhượng BĐS','','0','G','TNDN','','','',''),('363','2.1','Thuế TNDN nộp thừa kỳ trước chuyển sang kỳ này của hoạt động chuyển nhượng BĐS','G3','0','G','TNDN','','','',''),('364','2.2','Thuế TNDN đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS','G4','0','G','TNDN','','','',''),('365','2.3','Thuế TNDN đã tạm nộp các kỳ trước và trong năm quyết toán của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ','G5','0','G','TNDN','','','',''),('366','H','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp','H','0','0','TNDN','','','',''),('367','1','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động sản xuất kinh doanh (H1=E1+E5-G2)','H1','0','H','TNDN','','','',''),('368','2','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp trong năm của hoạt động chuyển nhượng BĐS (H2=E3-G4)','H2','0','H','TNDN','','','',''),('369','3','Chênh lệch giữa số thuế phải nộp và số thuế đã tạm nộp của hoạt động chuyển nhượng cơ sở hạ tầng, nhà có thu tiền theo tiến độ (H3=E4-G5)','H3','0','H','TNDN','','','',''),('370','I','Số thuế TNDN còn phải nộp đến thời hạn nộp hồ sơ khai quyết toán thuế (I=E-G=I1+I2)','I','0','0','TNDN','','','',''),('371','1','Thuế TNDN còn phải nộp của hoạt động sản xuất kinh doanh','I1','0','I','TNDN','','','',''),('372','2','Thuế TNDN còn phải nộp của hoạt động chuyển nhượng BĐS','I2','0','I','TNDN','','','','');
+ALTER TABLE tokhaitndn AUTO_INCREMENT=403;
+CREATE TABLE IF NOT EXISTS `tokhaitndn_tt80` (
+                                              `sott` int(11) NOT NULL,
+                                              `maso` varchar(5) NOT NULL,
+                                              `chitieu` varchar(200) NOT NULL,
+                                              `machitieu` varchar(5) NOT NULL,
+                                              `sotien` bigint(20) NOT NULL,
+                                              `machitieucha` varchar(5) NOT NULL,
+                                              `loaitokhai` varchar(10) NOT NULL,
+                                              `matk` varchar(100) NOT NULL,
+                                              `tkno` varchar(100) NOT NULL,
+                                              `sotiendk` bigint(20) NOT NULL
+                                            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;ALTER TABLE tokhaitndn_tt80 AUTO_INCREMENT=141;
+update mavt set niendo=2025;
+update makh set niendo=2025;
+update masp set niendo=2025;
+update mats set niendo=2025;
+update cptratruoc set niendo=2025;
+update nhatkykiemphieu set niendo=2025;
+update plthuetndnuudai set sotien=0;
+SET FOREIGN_KEY_CHECKS=1;
+COMMIT;
