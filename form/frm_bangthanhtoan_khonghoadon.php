@@ -274,6 +274,26 @@ $mabangke = $_GET['mabangke'];
         margin-left:20px;
     }
 
+    @media (max-width: 768px) {
+        #Form-chinh label {
+            font-size: 13px;
+        }
+
+        #Form-chinh input.text,
+        #Form-chinh select {
+            font-size: 14px;
+            min-height: 32px;
+        }
+
+        #dialog-tangtaisan {
+            font-size: 13px;
+        }
+
+        div.pq-grid * {
+            font-size: 13px;
+        }
+    }
+
 </style>
 <div id="dialog-tangtaisan" title="BẢNG KÊ MUA HÀNG HOÁ,DỊCH VỤ MUA VÀO KHÔNG CÓ HOÁ ĐƠN">
     <p class="validateTips"></p>
@@ -283,50 +303,42 @@ $mabangke = $_GET['mabangke'];
                 <td width="100%">
                     <fieldset style="background-color: #afd9ee;border: 0px solid">
                         <table class="table-dialog" style="vertical-align: middle;width: 100%" border="0" id="table_tonghop">
+                            <input name="mabangchi" type="hidden" value="" id="mabangchi">
                             <tr>
-                                <td width="20%" style="padding: 2px;"><label for="name"> Mã bảng chi :</label></td>
-                                <td width="80%" style="padding: 2px;"><input name="mabangchi" type="text" value="" autocomplete="off"
-                                                                             required=""
-                                                                             class="text ui-widget-content ui-corner-all"
-                                                                             id="mabangchi" list="listmabangke" placeholder="Mã bảng chi"
-                                                                             style="width: 100%">
-                                    <datalist id="listmabangke"></datalist>
-                                </td>
+                                <td style="padding: 2px;"><label for="name"> Ngày mua hàng :</label></td>
+                                <td style="padding: 2px;"><input name="ngay" type="date" value="" required=""
+                                                                 class="text ui-widget-content ui-corner-all"
+                                                                 id="ngay" style="width: 100%"></td>
                             </tr>
                             <tr>
-                                <td style="padding: 2px;"><label for="name"> Mã người mua :</label></td>
+                                <td style="padding: 2px;"><label for="name"> Mã khách hàng (CCCD) :</label></td>
                                 <td style="padding: 2px;"><input name="makh" type="text" value="" required=""
                                                                  class="text ui-widget-content ui-corner-all"
-                                                                 id="makh" placeholder="Mã người mua " autocomplete="off" list="listmakhachhang"
+                                                                 id="makh" placeholder="Mã KH thuộc nhóm Hộ nông dân" autocomplete="off" list="listmakhachhang"
                                                                  style="width: 100%"><datalist id="listmakhachhang"></datalist></td>
                             </tr>
                             <tr>
-                                <td style="padding: 2px;"><label for="name"> Người phụ trách thu mua :</label></td>
+                                <td style="padding: 2px;"><label for="name"> Tên khách hàng :</label></td>
                                 <td style="padding: 2px;"><input name="hotennguoichi" type="text" value="" required=""
                                                                  class="text ui-widget-content ui-corner-all"
-                                                                 id="hotennguoichi" placeholder="Người phụ trách thu mua " autocomplete="off" list="listmakhachhang"
+                                                                 id="hotennguoichi" placeholder="Tên khách hàng" autocomplete="off"
                                                                  style="width: 100%"></td>
                             </tr>
                             <tr>
                                 <td style="padding: 2px;"><label for="name"> Địa chỉ :</label></td>
                                 <td style="padding: 2px;"><input name="bophan" type="text" value="" required=""
                                                                  class="text ui-widget-content ui-corner-all"
-                                                                 id="bophan" placeholder="Địa chỉ " style="width: 100%">
+                                                                 id="bophan" placeholder="Địa chỉ" style="width: 100%">
                                 </td>
                             </tr>
-                            <tr style="display: none;">
-                                <td style="padding: 2px;"><label for="name"> Đã thuê những việc sau:</label></td>
-                                <td style="padding: 2px;"><input name="lydochi" type="text" value="" required=""
-                                                                 class="text ui-widget-content ui-corner-all"
-                                                                 id="lydochi" placeholder="Chi cho công việc"
-                                                                 style="width: 100%"></td>
-                            </tr>
-                            <tr >
-                                <td style="padding: 2px;"><label for="name"> Ngày:</label></td>
-                                <td style="padding: 2px;"><input name="ngay" type="date" value="" required=""
-                                                                 class="text ui-widget-content ui-corner-all"
-                                                                 id="ngay" placeholder="Chi cho công việc"
-                                                                 style="width: 100%"></td>
+                            <tr>
+                                <td style="padding: 2px;"><label for="name"> Trạng thái hạch toán :</label></td>
+                                <td style="padding: 2px;">
+                                    <select id="trangthaighi" class="text ui-widget-content ui-corner-all" style="width: 100%;">
+                                        <option value="CHUA_GHI_SO" selected>Chưa ghi sổ</option>
+                                        <option value="DA_GHI_SO">Ghi sổ</option>
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
                                 <td width="100%" style="padding: 2px;" colspan="2">
@@ -353,36 +365,18 @@ $mabangke = $_GET['mabangke'];
     $dir_module_bangkechitien = "modules/bangkechitien/";//----------------Lưới
     $(function () {
         /////////////////////////////////////////////////////// Danh sách Autocomplex
-        var $listmabangke = "";// Danh sách khách hàng
-
-        $.ajax({// Load danh sách mã khách hàng
-            url: $dir_module_bangkechitien + "listall.php",
-            async: false,
-            dataType: "json",
-            success: function (response) {
-                $array = (response);
-                for (var i = 0; i < $array.length; i++) {
-                    $listmabangke+='<option value='+$array[i].mabangke+'>'+$array[i].mabangke+'-'+bodauTiengViet($array[i].hotennguoichi)+'</option>';
-                }
-            }
-        });
-
-        $("#listmabangke").html($listmabangke);
-
         var $listmakhachhang = "";// Danh sách khách hàng
 
         $.ajax({// Load danh sách mã khách hàng
-            url: $dir_module_makhachhang + "listall.php",
+            url: $dir_module_makhachhang + "list_honongdan.php",
             async: false,
             dataType: "json",
             success: function (response) {
 
                 $array = (response);
-                // var js_arr = response.js_arr;
                 for (var i = 0; i < $array.length; i++) {
-                    if($array[i].manhom=='1010') {
-                        $listmakhachhang += '<option value=' + $array[i].makh + '>' + $array[i].socmnd + '-' + bodauTiengViet($array[i].tenkh) + '-' +$array[i].tenkh+'</option>';
-                    }
+                    var cccd = $array[i].socmnd ? $array[i].socmnd : "";
+                    $listmakhachhang += '<option value="' + $array[i].makh + '">' + cccd + ' - ' + bodauTiengViet($array[i].tenkh) + ' - ' + $array[i].tenkh + '</option>';
                 }
             }
         });
@@ -402,11 +396,11 @@ $mabangke = $_GET['mabangke'];
                         type: 'button', icon: 'ui-icon-plus', label: 'Thêm dòng', listener: {
                         "click": function (evt, ui) {
                             //append empty row at the end.
-                            var rowData = {ngaymuahang:'<?php echo date("Y-m-d"); ?>',hoten: '', diachi:'',socong:1,dongia:0,thanhtien:0,thuetncn:0,thuclinh:0}; //empty row
+                            var rowData = {noidung: '', socong: 1, dongia: 0, thanhtien: 0};
                             var rowIndx = $grid.pqGrid("addRow", {rowData: rowData});
                             $grid.pqGrid("goToPage", {rowIndx: rowIndx});
                             $grid.pqGrid("setSelection", null);
-                            $grid.pqGrid("setSelection", {rowIndx: rowIndx, dataIndx: 'ProductName'});
+                            $grid.pqGrid("setSelection", {rowIndx: rowIndx, dataIndx: 'noidung'});
                             $grid.pqGrid("editFirstCellInRow", {rowIndx: rowIndx});
                         }
                     }
@@ -542,31 +536,8 @@ $mabangke = $_GET['mabangke'];
             },
             colModel: [
                 {
-                    title: "Ngày mua hàng", width: 120, dataType: "string", align: "right", dataIndx: "ngaymuahang",
-                    render: function (ui) {
-                        var $yyyy_mm_dd = ui.rowData.ngaymuahang;
-                        return Format_dd_mm_yyyy($yyyy_mm_dd);
-                    },
-                    editor: {
-                        type: 'date'
-                    },
-                    validations: [{type: 'nonEmpty', msg: "Không được trống"}]
-                },
-                {
-                    title: "Họ và Tên người bán", width: 165, dataType: "string", dataIndx: "hoten",
-                    validations: [
-                        {type: 'nonEmpty', msg: "Không được trống"},
-                    ]
-                },
-                {
-                    title: "Địa chỉ", width: 140, dataType: "string", align: "left", dataIndx: "diachi"
-                },
-                {
-                    title: "Số CMND", width: 140, dataType: "string", align: "left", dataIndx: "socmnd"
-                },
-                {
                     title: "Tên hàng",
-                    width: 150,
+                    width: 260,
                     dataType: "string",
                     align: "left",
                     dataIndx: "noidung",
@@ -576,11 +547,11 @@ $mabangke = $_GET['mabangke'];
                     editor: {type: "textarea", attr: "rows=4"},
                 },
                 {
-                    title: "Số Lượng", width: 70, dataType: "float", align: "right", dataIndx: "socong",
+                    title: "Số lượng", width: 110, dataType: "float", align: "right", dataIndx: "socong",
                     validations: [{type: 'nonEmpty', msg: "Không được trống"}]
                 },
                 {
-                    title: "Đơn giá", width: 100, dataType: "integer", align: "right", dataIndx: "dongia",
+                    title: "Đơn giá", width: 140, dataType: "integer", align: "right", dataIndx: "dongia",
                     validations: [{type: 'nonEmpty', msg: "Không được trống"}],
                     render: function (ui) {
                         var cellData = ui.cellData;
@@ -593,11 +564,6 @@ $mabangke = $_GET['mabangke'];
                     var cellData = ui.cellData;
                     return $.number(cellData, 0, ".", ",");
                 }
-                },
-                {
-                    title: "Ghi chú", width: 100, dataType: "integer", align: "right", dataIndx: "ghichu",editable: true
-                    ,
-                editor: {type: "textarea", attr: "rows=4"},
                 },
                 {
                     title: "", editable: false, minWidth: 83, sortable: false,
@@ -707,11 +673,6 @@ $mabangke = $_GET['mabangke'];
         }
 
         ////end phím tắt-----------------------------------
-        $("#mabangchi").keydown(function (event) {// Gọi table khách hàng để chọn
-            if (event.keyCode == Keys.ENTER || event.keyCode == Keys.TAB) { //
-                checkSTT("mabangchi");
-            }
-        });
         $("#makh").keydown(function (event) {// Gọi table mã nội dung để chọn
             if (event.keyCode == Keys.ENTER) { // copy
                 $("#hotennguoichi").focus();
@@ -737,26 +698,17 @@ $mabangke = $_GET['mabangke'];
 
         function checkSTT(STT) {// Check key khi nhấn enter
             $STT = $("#" + STT).val().trim();
-            if ($STT == "") {//Nếu số thứ tự null sẽ tạo số mới tự động tăng theo mã
-                alert("Mã bảng kê chi tiền không được trống !");
-                $("#mabangchi").focus();
-            } else {// Nếu không trống kiểm tra xem có tồn tại hay không
-                var $checkphieuthuchi = 0;
-                $.ajax({// Kiểm tra xem STT có tồn tại hay không
-                    url: $dir_module_bangkechitien + "checkkey.php",
-                    data: {ma: $STT},
-                    async: false,
-                    success: function (response) {
-                        $checkphieuthuchi = response;
-                    }
-                });
-                if ($checkphieuthuchi == 0) {
-                    alert("Mã bảng kê chi tiền không tồn tại ! Vui Lòng nhập lại");
-                    $("#mabangchi").focus();
-                } else {
-                    $("#makh").focus();
-                }
+            if ($STT == "") {
+                var d = new Date();
+                var token = d.getFullYear().toString()
+                    + ('0' + (d.getMonth() + 1)).slice(-2)
+                    + ('0' + d.getDate()).slice(-2)
+                    + ('0' + d.getHours()).slice(-2)
+                    + ('0' + d.getMinutes()).slice(-2)
+                    + ('0' + d.getSeconds()).slice(-2);
+                $("#mabangchi").val("HND" + token);
             }
+            $("#makh").focus();
         }
         $("#makh").focusout(function (event) {// Gọi table mã nội dung để chọn
             $makh = $("#makh").val().trim();
@@ -797,7 +749,7 @@ $mabangke = $_GET['mabangke'];
 
             allFields.removeClass("ui-state-error");// kiem tra du lieu
 
-            valid = valid && checkNull($("#mabangchi"), " Mã bảng kê  ");
+            checkSTT("mabangchi");
             valid = valid && checkNull($("#makh"), " Mã người thu mua  ");
             valid = valid && checkNull($("#hotennguoichi"), " Họ và tên người thu mua ");
             valid = valid && checkNull($("#bophan"), " Bộ phận ");
@@ -805,21 +757,8 @@ $mabangke = $_GET['mabangke'];
             valid = valid && checkNull($("#ngay"), " Ngày ");
             //valid = valid && checkSoHoaDonTrung();
             $mabangke = $("#mabangchi").val().trim();
-            var $checkphieuthuchi = 0;
-            $.ajax({// Kiểm tra xem STT có tồn tại hay không
-                url: $dir_module_bangkechitien + "checkkey.php",
-                data: {ma: $mabangke},
-                async: false,
-                success: function (response) {
-                    $checkphieuthuchi = response;
-                }
-            });
-            if ($checkphieuthuchi == 0) {
-                alert("Mã bảng kê chi tiền không tồn tại ! Vui Lòng nhập lại");
-                $("#mabangchi").focus();
-            }
 
-            var danhsach = $( "#grid_editing_bangthuengoai" ).pqGrid( "getData", { dataIndx: ['ngaymuahang','hoten', 'diachi','socmnd','noidung','socong','dongia','thanhtien','ghichu'] } );
+            var danhsach = $( "#grid_editing_bangthuengoai" ).pqGrid( "getData", { dataIndx: ['noidung','socong','dongia','thanhtien'] } );
             if (valid) {
                 $.ajax({
                     url: $dir_module_bangkechitien + "nhapbangkekhonghoadon.php", // Bao gồm cả add và edit
@@ -827,10 +766,12 @@ $mabangke = $_GET['mabangke'];
                     dateType: "text", // dữ liệu trả về dạng text
                     data: { // Danh sách các thuộc tính sẽ gửi đi
                         mabangke: $("#mabangchi").val().trim(),
+                        makh: $("#makh").val().trim(),
                         hotennguoichi: $("#hotennguoichi").val().trim(),
                         bophan: $("#bophan").val().trim(),
-                        lydochi: $("#lydochi").val().trim(),
+                        lydochi: '',
                         ngay: $("#ngay").val().trim(),
+                        trangthaighi: $("#trangthaighi").val(),
                         danhsach:danhsach,
                     },
                     success: function (result) {
@@ -872,8 +813,8 @@ $mabangke = $_GET['mabangke'];
 
         dialog = $("#dialog-tangtaisan").dialog({
             autoOpen: false,
-            height: getHeight()-100,
-            width: getWidth()-100,
+            height: Math.max(getHeight() - 40, 520),
+            width: Math.max(Math.min(getWidth() - 20, 1200), 320),
             modal: true,
             buttons: {
                 "Đồng ý": ChucNang_nhapkho,
@@ -883,8 +824,9 @@ $mabangke = $_GET['mabangke'];
             }
         });
         dialog.dialog("open");
+        checkSTT("mabangchi");
         if('<?php echo $mabangke ?>'!=""){
-            $("#mabangchi").val(<?php echo $mabangke; ?>);
+            $("#mabangchi").val('<?php echo $mabangke; ?>');
             checkSTT("mabangchi");
         }
     });

@@ -8,8 +8,8 @@ $pathname = "datafile/"; // đường dẫn chứa data của công ty
 
 function create_Token(){
     $rd = getcwd();
-    $arr_root_source = explode("\\",$rd);
-    $root_source = $arr_root_source[3];
+  $arr_root_source = preg_split('/[\\\\\/]+/', trim($rd));
+  $root_source = end($arr_root_source);
     $_SESSION['TOKEN'] = $root_source;
 }
 

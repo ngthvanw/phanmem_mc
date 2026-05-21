@@ -17,7 +17,9 @@ $dir = $driver . "/datafile/" . $MST . "/";
 function restore_Database($hostName, $userName, $password, $DbName, $sqlFileName, $dir, $Partion) {
 	if (file_exists($sqlFileName)) {
 		// Dùng lệnh mysql để phục hồi cơ sở dữ liệu
-		$command = "{$Partion}xampp\\mysql\\bin\\mysql --host={$hostName} --user={$userName} --password={$password} --default-character-set=latin1 {$DbName} < {$sqlFileName}";
+        global $mysql_cli;
+        $mysqlBinary = isset($mysql_cli) && $mysql_cli !== '' ? $mysql_cli : "{$Partion}xampp\\mysql\\bin\\mysql";
+        $command = '"'.$mysqlBinary.'" --host='.$hostName.' --user='.$userName.' --password='.$password.' --default-character-set=latin1 '.$DbName.' < "'.$sqlFileName.'"';
 		// Thực thi lệnh phục hồi
 		system($command, $output);
 		return $output === 0; // Trả về true nếu lệnh thành công
@@ -37,9 +39,9 @@ if ($handle = opendir($dir)) {
     closedir($handle);
 }
 if (isset($_POST['submit'])) {
-    $NienDo = trim($_POST['NienDo']);
-    $MacDinh = trim($_POST['MacDinh']);
-    $theothongtu = trim($_POST['theothongtu']);
+    $NienDo = isset($_POST['NienDo']) ? trim($_POST['NienDo']) : '';
+    $MacDinh = isset($_POST['MacDinh']) ? trim($_POST['MacDinh']) : '';
+    $theothongtu = isset($_POST['theothongtu']) ? trim($_POST['theothongtu']) : '';
     $khongtontai = 0;
     if ($handle = opendir($dir)) {
         while ($entry = readdir($handle)) {
@@ -53,6 +55,9 @@ if (isset($_POST['submit'])) {
     }
     function load_khoadulieuchidoc($dir){
         $fp1 = @fopen($dir."/".'khoadulieu.db', "r"); // đọc thông tin chung
+        if (!$fp1) {
+            return 0;
+        }
         $string_info = fgets($fp1);
         fclose($fp1);
         if($string_info==""){
@@ -71,6 +76,9 @@ if (isset($_POST['submit'])) {
 
     function load_tuychon_file($dir){
         $fp1 = @fopen($dir."/".'tuychon.db', "r"); // đọc thông tin chung
+        if (!$fp1) {
+            return "";
+        }
         $string_info = fgets($fp1);
         fclose($fp1);
         return ($string_info);
@@ -85,6 +93,9 @@ if (isset($_POST['submit'])) {
     }
 	function load_ppkhaithue($dir){
 		$fp1 = @fopen($dir . "/" . 'phuongphapkhaithue.db', "r"); // đọc thông tin chung
+        if (!$fp1) {
+            return "1;1;1";
+        }
 		$string_info = fgets($fp1);
 		fclose($fp1);
 		if ($string_info == "") {
@@ -92,12 +103,12 @@ if (isset($_POST['submit'])) {
 		}
 		return ($string_info);
 	}
-	$ppkhautru = load_ppkhaithue($driver . "/datafile/" . $_SESSION['MST']."/".$_SESSION['NienDo']);
+    $currentNienDo = isset($_SESSION['NienDo']) ? $_SESSION['NienDo'] : '';
+    $ppkhautru = load_ppkhaithue($driver . "/datafile/" . $_SESSION['MST']."/".$currentNienDo);
     if ($NienDo != "") {
         if ($MacDinh != "on") {
             if ($khongtontai == 0) {
                 echo "<script>alert('Niên độ không tồn tại ! vui lòng nhập lại');</script>";
-                fclose($fp1);
             } else {
                 $_SESSION['NienDo'] = $NienDo;
                 $khoadulieuchidoc = load_khoadulieuchidoc($driver."/datafile/".$_SESSION['MST']."/".$NienDo);

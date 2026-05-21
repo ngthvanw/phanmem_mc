@@ -1,5 +1,12 @@
 <?php
 $mabangke = $_GET['mabangke'];
+$mauso_macdinh = "01/TNDN";
+if (isset($_SESSION['BANGTHUENGOAI']['ngay'])) {
+    $ngay_bangke = $_SESSION['BANGTHUENGOAI']['ngay'];
+    if (strtotime($ngay_bangke) >= strtotime('2026-01-01')) {
+        $mauso_macdinh = "02/TNDN";
+    }
+}
 ?>
 <style>
     #dialog-insolieu_xuatkho fieldset {
@@ -56,11 +63,14 @@ $mabangke = $_GET['mabangke'];
 			$("#tieptuc").focus();
         });
 
+        var $mauSoTNDN = "<?php echo $mauso_macdinh; ?>";
+
         $("#batđauin_insolieu_thuchi").click(function () {
             var parsedJson = "";
             $ten = $("#TenPhieu_ThuChi").val();
             $ngaylap = $("#NgayLap_InPhieuThuChi").val();
             $ngayhd = $("#NgayHoaDon_InPhieu_ThuChi").val();
+            $mauso = $mauSoTNDN;
             $.ajax({// Lấy thông tin phiếu và lưu vào session
                 url: $dir_module_bangkechitien + "laythongtininphieunhapxuat.php",
                 data: {
@@ -72,7 +82,7 @@ $mabangke = $_GET['mabangke'];
                     //parsedJson =(response);
                 }
             });
-            loadiFrame('tcpdf/baocao/inbangke_muavao_khonghoadon.php?ten='+$ten+'&ngaylap='+$ngaylap+"&ngayhd="+$ngayhd);
+            loadiFrame('tcpdf/baocao/inbangke_muavao_khonghoadon.php?ten='+$ten+'&ngaylap='+$ngaylap+"&ngayhd="+$ngayhd+"&mauso="+encodeURIComponent($mauso));
             $("#ifr_inphieuthuchi").load(
                 function () {
                     window.frames['ifr_inphieuthuchi'].focus();
@@ -84,7 +94,8 @@ $mabangke = $_GET['mabangke'];
         $ten = $("#TenPhieu_ThuChi").val();
         $ngaylap = $("#NgayLap_InPhieuThuChi").val();
         $ngayhd = $("#NgayHoaDon_InPhieu_ThuChi").val();
-            window.open("tcpdf/baocao/inbangke_muavao_khonghoadon.php?ten="+$ten+"&ngaylap="+$ngaylap+"&ngayhd="+$ngayhd,"bangke_khonghoadon","menubar=0,resizable=0");
+        $mauso = $mauSoTNDN;
+            window.open("tcpdf/baocao/inbangke_muavao_khonghoadon.php?ten="+$ten+"&ngaylap="+$ngaylap+"&ngayhd="+$ngayhd+"&mauso="+encodeURIComponent($mauso),"bangke_khonghoadon","menubar=0,resizable=0");
         });
 
         $("#xuatexcel_insolieu_thuchi").click(function () {

@@ -1,5 +1,10 @@
 ﻿<?php
-session_start();
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+}
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 //ini_set('display_errors', 1);
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
@@ -24,8 +29,8 @@ if (!isset($_SESSION['User'])) {
     redirect("login.php");
 } else {
     $rd = getcwd();
-    $arr_root_source = explode("\\", $rd);
-    $root_source = $arr_root_source[3];
+    $arr_root_source = preg_split('/[\\\\\/]+/', trim($rd));
+    $root_source = end($arr_root_source);
     if ($root_source != $_SESSION['TOKEN']) {
         session_destroy();
         redirect("login.php");
@@ -212,7 +217,9 @@ if (!isset($_SESSION['NienDo'])) {
     </script>
 	<?php
 }
-if($_SESSION['theothongtu'] == "tt18"){
+if (isset($_SESSION['Level']) && (string)$_SESSION['Level'] === "6") {
+    require("include/topmenu_partner_hnd.php");
+} else if($_SESSION['theothongtu'] == "tt18"){
     require("include/topmenu_hkd.php");
 }else{
     require("include/topmenu.php");

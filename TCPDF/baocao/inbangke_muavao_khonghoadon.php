@@ -5,6 +5,8 @@ $DATACISONHATKY = $_SESSION['BANGTHUENGOAI'];
 $ten = $_GET['ten'];
 $ngaylap = $_GET['ngaylap'];
 $ngayhd = $_GET['ngayhd'];
+$mausoRaw = isset($_GET['mauso']) ? strtoupper(trim($_GET['mauso'])) : '';
+$mauSoTNDN = ($mausoRaw === '02' || $mausoRaw === '02/TNDN') ? '02/TNDN' : '01/TNDN';
 function convert_number_to_words( $number )
 {
     $hyphen = ' ';
@@ -190,7 +192,8 @@ function convert_number_to_words( $number )
 <body class="dt-print-view">
 <?php
 $html_ct = "";
-$html_title = '
+$isMau02 = ($mauSoTNDN === '02/TNDN');
+$html_title_01 = '
 <thead>
   <tr>
     <th rowspan="2">STT</th>
@@ -200,29 +203,66 @@ $html_title = '
     <th rowspan="2">Ghi chú</th>
   </tr>
   <tr>
-    <th  rowspan="1">Tên người bán</th>
-    <th  rowspan="1">Địa chỉ</th>
-    <th rowspan="1" >Số CMND</th>
-    <th  rowspan="1" >Tên hàng</th>
-    <th  rowspan="1" >Số lượng</th>
-    <th  rowspan="1" >Đơn giá</th>
-    <th  rowspan="1" >Tổng giá thanh toán</th>
+    <th>Tên người bán</th>
+    <th>Địa chỉ</th>
+    <th>Số CMND</th>
+    <th>Tên hàng</th>
+    <th>Số lượng</th>
+    <th>Đơn giá</th>
+    <th>Tổng giá thanh toán</th>
   </tr>
-    <tr>
-    <th width="40px"  rowspan="1">1</th>
-    <th width="60px"  rowspan="1">2</th>
-    <th  width="150px" rowspan="1">3</th>
-    <th  width="150px" rowspan="1">4</th>
-    <th width="90px"  rowspan="1" >5</th>
-    <th width="150px rowspan="1" >6</th>
-    <th width="90px rowspan="1" >7</th>
-    <th width="100px rowspan="1" >8</th>
-    <th width="100px rowspan="1" >9</th>
-    <th width="100px rowspan="1" >10</th>
+  <tr>
+    <th width="40px">1</th>
+    <th width="70px">2</th>
+    <th width="150px">3</th>
+    <th width="150px">4</th>
+    <th width="90px">5</th>
+    <th width="160px">6</th>
+    <th width="80px">7</th>
+    <th width="90px">8</th>
+    <th width="110px">9</th>
+    <th width="100px">10</th>
   </tr>
-  </thead>
-  ';
+</thead>
+';
+
+$html_title_02 = '
+<thead>
+  <tr>
+    <th rowspan="2">STT</th>
+    <th rowspan="2">Ngày tháng năm mua hàng</th>
+    <th colspan="4">Người bán</th>
+    <th colspan="4">Hàng hoá mua vào</th>
+    <th rowspan="2">Ghi chú</th>
+  </tr>
+  <tr>
+    <th>Tên người bán</th>
+    <th>Địa chỉ</th>
+    <th>Số căn cước</th>
+    <th>Số điện thoại (nếu có)</th>
+    <th>Tên hàng hoá, dịch vụ</th>
+    <th>Số lượng, trọng lượng</th>
+    <th>Đơn giá</th>
+    <th>Tổng giá thanh toán</th>
+  </tr>
+  <tr>
+    <th width="32px">1</th>
+    <th width="58px">2</th>
+    <th width="130px">3</th>
+    <th width="130px">4</th>
+    <th width="85px">5</th>
+    <th width="90px">6</th>
+    <th width="150px">7</th>
+    <th width="85px">8</th>
+    <th width="95px">9</th>
+    <th width="110px">10</th>
+    <th width="95px"> </th>
+  </tr>
+</thead>
+';
 $i = 0;
+$DonGia = 0;
+$ThanhTien = 0;
 $danhsach = $DATACISONHATKY['danhsach'];
 krsort($danhsach);
 foreach ($danhsach as $iTem) {
@@ -242,9 +282,21 @@ foreach ($danhsach as $iTem) {
     $html_ct .= $iTem['diachi'];
     $html_ct .= '</td>
 
-       <td class="td_center"  align="left">';
-    $html_ct .= $iTem['socmnd'];
+         <td class="td_center"  align="left">';
+      $html_ct .= isset($iTem['socmnd']) ? $iTem['socmnd'] : '';
     $html_ct .= '</td>
+    ';
+      if ($isMau02) {
+        $html_ct .= '<td class="td_center"  align="left">';
+        if (isset($iTem['sodienthoai']) && trim($iTem['sodienthoai']) != '') {
+          $html_ct .= $iTem['sodienthoai'];
+        } else if (isset($iTem['dienthoai']) && trim($iTem['dienthoai']) != '') {
+          $html_ct .= $iTem['dienthoai'];
+        }
+        $html_ct .= '</td>';
+      }
+
+    $html_ct .= '
 
         <td class="td_center"  align="left">';
     $html_ct .= $iTem['noidung'];
@@ -260,94 +312,146 @@ foreach ($danhsach as $iTem) {
     $ThanhTien += $iTem['thanhtien'];
     $html_ct .= ($iTem['thanhtien'] == 0) ? "" : number_format($iTem['thanhtien'], 0, ",", ".");
     $html_ct .= '</td>
-<td class="td_end" style="text-align: center" ></td>
+<td class="td_end" style="text-align: center" >';
+    $html_ct .= isset($iTem['ghichu']) ? $iTem['ghichu'] : '';
+    $html_ct .= '</td>
       </tr>';
 }
 
-$html = '
+$soTienBangChu = ucfirst(convert_number_to_words((string)round($ThanhTien)));
+
+$html = '';
+if ($isMau02) {
+    $html .= '
 <table width="100%" border="0">
-  <tr>   
+  <tr>
+    <td align="left" width="68%"></td>
+    <td align="center" style="font-size: 14px;" width="32%"><b>Mẫu số 02/TNDN</b><br/>(Ban hành theo TT số 20/2026/TT-BTC của Bộ tài chính)</td>
+  </tr>
+</table>
+
+<table border="0" width="100%" align="center" cellpadding="1">
+  <tr><td align="center" style="font-size: 20px;"><b>BẢNG KÊ THU MUA HÀNG HOÁ, DỊCH VỤ KHÔNG CÓ HOÁ ĐƠN</b></td></tr>
+  <tr><td align="center" style="font-size: 15px;">(' . $ngayhd . ')</td></tr>
+</table>
+
+<table border="0" width="100%" align="left" cellpadding="2">
+  <tr>
+    <td width="74%" align="left">Tên doanh nghiệp: <b>' . $_SESSION["TenCongTy"] . '</b></td>
+    <td width="26%" align="left">Mã số thuế: <b>' . $_SESSION["MST"] . '</b></td>
+  </tr>
+  <tr>
+    <td align="left">Địa chỉ: <b>' . $_SESSION["DiaChi"] . '</b></td>
+    <td align="left">Số điện thoại: ...................................</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left">Địa chỉ nơi tổ chức thu mua: <b>' . $DATACISONHATKY['bophan'] . '</b></td>
+  </tr>
+</table>
+
+<table width="100%" border="0"><tr><td></td></tr></table>
+
+<table border="0" class="dataTable" cellpadding="2" cellspacing="0" align="center" valign="middle">' . $html_title_02 . $html_ct . '
+<tr>
+    <td colspan="7" class="td_full" align="right"><b>CỘNG</b></td>
+    <td class="td_full" align="right"><b></b></td>
+    <td class="td_full" align="right"><b></b></td>
+    <td class="td_full" align="right"><b>' . (($ThanhTien == 0) ? "" : number_format($ThanhTien, 0, ",", ".")) . '</b></td>
+    <td class="td_full"></td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellpadding="2">
+  <tr>
+    <td colspan="3">Tổng giá trị hàng hoá, dịch vụ mua vào: <b>' . number_format($ThanhTien, 0, ",", ".") . '</b></td>
+  </tr>
+  <tr>
+    <td colspan="3">Số tiền bằng chữ: (<b>' . $soTienBangChu . ' đồng</b>)</td>
+  </tr>
+  <tr>
+    <td width="34%" align="center"></td>
+    <td width="33%" align="center"></td>
+    <td width="33%" align="center">' . $ngaylap . '</td>
+  </tr>
+  <tr>
+    <td align="center"><b>Người lập bảng kê</b></td>
+    <td align="center"></td>
+    <td align="center"><b>Người đại diện hoặc người được<br/>uỷ quyền của doanh nghiệp</b></td>
+  </tr>
+  <tr>
+    <td align="center"><i>(Ký, họ tên)</i></td>
+    <td align="center"></td>
+    <td align="center"><i>(Ký, họ tên, đóng dấu)</i></td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellpadding="2">
+  <tr><td><b>Hướng dẫn:</b></td></tr>
+  <tr><td>Mẫu này dùng để thanh toán mua hàng hoá dịch vụ của người không đăng ký kinh doanh, tài sản cá nhân, hàng nông lâm thuỷ hải sản.</td></tr>
+  <tr><td>Mẫu này dùng để thanh toán mua hàng hoá, dịch vụ như tiền vá xe, phí bến bãi tạm, tiền cơm nước tài xế, tiền card điện thoại.</td></tr>
+</table>
+';
+} else {
+    $html .= '
+<table width="100%" border="0">
+  <tr>
     <td align="left" WIDTH="40%"></td>
     <td align="center" WIDTH="30%"></td>
     <td align="center" style="font-size: 14px;" WIDTH="30%">Mẫu số 01/TNDN<br/>(Ban hành theo thông tư số 78/2014/TT-BTC của Bộ Tài Chính)<br/></td>
-</tr>
-    <tr>
-    <td  align="center">&nbsp;</td>
-    <td  align="center">&nbsp;</td>
-    <td  align="center">&nbsp;</td>
   </tr>
-</table>
-    
-</td>
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
   </tr>
 </table>
 <table><tr><td></td></tr></table>
 <table border="0" width="60%" align="center">
   <tr>
-    <td  align="center"><b>' . $ten . '</b><br/>('.$ngayhd.')</td>
+    <td align="center"><b>' . $ten . '</b><br/>(' . $ngayhd . ')</td>
   </tr>
-    <tr>
-    <td  align="center">&nbsp;</td>
+  <tr>
+    <td align="center">&nbsp;</td>
   </tr>
-
 </table>
 <table border="0" width="100%" align="left">
   <tr>
-    <td width="70%"  align="left">Tên doanh nghiệp: <b>' . $_SESSION["TenCongTy"] . '</b></td>
+    <td width="70%" align="left">Tên doanh nghiệp: <b>' . $_SESSION["TenCongTy"] . '</b></td>
     <td width="30%" align="left">Mã số thuế: <b>' . $_SESSION["MST"] . '</b></td>
   </tr>
   <tr>
-    <td  align="left" colspan="2">Địa chỉ: <b>' . $_SESSION["DiaChi"] . '</b></td>
+    <td align="left" colspan="2">Địa chỉ: <b>' . $_SESSION["DiaChi"] . '</b></td>
   </tr>
-   <tr>
-    <td  align="left">Địa chỉ nơi tổ chức thu mua: <b>' . $DATACISONHATKY['bophan'] . '</b></td>
-    <td  align="left">Người phụ trách thu mua: <b>' . $DATACISONHATKY['hotennguoichi'] . '</b> </td>
-  </tr>
-
-</table>
-
-<table width="100%" border="0">
   <tr>
-    <td align="right"></td>
+    <td align="left">Địa chỉ nơi tổ chức thu mua: <b>' . $DATACISONHATKY['bophan'] . '</b></td>
+    <td align="left">Người phụ trách thu mua: <b>' . $DATACISONHATKY['hotennguoichi'] . '</b></td>
   </tr>
 </table>
-<table border="0" class="dataTable" cellpadding="2" cellspacing="0" align="center" valign="middle">' . $html_title . $html_ct . '
+<table width="100%" border="0"><tr><td align="right"></td></tr></table>
+<table border="0" class="dataTable" cellpadding="2" cellspacing="0" align="center" valign="middle">' . $html_title_01 . $html_ct . '
 <tr>
-    <td colspan="5" class="td_full" align="right" ><b>TỔNG CỘNG</b></td>';
-
-
-
-$html .= '<td class="td_full"  align="right"><b>';
-$html .= '</b></td>
-        <td class="td_full"  align="right"><b>';
-$html .= '</b></td>
-        <td class="td_full"  align="right"><b>';
-$html .= '</b></td>
-        <td class="td_full"  align="right"><b>';
-$html .= ($ThanhTien == 0) ? "" : number_format($ThanhTien, 0, ",", ".");
-$html .= '</b></td>
-<td class="td_full" ></td>
-
-  </tr>
-  
+  <td colspan="5" class="td_full" align="right"><b>TỔNG CỘNG</b></td>
+  <td class="td_full" align="right"><b></b></td>
+  <td class="td_full" align="right"><b></b></td>
+  <td class="td_full" align="right"><b></b></td>
+  <td class="td_full" align="right"><b>' . (($ThanhTien == 0) ? "" : number_format($ThanhTien, 0, ",", ".")) . '</b></td>
+  <td class="td_full"></td>
+</tr>
 </table>
 <table width="100%" cellpadding="2"><tr><td></td></tr></table>
 <table><tr><td></td></tr></table>
-
 <table width="100%" border="0" cellpadding="2">
   <tr>
-    <td colspan="3">Tổng giá trị hàng hoá mua vào: ';
-$html .= number_format($ThanhTien, 0, ",", ".");
-$html.=' đồng</td>
+    <td colspan="3">Tổng giá trị hàng hoá mua vào: ' . number_format($ThanhTien, 0, ",", ".") . ' đồng</td>
   </tr>
   <tr>
-  <td align="center" width="35%">&nbsp; Người lập bảng kê<br/><i>(Ký, họ tên)</i></td>
+    <td align="center" width="35%">&nbsp; Người lập bảng kê<br/><i>(Ký, họ tên)</i></td>
     <td align="center" width="35%"></td>
-    <td width="30%" rowspan="2" align="center">' . $ngaylap . '<br/>Giám đốc<br/><i>(Ký, họ tên)</i>
-   </td>
+    <td width="30%" rowspan="2" align="center">' . $ngaylap . '<br/>Giám đốc<br/><i>(Ký, họ tên)</i></td>
   </tr>
 </table>
 ';
+}
 echo $html;
 
 ?>

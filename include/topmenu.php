@@ -157,6 +157,14 @@ Initial setup","初始设置"); ?></a></li>
                         </ul>
                         <?php } ?>
                     </li><!--End Menu Tài sản -->
+                    <li style="background: url('icon/nokh.gif') no-repeat left center;<?php echo $HienThi; ?>"><!-- Menu Đối tác -->
+                        <h2><a  href="#"><?php echo HienNgonNgu($_SESSION['NGONNGU'],"Đối tác","Partners","伙伴"); ?></a></h2>
+                        <?php if($_SESSION['Level']!=5 && $_SESSION['Level']!=6 ){ ?>
+                            <ul>
+                                <li style="background: url('icon/1.gif') no-repeat left center;"><a href="#" onclick="$('.dialog_main_dinhmuc_sanpham').load('form/frm_bangthanhtoan_khonghoadon.php');"><?php echo HienNgonNgu($_SESSION['NGONNGU'],"Bảng kê HH không hoá đơn","List of goods without invoices","没有发票的商品清单"); ?></a></li>
+                            </ul>
+                        <?php } ?>
+                    </li><!--End Menu Đối tác -->
                     <li style="background: url('icon/tienluong.gif') no-repeat left center;"><!-- Menu tiền lương -->
                         <h2><a  href="#"><?php echo HienNgonNgu($_SESSION['NGONNGU'],"Giá thành","Price","Price"); ?></a></h2>
                         <?php if($_SESSION['Level']){ ?>
